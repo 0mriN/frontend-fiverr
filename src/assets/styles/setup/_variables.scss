@@ -1,0 +1,28 @@
+// Colors
+$clr1: #ce2e6c;
+$clr2: #4f3a65;
+$clr-gr: #1dbf73;
+$clr4: #95adbe;
+$clr5: #dff0ea;
+$clr6: #fff;
+$clr7: #222;
+
+$gray1: #ddd;
+$gray2: #aaa;
+$gray3: #777;
+$gray4: #333;
+
+// Breakpoints
+$mobile-breakpoint: 460px;
+$narrow-breakpoint: 720px;
+$normal-breakpoint: 960px;
+
+:root {
+    --green-color: #1dbf73;
+    --white-color: #ffffff;
+    --dark-green: #013914;
+    --gray-color: #74767e;
+}
+
+// -light: lighten($clr1bg, 10%);
+// -dark: darken($clr1bg, 10%);
