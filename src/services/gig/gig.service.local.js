@@ -5,6 +5,99 @@ import { userService } from '../user'
 
 const STORAGE_KEY = 'gig'
 
+const gigs = [{
+    _id: 'g101',
+    title: 'I will design your logo',
+    price: 12.16,
+    owner: {
+        _id: 'u101',
+        fullname: 'Dudu Da',
+        imgUrl: 'url',
+        level: 'basic/premium',
+        rate: 4,
+    },
+    daysToMake: 3,
+    description: 'Make unique logo...',
+    avgResponseTime: 1,
+    loc: 'Ghana',
+    imgUrls: ['/img/img1.jpg'],
+    tags: ['Arts And Crafts', 'Logo Design'],
+    likedByUsers: ['mini-user'],
+    reviews: [
+        {
+            id: 'madeId',
+            txt: 'Did an amazing work',
+            rate: 4,
+            by: {
+                _id: 'u102',
+                fullname: 'user2',
+                imgUrl: '/img/img2.jpg',
+            },
+        },
+    ],
+}, {
+    _id: 'g102',
+    title: 'I will design your logo',
+    price: 12.16,
+    owner: {
+        _id: 'u102',
+        fullname: 'Dudu Da',
+        imgUrl: 'url',
+        level: 'basic/premium',
+        rate: 4,
+    },
+    daysToMake: 3,
+    description: 'Make unique logo...',
+    avgResponseTime: 1,
+    loc: 'Ghana',
+    imgUrls: ['/img/img1.jpg'],
+    tags: ['Arts And Crafts', 'Logo Design'],
+    likedByUsers: ['mini-user'],
+    reviews: [
+        {
+            id: 'madeId',
+            txt: 'Did an amazing work',
+            rate: 4,
+            by: {
+                _id: 'u103',
+                fullname: 'user2',
+                imgUrl: '/img/img2.jpg',
+            },
+        },
+    ],
+}, {
+    _id: 'g103',
+    title: 'I will design your logo',
+    price: 12.16,
+    owner: {
+        _id: 'u103',
+        fullname: 'Dudu Da',
+        imgUrl: 'url',
+        level: 'basic/premium',
+        rate: 4,
+    },
+    daysToMake: 3,
+    description: 'Make unique logo...',
+    avgResponseTime: 1,
+    loc: 'Ghana',
+    imgUrls: ['/img/img1.jpg'],
+    tags: ['Arts And Crafts', 'Logo Design'],
+    likedByUsers: ['mini-user'],
+    reviews: [
+        {
+            id: 'madeId',
+            txt: 'Did an amazing work',
+            rate: 4,
+            by: {
+                _id: 'u104',
+                fullname: 'user2',
+                imgUrl: '/img/img2.jpg',
+            },
+        },
+    ],
+},
+
+]
 export const gigService = {
     query,
     getById,
@@ -26,15 +119,15 @@ async function query(filterBy = { txt: '', price: 0 }) {
     if (minSpeed) {
         gigs = gigs.filter(gig => gig.speed >= minSpeed)
     }
-    if(sortField === 'vendor' || sortField === 'owner'){
-        gigs.sort((gig1, gig2) => 
+    if (sortField === 'vendor' || sortField === 'owner') {
+        gigs.sort((gig1, gig2) =>
             gig1[sortField].localeCompare(gig2[sortField]) * +sortDir)
     }
-    if(sortField === 'price' || sortField === 'speed'){
-        gigs.sort((gig1, gig2) => 
+    if (sortField === 'price' || sortField === 'speed') {
+        gigs.sort((gig1, gig2) =>
             (gig1[sortField] - gig2[sortField]) * +sortDir)
     }
-    
+
     gigs = gigs.map(({ _id, vendor, price, speed, owner }) => ({ _id, vendor, price, speed, owner }))
     return gigs
 }
