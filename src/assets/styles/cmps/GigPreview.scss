@@ -1,10 +1,108 @@
-.gig-preview {
+.basic-gig-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
     a {
-        color: $clr4;
-        padding: 0;
-    }    
-	p {
-		margin-block: 0 0.2rem;
-        font-size: .85em;
-	}
+        text-decoration: none;
+        color: $clr5;
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    img {
+        height: rem(180px);
+        width: rem(300px);
+        border-radius: 8px;
+        margin-right: 3px;
+    }
+
+    .card-seller {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .card-profile {
+            display: flex;
+            align-items: center;
+            font-size: rem(14px);
+
+            & img {
+                border-radius: 30px;
+                height: rem(24px);
+                width: rem(24px);
+                background-color: transparent;
+            }
+
+            & span {
+                color: #222325;
+                font-weight: 700;
+            }
+        }
+
+        .card-rate {
+            display: flex;
+            padding-inline: 8px;
+            align-items: center;
+            gap: 2px;
+            color: $clr6;
+            font-weight: 600;
+            font-size: 14px;
+            height: rem(22px);
+            border-radius: 4px;
+
+            &.top-rated {
+                background-color: $clr8;
+                color:$clr9;
+            }
+
+            .levelStar {
+                margin-top: 0.3rem;
+            }
+        }
+    }
+
+    .card-title {
+        flex-grow: 1;
+        display: flex;
+        font-size: rem(16px);
+        color: $clr6;
+        font-weight: 500;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    .card-bottomLine {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .card-rating {
+            display: flex;
+            align-items: center;
+            margin: 8px 0px;
+            gap: 3px;
+            color: $clr7;
+            font-weight: 700;
+
+            span {
+                color: $gray3;
+                font-weight: 600;
+            }
+
+        }
+
+        .card-from {
+            display: flex;
+            gap: 5px;
+            color: $clr7;
+            font-weight: 600;
+        }
+    }
 }
