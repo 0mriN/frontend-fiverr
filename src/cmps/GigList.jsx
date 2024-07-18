@@ -12,7 +12,7 @@ export function GigList({ gigs, onRemoveGig, onUpdateGig }) {
     }
 
     return <section>
-        <ul className="list">
+        <ul className="gig-list">
             {gigs.map(gig =>
                 <li key={gig._id}>
                     <GigPreview gig={gig}/>
