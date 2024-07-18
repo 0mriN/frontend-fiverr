@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../../src/assets/styles/cmps/PackModal.scss';
-
+import PackModalToolbar from '../cmps/PackModalToolbar';
 const packages = {
   basic: {
     name: "BRONZE PACKAGE",
@@ -29,8 +29,10 @@ const PackageModal = () => {
   const [activeTab, setActiveTab] = useState('basic');
 
   return (
+    
     <div className="modal">
       <div className="modal-content">
+                <PackModalToolbar/>
         <div className="modal-header">
           {Object.keys(packages).map((key) => (
             <button

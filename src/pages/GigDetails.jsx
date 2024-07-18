@@ -7,6 +7,7 @@ import { addGigMsg, loadGig } from '../store/actions/gig.actions';
 import '../../src/assets/styles/pages/GigDetails.scss';
 import PackageModal from '../cmps/PackModal';
 
+
 export function GigDetails() {
   const { gigId } = useParams();
   const gig = useSelector(storeState => storeState.gigModule.gig);
@@ -16,7 +17,6 @@ export function GigDetails() {
     console.log(gigId);
     console.log(gig);
   }, [gigId]);
-console.log(gig.owner.fullname)
   return (
     <section className="gig-details">
       <div className="gig-details-main">
@@ -48,6 +48,7 @@ console.log(gig.owner.fullname)
         
       </div>
       <div className="gig-buy-modal">
+
        <PackageModal/>
       </div>
     </section>
