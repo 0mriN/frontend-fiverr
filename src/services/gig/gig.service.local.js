@@ -19,6 +19,16 @@ const gigs = [{
   Join thousands of satisfied users and elevate your brand today!
 </p>
 `,
+aboutFiles:`    <div class="logo-details">
+        <div class="detail-item">
+            <span class="detail-title">Logo style</span>
+            <span class="detail-content">Minimalist</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-title">File format</span>
+            <span class="detail-content">AI, JPG, PNG, SVG</span>
+        </div>
+    </div>`,
     price: 12.16,
     owner: {
         _id: 'u101',
@@ -58,6 +68,16 @@ const gigs = [{
   </ul>
   Start now and see the difference a professional logo can make!
 </p>`,
+aboutFiles:`    <div class="logo-details">
+        <div class="detail-item">
+            <span class="detail-title">Logo style</span>
+            <span class="detail-content">Minimalist</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-title">File format</span>
+            <span class="detail-content">AI, JPG, PNG, SVG</span>
+        </div>
+    </div>`,
     price: 12.16,
     owner: {
         _id: 'u102',
@@ -97,6 +117,16 @@ const gigs = [{
   </ul>
   Get started today and give your business the logo it deserves!
 </p>`,
+aboutFiles:`    <div class="logo-details">
+        <div class="detail-item">
+            <span class="detail-title">Logo style</span>
+            <span class="detail-content">Minimalist</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-title">File format</span>
+            <span class="detail-content">AI, JPG, PNG, SVG</span>
+        </div>
+    </div>`,
     price: 12.16,
     owner: {
         _id: 'u103',
