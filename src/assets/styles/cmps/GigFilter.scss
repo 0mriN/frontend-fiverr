@@ -4,24 +4,30 @@
     align-items: center;
     gap: 0 .5em;
 
-    background-color: $clr4;
     padding: .5em;
 
-    h3 {
-        grid-column: 1 / -1;
-        font-size: rem(14px);
-        margin: 0;
+    & input {
+        height: 38px;
+        width: 550px;
+
+        border: none;
+        outline: 1px lighten($gray2, 10%) solid;
+        border-radius: 4px 0px 0px 4px;
+
+        padding-inline: rem(15px);
+        font-size: rem(18px);
+
+        &::placeholder {
+            color: lighten($gray2, 10%);
+            font-weight: lighter;
+        }
     }
 
-    & :not(h3) {
-        cursor: pointer;
-    }
-
-    input:is([type="text"], [type="number"]){
+    input:is([type="text"], [type="number"]) {
         height: 1.8em;
         border: none;
         border-block-end: 1px solid $gray1;
-    
+
         &:focus {
             outline: none;
             background-color: $gray1;
@@ -33,7 +39,8 @@
         grid-column: 4;
     }
 
-    .sort-field, .sort-dir {
+    .sort-field,
+    .sort-dir {
         display: flex;
         align-items: center;
         gap: 1em;
@@ -58,7 +65,7 @@
             outline: 1px solid $gray1;
         }
 
-        &:has(:checked) span  {
+        &:has(:checked) span {
             background-color: $clr3;
             color: $gray1;
         }
