@@ -9,6 +9,16 @@ const STORAGE_KEY = 'gig'
 const gigs = [{
     _id: 'g101',
     title: 'I will design your logo',
+    aboutDesc:`<p>
+  Our <mark>Logo Maker</mark> is the best tool for your branding needs. With our platform, you can:
+  <ul>
+    <li><strong>Create</strong> stunning logos effortlessly</li>
+    <li><strong>Customize</strong> every aspect to fit your brand</li>
+    <li><strong>Download</strong> high-resolution files instantly</li>
+  </ul>
+  Join thousands of satisfied users and elevate your brand today!
+</p>
+`,
     price: 12.16,
     owner: {
         _id: 'u101',
@@ -39,6 +49,15 @@ const gigs = [{
 }, {
     _id: 'g102',
     title: 'I will design your logo',
+    aboutDesc:`<p>
+  Discover the ultimate <mark>Logo Design Tool</mark> for your business. You can:
+  <ul>
+    <li><strong>Generate</strong> unique logos in minutes</li>
+    <li><strong>Edit</strong> with an intuitive interface</li>
+    <li><strong>Save</strong> multiple versions for different uses</li>
+  </ul>
+  Start now and see the difference a professional logo can make!
+</p>`,
     price: 12.16,
     owner: {
         _id: 'u102',
@@ -69,6 +88,15 @@ const gigs = [{
 }, {
     _id: 'g103',
     title: 'I will design your logo',
+    aboutDesc:`<p>
+  Enhance your brand with our powerful <mark>Logo Creator</mark>. Features include:
+  <ul>
+    <li><strong>Design</strong> with a wide variety of templates</li>
+    <li><strong>Personalize</strong> with colors, fonts, and icons</li>
+    <li><strong>Export</strong> in multiple formats for web and print</li>
+  </ul>
+  Get started today and give your business the logo it deserves!
+</p>`,
     price: 12.16,
     owner: {
         _id: 'u103',
