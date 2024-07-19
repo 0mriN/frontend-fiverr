@@ -2,7 +2,7 @@
 import { storageService } from '../async-storage.service'
 import { makeId, saveToStorage } from '../util.service'
 import { userService } from '../user'
-import {saveToStorage} from '../util.service.js'
+// import {saveToStorage} from '../util.service.js'
 
 const STORAGE_KEY = 'gig'
 
@@ -293,27 +293,27 @@ window.cs = gigService
 
 
 async function query(filterBy = { txt: '', price: 0 }) {
-    if (!gigs) saveToStorage(STORAGE_KEY, _getDemoGigs())
-    var gigs = await storageService.query(STORAGE_KEY)
-    const { txt, minSpeed, maxPrice, sortField, sortDir } = filterBy
+    // if (!gigs) saveToStorage(STORAGE_KEY, _getDemoGigs())
+    // var gigs = await storageService.query(STORAGE_KEY)
+    // const { txt, minSpeed, maxPrice, sortField, sortDir } = filterBy
 
-    if (txt) {
-        const regex = new RegExp(filterBy.txt, 'i')
-        gigs = gigs.filter(gig => regex.test(gig.vendor) || regex.test(gig.description))
-    }
-    if (minSpeed) {
-        gigs = gigs.filter(gig => gig.speed >= minSpeed)
-    }
-    if (sortField === 'vendor' || sortField === 'owner') {
-        gigs.sort((gig1, gig2) =>
-            gig1[sortField].localeCompare(gig2[sortField]) * +sortDir)
-    }
-    if (sortField === 'price' || sortField === 'speed') {
-        gigs.sort((gig1, gig2) =>
-            (gig1[sortField] - gig2[sortField]) * +sortDir)
-    }
+    // if (txt) {
+    //     const regex = new RegExp(filterBy.txt, 'i')
+    //     gigs = gigs.filter(gig => regex.test(gig.vendor) || regex.test(gig.description))
+    // }
+    // if (minSpeed) {
+    //     gigs = gigs.filter(gig => gig.speed >= minSpeed)
+    // }
+    // if (sortField === 'vendor' || sortField === 'owner') {
+    //     gigs.sort((gig1, gig2) =>
+    //         gig1[sortField].localeCompare(gig2[sortField]) * +sortDir)
+    // }
+    // if (sortField === 'price' || sortField === 'speed') {
+    //     gigs.sort((gig1, gig2) =>
+    //         (gig1[sortField] - gig2[sortField]) * +sortDir)
+    // }
 
-    gigs = gigs.map(({ _id, vendor, price, speed, owner }) => ({ _id, vendor, price, speed, owner }))
+    // gigs = gigs.map(({ _id, vendor, price, speed, owner }) => ({ _id, vendor, price, speed, owner }))
     return gigs
 }
 
