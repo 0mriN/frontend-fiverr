@@ -1,4 +1,7 @@
 import { Link } from 'react-router-dom'
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import { responsive } from './GigCarousel';
 
 export function GigPreview({ gig }) {
 
@@ -36,7 +39,6 @@ export function GigPreview({ gig }) {
     }
     const averageRating = getAverageRating(gig.reviews);
 
-
     return <div className="basic-gig-card">
         <Link to={`/gig/${gig._id}`}>
             <img src={gig.imgUrls} alt="" />
@@ -64,5 +66,21 @@ export function GigPreview({ gig }) {
                 <div className='card-from'>From<span>{`₪${gig.price}`}</span></div>
             </div>
         </Link>
+        <Carousel
+            swipeable={true}
+            draggable={true}
+            showDots={true}
+            responsive={responsive}
+            customTransition="all .5"
+            transitionDuration={500}
+            containerClass="carousel-container"
+            dotListClass="custom-dot-list-style"
+            itemClass="carousel-item-padding-40-px"
+        >
+             <div> <img src='../src/assets/img/img1.png' alt="" /></div>
+             <div> <img src='../src/assets/img/img2.png' alt="" /></div>
+             <div> <img src='../src/assets/img/img3.png' alt="" /></div>
+             <div> <img src='../src/assets/img/img2.png' alt="" /></div>
+        </Carousel>
     </div>
 }
