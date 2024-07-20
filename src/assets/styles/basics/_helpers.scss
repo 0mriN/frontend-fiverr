@@ -44,3 +44,11 @@
 .portrait-ratio {
     @include aspect-ratio(9, 16);
 }
+
+.single-line-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    vertical-align: top;
+}

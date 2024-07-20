@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 1rem 1fr 1rem;
 
-    > * {
+    >* {
         grid-column: 2;
 
         &.full {
@@ -11,33 +11,52 @@
     }
 
     @include for-mobile-layout {
-        grid-template-columns: 
-            minmax(3px, 1fr)
-            minmax(auto, $mobile-breakpoint)
-            minmax(3px, 1fr);
-    }
-    @include for-narrow-layout {
-        grid-template-columns: 
-            minmax(20px, 1fr)
-            minmax(auto, $narrow-breakpoint)
-            minmax(20px, 1fr);
-    }
-    @include for-normal-layout {
-        grid-template-columns: 
-            minmax(20px, 1fr)
-            minmax(auto, $normal-breakpoint)
-            minmax(20px, 1fr);
-    }
-    @include for-wide-layout {
-        grid-template-columns: 
-            minmax(20px, 1fr)
-            minmax(auto, $wide-breakpoint)
-            minmax(20px, 1fr);
-    }
-}
+        grid-template-columns:
+            minmax(3px, 1fr) minmax(auto, $mobile-breakpoint) minmax(3px, 1fr);
 
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 20px;
+        .gig-list {
+            grid-template-columns: repeat(1, minmax(rem(245px), rem(550px)));
+
+        }
+    }
+
+    @include for-small-layout {
+        grid-template-columns:
+            minmax(3px, 1fr) minmax(auto, $narrow-breakpoint) minmax(3px, 1fr);
+
+        .gig-list {
+            grid-template-columns: repeat(2, minmax(rem(256px), rem(405px)));
+
+        }
+    }
+
+    @include for-narrow-layout {
+        grid-template-columns:
+            minmax(20px, 1fr) minmax(auto, $normal-breakpoint) minmax(20px, 1fr);
+
+        .gig-list {
+            grid-template-columns: repeat(3, minmax(rem(262px), rem(350px)));
+
+        }
+    }
+
+    @include for-normal-layout {
+        grid-template-columns:
+            minmax(20px, 1fr) minmax(auto, $wide-breakpoint) minmax(20px, 1fr);
+
+        .gig-list {
+            grid-template-columns: repeat(4, minmax(rem(256px), rem(314px)));
+
+        }
+    }
+
+    @include for-wide-layout {
+        grid-template-columns:
+            minmax(20px, 1fr) minmax(auto, $wide-breakpoint) minmax(20px, 1fr);
+
+            .gig-list {
+                grid-template-columns: repeat(4, minmax(rem(256px), rem(326px)));
+    
+            }
+    }
 }

@@ -8,7 +8,7 @@ const STORAGE_KEY = 'gig'
 
 const gigs = [{
     _id: 'g101',
-    title: 'I will design your logo in just 24 hrs in modern style',
+    title: 'I will design your logo in just 24 hrs in modern style and i will do ur wholeffa ffafa fafa',
     aboutDesc: `<p>
   Our <mark>Logo Maker</mark> is the best tool for your branding needs. With our platform, you can:
   <ul>
@@ -187,7 +187,7 @@ const gigs = [{
     description: 'Make unique logo...',
     avgResponseTime: 1,
     loc: 'Ghana',
-    imgUrls: ['../src/assets/img/img2.png'],
+    imgUrls: ['../src/assets/img/img4.png'],
     tags: ['Arts And Crafts', 'Logo Design'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -228,14 +228,14 @@ const gigs = [{
         _id: 'u102',
         fullname: 'Dudu Da',
         imgUrl: '../src/assets/img/profile.png',
-        level: 'Level 1',
+        level: 'Top Rated',
         rate: 4,
     },
     daysToMake: 3,
     description: 'Make unique logo...',
     avgResponseTime: 1,
     loc: 'Ghana',
-    imgUrls: ['../src/assets/img/img3.png'],
+    imgUrls: ['../src/assets/img/img5.png'],
     tags: ['Arts And Crafts', 'Logo Design'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -265,7 +265,7 @@ const gigs = [{
     description: 'Make unique logo...',
     avgResponseTime: 1,
     loc: 'Ghana',
-    imgUrls: ['../src/assets/img/img1.png'],
+    imgUrls: ['../src/assets/img/img6.png'],
     tags: ['Arts And Crafts', 'Logo Design'],
     likedByUsers: ['mini-user'],
     reviews: [
@@ -287,7 +287,9 @@ export const gigService = {
     getById,
     save,
     remove,
-    addGigMsg
+    addGigMsg,
+    getStarLevel,
+    getAvgRating,
 }
 window.cs = gigService
 
@@ -362,4 +364,36 @@ async function addGigMsg(gigId, txt) {
     await storageService.put(STORAGE_KEY, gig)
 
     return msg
+}
+
+function getStarLevel(gig) {
+
+    let color1 = '#E4E5E7'
+    let color2 = '#E4E5E7'
+    let color3 = '#E4E5E7'
+    let isTopRated = ''
+
+    if (gig.owner.level === 'Level 1') {
+        color1 = '#404145'
+        isTopRated = ''
+    }
+    else if (gig.owner.level === 'Level 2') {
+        color1 = '#404145'
+        color2 = '#404145'
+        isTopRated = ''
+    }
+    else if (gig.owner.level === 'Top Rated') {
+        color1 = '#804317'
+        color2 = '#804317'
+        color3 = '#804317'
+        isTopRated = 'top-rated'
+    }
+    return { color1, color2, color3, isTopRated }
+}
+
+function getAvgRating(reviews) {
+    if (reviews.length === 0) return 'No reviews';
+
+    const totalRating = reviews.reduce((sum, review) => sum + review.rate, 0);
+    return (totalRating / reviews.length).toFixed(2);
 }
