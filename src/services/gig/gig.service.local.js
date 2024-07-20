@@ -3,8 +3,8 @@ import { storageService } from '../async-storage.service'
 import { getRandomIntInclusive, makeId, makeLorem, saveToStorage, loadFromStorage } from '../util.service'
 import { userService } from '../user'
 
-const STORAGE_KEY = 'gig'
-var gigs = loadFromStorage(STORAGE_KEY)
+const GIG_KEY = 'gig'
+var gigs = loadFromStorage(GIG_KEY)
 _createGigs()
 
 export const gigService = {
@@ -18,7 +18,7 @@ window.cs = gigService
 
 
 async function query(filterBy = { txt: '', price: 0 }) {
-    // gigs = await storageService.query(STORAGE_KEY)
+    // gigs = await storageService.query(GIG_KEY)
     // const { txt, minSpeed, maxPrice, sortField, sortDir } = filterBy
 
     // if (txt) {
@@ -38,17 +38,17 @@ async function query(filterBy = { txt: '', price: 0 }) {
     // }
 
     // gigs = gigs.map(({ _id, vendor, price, speed, owner }) => ({ _id, vendor, price, speed, owner }))
-    console.log('bla',gigs);
+    console.log('bla', gigs);
     return gigs
 }
 
 function getById(gigId) {
-    return storageService.get(STORAGE_KEY, gigId)
+    return storageService.get(GIG_KEY, gigId)
 }
 
 async function remove(gigId) {
     // throw new Error('Nope')
-    await storageService.remove(STORAGE_KEY, gigId)
+    await storageService.remove(GIG_KEY, gigId)
 }
 
 async function save(gig) {
@@ -59,7 +59,7 @@ async function save(gig) {
             price: gig.price,
             speed: gig.speed,
         }
-        savedGig = await storageService.put(STORAGE_KEY, gigToSave)
+        savedGig = await storageService.put(GIG_KEY, gigToSave)
     } else {
         const gigToSave = {
             vendor: gig.vendor,
@@ -69,7 +69,7 @@ async function save(gig) {
             owner: userService.getLoggedinUser(),
             msgs: []
         }
-        savedGig = await storageService.post(STORAGE_KEY, gigToSave)
+        savedGig = await storageService.post(GIG_KEY, gigToSave)
     }
     return savedGig
 }
@@ -84,13 +84,13 @@ async function addGigMsg(gigId, txt) {
         txt
     }
     gig.msgs.push(msg)
-    await storageService.put(STORAGE_KEY, gig)
+    await storageService.put(GIG_KEY, gig)
 
     return msg
 }
 
 function _createGigs() {
-    
+    // var gigs = loadFromStorage(GIG_KEY)
     if (!gigs || !gigs.length) {
         gigs = [
             _createGig(),
@@ -102,24 +102,14 @@ function _createGigs() {
             _createGig('hire me to do a gig'),
             _createGig('i make gigs for youtube'),
         ]
-        saveToStorage(STORAGE_KEY, gigs)
+        saveToStorage(GIG_KEY, gigs)
     }
 }
 
 function _createGig(title = 'a new gig') {
     return {
-        id: makeId(),
+        _id: makeId(),
         title,
-        aboutDesc: `
-            <p>
-                Our <mark>Logo Maker</mark> is the best tool for your branding needs. With our platform, you can:
-                <ul>
-                    <li><strong>Create</strong> stunning logos effortlessly</li>
-                    <li><strong>Customize</strong> every aspect to fit your brand</li>
-                    <li><strong>Download</strong> high-resolution files instantly</li>
-                </ul>
-                Join thousands of satisfied users and elevate your brand today!
-            </p>`,
         aboutFiles: `
             <div class="logo-details">
                 <div class="detail-item">
@@ -140,7 +130,16 @@ function _createGig(title = 'a new gig') {
             rate: getRandomIntInclusive(1, 5),
         },
         daysToMake: getRandomIntInclusive(1, 7),
-        description: 'Make unique logo...',
+        description: `
+            <p>
+                Our <mark>Logo Maker</mark> is the best tool for your branding needs. With our platform, you can:
+                <ul>
+                    <li><strong>Create</strong> stunning logos effortlessly</li>
+                    <li><strong>Customize</strong> every aspect to fit your brand</li>
+                    <li><strong>Download</strong> high-resolution files instantly</li>
+                </ul>
+                Join thousands of satisfied users and elevate your brand today!
+            </p>`,
         avgResponseTime: getRandomIntInclusive(1, 5),
         imgUrls: [
             '../src/assets/img/img1.png',
