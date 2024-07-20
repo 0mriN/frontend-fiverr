@@ -11,7 +11,7 @@ export function GigPreview({ gig }) {
     return <div className="basic-gig-card">
         <Link to={`/gig/${gig._id}`}>
             <div className="img-container">
-                <img src={gig.imgUrls} alt="" />
+                <img src={gig.imgUrls[0]} alt="" />
             </div></Link>
         <div className="card-seller">
             <div className="card-profile">
