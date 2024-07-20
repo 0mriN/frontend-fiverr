@@ -8,14 +8,14 @@ export function LongTxt({ txt, length = 65 }) {
     }
     
     if (txt.length <= length) {
-        return <p>{txt}</p>
+        return <span>{txt}</span>
     }
 
     const text = isExpanded ? txt : `${txt.slice(0, length)}...`
     return (
-        <p>
+        <span>
             {text}
-        </p>
+        </span>
 
     )
 }

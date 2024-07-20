@@ -10,11 +10,12 @@ import { userService } from '../services/user'
 import { GigList } from '../cmps/GigList'
 import { GigFilter } from '../cmps/GigFilter'
 
+
 export function GigIndex() {
 
     const [filterBy, setFilterBy] = useState(gigService.getDefaultFilter())
     const gigs = useSelector(storeState => storeState.gigModule.gigs)
-    // const gigs = gigService.query()
+  
     useEffect(() => {
         loadGigs(filterBy)
     }, [filterBy])

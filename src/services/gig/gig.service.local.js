@@ -127,11 +127,11 @@ function _createGigs() {
     if (!gigs || !gigs.length) {
         gigs = [
             _createGig(),
-            _createGig('this is a gig'),
-            _createGig('ill design your logo'),
+            _createGig('this is a gig and ill design your logo ill design your logo ill design your logo'),
+            _createGig('ill design your logo i make gigs i make gigs i make gigs i make gigs hire me to do a gig'),
             _createGig('i make gigs'),
-            _createGig('i have a good gig'),
-            _createGig('i can do a good gig'),
+            _createGig('i make gigs'),
+            _createGig('i make gigs'),
             _createGig('hire me to do a gig'),
             _createGig('i make gigs for youtube'),
         ]
