@@ -1,12 +1,6 @@
 .gig-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(rem(220px), 1fr));
     grid-row-gap: rem(40px);
-    grid-column-gap: rem(24px);
-
-    li {
-        padding: .5em;
-        // min-width: rem(288.70px);
-        // min-width: rem(300.66px);
-    }
+    grid-column-gap: rem(32px);
+    padding: 0px rem(32px)
 }

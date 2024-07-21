@@ -1,9 +1,11 @@
 .basic-gig-card {
-    display: flex;
-    flex-direction: column;
+    display: block;
     justify-content: space-between;
-    height: 100%;
-
+ 
+    &:hover a:nth-of-type(2) {
+        text-decoration: underline;
+    }
+    
     a {
         text-decoration: none;
         color: $clr5;
@@ -14,22 +16,46 @@
         height: 100%;
     }
 
-    img {
-        height: rem(180px);
-        width: rem(300px);
+    .img-container {
+        position: relative;
+        padding-bottom: 59.999%;
+        border: 1px solid #ddd;
         border-radius: 8px;
-        margin-right: 3px;
+
+        img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            
+        }
     }
 
     .card-seller {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: end;
+        margin: 12px 0px 0px;
+
 
         .card-profile {
             display: flex;
-            align-items: center;
+            align-items: end;
             font-size: rem(14px);
+            gap:6px;
+
+            .card-profile-name {
+                display: flex;
+                align-items: end;
+                min-width: 120px;
+                gap: 5px;
+
+                & span {
+                    color: #222325;
+                    font-weight: 700;
+
+                }
+            }
 
             & img {
                 border-radius: 30px;
@@ -37,44 +63,41 @@
                 width: rem(24px);
                 background-color: transparent;
             }
-
-            & span {
-                color: #222325;
-                font-weight: 700;
-            }
         }
 
         .card-rate {
             display: flex;
-            padding-inline: 8px;
             align-items: center;
             gap: 2px;
             color: $clr6;
             font-weight: 600;
             font-size: 14px;
-            height: rem(22px);
+            height: rem(24px);
             border-radius: 4px;
+            min-width: rem(120px);
+            justify-content: end;
 
             &.top-rated {
                 background-color: $clr8;
-                color:$clr9;
+                color: $clr9;
+                padding-inline: 8px;
             }
 
             .levelStar {
-                margin-top: 0.15rem;
+                margin-top: 3px;
             }
         }
     }
 
     .card-title {
-        flex-grow: 1;
-        display: flex;
-        font-size: rem(16px);
-        color: $clr6;
-        font-weight: 500;
-
-        p {
+        span {
+            flex-grow: 2;
+            display: flex;
+            font-size: rem(16px);
+            color: $clr6;
+            font-weight: 500;
             margin: 0;
+            height: rem(50px);
         }
     }
 
@@ -86,10 +109,11 @@
         .card-rating {
             display: flex;
             align-items: center;
-            margin: 8px 0px;
+            margin: 8px 0px 6px;
             gap: 3px;
             color: $clr7;
             font-weight: 700;
+
 
             span {
                 color: $gray3;

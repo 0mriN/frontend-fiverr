@@ -3,6 +3,8 @@ $clr1: #ce2e6c;
 $clr2: #4f3a65;
 $clr3: #1dbf73;
 $clr4: #95adbe;
+
+// list + preview colors
 $clr5: #62646a;
 $clr6: #404145;
 $clr7: #222325;
@@ -15,9 +17,10 @@ $gray3: #74767e;
 $gray4: #333;
 
 // Breakpoints
-$mobile-breakpoint: 460px;
-$narrow-breakpoint: 720px;
-$normal-breakpoint: 960px;
+$mobile-breakpoint: 600px; 
+$narrow-breakpoint: 900px; 
+$normal-breakpoint: 1160px; 
+$wide-breakpoint: 1400px; 
 
 :root {
     --green-color: #1dbf73;
@@ -25,6 +28,3 @@ $normal-breakpoint: 960px;
     --dark-green: #013914;
     --gray-color: #74767e;
 }
-
-// -light: lighten($clr1bg, 10%);
-// -dark: darken($clr1bg, 10%);
