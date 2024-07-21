@@ -163,16 +163,33 @@ function _createGig(title = 'a new gig') {
             rate: getRandomIntInclusive(1, 5),
         },
         daysToMake: getRandomIntInclusive(1, 7),
-        description: `
-            <p>
-                Our <mark>Logo Maker</mark> is the best tool for your branding needs. With our platform, you can:
-                <ul>
-                    <li><strong>Create</strong> stunning logos effortlessly</li>
-                    <li><strong>Customize</strong> every aspect to fit your brand</li>
-                    <li><strong>Download</strong> high-resolution files instantly</li>
-                </ul>
-                Join thousands of satisfied users and elevate your brand today!
-            </p>`,
+        getToKnowDesc:"Senior graphic designer experienced in logo and covers design",
+        description: `<p>Fiverr says the writing of this description is my chance to be creative, I disagree. My real chance to be creative is when I start designing a logo.</p>
+
+<p>I will give all my knowledge and experience to creating the perfect logo for your business, but all that is for nothing without creativity, that's the reason why most of all I'm going to be creative with your new logo. Push the boundaries, explore new possibilities, create something unique, something that will make your brand stand out from the competition! <mark>Well seems like I did put some creativity in this description after all :)</mark></p>
+
+<p><strong>What will you get in Gig deliverables:</strong></p>
+<ul>
+  <li>2-4 unique designs concepts</li>
+  <li>Professional and unique modern concepts</li>
+  <li>300 DPI HIGH-QUALITY JPG, and PNG format.</li>
+  <li>AI (Source file) & High-Quality PDF</li>
+</ul>
+
+<p><strong>Why trust me?</strong></p>
+<ul>
+  <li>Fast Response Time</li>
+  <li>100% Customer Satisfaction</li>
+  <li>Full Copyright</li>
+  <li>I guarantee on-time delivery</li>
+  <li>Fully editable files.</li>
+</ul>
+
+<p><strong>Still not convinced?</strong></p>
+<p>Hit me a message with any questions or concerns and I will answer in the shortest time.</p>
+
+<p><em>Have a nice day,<br>Stefan Prodanovic</em></p>
+`,
         avgResponseTime: getRandomIntInclusive(1, 5),
         imgUrls: [
             '../src/assets/img/img1.png',
