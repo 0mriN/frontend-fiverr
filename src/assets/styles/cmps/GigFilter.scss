@@ -1,14 +1,12 @@
 .gig-filter {
-    display: grid;
-    grid-template-columns: 1fr 5em 5em auto;
-    align-items: center;
-    gap: 0 .5em;
-
-    padding: .5em;
+    display: flex;
 
     & input {
-        height: 38px;
-        width: 550px;
+        align-content: center;
+        // height: 38px;
+        // width: rem(790px);
+        width: 100%;
+        // height: 100%;
 
         border: none;
         outline: 1px lighten($gray2, 10%) solid;
@@ -34,6 +32,16 @@
         }
     }
 
+    & .btn {
+        height: 40px;
+        width: 50px;
+
+        margin-top: -1px;
+        padding-top: 9px;
+
+        background-color: black;
+        border-radius: 0px 4px 4px 0px;
+    }
 
     .btn-clear {
         grid-column: 4;
