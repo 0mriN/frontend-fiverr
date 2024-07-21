@@ -1,0 +1,32 @@
+.gig-edit{
+        max-width: rem(300px);
+        margin: auto;
+        margin-top: rem(30px);
+
+        & form {
+            display: flex;
+            flex-direction: column;
+            font-size: 1.5rem;
+    
+            & input {
+                margin-bottom: 1em;
+            }
+            & .upload-container{
+                border: 0.5px solid $gray3;
+                padding: 10px;
+            }
+            
+                            textarea {
+                                height: rem(100px);
+                            }
+
+            button {
+                align-self: center;
+                width: 50px;
+            }
+        }
+        
+        
+    
+    
+}

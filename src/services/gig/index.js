@@ -1,15 +1,16 @@
 const { DEV, VITE_LOCAL } = import.meta.env
 
-import { getRandomIntInclusive, makeId } from '../util.service'
+import { getRandomIntInclusive, makeId, makeLorem } from '../util.service'
 
 import { gigService as local } from './gig.service.local'
 import { gigService as remote } from './gig.service.remote'
 
 function getEmptyGig() {
 	return {
-		vendor: makeId(),
-		speed: getRandomIntInclusive(80, 240),
-		msgs: [],
+		title:'',
+		price:'',
+        description: '',
+        imgUrls: []
 	}
 }
 

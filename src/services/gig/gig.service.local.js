@@ -44,6 +44,7 @@ async function query(filterBy = { txt: '', price: 0 }) {
 }
 
 function getById(gigId) {
+    console.log('hi');
     return storageService.get(GIG_KEY, gigId)
 }
 
@@ -53,23 +54,70 @@ async function remove(gigId) {
 }
 
 async function save(gig) {
+    console.log('hi from save local before');
     var savedGig
     if (gig._id) {
         const gigToSave = {
             _id: gig._id,
+            title: gig.title,
             price: gig.price,
-            speed: gig.speed,
+            description: gig.description,
         }
         savedGig = await storageService.put(GIG_KEY, gigToSave)
     } else {
         const gigToSave = {
-            vendor: gig.vendor,
+            title: gig.title,
             price: gig.price,
-            speed: gig.speed,
+            description: gig.description,
+            owner: {
+                _id: makeId(),
+                fullname: makeLorem(2),
+                imgUrl: '../src/assets/img/profile.png',
+                level: 'Level 1',
+                rate: getRandomIntInclusive(1, 5),
+            },
+            reviews: [
+                {
+                    id: 'madeId',
+                    txt: 'Did an amazing work',
+                    rate: getRandomIntInclusive(1, 5),
+                    by: {
+                        _id: 'u102',
+                        fullname: 'user2',
+                        imgUrl: '/img/img2.jpg',
+                    },
+                }, {
+                    id: 'madeId',
+                    txt: 'Did an awesome work',
+                    rate: getRandomIntInclusive(1, 5),
+                    by: {
+                        _id: 'u107',
+                        fullname: 'user7',
+                        imgUrl: '/img/img2.jpg',
+                    },
+                }, {
+                    id: 'madeId',
+                    txt: 'Did a great job',
+                    rate: getRandomIntInclusive(1, 5),
+                    by: {
+                        _id: 'u102',
+                        fullname: 'user2',
+                        imgUrl: '/img/img2.jpg',
+                    }
+                }
+            ],
+            imgUrls: gig.imgUrls || [
+                '../src/assets/img/img1.png',
+                '../src/assets/img/img2.png',
+                '../src/assets/img/img3.png',
+            ],
+
             // Later, owner is set by the backend
-            owner: userService.getLoggedinUser(),
-            msgs: []
+            // owner: userService.getLoggedinUser(),
+            // imgUrls: gig.imgUrls
         }
+        console.log('hi from save local after', gigToSave.level);
+
         savedGig = await storageService.post(GIG_KEY, gigToSave)
     }
     return savedGig

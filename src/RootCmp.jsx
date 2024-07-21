@@ -17,11 +17,12 @@ import { UserMsg } from './cmps/UserMsg.jsx'
 import { LoginSignup } from './pages/LoginSignup.jsx'
 import { Login } from './pages/Login.jsx'
 import { Signup } from './pages/Signup.jsx'
+import { GigEdit } from './cmps/GigEdit.jsx'
 
 export function RootCmp() {
     return (
         <div className="main-container">
-            <AppHeader />
+            {/* <AppHeader /> */}
             {/* <UserMsg /> */}
 
             <main>
@@ -33,6 +34,8 @@ export function RootCmp() {
                     </Route>
                     <Route path="gig" element={<GigIndex />} />
                     <Route path="gig/:gigId" element={<GigDetails />} />
+                    <Route path="/gig/edit/" element={<GigEdit />} />
+                    <Route path="/gig/edit/:gigId?" element={<GigEdit />} />
                     {/* <Route path="user/:id" element={<UserDetails />} /> */}
                     {/* <Route path="review" element={<ReviewIndex />} /> */}
                     {/* <Route path="chat" element={<ChatApp />} /> */}

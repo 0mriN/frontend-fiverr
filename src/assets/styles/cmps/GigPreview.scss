@@ -1,6 +1,10 @@
 .basic-gig-card {
     display: block;
     justify-content: space-between;
+ 
+    &:hover a:nth-of-type(2) {
+        text-decoration: underline;
+    }
     
     a {
         text-decoration: none;
@@ -46,7 +50,6 @@
                 min-width: 120px;
                 gap: 5px;
 
-                // & p {
                 & span {
                     color: #222325;
                     font-weight: 700;

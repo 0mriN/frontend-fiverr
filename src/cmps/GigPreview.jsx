@@ -17,8 +17,7 @@ export function GigPreview({ gig }) {
             <div className="card-profile">
                 <img src={gig.owner.imgUrl} alt="" />
                 <div className='card-profile-name single-line-text'>
-                    {/* <span>{gig.owner.fullname} </span> */}
-                    <LongTxt txt={gig.owner.fullname} length={10} />
+                    <LongTxt txt={gig.owner.fullname} length={15} />
                 </div>
             </div>
             <div className={`card-rate ${starLevel.isTopRated}`}>
