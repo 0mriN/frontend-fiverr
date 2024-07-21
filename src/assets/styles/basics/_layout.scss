@@ -15,7 +15,7 @@
             minmax(3px, 1fr) minmax(auto, $mobile-breakpoint) minmax(3px, 1fr);
 
         .gig-list {
-            grid-template-columns: repeat(1, minmax(rem(245px), rem(550px)));
+            grid-template-columns: repeat(1, minmax(rem(240px), rem(550px)));
 
         }
     }
@@ -25,7 +25,7 @@
             minmax(3px, 1fr) minmax(auto, $narrow-breakpoint) minmax(3px, 1fr);
 
         .gig-list {
-            grid-template-columns: repeat(2, minmax(rem(256px), rem(405px)));
+            grid-template-columns: repeat(2, minmax(rem(210px), rem(405px)));
 
         }
     }
@@ -35,7 +35,7 @@
             minmax(20px, 1fr) minmax(auto, $normal-breakpoint) minmax(20px, 1fr);
 
         .gig-list {
-            grid-template-columns: repeat(3, minmax(rem(262px), rem(350px)));
+            grid-template-columns: repeat(3, minmax(rem(240px), rem(350px)));
 
         }
     }
@@ -45,7 +45,7 @@
             minmax(20px, 1fr) minmax(auto, $wide-breakpoint) minmax(20px, 1fr);
 
         .gig-list {
-            grid-template-columns: repeat(4, minmax(rem(256px), rem(314px)));
+            grid-template-columns: repeat(4, minmax(rem(210px), rem(316px)));
 
         }
     }

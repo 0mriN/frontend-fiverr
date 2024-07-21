@@ -28,7 +28,7 @@ export function GigIndex() {
             showErrorMsg('Cannot remove gig')
         }
     }
-
+if (!gigs) return <div>Loading...</div>
     return (
         <main className="gig-index">
             <header>

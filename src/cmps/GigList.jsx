@@ -11,8 +11,6 @@ export function GigList({ gigs, onRemoveGig, onUpdateGig }) {
         return gig.owner?._id === user._id
     }
 
-    console.log('gigs:', gigs);
-
     return <section>
         <ul className="gig-list">
             {gigs.map(gig =>

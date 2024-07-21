@@ -1,11 +1,11 @@
 .basic-gig-card {
     display: block;
     justify-content: space-between;
- 
-    &:hover a:nth-of-type(2) {
+
+    &:hover .card-title span {
         text-decoration: underline;
     }
-    
+
     a {
         text-decoration: none;
         color: $clr5;
@@ -14,22 +14,34 @@
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
+
     }
 
-    .img-container {
-        position: relative;
-        padding-bottom: 59.999%;
+    .carousel-container {
         border: 1px solid #ddd;
         border-radius: 8px;
 
         img {
-            position: absolute;
             width: 100%;
             height: 100%;
             border-radius: 8px;
-            
         }
     }
+
+    // .img-container {
+    //     position: relative;
+    //     padding-bottom: 59.999%;
+    //     border: 1px solid #ddd;
+    //     border-radius: 8px;
+
+    //     img {
+    //         position: absolute;
+    //         width: 100%;
+    //         height: 100%;
+    //         border-radius: 8px;
+
+    //     }
+    // }
 
     .card-seller {
         display: flex;
@@ -42,19 +54,15 @@
             display: flex;
             align-items: end;
             font-size: rem(14px);
-            gap:6px;
+            gap: 6px;
 
             .card-profile-name {
                 display: flex;
                 align-items: end;
                 min-width: 120px;
                 gap: 5px;
-
-                & span {
-                    color: #222325;
-                    font-weight: 700;
-
-                }
+                font-family: 'MacanExBold';
+                color: #222325;
             }
 
             & img {
@@ -66,25 +74,32 @@
         }
 
         .card-rate {
-            display: flex;
-            align-items: center;
-            gap: 2px;
-            color: $clr6;
-            font-weight: 600;
-            font-size: 14px;
-            height: rem(24px);
-            border-radius: 4px;
-            min-width: rem(120px);
-            justify-content: end;
 
-            &.top-rated {
-                background-color: $clr8;
-                color: $clr9;
-                padding-inline: 8px;
-            }
+            >* {
+                display: flex;
+                align-items: center;
+                gap: 2px;
+                color: $clr6;
+                font-weight: 600;
+                font-size: 14px;
+                height: rem(24px);
+                border-radius: 4px;
+                min-width: rem(120px);
+                justify-content: end;
 
-            .levelStar {
-                margin-top: 3px;
+                &.top-rated {
+                    background-color: $clr8;
+                    color: $clr9;
+                    padding-inline: 6px;
+
+                    p {
+                        // margin-top: rem(15px);
+                    }
+                }
+
+                .levelStar {
+                    margin-top: 2px;
+                }
             }
         }
     }
@@ -101,7 +116,7 @@
         }
     }
 
-    .card-bottomLine {
+    .card-lower-part {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -124,9 +139,9 @@
 
         .card-from {
             display: flex;
+            font-family: 'MacanBold';
             gap: 5px;
             color: $clr7;
-            font-weight: 600;
         }
     }
 }

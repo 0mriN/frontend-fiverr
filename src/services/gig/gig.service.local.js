@@ -44,7 +44,6 @@ async function query(filterBy = { txt: '', price: 0 }) {
 }
 
 function getById(gigId) {
-    console.log('hi');
     return storageService.get(GIG_KEY, gigId)
 }
 
@@ -54,7 +53,6 @@ async function remove(gigId) {
 }
 
 async function save(gig) {
-    console.log('hi from save local before');
     var savedGig
     if (gig._id) {
         const gigToSave = {
@@ -116,8 +114,6 @@ async function save(gig) {
             // owner: userService.getLoggedinUser(),
             // imgUrls: gig.imgUrls
         }
-        console.log('hi from save local after', gigToSave.level);
-
         savedGig = await storageService.post(GIG_KEY, gigToSave)
     }
     return savedGig
