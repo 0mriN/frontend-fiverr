@@ -2,21 +2,24 @@
     display: flex;
     min-height: rem(70px);
 
-    margin-inline: 1rem;
-
-    padding: rem(10px) 0;
+    padding: 0px rem(32px);
 
     nav {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        // justify-content: space-between;
 
-        gap: 1em;
         width: 100%;
 
         font-size: .8em;
 
+        & .nav-hamburger {
+            margin-inline-end: rem(10px);
+        }
+
         & .nav-logo>* {
+            margin-inline-end: rem(35px);
+
             font-size: 2.2em;
             font-weight: bold;
             color: $clr7;
@@ -30,15 +33,20 @@
             }
         }
 
+        & .nav-filter {
+            // height: rem(38px);
+            // width: rem(740px);
+            flex-grow: 1;
+            margin-inline-end: rem(35px);
+        }
+
         .nav-icons {
-            gap: 0 30px;
+            gap: 0 12px;
+            margin-inline-end: rem(30px);
 
             & .bell-icon,
             & .msg-icon,
             & .heart-icon {
-                display: grid;
-                place-items: center;
-
                 height: 40px;
                 width: 40px;
 
@@ -56,8 +64,9 @@
         }
 
         .nav-orders {
-            margin-inline-start: 50px;
+            margin-inline-end: rem(25px);
 
+            font-size: rem(16px);
             &>*:visited {
                 color: #62646a;
             }
@@ -73,17 +82,19 @@
         .nav-user {
             display: grid;
             place-items: center;
+            text-align: center;
 
-            height: 35px;
-            width: 35px;
+            // margin-inline-start: remm(50px);
 
-            margin-inline-start: 20px;
+            height: 32px;
+            width: 32px;
 
             border-radius: 50%;
 
-            background-color: $clr4;
+            background-color: #9b6928;
 
             color: white;
+            font-size: rem(16px);
 
             &:hover {
                 cursor: pointer;
@@ -98,20 +109,22 @@
     align-content: center;
     height: 40px;
 
+    padding: 0px rem(32px);
+
     & .second-header-filters {
         color: #74767e;
 
         &>* {
             &:first-child {
-                padding: 0 10px 0 0;
+                padding: 0 rem(7.4px) 0 0;
             }
 
             &:not(:first-child, :last-child) {
-                padding: 0 10px;
+                padding: 0 rem(7.4px);
             }
 
             &:last-child {
-                padding: 0 0 0 10px;
+                padding: 0 0 0 rem(7.4px);
             }
 
             &>*:visited {
