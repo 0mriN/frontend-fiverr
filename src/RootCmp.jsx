@@ -22,7 +22,7 @@ import { GigEdit } from './cmps/GigEdit.jsx'
 export function RootCmp() {
     return (
         <div className="main-container">
-            {/* <AppHeader /> */}
+            <AppHeader />
             {/* <UserMsg /> */}
 
             <main>

@@ -54,7 +54,7 @@ export function GigDetails() {
             <p>What people loved about this freelancer</p>
             <div className="details-review"><img src="https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/be0207cba0c4e465f4b8721f97ad08b7-1714534350146/ef6594cd-43ea-4632-8971-eb8d13bb038a.jpg" alt="" /></div>
             <p className="about-title">About this gig</p>
-            <div className="about-desc" dangerouslySetInnerHTML={{ __html: gig.description }}></div>
+            <pre><div  className="about-desc" dangerouslySetInnerHTML={{ __html: gig.description }}></div></pre>
             <hr className="divider" />
             <div className="about-file-details" dangerouslySetInnerHTML={{ __html: gig.aboutFiles }}></div>
             <div className="about-get-to-know"><h4>Get to know {gig.owner.fullname}</h4>

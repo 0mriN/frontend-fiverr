@@ -17,7 +17,7 @@ export function GigEdit() {
 
     async function loadGig() {
         try {
-            const gig = await gigService.getById(params.gigId) // check
+            const gig = await gigService.getById(params.gigId) 
             setGigToEdit(gig)
         } catch (err) {
             console.log('err:', err)
