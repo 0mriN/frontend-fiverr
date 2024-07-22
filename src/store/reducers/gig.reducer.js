@@ -1,3 +1,5 @@
+import { gigService } from "../../services/gig"
+
 export const SET_GIGS = 'SET_GIGS'
 export const SET_GIG = 'SET_GIG'
 export const REMOVE_GIG = 'REMOVE_GIG'
@@ -5,9 +7,12 @@ export const ADD_GIG = 'ADD_GIG'
 export const UPDATE_GIG = 'UPDATE_GIG'
 export const ADD_GIG_MSG = 'ADD_GIG_MSG'
 
+export const SET_FILTER = 'SET_FILTER'
+
 const initialState = {
     gigs: [],
-    gig: null
+    gig: null,
+    filterBy: gigService.getDefaultFilter()
 }
 
 export function gigReducer(state = initialState, action) {
@@ -35,6 +40,9 @@ export function gigReducer(state = initialState, action) {
         case ADD_GIG_MSG:
             newState = { ...state, gig: { ...state.gig, msgs: [...state.gig.msgs || [], action.msg] } }
             break
+
+        case SET_FILTER:
+            newState = { ...state, filterBy: { ...action.filterBy } }
         default:
     }
     return newState

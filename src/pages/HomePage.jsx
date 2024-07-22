@@ -31,7 +31,7 @@ export function HomePage() {
             <div className='sub-category-container'>
                 <a href="">
                 <img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/programming-tech.49dbf0d.svg" alt="programming_tech" loading="lazy"/>
-                <p class="sub-category">Programming & Tech</p>
+                <p className="sub-category">Programming & Tech</p>
                 </a>
             </div>
             {/* <div className='video-container'> */}

@@ -18,27 +18,14 @@ export const gigService = {
 window.cs = gigService
 
 
-async function query(filterBy = { txt: '', price: 0 }) {
-    const gigs = await storageService.query(GIG_KEY)
-    // const { txt, minSpeed, maxPrice, sortField, sortDir } = filterBy
-
-    // if (txt) {
-    //     const regex = new RegExp(filterBy.txt, 'i')
-    //     gigs = gigs.filter(gig => regex.test(gig.vendor) || regex.test(gig.description))
-    // }
-    // if (minSpeed) {
-    //     gigs = gigs.filter(gig => gig.speed >= minSpeed)
-    // }
-    // if (sortField === 'vendor' || sortField === 'owner') {
-    //     gigs.sort((gig1, gig2) =>
-    //         gig1[sortField].localeCompare(gig2[sortField]) * +sortDir)
-    // }
-    // if (sortField === 'price' || sortField === 'speed') {
-    //     gigs.sort((gig1, gig2) =>
-    //         (gig1[sortField] - gig2[sortField]) * +sortDir)
-    // }
-
-    // gigs = gigs.map(({ _id, vendor, price, speed, owner }) => ({ _id, vendor, price, speed, owner }))
+async function query(filterBy = { title: ''}) {
+    var gigs = await storageService.query(GIG_KEY)
+    const { title } = filterBy
+    
+    if (title) {
+        const regex = new RegExp(filterBy.title, 'i')
+        gigs = gigs.filter(gig => regex.test(gig.title) || regex.test(gig.description))
+    }
     return gigs
 }
 

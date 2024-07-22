@@ -1,6 +1,6 @@
 
 import { gigService } from '../../services/gig'
-import { ADD_GIG, ADD_GIG_MSG, REMOVE_GIG, SET_GIG, SET_GIGS, UPDATE_GIG } from '../reducers/gig.reducer'
+import { ADD_GIG, ADD_GIG_MSG, REMOVE_GIG, SET_GIG, SET_GIGS, UPDATE_GIG, SET_FILTER } from '../reducers/gig.reducer'
 import { store } from '../store'
 
 export async function loadGigs(filterBy) {
@@ -65,6 +65,10 @@ export async function addGigMsg(gigId, txt) {
         console.log('Cannot add gig msg', err)
         throw err
     }
+}
+
+export function setFilter(filterBy) {
+    store.dispatch({ type: SET_FILTER, filterBy })
 }
 
 // Command Creators:

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router'
 import { useSelector } from 'react-redux'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { logout } from '../store/actions/user.actions'
-import { GigFilter } from './GigFilter'
+import { SearchBar } from './SearchBar'
 import { useState } from 'react'
 import { gigService } from '../services/gig'
 
@@ -13,7 +13,8 @@ export function AppHeader() {
 	const user = useSelector(storeState => storeState.userModule.user)
 	const navigate = useNavigate()
 
-	const [filterBy, setFilterBy] = useState(gigService.getDefaultFilter())
+	const filterBy = useSelector(storeState => storeState.gigModule.filterBy)
+	// const [filterBy, setFilterBy] = useState(gigService.getDefaultFilter())
 
 	async function onLogout() {
 		try {
@@ -37,7 +38,7 @@ export function AppHeader() {
 					</div>
 
 					<div className="nav-filter">
-						<GigFilter filterBy={filterBy} setFilterBy={setFilterBy} />
+						<SearchBar />
 					</div>
 
 					<ul className="nav-icons flex">

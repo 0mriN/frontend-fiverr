@@ -23,12 +23,13 @@
 @import "pages/UserDetails";
 @import "pages/TaskDetails";
 @import "pages/LoginSignup";
+@import "pages/OrderIndex.scss";
 
 // Components
 @import "cmps/AppHeader";
 @import "cmps/AppFooter";
 @import "cmps/UserMsg";
-@import "cmps/GigFilter";
+@import "cmps/SearchBar";
 @import "cmps/ReviewEdit";
 @import "cmps/ReviewList";
 @import "cmps/ReviewPreview";
@@ -37,5 +38,7 @@
 @import "cmps/DetailsReview.scss";
 @import "cmps/DetailsReviews.scss";
 @import "cmps/GigEdit.scss";
+@import "cmps/OrderList.scss";
+@import "cmps/OrderPreview.scss";
 @import "cmps/DetailsHeader.scss";
 @import "cmps/PackCompare.scss";

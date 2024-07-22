@@ -8,17 +8,15 @@ import { gigService } from '../services/gig'
 import { userService } from '../services/user'
 
 import { GigList } from '../cmps/GigList'
-import { GigFilter } from '../cmps/GigFilter'
 
 
 export function GigIndex() {
-
-    const [filterBy, setFilterBy] = useState(gigService.getDefaultFilter())
+    const filterBy = useSelector(storeState => storeState.gigModule.filterBy)
     const gigs = useSelector(storeState => storeState.gigModule.gigs)
   
     useEffect(() => {
         loadGigs(filterBy)
-    }, [filterBy,gigs])
+    }, [filterBy])
 
     async function onRemoveGig(gigId) {
         try {
@@ -35,7 +33,6 @@ if (!gigs) return <div>Loading...</div>
               
                 {/* {userService.getLoggedinUser() && <button onClick={onAddGig}>Add a Gig</button>} */}
             </header>
-            {/* <GigFilter filterBy={filterBy} setFilterBy={setFilterBy} /> */}
             <GigList
                 gigs={gigs}
                 onRemoveGig={onRemoveGig}
