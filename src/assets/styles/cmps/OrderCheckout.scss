@@ -1,0 +1,13 @@
+.order-checkout {
+    padding: 0 rem(32px);
+
+    h1 {
+        text-align: center;
+    }
+
+    .checkout-details-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+}

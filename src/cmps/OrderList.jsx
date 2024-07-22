@@ -1,6 +1,7 @@
 import { OrderPreview } from "./OrderPreview";
 
 export function OrderList({ orders }) {
+    console.log(orders)
     return <table className="order-list">
         <thead className="order-list-header">
             <tr>

@@ -5,8 +5,14 @@ import { makeId } from '../util.service'
 const ORDER_KEY = 'orderDb'
 
 export const orderService = {
+    query,
     getById,
     add,
+}
+
+async function query() {
+    return await storageService.query(ORDER_KEY)
+    // return storageService.query(ORDER_KEY)
 }
 
 async function getById(orderId) {
@@ -14,7 +20,7 @@ async function getById(orderId) {
 }
 
 async function add(order) {
-    const addedOrder = await storageService.post('order', order)
+    const addedOrder = await storageService.post(ORDER_KEY, order)
     return addedOrder
 }
 

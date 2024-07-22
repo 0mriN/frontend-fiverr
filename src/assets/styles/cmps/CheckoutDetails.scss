@@ -1,0 +1,60 @@
+.checkout-details {
+    padding: rem(25px);
+
+    border: 1px solid lightgrey;
+    border-radius: rem(5px);
+
+    .checkout-header {
+        display: flex;
+        justify-content: space-between;
+
+        img {
+            margin-inline-end: rem(20px);
+
+            height: 100px;
+            border-radius: rem(5px);
+        }
+
+        h2 {
+            font-size: rem(18px);
+        }
+    }
+
+    .package-type {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .order-service-tax {
+        display: flex;
+        flex-direction: column;
+
+        .service,
+        .tax {
+            display: flex;
+            justify-content: space-between;
+
+        }
+    }
+
+    .order-payment {
+        & .final-pay {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .btn {
+        display: block;
+        margin: 0 auto;
+
+        width: 85%;
+        height: rem(40px);
+
+        background-color: black;
+        color: white;
+        font-size: rem(18px);
+
+        border-radius: rem(5px);
+    }
+}
