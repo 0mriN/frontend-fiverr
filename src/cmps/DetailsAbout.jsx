@@ -2,7 +2,7 @@ import react from "react";
 
 import { StarLevel } from "../cmps/StarLevel" 
 export function DetailsAbout({ gig }) {
-  console.log(gig.reviews);
+
   return (
     <div>
       <p className="about-title">About this gig</p>

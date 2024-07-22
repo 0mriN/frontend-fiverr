@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import { PackModalToolbar } from '../cmps/PackModalToolbar'
 import { OrderModal } from './OrderModal.jsx'
+import { useNavigate } from 'react-router';
+import { makeId } from '../services/util.service.js';
+import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service.js';
+import { addOrder } from '../store/actions/order.actions.js';
 
 const CLOCKICON = <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 14c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"></path><path d="M9 4H7v5h5V7H9V4z"></path></svg>;
 
@@ -8,6 +12,7 @@ export function PackModal({ gig }) {
   const [activeTab, setActiveTab] = useState('basic');
   const [showOrderModal, setShowOrderModal] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState(null);
+  const navigate = useNavigate()
 
   const packages = {
     basic: {
@@ -36,10 +41,31 @@ export function PackModal({ gig }) {
     }
   }
 
-  const handleContinue = (packageKey) => {
-    setSelectedPackage(packages[packageKey])
-    setShowOrderModal(true)
+  async function handleContinue() {
+    const user = userService.getLoggedinUser()
+
+    const order = {
+      _id: makeId(),
+      buyer: userService.getLoggedinUser(),
+      seller: gig.owner,
+      gig,
+      status: 'pending',
+    }
+
+    try {
+      await addOrder(order)
+      navigate('/orders')
+      showSuccessMsg(`Order saved !`)
+    } catch (err) {
+      showErrorMsg(`Cannot save order`)
+      console.log('err:', err)
+    }    
   }
+
+  // const handleContinue = (packageKey) => {
+  //   setSelectedPackage(packages[packageKey])
+  //   setShowOrderModal(true)
+  // }
 
   const handleCloseModal = () => {
     setShowOrderModal(false)
@@ -74,7 +100,8 @@ export function PackModal({ gig }) {
               <p>{packages[key].description}</p>
               <p><span className="icon">{CLOCKICON}</span> {packages[key].delivery} <span className="icon">🔄</span> {packages[key].revisions}</p>
               <p><a href="#" className="toggle-details">What's Included</a> <span className="icon">⬇️</span></p>
-              <button className="continue-btn" onClick={() => handleContinue(key)}>Continue <span className="arrow-icon">➡️</span></button>
+              <button className="continue-btn" onClick={handleContinue}>Continue <span className="arrow-icon">➡️</span></button>
+              {/* <button className="continue-btn" onClick={() => handleContinue(key)}>Continue <span className="arrow-icon">➡️</span></button> */}
               <p className="compare-packages">Compare packages</p>
             </div>
           ))}

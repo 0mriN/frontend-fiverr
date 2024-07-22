@@ -7,7 +7,6 @@ import React from 'react';
 
 export function DetailsReviews({gig}) {
 
-
   return (
     <div className="reviews">
       {gig.reviews.map((review, index) => (
