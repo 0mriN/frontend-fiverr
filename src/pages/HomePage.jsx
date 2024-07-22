@@ -124,10 +124,10 @@ export function HomePage() {
                 </ul>
             </div>
             <div className='video-container'>
-             <video controls muted autoPlay> 
-                        <source src={introVideo} type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video> 
+                <video controls muted autoPlay>
+                    <source src={introVideo} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
             </div>
             <div className='home-join-container'>
                 <div className='home-join'>
@@ -135,6 +135,7 @@ export function HomePage() {
                     <a>Join Fiverr</a>
                 </div>
             </div>
+            <div className='bottom-line full'></div>
         </section>
     )
 }
