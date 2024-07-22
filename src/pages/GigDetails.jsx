@@ -30,10 +30,10 @@ export function GigDetails() {
               <DetailsHeader gig={gig} />
               <HeroCarousel images={images} />
             </div>
-            <DetailsReview gig={gig} />
-            <DetailsAbout gig={gig} />
-            <PackageComparison />
-            <DetailsReviews gig={gig} />
+         {/* <DetailsReview gig={gig}/> */}
+         <DetailsAbout gig={gig}/>
+         {/* <PackageComparison/> */}
+         <DetailsReviews gig={gig}/>
           </div>
         ) : (
           <p>Loading...</p>
