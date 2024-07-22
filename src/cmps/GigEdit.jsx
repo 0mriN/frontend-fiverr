@@ -61,7 +61,6 @@ export function GigEdit() {
             console.log('err:', err)
         }
     }
-    //try to do them both in the same function
     async function onUpdateGig(ev) {
         ev.preventDefault()
         try {
