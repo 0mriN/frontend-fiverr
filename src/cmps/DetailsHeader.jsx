@@ -1,8 +1,11 @@
 import React from 'react'
-
+import '../assets/styles/cmps/DetailsHeader.scss'
+import { StarLevel } from "../cmps/StarLevel" 
 export function DetailsHeader({gig}){
 return  (
-  <div><h6>
+  <div className='gig-details-header-container'>
+    
+    <h6>
               <svg
                 width="16"
                 height="16"
@@ -20,8 +23,9 @@ return  (
                 src="https://fiverr-res.cloudinary.com/image/upload/t_profile_original,q_auto,f_auto/v1/attachments/profile/photo/f91b8760b6eae417acc9fc0adf178b80-1709314771112/401bbbdd-fbbf-4ce2-9ab9-fe68217db026.jpg"
                 alt=""
               />
-              <p>{gig.owner.fullname}</p>
-              <p>{gig.reviews[0].rate}</p>
+              
+              <div className='gig-details-header-ratename'><p className='full-name'>{gig.owner.fullname}</p><div className="gig-details-rate-comp"> <StarLevel gig={gig}/></div></div>
+              <p>rate-currnotworking</p>
             </div>
             </div>
 )

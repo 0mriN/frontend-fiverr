@@ -1,15 +1,15 @@
 .package-comparison {
     h2 {
-      text-align: center;
+      text-align: left;
     }
   
     .package-table {
       display: flex;
-      justify-content: space-around;
+      // justify-content: space-around;
   
       .package {
         border: 1px solid #ccc;
-        padding: 20px;
+        // padding: 20px;
         text-align: center;
         width: 30%;
   

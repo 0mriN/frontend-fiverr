@@ -1,5 +1,5 @@
 import react from 'react'
-import '../assets/styles/cmps/DetailsReview.scss'
+// import '../assets/styles/cmps/DetailsReview.scss'
 
 export function DetailsReview({gig}){
 return(

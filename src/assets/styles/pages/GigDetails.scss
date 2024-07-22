@@ -1,113 +1,134 @@
-.main-container{
-  @media (max-width: 1200px) {
-    .main-container {
-        grid-template-columns: 1fr;
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr; // Default to single column
+  @media (min-width: 1200px) {
+    // grid-template-columns: 60% 40%; // Two columns for larger screens
+  }
+
+  .gig-details {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 20px;
+    padding: 32px;
+
+    .gig-details-main,
+    .gig-reviewList,
+    .gig-reviews-carousel,
+    .about-gig,
+    .gig-page-reviews,
+    .review-filter,
+    .compare-packages,
+    .text-display,
+    .gig-carousel,
+    .gig-description,
+    .about-user-gig {
+      grid-column: 1;
     }
-}
 
-// @media (max-width: 900px) {}
+    
 
-.gig-details {
+    h6 {
+      font-size: 14px;
+    }
+    h1 {
+      font-size: 28px;
+    }
+    .about-title {
+      font-size: 20px;
+    }
+    mark {
+      background-color: #ffecd1;
+    }
+    .gig-details-main {
+      max-width: 768px;
+      width: 100%;
+      height: auto;
+      margin: 20px;
+    }
 
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  display: flex;
-  padding: 32px;
-  z-index: 20;
-display: grid;
-        grid-template-columns: 900px 276.5px;
-        gap: 20px;
-        .gig-details-main, .gig-reviewList, .gig-reviews-carousel, .about-gig, .gig-page-reviews, .review-filter, .compare-packages, .text-display, .gig-carousel, .gig-description, .about-user-gig {
-          grid-column: 1;
-        .gig-buy-modal{
-          grid-column: 2;
-        }
-      }
-
-  h6 {
-    font-size: 14px;
-  }
-  h1 {
-    font-size: 28px;
-  }
-  .about-title {
-    font-size: 20px;
-  }
-  mark {
-    background-color: #ffecd1;
-  }
-  .gig-details-main {
-    max-width: 768px;
-    width: 100%;
-    height: auto;
-    margin: 20px;
-  }
-  .details-owner {
-    margin-bottom: 20px;
-    display: flex;
-  }
-
-  .details-owner img {
-    border-radius: 50%;
-    width: 64px;
-    height: 64px;
-    margin-right: 20px;
-  }
-  .gig-buy-modal {
-    width: 100%;
-    height: auto;
-    margin: 20px;
-  }
-  .desc-div{
-    max-width: 720px;
-    .about-desc {
+    .details-owner {
+      margin-bottom: 20px;
+      display: flex;
+    }
+    
+    .desc-div {
+      max-width: 720px;
+      .about-desc {
         font-size: 16px;
         width: 100%;
-        
       }
-  }
+    }
+    
+    .gig-details-rate-comp {
+      max-width: rem(118px);
+      > * {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        color: $clr6;
+        font-weight: 600;
+        font-size: 14px;
+        height: rem(24px);
+        border-radius: 4px;
+        min-width: rem(120px);
+        justify-content: end;
 
+        &.top-rated {
+          background-color: $clr8;
+          color: $clr9;
+          padding-inline: 6px;
+        }
 
+        .levelStar {
+          margin-top: 2px;
+        }
+      }
+    }
+    .gig-details-header-ratename{
+        display: flex;
+        align-items: baseline;
+    }
 
-  
-  .about-file-details {
-    display: flex;
-    border-bottom: solid 1px gray;
-  }
-  .about-get-to-know img {
-    border-radius: 50%;
-    height: 96px;
-    width: 96px;
-    margin-right: 20px;
-  }
-  .about-get-to-know-details {
-    display: flex;
-  }
-  .logo-details {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 10px;
-    margin-top: 10px;
-  }
+    .about-file-details {
+      display: flex;
+      border-bottom: solid 1px gray;
+    }
+    .about-get-to-know img {
+      border-radius: 50%;
+      height: 96px;
+      width: 96px;
+      margin-right: 20px;
+    }
+    .about-get-to-know-details {
+      display: flex;
+    }
+    .logo-details {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 10px;
+      margin-top: 10px;
+    }
 
-  .detail-item {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    margin-right: 20px; /* Add margin to create space between columns */
-  }
+    .detail-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      margin-right: 20px; /* Add margin to create space between columns */
+    }
 
-  .detail-item:last-child {
-    margin-right: 0; /* Remove margin from the last item */
-  }
+    .detail-item:last-child {
+      margin-right: 0; /* Remove margin from the last item */
+    }
 
-  .detail-title {
-    font-weight: bold;
-    color: #555;
-  }
+    .detail-title {
+      font-weight: bold;
+      color: #555;
+    }
 
-  .detail-content {
-    margin-top: 5px;
-    color: #333;
+    .detail-content {
+      margin-top: 5px;
+      color: #333;
+    }
   }
-}
 }

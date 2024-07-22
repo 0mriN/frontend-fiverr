@@ -1,5 +1,5 @@
-import React from 'react';
-import '../../src/assets/styles/cmps/PackModal.scss';
+import React from 'react'
+import '../../src/assets/styles/cmps/PackModal.scss'
 
 export function OrderModal({ packageInfo, onClose }) {
   return (
@@ -31,5 +31,5 @@ export function OrderModal({ packageInfo, onClose }) {
         </div>
       </div>
     </div>
-  );
+  )
 }

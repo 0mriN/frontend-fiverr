@@ -236,36 +236,36 @@ function _createGig(title = 'a new gig') {
         ],
         tags: ['Arts And Crafts', 'Logo Design'],
         likedByUsers: ['mini-user'],
-        reviews: [
+        reviews :[
             {
-                id: 'madeId',
-                txt: 'Did an amazing work',
-                rate: getRandomIntInclusive(1, 5),
-                by: {
-                    _id: 'u102',
-                    fullname: 'user2',
-                    imgUrl: '/img/img2.jpg',
-                },
-            }, {
-                id: 'madeId',
-                txt: 'Did an awesome work',
-                rate: getRandomIntInclusive(1, 5),
-                by: {
-                    _id: 'u107',
-                    fullname: 'user7',
-                    imgUrl: '/img/img2.jpg',
-                },
-            }, {
-                id: 'madeId',
-                txt: 'Did a great job',
-                rate: getRandomIntInclusive(1, 5),
-                by: {
-                    _id: 'u102',
-                    fullname: 'user2',
-                    imgUrl: '/img/img2.jpg',
-                },
+              username: 'concretedigit1al',
+              country: 'United States',
+              rating: 4,
+              date: '2 months ago',
+              text: "Appreciative of the willingness to make multiple revisions, however I do not believe much creative effort went into the first logo drafts. Maybe it was my industry (Tech), but I felt like the examples shown in the portfolio did not match the quality received. We were able to figure out something in the end with my input and design direction - but even then the logo still felt flat. Nonetheless, thank you.",
             },
-        ],
+            {
+              username: 'printprofi',
+              country: 'Germany',
+              rating: 1,
+              date: '3 weeks ago',
+              text: "Too expensive and very bad work. Unfortunately, the cooperation was poor. I thought that I would get more help and more interesting solutions for this price. But the graphic artist/designer did a poor job here. I could do this work myself with Illustrator.",
+            },
+            {
+              username: 'jogydsilva',
+              country: 'United Arab Emirates',
+              rating: 1,
+              date: '2 months ago',
+              text: "I approved the delivery only because I do not want to waste more of my time in this. I am not going to use this design anywhere. Disappointing! As a person Stefan is polite, but at the same time, I don't think he understands big businesses.",
+            },
+            {
+              username: 'JohnCena',
+              country: 'Israel',
+              rating: 4,
+              date: '2 months ago',
+              text: "for long time i felt invisible, only until i discovered i was on display none",
+            },
+          ],
     }
 }
 

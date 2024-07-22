@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import '../../src/assets/styles/cmps/PackModal.scss';
-import {PackModalToolbar} from '../cmps/PackModalToolbar';
-import {OrderModal} from './OrderModal.jsx'; 
+import React, { useState } from 'react'
+import '../../src/assets/styles/cmps/PackModal.scss'
+import {PackModalToolbar} from '../cmps/PackModalToolbar'
+import {OrderModal} from './OrderModal.jsx' 
 
 const packages = {
   basic: {
@@ -25,23 +25,23 @@ const packages = {
     delivery: "7-day delivery",
     revisions: "Unlimited Revisions",
   }
-};
+}
 
-const CLOCKICON = <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 14c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"></path><path d="M9 4H7v5h5V7H9V4z"></path></svg>;
+const CLOCKICON = <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 14c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"></path><path d="M9 4H7v5h5V7H9V4z"></path></svg>
 
 export function PackageModal() {
-  const [activeTab, setActiveTab] = useState('basic');
-  const [showOrderModal, setShowOrderModal] = useState(false);
-  const [selectedPackage, setSelectedPackage] = useState(null);
+  const [activeTab, setActiveTab] = useState('basic')
+  const [showOrderModal, setShowOrderModal] = useState(false)
+  const [selectedPackage, setSelectedPackage] = useState(null)
 
   const handleContinue = (packageKey) => {
-    setSelectedPackage(packages[packageKey]);
-    setShowOrderModal(true);
-  };
+    setSelectedPackage(packages[packageKey])
+    setShowOrderModal(true)
+  }
 
   const handleCloseModal = () => {
-    setShowOrderModal(false);
-  };
+    setShowOrderModal(false)
+  }
 
   return (
     <div className="modal">
@@ -87,7 +87,7 @@ export function PackageModal() {
         </div>
       )}
     </div>
-  );
+  )
 }
 
 
