@@ -1,5 +1,5 @@
-import React from 'react';
-import '../../src/assets/styles/cmps/PackModal.scss';
+import React from 'react'
+import '../../src/assets/styles/cmps/PackModal.scss'
 
 import { useNavigate } from 'react-router';
 import { userService } from '../services/user';
@@ -62,5 +62,5 @@ export function OrderModal({ packageInfo, onClose, gig }) {
         </div>
       </div>
     </div>
-  );
+  )
 }

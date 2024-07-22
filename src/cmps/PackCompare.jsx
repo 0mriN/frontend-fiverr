@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import '../assets/styles/cmps/PackCompare.scss'
 
 const packages = [
@@ -57,7 +57,7 @@ const packages = [
       { time: '1 day', extraCost: 229.59 },
     ],
   },
-];
+]
 
 export function PackageComparison() {
   return (
@@ -90,5 +90,5 @@ export function PackageComparison() {
         ))}
       </div>
     </div>
-  );
+  )
 }

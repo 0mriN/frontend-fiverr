@@ -18,6 +18,7 @@
 @import "pages/AboutUs";
 @import "pages/HomePage";
 @import "pages/GigIndex";
+@import "pages/GigDetails.scss";
 @import "pages/ReviewIndex";
 @import "pages/UserDetails";
 @import "pages/TaskDetails";
@@ -34,6 +35,9 @@
 @import "cmps/ReviewPreview";
 @import "cmps/GigList";
 @import "cmps/GigPreview";
+@import "cmps/DetailsReview.scss";
+@import "cmps/DetailsReviews.scss";
 @import "cmps/GigEdit.scss";
 @import "cmps/OrderList.scss";
 @import "cmps/OrderPreview.scss";
+@import "cmps/DetailsHeader.scss";
