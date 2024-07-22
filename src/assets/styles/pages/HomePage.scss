@@ -1,5 +1,5 @@
 .home-page {
-    padding: 0 32px;
+    padding: 0 rem(32px);
 
     .hero-box-container {
         display: flex;
@@ -7,9 +7,9 @@
         align-items: center;
         justify-content: center;
         width: 100%;
-        max-width: 1336px;
+        max-width: rem(1336px);
         border-radius: 16px;
-        margin-top: 41px;
+        margin-top: rem(41px);
         position: relative;
 
         .hero-box {
@@ -19,9 +19,9 @@
 
             h1 {
                 color: #fff;
-                font-size: 60px;
+                font-size: rem(60px);
                 letter-spacing: -2.4px;
-                line-height: 69px;
+                line-height: rem(69px);
                 text-align: center;
                 font-weight: 400;
 
@@ -29,7 +29,7 @@
                     font-family: 'Domaine';
                     color: #1dbf73;
                     font-weight: 200;
-                    font-size: 63px;
+                    font-size: rem(63px);
                 }
             }
 
@@ -65,6 +65,15 @@
                     position: absolute;
                     right: 6px;
                     cursor: pointer;
+
+                    &:hover {
+                        background-color: #126f43
+                    }
+
+                    .search-btn {
+                        height: 18px;
+                        width: 18px;
+                    }
                 }
             }
         }
@@ -111,24 +120,30 @@
 
     .sub-category-container {
         display: flex;
-        margin-top:rem(28px);
+        margin-top: rem(28px);
+        gap: rem(19px);
+        padding: 0px rem(32px);
 
         a {
-            max-width: rem(129px);
-            max-height: rem(129px);
-            border: 1px solid;
+            width: rem(129px);
+            height: rem(129px);
+            border: 1px solid #fff;
             border-radius: 16px;
             text-decoration: none;
-            color:#222325;
-            justify-content: space-between;
+            color: #222325;
+            line-height: 24px;
             padding: 11px;
+            box-shadow: rgba(0, 0, 0, 0.027) 0px 0px 0.880517px 0px,
+                rgba(0, 0, 0, 0.03) 0px 0px 2.29197px 0px,
+                rgba(0, 0, 0, 0.055) 0px 0px 5.52px 0px,
+                rgba(0, 0, 0, 0.09) 0px 0px 11px 0px;
+            font-weight: 600;
 
-        }
-
-        .sub-category {
-            display: flex;
-            flex-direction: column;
-
+            .sub-category {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
         }
     }
 }
