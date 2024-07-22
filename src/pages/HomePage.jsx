@@ -135,7 +135,6 @@ export function HomePage() {
                     <a>Join Fiverr</a>
                 </div>
             </div>
-            <div className='bottom-line full'></div>
         </section>
     )
 }

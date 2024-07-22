@@ -1,6 +1,79 @@
-.gig-list {
-    display: grid;
-    grid-row-gap: rem(40px);
-    grid-column-gap: rem(32px);
-    padding: 0px rem(32px);
+.gig-list-container {
+padding:0px 32px;
+    .sort-container {
+        // align-items: left;
+        color: #62646a;
+        display: flex;
+        flex-direction: column;
+        // flex-basis: 0%;
+        // flex-wrap: wrap;
+        font-weight: 600;
+        gap: 16px normal;
+        justify-content: space-between;
+        line-height: 24px;
+
+        .top-filters {
+            // align-content: left;
+            color: #62646a;
+            display: flex;
+            font-weight: 600;
+            gap: 12px;
+            line-height: 24px;
+            margin: 24px 0px 0px;
+
+            color: 222325;
+            display: inline-flex;
+            gap: 8px;
+            justify-content: left;
+            line-height: 26px;
+            padding: 10px 0px;
+            text-align: center;
+
+            button {
+                border-radius: 8px;
+                border: 1px solid #dadbdd;
+                background-color: #fff;
+                color: 222325;
+                display: inline-flex;
+                gap: 8px;
+                justify-content: center;
+                line-height: 26px;
+                padding: 10px 20px;
+                text-align: center;
+                font-family: 'MacanBold';
+            }
+        }
+
+        .sort-by-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+           
+            
+            .sort-by{
+                font-weight: 580;
+                color: #74767e;
+                padding: 10px 12px;
+                max-width: rem(230px);
+
+                .sort-selector{
+                    background-color: #fff;
+                    border: none;
+                    font-family: 'MacanBold';
+                    font-size: 16px;
+                    color:#222325;
+                    text-align: center;
+                    max-width: rem(130px);
+                    
+                }
+            }
+        }
+    }
+
+    .gig-list {
+        display: grid;
+        grid-row-gap: rem(40px);
+        grid-column-gap: rem(32px);
+    }
 }

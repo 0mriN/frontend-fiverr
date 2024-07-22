@@ -12,6 +12,7 @@ export function AppFooter() {
 
 	return (
 		<footer className="app-footer ">
+			 <div className='top-line'></div>
 			<div className="footer-wrapper">
 				<div className="footer-grid">
 
