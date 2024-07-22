@@ -16,6 +16,11 @@ import aiServices from '../assets/img/svg/ai-services.svg'
 import musicAudio from '../assets/img/svg/music-audio.svg'
 import business from '../assets/img/svg/business.svg'
 import consulting from '../assets/img/svg/consulting.svg'
+import categoriesIcon from '../assets/img/svg/categoriesIcon.svg'
+import handshake from '../assets/img/svg/handshake.svg'
+import lightning from '../assets/img/svg/lightning.svg'
+import support from '../assets/img/svg/support.svg'
+import introVideo from '../assets/img/How-Fiverr-Works-homepage.mp4'
 
 
 
@@ -85,12 +90,51 @@ export function HomePage() {
                     <p className="sub-category">Consulting</p>
                 </a>
             </div>
-            {/* <div className='video-container'> */}
-            {/* <video controls>
-                        <source src="../assets/img/How Fiverr Works homepage.mp4" type="mp4" />
+            <div className='home-intro'>
+                <h2 className='intro-title'>A whole world of freelance talent at your fingertips</h2>
+                <ul>
+                    <li>
+                        <div className="intro-card">
+                            <img src={categoriesIcon} alt="" />
+                            <h3>Over 700 categories</h3>
+                        </div>
+                        <p>Get results from skilled freelancers from all over the world, for every task, at any price point.</p>
+                    </li>
+                    <li>
+                        <div className="intro-card">
+                            <img src={handshake} alt="" />
+                            <h3>Clear, upfront pricing</h3>
+                        </div>
+                        <p>No hourly rates, just project-based pricing. Payments only get released when you approve.</p>
+                    </li>
+                    <li>
+                        <div className="intro-card">
+                            <img src={lightning} alt="" />
+                            <h3>Quality work done faster</h3>
+                        </div>
+                        <p>Filter to find the right freelancers quickly and get great work delivered in no time, every time.</p>
+                    </li>
+                    <li>
+                        <div className="intro-card">
+                            <img src={support} alt="" />
+                            <h3>24/7 award-winning support</h3>
+                        </div>
+                        <p>Chat with our team to get your questions answered or resolve any issues with your orders.</p>
+                    </li>
+                </ul>
+            </div>
+            <div className='video-container'>
+             <video controls muted autoPlay> 
+                        <source src={introVideo} type="video/mp4" />
                         Your browser does not support the video tag.
-                    </video> */}
-            {/* </div> */}
+                    </video> 
+            </div>
+            <div className='home-join-container'>
+                <div className='home-join'>
+                    <h2>Freelance services at your <em>fingertips!</em></h2>
+                    <a>Join Fiverr</a>
+                </div>
+            </div>
         </section>
     )
 }
