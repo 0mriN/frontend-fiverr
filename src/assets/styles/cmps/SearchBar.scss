@@ -1,0 +1,32 @@
+.search-bar {
+    display: flex;
+
+    &>input {
+        align-content: center;
+
+        width: 100%;
+
+        border: none;
+        outline: 1px lighten($gray2, 10%) solid;
+        border-radius: 4px 0px 0px 4px;
+
+        padding-inline: rem(15px);
+        font-size: rem(18px);
+
+        &::placeholder {
+            color: lighten($gray2, 10%);
+            font-weight: lighter;
+        }
+    }
+
+    & .btn {
+        height: 40px;
+        width: 50px;
+
+        margin: -1px;
+        padding-top: 9px;
+
+        background-color: black;
+        border-radius: 0px 4px 4px 0px;
+    }
+}
