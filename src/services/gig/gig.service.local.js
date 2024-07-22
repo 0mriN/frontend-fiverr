@@ -209,9 +209,7 @@ function _createGig(title = 'a new gig') {
         daysToMake: getRandomIntInclusive(1, 7),
         getToKnowDesc:"Senior graphic designer experienced in logo and covers design",
         description: `<p>Fiverr says the writing of this description is my chance to be creative, I disagree. My real chance to be creative is when I start designing a logo.</p>
-
 <p>I will give all my knowledge and experience to creating the perfect logo for your business, but all that is for nothing without creativity, that's the reason why most of all I'm going to be creative with your new logo. Push the boundaries, explore new possibilities, create something unique, something that will make your brand stand out from the competition! <mark>Well seems like I did put some creativity in this description after all :)</mark></p>
-
 <p><strong>What will you get in Gig deliverables:</strong></p>
 <ul>
   <li>2-4 unique designs concepts</li>
@@ -219,7 +217,6 @@ function _createGig(title = 'a new gig') {
   <li>300 DPI HIGH-QUALITY JPG, and PNG format.</li>
   <li>AI (Source file) & High-Quality PDF</li>
 </ul>
-
 <p><strong>Why trust me?</strong></p>
 <ul>
   <li>Fast Response Time</li>
@@ -228,10 +225,8 @@ function _createGig(title = 'a new gig') {
   <li>I guarantee on-time delivery</li>
   <li>Fully editable files.</li>
 </ul>
-
 <p><strong>Still not convinced?</strong></p>
 <p>Hit me a message with any questions or concerns and I will answer in the shortest time.</p>
-
 <p><em>Have a nice day,<br>Stefan Prodanovic</em></p>
 `,
         avgResponseTime: getRandomIntInclusive(1, 5),

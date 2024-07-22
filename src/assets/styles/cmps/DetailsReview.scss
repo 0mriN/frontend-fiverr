@@ -1,0 +1,20 @@
+.details-review {
+    border: solid 1px gray;
+    border-radius: 4px;
+    min-height: 133px;
+    display: flex;
+}
+  .details-review img {
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    margin-top: 21px;
+    margin-left: 29px;
+    margin-right: 20px;
+  
+  .details-review-text{
+    display: grid;
+    grid-template-rows: 3;
+    
+  }
+}

@@ -1,0 +1,54 @@
+.package-comparison {
+    h2 {
+      text-align: center;
+    }
+  
+    .package-table {
+      display: flex;
+      justify-content: space-around;
+  
+      .package {
+        border: 1px solid #ccc;
+        padding: 20px;
+        text-align: center;
+        width: 30%;
+  
+        h3 {
+          margin-top: 0;
+        }
+  
+        ul {
+          list-style: none;
+          padding: 0;
+  
+          li {
+            &.available {
+              color: green;
+            }
+  
+            &.unavailable {
+              color: red;
+              text-decoration: line-through;
+            }
+          }
+        }
+  
+        .delivery-options {
+          text-align: left;
+        }
+  
+        .select-btn {
+          background-color: black;
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          cursor: pointer;
+  
+          &:hover {
+            background-color: #333;
+          }
+        }
+      }
+    }
+  }
+  

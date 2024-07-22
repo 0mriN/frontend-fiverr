@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import '../../src/assets/styles/cmps/PackModal.scss';
-// import '../../src/assets/styles/cmps/OrderModal.scss';
-import PackModalToolbar from '../cmps/PackModalToolbar';
-import OrderModal from './OrderModal.jsx'; 
+import {PackModalToolbar} from '../cmps/PackModalToolbar';
+import {OrderModal} from './OrderModal.jsx'; 
 
 const packages = {
   basic: {
@@ -30,7 +29,7 @@ const packages = {
 
 const CLOCKICON = <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 14c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"></path><path d="M9 4H7v5h5V7H9V4z"></path></svg>;
 
-const PackageModal = () => {
+export function PackageModal() {
   const [activeTab, setActiveTab] = useState('basic');
   const [showOrderModal, setShowOrderModal] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState(null);
@@ -47,7 +46,7 @@ const PackageModal = () => {
   return (
     <div className="modal">
       <div className="modal-content">
-        <PackModalToolbar />
+          <PackModalToolbar/>
         <div className="modal-header">
           {Object.keys(packages).map((key) => (
             <button
@@ -89,6 +88,6 @@ const PackageModal = () => {
       )}
     </div>
   );
-};
+}
 
-export default PackageModal;
+
