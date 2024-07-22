@@ -50,6 +50,7 @@
     .details-owner {
       margin-bottom: 20px;
       display: flex;
+      img{align-self: center;}
     }
     
     .desc-div {
@@ -86,13 +87,36 @@
       }
     }
     .gig-details-header-ratename{
-        display: flex;
-        align-items: baseline;
-    }
+        display: grid;
+        grid-auto-flow:column;
+        grid-template-rows: 1fr 1fr;
+        .gig-details-rate-comp{
+          align-self: center;
+        }
+        .full-name{
+          font-size: 20px;
+          font-weight: 800;
+          color:black
+        }
+        .single-line-text{
+          font-size: 14px;
 
+        }
+        .gig-details-header-innerdiv{
+          display: flex;
+          align-items: center;
+        }
+        .top-rated{
+          margin-left: 20px;
+        }
+    }
+.about-get-to-know-details{
+display: flex;
+}
     .about-file-details {
       display: flex;
-      border-bottom: solid 1px gray;
+      flex-direction: column;
+      border-bottom: solid 1px #ccc;
     }
     .about-get-to-know img {
       border-radius: 50%;
@@ -100,9 +124,21 @@
       width: 96px;
       margin-right: 20px;
     }
-    .about-get-to-know-details {
-      display: flex;
+    .about-get-to-know h4{
+      font-size: 20px;
     }
+    .get-to-know-container{
+    display: grid;
+    grid-template-rows: 1fr 1fr;  
+    }
+    .get-to-know-container-inside{
+      display: flex;
+      align-items: baseline;
+      p{
+        font-weight: 500;
+      }
+    }
+  
     .logo-details {
       display: flex;
       justify-content: space-between;
@@ -123,7 +159,7 @@
 
     .detail-title {
       font-weight: bold;
-      color: #555;
+      color: lightgrey;
     }
 
     .detail-content {
