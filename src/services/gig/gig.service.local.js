@@ -4,7 +4,6 @@ import { getRandomIntInclusive, makeId, makeLorem, saveToStorage, loadFromStorag
 import { userService } from '../user'
 
 const GIG_KEY = 'gig'
-var gigs = loadFromStorage(GIG_KEY)
 _createGigs()
 
 export const gigService = {
@@ -20,7 +19,7 @@ window.cs = gigService
 
 
 async function query(filterBy = { txt: '', price: 0 }) {
-    // gigs = await storageService.query(GIG_KEY)
+    const gigs = await storageService.query(GIG_KEY)
     // const { txt, minSpeed, maxPrice, sortField, sortDir } = filterBy
 
     // if (txt) {
@@ -167,7 +166,7 @@ function getAvgRating(reviews) {
 }
 
 function _createGigs() {
-    // var gigs = loadFromStorage(GIG_KEY)
+    let gigs = loadFromStorage(GIG_KEY)
     if (!gigs || !gigs.length) {
         gigs = [
             _createGig(),
@@ -207,7 +206,7 @@ function _createGig(title = 'a new gig') {
             rate: getRandomIntInclusive(1, 5),
         },
         daysToMake: getRandomIntInclusive(1, 7),
-        getToKnowDesc:"Senior graphic designer experienced in logo and covers design",
+        getToKnowDesc: "Senior graphic designer experienced in logo and covers design",
         description: `<p>Fiverr says the writing of this description is my chance to be creative, I disagree. My real chance to be creative is when I start designing a logo.</p>
 <p>I will give all my knowledge and experience to creating the perfect logo for your business, but all that is for nothing without creativity, that's the reason why most of all I'm going to be creative with your new logo. Push the boundaries, explore new possibilities, create something unique, something that will make your brand stand out from the competition! <mark>Well seems like I did put some creativity in this description after all :)</mark></p>
 <p><strong>What will you get in Gig deliverables:</strong></p>

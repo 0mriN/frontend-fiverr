@@ -17,7 +17,7 @@ export function GigEdit() {
 
     async function loadGig() {
         try {
-            const gig = await gigService.getById(params.gigId) // check
+            const gig = await gigService.getById(params.gigId) 
             setGigToEdit(gig)
         } catch (err) {
             console.log('err:', err)
@@ -61,7 +61,6 @@ export function GigEdit() {
             console.log('err:', err)
         }
     }
-    //try to do them both in the same function
     async function onUpdateGig(ev) {
         ev.preventDefault()
         try {

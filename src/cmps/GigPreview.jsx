@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom'
-import { gigService } from '../services/gig/gig.service.local.js';
-import { LongTxt } from './LongTxt.jsx';
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import { responsive } from './GigCarousel';
-import { StarLevel } from './StarLevel.jsx';
+import { gigService } from '../services/gig/gig.service.local.js'
+import { LongTxt } from './LongTxt.jsx'
+import Carousel from "react-multi-carousel"
+import "react-multi-carousel/lib/styles.css"
+import { responsive } from './GigCarousel'
+import { StarLevel } from './StarLevel.jsx'
 
 export function GigPreview({ gig }) {
 
-    const avgRating = gigService.getAvgRating(gig.reviews);
+    const avgRating = gigService.getAvgRating(gig.reviews)
     const imgs = gig.imgUrls
 
     return <div className="basic-gig-card">
