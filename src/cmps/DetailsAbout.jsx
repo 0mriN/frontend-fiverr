@@ -1,4 +1,4 @@
-import react from "react";
+import react from "react"
 
 import { StarLevel } from "../cmps/StarLevel" 
 export function DetailsAbout({ gig }) {
@@ -49,5 +49,5 @@ export function DetailsAbout({ gig }) {
         </div>
       </div>
     </div>
-  );
+  )
 }

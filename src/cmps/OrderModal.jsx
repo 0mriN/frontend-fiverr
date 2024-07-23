@@ -1,12 +1,12 @@
 import React from 'react'
 import '../../src/assets/styles/cmps/PackModal.scss'
 
-import { useNavigate } from 'react-router';
-import { userService } from '../services/user';
-import { Link } from 'react-router-dom';
-import { addOrder } from '../store/actions/order.actions';
-import { makeId } from '../services/util.service';
-import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service';
+import { useNavigate } from 'react-router'
+import { userService } from '../services/user'
+import { Link } from 'react-router-dom'
+import { addOrder } from '../store/actions/order.actions'
+import { makeId } from '../services/util.service'
+import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 
 export function OrderModal({ packageInfo, onClose, gig }) {
   const navigate = useNavigate()

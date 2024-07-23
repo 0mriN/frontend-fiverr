@@ -1,3 +1,13 @@
 .order-preview {
-    justify-content: space-between;
+    // justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
+
+
+    img{
+        height:rem(40px);
+        // width:rem(40px);
+    }
+
+   
 }
