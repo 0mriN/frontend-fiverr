@@ -41,7 +41,8 @@ export function GigDetails() {
       </div>
 
       <div className="gig-buy-modal">
-        <PackModal gig={gig} />
+        {gig &&
+          <PackModal gig={gig} />}
       </div>
     </section>
   )

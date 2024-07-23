@@ -18,6 +18,7 @@ import { Login } from './pages/Login.jsx'
 import { Signup } from './pages/Signup.jsx'
 import { GigEdit } from './cmps/GigEdit.jsx'
 import { OrderIndex } from './pages/OrderIndex.jsx'
+import { OrderCheckout } from './cmps/OrderCheckout.jsx'
 
 export function RootCmp() {
     return (
@@ -41,9 +42,10 @@ export function RootCmp() {
                         <Route path="signup" element={<Signup />} />
                     </Route>
                     <Route path="/orders" element={<OrderIndex />} />
+                    <Route path="/checkout" element={<OrderCheckout />} />
                 </Routes>
             </main>
-            {/* <AppFooter /> */}
+            <AppFooter />
         </div>
     )
 }

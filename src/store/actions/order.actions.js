@@ -14,8 +14,7 @@ export async function loadOrders() {
 
 export async function addOrder(order) {
 	try {
-		const addedOrder = await orderService.add(order)
-		store.dispatch(getActionAddOrder(addedOrder))
+		store.dispatch(getActionAddOrder(order))
 	} catch (err) {
 		console.log('OrderActions: err in addOrder', err)
 		throw err

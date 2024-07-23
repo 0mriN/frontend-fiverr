@@ -10,7 +10,7 @@ import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service';
 
 export function OrderModal({ packageInfo, onClose, gig }) {
   const navigate = useNavigate()
-  // packageInfo, user, gig.owner
+
   async function onContinue() {
     const user = userService.getLoggedinUser()
 
@@ -19,17 +19,17 @@ export function OrderModal({ packageInfo, onClose, gig }) {
       buyer: userService.getLoggedinUser(),
       seller: gig.owner,
       gig,
+      packageInfo,
       status: 'pending',
     }
-
     try {
-      const savedOrder = await addOrder(order)
-      navigate('/orders')
-      showSuccessMsg(`Order saved !`)
-    } catch (err) {
-      showErrorMsg(`Cannot save order`)
+      await addOrder(order)
+      navigate('/checkout')
+    } catch {
+      showErrorMsg(`Oops, something went wrong`)
       console.log('err:', err)
-    }    
+    }
+     
   }
 
   return (
@@ -38,7 +38,7 @@ export function OrderModal({ packageInfo, onClose, gig }) {
         <div className="order-modal-content">
           <button className="close-btn" onClick={onClose}>×</button>
           <h2>{packageInfo.name}</h2>
-          <p>{packageInfo.price}</p>
+          <p>{`₪${packageInfo.price}`}</p>
           <div className="extras">
             <label>
               <input type="checkbox" />
@@ -58,7 +58,7 @@ export function OrderModal({ packageInfo, onClose, gig }) {
               Google Drive Link ( + ₪38.26 )
             </label>
           </div>
-          <button className="continue-btn" onClick={onContinue}>Continue ({packageInfo.price})</button>
+          <button className="continue-btn" onClick={onContinue}>Continue ({`₪${packageInfo.price}`})</button>
         </div>
       </div>
     </div>
