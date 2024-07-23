@@ -87,15 +87,15 @@
                 min-width: rem(120px);
                 justify-content: end;
 
-                &.top-rated {
-                    background-color: $clr8;
-                    color: $clr9;
-                    padding-inline: 6px;
-                }
+                    &.top-rated {
+                        background-color: $clr8;
+                        color: $clr9;
+                        padding-inline: 6px;
+                    }
 
-                .levelStar {
-                    margin-top: 2px;
-                }
+                    .level-star {
+                        margin-top: 2px;
+                    }
             }
         }
     }

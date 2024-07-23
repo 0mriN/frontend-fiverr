@@ -1,26 +1,218 @@
-.app-footer{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.app-footer {
 
-    min-height: 3.5rem;
-
-    padding: rem(10px) 1rem;
-    background-color: $clr4;
-
-    p {
-        margin: 0;
+    .top-line {
+        margin-top: 20px;
+        border-top: 1px solid #e4e5e7;
     }
-    
-    span {
-        font-size: .8em;
-        
-        &.local-services {
-            color: $clr1;
+
+    .footer-wrapper {
+        line-height: 24px;
+        margin: 0px 6.5px;
+        padding: 64px 32px 24px;
+
+        .footer-grid {
+            display: flex;
+            margin-bottom: 8px;
+
+            .footer-col {
+                color: #62646a;
+                flex-basis: 20%;
+                line-height: 24px;
+                padding: 0px 16px;
+
+                article {
+                    text-align: left;
+                    padding: 0px 0px 40px;
+
+                    .footer-title {
+                        display: flex;
+                        padding: 0px 0px 20px;
+                        text-align: left;
+
+                        h6 {
+                            color: #404145;
+                            font-weight: 700;
+                            line-height: 22.4px;
+                            padding-inline-start: 40px;
+                            font-size: 16px;
+                            font-family: 'MacanBold';
+
+                        }
+                    }
+
+                    .footer-content {
+                        overflow: hidden;
+                        display: block;
+
+                        ul {
+                            display: block;
+                            list-style-type: disc;
+                            margin-block-start: 1em;
+                            margin-block-end: 1em;
+                            margin-inline-start: 0px;
+                            margin-inline-end: 0px;
+                            padding-inline-start: 40px;
+                            unicode-bidi: isolate;
+                            list-style: none;
+
+                            li {
+                                display: list-item;
+                                line-height: 24px;
+                                padding: 0px 0px 16px;
+
+                                a {
+                                    color: #74767e;
+                                    display: inline;
+                                    line-height: 24px;
+                                    font-size: 16px;
+                                    font-family: 'Macan';
+                                    font-weight: 580;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
-        
-        &.remote-services {
-            color: $clr5;
+
+        .footer-bottom {
+            border-top: 1px solid #e4e5e7;
+            align-items: center;
+            color: #62646a;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            line-height: 24px;
+
+            .footer-bottom-left {
+                align-items: center;
+                padding: 16px 0px 0px;
+                display: flex;
+                // justify-content: space-between;
+
+                .footer-logo {
+                    color: #62646a;
+                    line-height: 24px;
+
+                    svg {
+                        display: inline;
+                        fill: none;
+                    }
+                }
+
+                p {
+                    align-items: center;
+                    display: flex;
+                    padding: 16px 0px 0px;
+
+                    span {
+                        color: #b5b6ba;
+                        font-size: 14px;
+                        line-height: 21px;
+                        margin: 0px 0px 0px 24px;
+                    }
+                }
+            }
+
+
+            .footer-bottom-right {
+                color: #62646a;
+                align-items: center;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                line-height: 24px;
+                padding: 16px 0px 0px;
+                width: rem(495px);
+
+                .social {
+                    justify-content: space-between;
+                    padding: 16px 0px 0px;
+                    width: rem(292px);
+                    display: flex;
+                    list-style: none;
+                    list-style-image: none;
+
+                    li {
+                        display: list-item;
+                        text-align: -webkit-match-parent;
+                        unicode-bidi: isolate;
+
+                        a {
+                            background-color: transparent;
+                            border-radius: 50%;
+                            display: flex;
+                            margin: -8px;
+                            padding: 8px;
+                            text-align: left;
+                            height: 40px;
+                            width: 40px;
+
+                            svg {
+                                fill: #74767e
+                            }
+                        }
+                    }
+                }
+
+                .settings-btns {
+                    display: flex;
+                    color: #62646a;
+                    line-height: 24px;
+
+
+                    .lang {
+                        align-items: center;
+                        background-color: transparent;
+                        border-radius: 54px;
+                        display: flex;
+                        font-size: 14px;
+                        font-weight: 600;
+                        line-height: 21px;
+                        padding: 8px 12px;
+                        text-align: center;
+                        margin-top: 14px;
+                        color: #62646a;
+
+                        img {
+                            svg {
+                                color: #404145;
+                                font-weight: 400;
+                            }
+                        }
+
+                        .lang-label {
+                            // color: #404145;
+                            font-size: 14px;
+                            font-weight: 600;
+                            line-height: 21px;
+                            text-align: center;
+                            padding-left: 3px;
+                        }
+
+                    }
+
+                    .currecny {
+                        align-items: flex-start;
+                        border-radius: 54px;
+                        display: inline-block;
+                        //    font-size: 14px;
+                        font-weight: 600;
+                        line-height: 21px;
+                        //    padding: 8px 12px;
+                        text-align: center;
+                        background-color: transparent;
+                        margin-top: 14px;
+                        color: #62646a;
+                    }
+
+                    button.accessibility {
+                        margin-top: 14px;
+                        background-color: transparent
+                    }
+                }
+            }
         }
     }
 }
