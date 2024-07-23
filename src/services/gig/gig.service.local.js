@@ -1,6 +1,6 @@
 
 import { storageService } from '../async-storage.service'
-import { getRandomIntInclusive, makeId, makeLorem, saveToStorage, loadFromStorage } from '../util.service'
+import { getRandomIntInclusive, makeId, makeLorem, saveToStorage, loadFromStorage, getRandomTags } from '../util.service'
 import { userService } from '../user'
 
 const GIG_KEY = 'gig'
@@ -20,11 +20,16 @@ window.cs = gigService
 
 async function query(filterBy = { title: '' }) {
     var gigs = await storageService.query(GIG_KEY)
-    const { title } = filterBy
+    const { title, tags } = filterBy
 
     if (title) {
         const regex = new RegExp(filterBy.title, 'i')
         gigs = gigs.filter(gig => regex.test(gig.title) || regex.test(gig.description))
+    }
+    if (tags && tags.length) {
+        gigs = gigs.filter(gig => {
+            return tags.every(tag => gig.tags.includes(tag))
+        })
     }
     return gigs
 }
@@ -159,6 +164,7 @@ function _createGigs() {
         // gigs.map(gig => ({...gig,_id: makeId()}))
         gigs.map(gig => {
             gig._id = makeId()
+            gig.tags = getRandomTags()
         })
 
         saveToStorage(GIG_KEY, gigs)
@@ -294,7 +300,8 @@ function _getFormattedGigs() {
                 "realistic drawing",
                 "hand drawing",
                 "portrait drawing",
-                "pencil sketch"
+                "pencil sketch",
+                "graphics_design"
             ],
             "likedByUsers": [
                 "mini-user"

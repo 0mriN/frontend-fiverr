@@ -17,7 +17,7 @@ function getEmptyGig() {
 function getDefaultFilter() {
     return {
         title: '',
-        // minSpeed: '',
+        tags: [],
         // sortField: '',
         // sortDir: '',
     }

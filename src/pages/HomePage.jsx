@@ -21,10 +21,30 @@ import handshake from '../assets/img/svg/handshake.svg'
 import lightning from '../assets/img/svg/lightning.svg'
 import support from '../assets/img/svg/support.svg'
 import introVideo from '../assets/img/How-Fiverr-Works-homepage.mp4'
+import { HomePrimeCategoryFilter } from '../cmps/HomePrimeCategoryFilter'
+import { setFilter } from '../store/actions/gig.actions'
+import { useSelector } from 'react-redux'
+
 
 
 
 export function HomePage() {
+    const filterBy = useSelector(storeState => storeState.gigModule.filterBy)
+    const srcs = [
+        programming,
+        graphicsDesign,
+        digitalMarketing,
+        writingTranslation,
+        videoAnimation,
+        aiServices,
+        musicAudio,
+        business,
+        consulting,
+    ]
+    function onSetFilterBy(filterBy) {
+        setFilter(filterBy)
+    }
+
     return (
         <section className="home-page">
             <div className="hero-box-container">
@@ -52,44 +72,11 @@ export function HomePage() {
                     </ul>
                 </div>
             </div>
-            <div className='sub-category-container'>
-                <a href="">
-                    <img src={programming} alt="programming_tech" loading="lazy" />
-                    <p className="sub-category">Programming & Tech</p>
-                </a>
-                <a href="">
-                    <img src={graphicsDesign} alt="graphics_design" loading="lazy" />
-                    <p className="sub-category">Graphics & Design</p>
-                </a>
-                <a href="">
-                    <img src={digitalMarketing} alt="digital_marketing" loading="lazy" />
-                    <p className="sub-category">Digital Marketing </p>
-                </a>
-                <a href="">
-                    <img src={writingTranslation} alt="writing_translation" loading="lazy" />
-                    <p className="sub-category">Writing & Translation</p>
-                </a>
-                <a href="">
-                    <img src={videoAnimation} alt="video_animation" loading="lazy" />
-                    <p className="sub-category">Video & Animation</p>
-                </a>
-                <a href="">
-                    <img src={aiServices} alt="ai_services" loading="lazy" />
-                    <p className="sub-category">AI Services</p>
-                </a>
-                <a href="">
-                    <img src={musicAudio} alt="Music_audio" loading="lazy" />
-                    <p className="sub-category">Music & Audio</p>
-                </a>
-                <a href="">
-                    <img src={business} alt="business" loading="lazy" />
-                    <p className="sub-category">Business</p>
-                </a>
-                <a href="">
-                    <img src={consulting} alt="consulting" loading="lazy" />
-                    <p className="sub-category">Consulting</p>
-                </a>
-            </div>
+            <HomePrimeCategoryFilter
+                srcs={srcs}
+                setFilterBy={onSetFilterBy}
+                filterBy={filterBy}
+            />
             <div className='home-intro'>
                 <h2 className='intro-title'>A whole world of freelance talent at your fingertips</h2>
                 <ul>

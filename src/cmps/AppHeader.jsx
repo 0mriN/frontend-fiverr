@@ -6,6 +6,8 @@ import { logout } from '../store/actions/user.actions'
 import { SearchBar } from './SearchBar'
 import { useState } from 'react'
 import { gigService } from '../services/gig'
+import { setFilter } from '../store/actions/gig.actions'
+import { PrimeCategoryFilter } from './PrimeCategoryFilter'
 
 
 
@@ -14,8 +16,10 @@ export function AppHeader() {
 	const navigate = useNavigate()
 
 	const filterBy = useSelector(storeState => storeState.gigModule.filterBy)
-	// const [filterBy, setFilterBy] = useState(gigService.getDefaultFilter())
 
+    function onSetFilterBy(filterBy) {
+        setFilter(filterBy)
+    }
 	async function onLogout() {
 		try {
 			await logout()
@@ -55,20 +59,7 @@ export function AppHeader() {
 				</nav>
 			</header>
 			<div className="line full"></div>
-			{/* <section className="second-header">
-				<ul className="second-header-filters flex">
-					<li><a className="single-line-text" href="">Graphics & Design</a></li>
-					<li><a className="single-line-text" href="">Programming & Tech</a></li>
-					<li><a className="single-line-text" href="">Digital Marketing</a></li>
-					<li><a className="single-line-text" href="">Video & Animation</a></li>
-					<li><a className="single-line-text" href="">Writing & Translation</a></li>
-					<li><a className="single-line-text" href="">Music & Audio</a></li>
-					<li><a className="single-line-text" href="">Business</a></li>
-					<li><a className="single-line-text" href="">Consulting</a></li>
-					<li><a className="single-line-text" href="">AI Services</a></li>
-					<li><a className="single-line-text" href="">Personal Growth</a></li>
-				</ul>
-			</section> */}
+				<PrimeCategoryFilter setFilterBy={onSetFilterBy} filterBy={filterBy} />
 			<div className="line full"></div>
 		</>
 	)
