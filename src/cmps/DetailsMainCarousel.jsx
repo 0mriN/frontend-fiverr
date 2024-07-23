@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
-import '../assets/styles/cmps/DetailsMainCarousel.scss';
+import React, { useState } from 'react'
+import Carousel from 'react-multi-carousel'
+import 'react-multi-carousel/lib/styles.css'
+// import '../assets/styles/cmps/DetailsMainCarousel.scss'
 
 const images = [
   {
@@ -32,7 +32,7 @@ const images = [
     src: "https://yesimadesigner.com/wp-content/uploads/2019/10/color-logos-famous-logo-designs.png?x99157&x99157&x99157&x99157&x78792&x86947&x86947&x86947",
     alt: "Image 7",
   },
-];
+]
 
 export default images
 const responsive = {
@@ -52,7 +52,7 @@ const responsive = {
     breakpoint: { max: 464, min: 0 },
     items: 1
   }
-};
+}
 
 const thumbnailResponsive = {
   superLargeDesktop: {
@@ -71,14 +71,14 @@ const thumbnailResponsive = {
     breakpoint: { max: 464, min: 0 },
     items: 2
   }
-};
+}
 
 export function HeroCarousel({ images }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0)
 
   const handleThumbnailClick = (index) => {
-    setCurrentIndex(index);
-  };
+    setCurrentIndex(index)
+  }
 
   return (
     <div className="hero-carousel-container">
@@ -125,6 +125,6 @@ export function HeroCarousel({ images }) {
         ))}
       </Carousel>
     </div>
-  );
+  )
 }
 

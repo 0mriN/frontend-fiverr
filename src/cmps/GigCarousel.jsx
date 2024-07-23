@@ -1,5 +1,5 @@
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import Carousel from "react-multi-carousel"
+import "react-multi-carousel/lib/styles.css"
 export const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -22,4 +22,4 @@ export const responsive = {
     items: 1,
     partialVisibilityGutter:40
   }
-};
+}

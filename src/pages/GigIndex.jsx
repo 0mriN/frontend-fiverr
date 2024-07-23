@@ -15,8 +15,7 @@ import { Link } from 'react-router-dom'
 
 
 export function GigIndex() {
-
-    const [filterBy, setFilterBy] = useState(gigService.getDefaultFilter())
+    const filterBy = useSelector(storeState => storeState.gigModule.filterBy)
     const gigs = useSelector(storeState => storeState.gigModule.gigs)
 
     useEffect(() => {

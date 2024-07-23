@@ -1,49 +1,63 @@
 .package-comparison {
-    h2 {
-      text-align: center;
+  h2 {
+    text-align: left;
+  }
+
+  .package-table {
+    display: flex;
+    border: 1px solid #ccc;
+
+    .feature-column {
+      flex: 1;
+      border-right: 1px solid #ccc;
+      text-align: left;
+    
+      .feature-header{
+        height:20%;
+      }
+
+
+      .feature-header, .feature-name {
+        padding: 10px;
+        background-color: #f8f8f8;
+        border-bottom: 1px solid #ccc;
+        font-weight: bold;
+      }
+
+      .feature-name {
+        font-weight: normal;
+      }
     }
-  
-    .package-table {
-      display: flex;
-      justify-content: space-around;
-  
-      .package {
-        border: 1px solid #ccc;
-        padding: 20px;
-        text-align: center;
-        width: 30%;
-  
-        h3 {
-          margin-top: 0;
+
+    .package {
+      flex: 1;
+      text-align: center;
+
+      .package-header {
+        background-color: #f8f8f8;
+        border-bottom: 1px solid #ccc;
+        padding: 10px;
+      }
+
+      .feature-value {
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+
+        .icon-available {
+          color: green;
         }
-  
-        ul {
-          list-style: none;
-          padding: 0;
-  
-          li {
-            &.available {
-              color: green;
-            }
-  
-            &.unavailable {
-              color: red;
-              text-decoration: line-through;
-            }
-          }
+
+        .icon-unavailable {
+          color: red;
         }
-  
-        .delivery-options {
-          text-align: left;
-        }
-  
+
         .select-btn {
           background-color: black;
           color: white;
           border: none;
           padding: 10px 20px;
           cursor: pointer;
-  
+
           &:hover {
             background-color: #333;
           }
@@ -51,4 +65,4 @@
       }
     }
   }
-  
+}

@@ -1,25 +1,25 @@
-import { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { addGigMsg, loadGig } from "../store/actions/gig.actions";
-import "../../src/assets/styles/pages/GigDetails.scss";
-import {PackageModal} from "../cmps/PackModal";
-import {HeroCarousel} from "../cmps/DetailsMainCarousel";
-import { DetailsHeader } from "../cmps/DetailsHeader";
+import { useEffect } from "react"
+import { useParams } from "react-router-dom"
+import { useSelector } from "react-redux"
+import { addGigMsg, loadGig } from "../store/actions/gig.actions"
+import { PackModal } from "../cmps/PackModal"
+import { HeroCarousel } from "../cmps/DetailsMainCarousel"
+import { DetailsHeader } from "../cmps/DetailsHeader"
+import { DetailsReviews } from "../cmps/DetailsReviews"
+import { DetailsReview } from "../cmps/DetailsReview"
+import { DetailsAbout } from "../cmps/DetailsAbout"
+import images from "../cmps/DetailsMainCarousel"
+import { PackageComparison } from "../cmps/PackCompare"
 
-import { DetailsReview } from "../cmps/DetailsReview";
-import { DetailsAbout } from "../cmps/DetailsAbout";
-import images from "../cmps/DetailsMainCarousel";
-import { PackageComparison } from "../cmps/PackCompare";
+
 export function GigDetails() {
-  const { gigId } = useParams();
-  const gig = useSelector((storeState) => storeState.gigModule.gig);
+  const { gigId } = useParams()
+  const gig = useSelector((storeState) => storeState.gigModule.gig)
 
   useEffect(() => {
-    loadGig(gigId);
-  }, [gigId]);
+    loadGig(gigId)
+  }, [gigId])
 
-  // const starLevel = gigService.getStarLevel(gig)
 
   return (
     <section className="gig-details">
@@ -27,12 +27,13 @@ export function GigDetails() {
         {gig ? (
           <div>
             <div>
-              <DetailsHeader gig={gig}/>
+              <DetailsHeader gig={gig} />
               <HeroCarousel images={images} />
             </div>
-         <DetailsReview gig={gig}/>
+         {/* <DetailsReview gig={gig}/> */}
          <DetailsAbout gig={gig}/>
-         <PackageComparison/>
+         {/* <PackageComparison/> */}
+         <DetailsReviews gig={gig}/>
           </div>
         ) : (
           <p>Loading...</p>
@@ -40,8 +41,8 @@ export function GigDetails() {
       </div>
 
       <div className="gig-buy-modal">
-        <PackageModal />
+        <PackModal gig={gig} />
       </div>
     </section>
-  );
+  )
 }

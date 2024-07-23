@@ -1,157 +1,163 @@
-.modal {
-  position: fixed;
-  grid-template-columns: 2;
-  bottom: 100px;
-  left: 400px;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 0; // Ensure the modal is on top of other content
-
-  .modal-content {
+.gig-buy-modal {
+  // position: sticky;
+  top: 20px; // Adjust this value to control how far from the top the modal sticks
+  // display: flex;
+  // flex-direction: column;
+  // z-index: 1010;
+  // display: inline;
+  overflow: none;
+  // position: absolute;
+  
+  .modal {
     background-color: white;
     border-radius: 5px;
     width: 400px;
     padding: 20px;
-    z-index: 1010; // Ensure the modal content is above the overlay
-    position: sticky;
-  }
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    // position: absolute;
+    
+    .modal-content {
+      background-color: white;
+      position: sticky; 
+      border-radius: 5px;
+      position: -webkit-sticky !important;
+      top: 10px;
+    }
 
-  .modal-body {
-    text-align: center;
-    overflow-y: auto; // Allow scrolling within modal body if content overflows
-    max-height: calc(100vh - 100px); // Adjust max height as needed
-    border: solid 1px gray;
-  }
+    .modal-body {
+      text-align: center;
+      overflow-y: auto; // Allow scrolling within modal body if content overflows
+      max-height: calc(100vh - 100px); // Adjust max height as needed
+      border: solid 1px gray;
+    }
 
-  .modal-header {
-    display: flex;
-    border-bottom: 1px solid #ccc;
-  }
-
-  h2 {
-    margin-top: 0;
-  }
-
-  .extras {
-    margin-top: 20px;
-
-    label {
+    .modal-header {
       display: flex;
-      align-items: center;
-      margin-bottom: 10px;
+      border-bottom: 1px solid #ccc;
+    }
 
-      input {
-        margin-right: 10px;
+    h2 {
+      margin-top: 0;
+    }
+
+    .extras {
+      margin-top: 20px;
+
+      label {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+
+        input {
+          margin-right: 10px;
+        }
       }
     }
-  }
 
-  .continue-btn {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 4px;
-    font-size: 16px;
-  }
-
-  .tab {
-    flex: 1;
-    text-align: center;
-    padding: 10px;
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    border: solid 1px gray;
-    background-color: white;
-    height: 58px;
-    width: 104px;
-
-    &.active {
-      border-bottom: 2px solid black;
-      font-weight: bold;
-    }
-  }
-
-  .tab-content {
-    display: none;
-
-    &.active {
-      display: block;
-    }
-  }
-
-  .info-icon {
-    font-size: 12px;
-    cursor: pointer;
-    margin-right: 24px;
-    margin-left: 8px;
-  }
-
-  .icon {
-    margin-right: 5px;
-    width: 16px;
-    height: 16px;
-  }
-
-  .toggle-details {
-    text-decoration: none;
-    color: black;
-  }
-
-  .continue-btn {
-    background-color: black;
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-  }
-
-  .arrow-icon {
-    margin-left: 10px;
-  }
-
-  .compare-packages {
-    font-size: 12px;
-    color: grey;
-  }
-
-  .modal-footer {
-    text-align: center;
-    padding-top: 10px;
-    margin-top: 20px;
-  }
-
-  .contact-btn {
-    background-color: white;
-    border: 1px solid black;
-    padding: 10px;
-    cursor: pointer;
-    width: calc(100% - 24px);
-  }
-
-  .package-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
-    margin-top: 10px;
-
-    h3 {
-      margin-left: 24px;
+    .continue-btn {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 4px;
       font-size: 16px;
     }
-  }
 
-  p {
-    margin-left: 24px;
-    margin-right: 24px;
-  }
+    .tab {
+      flex: 1;
+      text-align: center;
+      padding: 10px;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      border: solid 1px gray;
+      background-color: white;
+      height: 58px;
+      width: 104px;
 
-  .modal-price {
-    font-size: 20px;
+      &.active {
+        border-bottom: 2px solid black;
+        font-weight: bold;
+      }
+    }
+
+    .tab-content {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
+
+    .info-icon {
+      font-size: 12px;
+      cursor: pointer;
+      margin-right: 24px;
+      margin-left: 8px;
+    }
+
+    .icon {
+      margin-right: 5px;
+      width: 16px;
+      height: 16px;
+    }
+
+    .toggle-details {
+      text-decoration: none;
+      color: black;
+    }
+
+    .continue-btn {
+      background-color: black;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .arrow-icon {
+      margin-left: 10px;
+    }
+
+    .compare-packages {
+      font-size: 12px;
+      color: grey;
+    }
+
+    .modal-footer {
+      text-align: center;
+      padding-top: 10px;
+      margin-top: 20px;
+    }
+
+    .contact-btn {
+      background-color: white;
+      border: 1px solid black;
+      padding: 10px;
+      cursor: pointer;
+      width: calc(100% - 24px);
+    }
+
+    .package-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      margin-top: 10px;
+
+      h3 {
+        margin-left: 24px;
+        font-size: 16px;
+      }
+    }
+
+    p {
+      margin-left: 24px;
+      margin-right: 24px;
+    }
+
+    .modal-price {
+      font-size: 20px;
+    }
   }
 }
