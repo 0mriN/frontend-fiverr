@@ -2,7 +2,6 @@ import { userService } from '../services/user'
 import { GigPreview } from './GigPreview'
 
 export function GigList({ gigs, onRemoveGig, onUpdateGig }) {
-
     function shouldShowActionBtns(gig) {
         const user = userService.getLoggedinUser()
 
