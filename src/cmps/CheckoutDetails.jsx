@@ -5,8 +5,9 @@ import { orderService } from "../services/order/order.service.local"
 
 export function CheckoutDetails({ orders }) {
     const navigate = useNavigate()
-
     const { gig, packageInfo } = orders[0]
+    console.log('gig',gig)
+    console.log('packageInfo',packageInfo)
 
     function calcServiceFee() {
         return 20
@@ -61,6 +62,7 @@ export function CheckoutDetails({ orders }) {
         <article className="order-payment">
             <ul className="final-pay">
                 <li>Order total</li>
+                {/* <li>{`${calcTotal()}`}</li> */}
                 <li>{`₪${calcTotal()}`}</li>
             </ul>
         </article>
