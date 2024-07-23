@@ -31,7 +31,8 @@ export function GigPreview({ gig }) {
                     <img src={img} alt="" />
                 </Link>
             ))}
-        </Carousel>        <div className="card-seller">
+        </Carousel>
+        <div className="card-seller">
             <div className="card-profile">
                 <img src={gig.owner.imgUrl} alt="" />
                 <div className='card-profile-name single-line-text'>
@@ -49,7 +50,7 @@ export function GigPreview({ gig }) {
         </Link>
         <div className='card-lower-part'>
             <div className='card-rating'>
-            <img src={ratingStar} alt="ratingstar" />
+                <img src={ratingStar} alt="ratingstar" />
                 {` ${avgRating}`}
                 <span>{`(${gig.reviews.length})`}</span>
             </div>

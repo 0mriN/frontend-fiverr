@@ -26,14 +26,12 @@ export function GigDetails() {
       <div className="gig-details-main">
         {gig ? (
           <div>
-            <div>
-              <DetailsHeader gig={gig} />
-              <HeroCarousel images={images} />
-            </div>
-         {/* <DetailsReview gig={gig}/> */}
-         <DetailsAbout gig={gig}/>
-         {/* <PackageComparison/> */}
-         <DetailsReviews gig={gig}/>
+            <DetailsHeader gig={gig} />
+            <HeroCarousel images={images} />
+            {/* <DetailsReview gig={gig}/> */}
+            <DetailsAbout gig={gig} />
+            {/* <PackageComparison/> */}
+            <DetailsReviews gig={gig} />
           </div>
         ) : (
           <p>Loading...</p>
@@ -41,8 +39,8 @@ export function GigDetails() {
       </div>
 
       <div className="gig-buy-modal">
-        {gig &&
-          <PackModal gig={gig} />}
+        {/* {gig && */}
+        {/* // <PackModal gig={gig} />} */}
       </div>
     </section>
   )
