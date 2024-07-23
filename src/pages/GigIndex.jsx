@@ -8,7 +8,7 @@ import { gigService } from '../services/gig'
 import { userService } from '../services/user'
 
 import { GigList } from '../cmps/GigList'
-import { GigFilter } from '../cmps/GigFilter'
+// import { GigFilter } from '../cmps/GigFilter'
 import homeBreadcrump from '../assets/img/svg/home-breadcrumb.svg'
 import { Link } from 'react-router-dom'
 
