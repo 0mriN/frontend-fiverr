@@ -40,7 +40,7 @@ export function GigIndex() {
                         <li> / Programming & Tech </li>
                     </ul>
                     <h1>Website Development</h1>
-                    <div><p class="index-subtitle">Create, build, and develop your website with skilled website developers</p></div>
+                    <div><p className="index-subtitle">Create, build, and develop your website with skilled website developers</p></div>
                     {/* {userService.getLoggedinUser() && <button onClick={onAddGig}>Add a Gig</button>} */}
                 </div>
             </header>

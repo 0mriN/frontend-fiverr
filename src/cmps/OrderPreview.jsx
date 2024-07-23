@@ -1,3 +1,4 @@
+import buyerImg from "../assets/img/profile.png"
 export function OrderPreview({ order }) {
     const { buyer, gig, status } = order
 
@@ -6,8 +7,9 @@ export function OrderPreview({ order }) {
     }
 
     return <>
-        <td>
-            <img src={buyer.imgUrl} />
+        <td className="order-preview flex">
+            {/* <img src={buyer.imgUrl} /> */}
+            <img src={buyerImg} />
             <p>{buyer.fullname}</p>
         </td>
         <td>

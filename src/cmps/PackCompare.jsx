@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import { FaCheck, FaTimes } from 'react-icons/fa';
+import { FaCheck, FaTimes } from 'react-icons/fa'
 
 const packages = [
   {
@@ -42,7 +42,7 @@ const packages = [
       { name: 'Delivery Time', available: true, time: '5 days', extraCost: '1 day (+₪382.63)' }
     ],
   },
-];
+]
 
 export function PackageComparison() {
   const featureNames = [
@@ -53,7 +53,7 @@ export function PackageComparison() {
     'Source file',
     'Revisions',
     'Delivery Time'
-  ];
+  ]
 
   return (
     <div className="package-comparison">
@@ -73,13 +73,13 @@ export function PackageComparison() {
               <p>₪{pkg.price}</p>
             </div>
             {featureNames.map((feature, i) => {
-              const pkgFeature = pkg.features.find(f => f.name === feature);
+              const pkgFeature = pkg.features.find(f => f.name === feature)
               if (feature === 'Revisions') {
                 return (
                   <div key={i} className="feature-value">
                     {pkgFeature?.available ? pkgFeature.quantity : <FaTimes className="icon-unavailable" />}
                   </div>
-                );
+                )
               }
               if (feature === 'Delivery Time') {
                 return (
@@ -97,13 +97,13 @@ export function PackageComparison() {
                       </div>
                     ) : <FaTimes className="icon-unavailable" />}
                   </div>
-                );
+                )
               }
               return (
                 <div key={i} className="feature-value">
                   {pkgFeature?.available ? <FaCheck className="icon-available" /> : <FaTimes className="icon-unavailable" />}
                 </div>
-              );
+              )
             })}
             <div className="feature-value">
               <button className="select-btn">Select</button>
@@ -112,5 +112,5 @@ export function PackageComparison() {
         ))}
       </div>
     </div>
-  );
+  )
 }

@@ -6,8 +6,7 @@ import { orderService } from "../services/order/order.service.local"
 export function CheckoutDetails({ orders }) {
     const navigate = useNavigate()
     const { gig, packageInfo } = orders[0]
-    console.log('gig',gig)
-    console.log('packageInfo',packageInfo)
+
 
     function calcServiceFee() {
         return 20
@@ -26,7 +25,7 @@ export function CheckoutDetails({ orders }) {
     async function onPay() {
         try {
             orderService.add(orders[0])
-            console.log('saved to storage');
+            console.log('saved to storage')
             navigate('/')
             showSuccessMsg(`Order saved !`)
         } catch (err) {

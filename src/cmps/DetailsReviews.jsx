@@ -1,5 +1,5 @@
-import React from 'react';
-// import '../assets/styles/cmps/DetailsReviews.scss';
+import React from 'react'
+// import '../assets/styles/cmps/DetailsReviews.scss'
 
 export function DetailsReviews({gig}) {
 
@@ -20,5 +20,5 @@ export function DetailsReviews({gig}) {
         </div>
       ))}
     </div>
-  );
+  )
 }

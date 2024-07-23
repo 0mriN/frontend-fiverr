@@ -1,4 +1,4 @@
-import { OrderPreview } from "./OrderPreview";
+import { OrderPreview } from "./OrderPreview"
 
 export function OrderList({ orders }) {
     console.log(orders)
