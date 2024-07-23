@@ -1,9 +1,9 @@
-.main-container {
-  display: grid;
-  grid-template-columns: 1fr; // Default to single column
-  @media (min-width: 1200px) {
-    // grid-template-columns: 60% 40%; // Two columns for larger screens
-  }
+// .main-container {
+//   display: grid;
+//   grid-template-columns: 1fr; // Default to single column
+//   @media (min-width: 1200px) {
+//     // grid-template-columns: 60% 40%; // Two columns for larger screens
+//   }
 
   .gig-details {
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -167,4 +167,4 @@ display: flex;
       color: #333;
     }
   }
-}
+// }
