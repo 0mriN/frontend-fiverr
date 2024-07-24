@@ -1,40 +1,7 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
-// import '../assets/styles/cmps/DetailsMainCarousel.scss'
 
-const images = [
-  {
-    src: "https://res.cloudinary.com/vistaprint/images/f_auto,q_auto/v1705580305/ideas-and-advice-prod/en-us/featured_14223857a51/featured_14223857a51.png?_i=AA",
-    alt: "Image 1",
-  },
-  {
-    src: "https://cdn.pixabay.com/photo/2017/03/16/21/18/logo-2150297_640.png",
-    alt: "Image 2",
-  },
-  {
-    src: "https://visme.co/blog/wp-content/uploads/2024/04/1.jpg",
-    alt: "Image 3",
-  },
-  {
-    src: "https://stantorchpromotions.com/wp-content/uploads/2023/02/logo-b1.jpeg",
-    alt: "Image 4",
-  },
-  {
-    src: "https://i.pinimg.com/736x/db/87/75/db87753a7685b0758792da046372c959.jpg",
-    alt: "Image 5",
-  },
-  {
-    src: "https://images.crowdspring.com/blog/wp-content/uploads/2022/02/18105346/abstract-logos.png",
-    alt: "Image 6",
-  },
-  {
-    src: "https://yesimadesigner.com/wp-content/uploads/2019/10/color-logos-famous-logo-designs.png?x99157&x99157&x99157&x99157&x78792&x86947&x86947&x86947",
-    alt: "Image 7",
-  },
-]
-
-export default images
 const responsive = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 1024 },
@@ -73,21 +40,23 @@ const thumbnailResponsive = {
   }
 }
 
-export function HeroCarousel({ images }) {
+export function DetailsMainCarousel({ imgUrls }) {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const mainCarouselRef = useRef(null)
 
   const handleThumbnailClick = (index) => {
     setCurrentIndex(index)
+    mainCarouselRef.current.goToSlide(index)
   }
 
   return (
-    <div className="hero-carousel-container">
+    <section className="details-main-carousel">
       <Carousel
+        ref={mainCarouselRef}
         responsive={responsive}
-        showDots={true}
+        showDots={false}
         arrows={true}
-        afterChange={(previousSlide, { currentSlide }) => setCurrentIndex(currentSlide)}
-        infinite={true}
+        infinite={false}
         customTransition="all .5"
         transitionDuration={500}
         containerClass="carousel-container"
@@ -96,10 +65,11 @@ export function HeroCarousel({ images }) {
         keyBoardControl={true}
         swipeable={true}
         draggable={true}
+        afterChange={(previousSlide, { currentSlide }) => setCurrentIndex(currentSlide)}
       >
-        {images.map((image, index) => (
+        {imgUrls.map((image, index) => (
           <div key={index} className="hero-image-container">
-            <img src={image.src} alt={image.alt} className="hero-carousel-image" />
+            <img src={image} className="hero-carousel-image" />
           </div>
         ))}
       </Carousel>
@@ -114,17 +84,16 @@ export function HeroCarousel({ images }) {
         swipeable={true}
         draggable={true}
       >
-        {images.map((image, index) => (
+        {imgUrls.map((image, index) => (
           <div
             key={index}
             className={`thumbnail-image-container ${index === currentIndex ? 'active' : ''}`}
             onClick={() => handleThumbnailClick(index)}
           >
-            <img src={image.src} alt={image.alt} className="thumbnail-image" />
+            <img src={image} alt='img' className="thumbnail-image" />
           </div>
         ))}
       </Carousel>
-    </div>
+    </section>
   )
 }
-

@@ -3,12 +3,12 @@ import { useParams } from "react-router-dom"
 import { useSelector } from "react-redux"
 import { addGigMsg, loadGig } from "../store/actions/gig.actions"
 import { PackModal } from "../cmps/PackModal"
-import { HeroCarousel } from "../cmps/DetailsMainCarousel"
+import { DetailsMainCarousel } from "../cmps/DetailsMainCarousel"
 import { DetailsHeader } from "../cmps/DetailsHeader"
 import { DetailsReviews } from "../cmps/DetailsReviews"
 import { DetailsReview } from "../cmps/DetailsReview"
 import { DetailsAbout } from "../cmps/DetailsAbout"
-import images from "../cmps/DetailsMainCarousel"
+// import images from "../cmps/DetailsMainCarousel"
 import { PackageComparison } from "../cmps/PackCompare"
 
 
@@ -28,7 +28,8 @@ export function GigDetails() {
           <div>
             <div>
               <DetailsHeader gig={gig} />
-              <HeroCarousel images={images} />
+              {/* <HeroCarousel images={images} /> */}
+              <DetailsMainCarousel imgUrls={gig.imgUrls} />
             </div>
          {/* <DetailsReview gig={gig}/> */}
          <DetailsAbout gig={gig}/>
