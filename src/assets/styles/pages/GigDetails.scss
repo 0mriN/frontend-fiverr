@@ -1,8 +1,8 @@
 .gig-details {
 
   display: grid;
-  grid-template-columns: em(712px) 1fr;
-  // grid-template-columns: 2fr 1fr;
+  // grid-template-columns: em(712px) 1fr;
+  grid-template-columns: 2fr 1fr;
   // align-items: flex-start;
   background-color: #fff;
   line-height: 24px;
@@ -190,10 +190,68 @@
       }
 
     }
+    .main-carousel{
+      width:100% ;
+      height:em(575px) ;
+    }
+      .hero-carousel-container {
+        width: em(712px);
+        height: em(427px);
+        position: relative;
+        // z-index: 10;
+        
+        
+        .hero-image-container {
+      
+        display: flex;
+        justify-content: center;
+        align-items: center;
+   
+
+      }
+      .hero-carousel-image {
+        width: 100%;
+        height: auto;
+        // display: block;
+      }
+    
+      .carousel-container {
+        // width: 100%;
+      }
+      .thumbnail-container {
+        // display: grid;
+        // margin-top: 20px;
+      }
+      
+      .thumbnail-image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        padding: 5px;
+        border: 2px solid transparent;
+      }
+      
+      
+      .thumbnail-image {
+        max-width: 100%;
+        height: auto;
+        // display: block;
+      }
+      
+      .react-multi-carousel-dot-list{
+        display: none;
+      }
+
+    }
+    .details-about-section{
+      display: block;
+    }  
   }
 
   .gig-buy-modal {
     grid-column: 2;
+    padding: 0px 0px 32px;
 
   }
 }
@@ -232,12 +290,12 @@
 //     mark {
 //       background-color: #ffecd1;
 //     }
-//     .gig-details-main {
-//       max-width: 768px;
-//       width: 100%;
-//       height: auto;
-//       margin: 20px;
-//     }
+    // .gig-details-main {
+    //   max-width: 768px;
+    //   width: 100%;
+    //   height: auto;
+    //   margin: 20px;
+    // }
 
 //     .details-owner {
 //       margin-bottom: 20px;
