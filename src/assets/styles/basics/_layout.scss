@@ -1,7 +1,7 @@
 .main-container {
     display: grid;
     grid-template-columns: 1rem 1fr 1rem;
-
+    position: relative;
     >* {
         grid-column: 2;
 

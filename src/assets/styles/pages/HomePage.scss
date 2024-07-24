@@ -33,19 +33,21 @@
                 }
             }
 
-            .search-bar {
-                display: flex;
+            .search-bar-container {
+                display: block;
                 background: #fff;
                 padding: 10px 58px 10px 16px;
                 border-radius: 12px;
                 height: rem(60px);
 
                 input {
+                    // margin-bottom: 28px;
                     border: none;
                     outline: none;
                     font-size: 16px;
                     margin-right: 8px;
-                    flex-grow: 1;
+                    height: rem(40px);
+                    width: 100%;
                 }
 
                 button {
@@ -64,6 +66,7 @@
                     height: rem(48px);
                     position: absolute;
                     right: 6px;
+                    bottom: 6px;
                     cursor: pointer;
 
                     &:hover {
@@ -116,39 +119,6 @@
             }
         }
 
-    }
-
-    .sub-category-container {
-        display: flex;
-        margin-top: rem(28px);
-        gap: rem(19px);
-        padding: 0px rem(10px);
-
-        a {
-            width: rem(129px);
-            height: rem(129px);
-            border: 1px solid #fff;
-            border-radius: 16px;
-            text-decoration: none;
-            color: #222325;
-            line-height: 24px;
-            padding: 11px;
-            box-shadow: rgba(0, 0, 0, 0.027) 0px 0px 0.880517px 0px,
-                rgba(0, 0, 0, 0.03) 0px 0px 2.29197px 0px,
-                rgba(0, 0, 0, 0.055) 0px 0px 5.52px 0px,
-                rgba(0, 0, 0, 0.09) 0px 0px 11px 0px;
-            font-weight: 600;
-
-            .sub-category {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-            }
-
-            &:hover {
-                background: radial-gradient(63.44% 63.44% at 50% 50%, #c2ffe2 0, #fff 100%), #fff;
-            }
-        }
     }
 
     .home-intro {

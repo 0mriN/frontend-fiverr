@@ -8,7 +8,6 @@ import { StarLevel } from './StarLevel.jsx'
 import ratingStar from '../assets/img/svg/RatingStar.svg'
 
 export function GigPreview({ gig }) {
-
     const avgRating = gigService.getAvgRating(gig.reviews)
     const imgs = gig.imgUrls
 
