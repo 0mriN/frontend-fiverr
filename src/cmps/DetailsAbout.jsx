@@ -4,7 +4,7 @@ import { StarLevel } from "../cmps/StarLevel"
 export function DetailsAbout({ gig }) {
 
   return (
-    <div>
+    <section className="details-about-section">
       <p className="about-title">About this gig</p>
       <div className="desc-div">
         <div
@@ -48,6 +48,6 @@ export function DetailsAbout({ gig }) {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
