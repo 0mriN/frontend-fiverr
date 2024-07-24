@@ -74,11 +74,11 @@ export function AppHeader() {
 
 				{/* {isSignUpModalOpen && <SignUpModal onClose={() => setIsSignUpModalOpen(false)} />} */}
 			</nav>
-			<div className="line full"></div>
-				<PrimeCategoryFilter setFilterBy={onSetFilterBy} filterBy={filterBy} />
-			<div className="line full"></div>
-
 		</header>
+		<div className="line full"></div>
+		<PrimeCategoryFilter setFilterBy={onSetFilterBy} filterBy={filterBy} />
+		<div className="line full"></div>
+
 	</section >
 
 }
