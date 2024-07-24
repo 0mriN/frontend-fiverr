@@ -6,6 +6,7 @@ import { GigIndex } from './pages/GigIndex.jsx'
 import { ReviewIndex } from './pages/ReviewIndex.jsx'
 import { ChatApp } from './pages/Chat.jsx'
 import { AdminIndex } from './pages/AdminIndex.jsx'
+import { ProfilePage } from './pages/ProfilePage.jsx'
 
 import { GigDetails } from './pages/GigDetails.jsx'
 import { UserDetails } from './pages/UserDetails'
@@ -17,6 +18,7 @@ import { LoginSignup } from './pages/LoginSignup.jsx'
 import { Login } from './pages/Login.jsx'
 import { Signup } from './pages/Signup.jsx'
 import { GigEdit } from './cmps/GigEdit.jsx'
+
 import { OrderIndex } from './pages/OrderIndex.jsx'
 import { OrderCheckout } from './cmps/OrderCheckout.jsx'
 
@@ -42,6 +44,7 @@ export function RootCmp() {
                         <Route path="signup" element={<Signup />} />
                     </Route>
                     <Route path="/orders" element={<OrderIndex />} />
+                    <Route path="/profile" element={<ProfilePage />} />
                     <Route path="/checkout" element={<OrderCheckout />} />
                 </Routes>
             </main>

@@ -52,7 +52,10 @@ async function login(userCred) {
       password: "1234",
       level: "basic",
       isSeller: true,
-      isAdmin:false
+      isAdmin:false,
+      country:'Afghanistan',
+      memberSince:'july',
+      description:`Unlock stunning visuals with our top-notch carousel design service! We create interactive and engaging carousels with seamless transitions and responsive thumbnails. Perfect for showcasing your products or portfolio. Enhance user experience and capture attention effortlessly. Let's bring your vision to life with precision and creativity!`,
     },
     {
       _id: "u102",
@@ -62,7 +65,11 @@ async function login(userCred) {
       password: "1234",
       level: "basic",
       isSeller: true,
-      isAdmin:false
+      isAdmin:false,
+      country:'Israel',
+      memberSince:'july',
+      description:`Unlock stunning visuals with our top-notch carousel design service! We create interactive and engaging carousels with seamless transitions and responsive thumbnails. Perfect for showcasing your products or portfolio. Enhance user experience and capture attention effortlessly. Let's bring your vision to life with precision and creativity!`,
+
     },
     {
       _id: "u102",
@@ -72,7 +79,10 @@ async function login(userCred) {
       password: "1234",
       level: "basic",
       isSeller: false,
-      isAdmin:true
+      isAdmin:true,
+      country:'disneyland',
+      memberSince:'july',
+      description:`Unlock stunning visuals with our top-notch carousel design service! We create interactive and engaging carousels with seamless transitions and responsive thumbnails. Perfect for showcasing your products or portfolio. Enhance user experience and capture attention effortlessly. Let's bring your vision to life with precision and creativity!`,
     },
     
   ]
@@ -98,7 +108,7 @@ async function logout() {
 }
 
 function getLoggedinUser() {
-  // return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
+  return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
   return {
     _id: "u101",
     fullname: "idan duj",
@@ -116,6 +126,12 @@ function saveLoggedinUser(user) {
     imgUrl: user.imgUrl,
     score: user.score,
     isAdmin: user.isAdmin,
+    isSeller:user.isSeller,
+    level: user.level,
+country:user.country,
+memberSince:user.memberSince,
+description:user.description
+    
   }
   sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
   return user

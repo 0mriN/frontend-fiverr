@@ -1,0 +1,77 @@
+.profile-page {
+  display: grid;
+  justify-content: center;
+  padding: 20px;
+  grid-template-columns: 400px 3fr;
+  padding: 20px;
+  // background-color: red;
+
+  .profile-info {
+    width: 300px;
+    text-align: center;
+
+    padding: 20px;
+    // margin: 100px;
+    width: 100%;
+
+    background-color: #fff;
+    .profile-info-main {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1em;
+    }
+     img.profile-info-main-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      margin: auto;
+      
+    }
+
+    .profile-info-main h2 {
+      margin: 0 0 10px;
+      padding-bottom: 1em;
+      border-bottom: solid 1px #ccc;
+    }
+  }
+
+
+  .profile-details p {
+    margin: 5px 0;
+}
+    .profile-details-singleline{
+        display: flex;
+
+    }
+    .profile-details-singleline{
+        justify-content: space-between;
+        align-items: center;
+        .profile-details-singleline-innerdiv{
+            display: flex;
+        }
+    }
+  .profile-description {
+    margin: 20px 0;
+    text-align: left;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1em;
+    font-family: "Macan";
+  }
+
+  .profile-description h3 {
+    margin: 0 0 10px;
+    font-size: 1em;
+  }
+
+  .messages-btn {
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}

@@ -1,26 +1,36 @@
-import { useSelector } from 'react-redux'
-import { OrderList } from '../cmps/OrderList'
-import { orderService } from '../services/order/order.service.local'
-import { loadOrders } from '../store/actions/order.actions'
+import React, { useEffect, useState } from 'react';
+import { orderService } from '../services/order/order.service.local';
+import { OrderList } from '../cmps/OrderList';
+import { SummarySection } from '../cmps/SummarySection';
+import { GigFilter } from '../cmps/GigFilter';
+import { GigList } from '../cmps/GigList';
 
 export function OrderIndex() {
-    const orders = useSelector(storeState => storeState.orderModule.orders)
+    const [orders, setOrders] = useState([]);
+    const [sortedGigs, setSortedGigs] = useState([]);
 
-    // async function onLoadOrders() {
-    //     try {
-    //         const orders = await loadOrders()
-    //         return orders
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // }
-    // const orders = onLoadOrders()
-    if (!orders) return <div>Loading...</div>
-    console.log('orders',orders);
-    
-    return <section className="order-index">
-        <h1>Manage Orders</h1>
-        {orders &&
-            <OrderList orders={orders} />}
-    </section>
+    const fetchOrders = async () => {
+        try {
+            const orders = await orderService.query();
+            setOrders(orders);
+            setSortedGigs(orders); // Initialize sortedGigs with all orders
+        } catch (error) {
+            console.error("Failed to load orders", error);
+        }
+    };
+
+    useEffect(() => {
+        fetchOrders();
+    }, []);
+
+    if (!orders.length) return <div>Loading...</div>;
+
+    return (
+        <section className="order-index">
+            <h1>Manage Orders</h1>
+            <SummarySection orders={orders} />
+            <GigFilter gigs={orders} setSortedGigs={setSortedGigs} />
+            <OrderList orders={sortedGigs} fetchOrders={fetchOrders} />
+        </section>
+    );
 }
