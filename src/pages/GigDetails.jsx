@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { addGigMsg, loadGig } from "../store/actions/gig.actions"
 import { PackModal } from "../cmps/PackModal"
-import { HeroCarousel } from "../cmps/DetailsMainCarousel"
+import { DetailsMainCarousel } from "../cmps/DetailsMainCarousel"
 import { DetailsHeader } from "../cmps/DetailsHeader"
 import { DetailsReviews } from "../cmps/DetailsReviews"
 import { DetailsReview } from "../cmps/DetailsReview"
@@ -30,8 +30,9 @@ export function GigDetails() {
               <HeroCarousel gig={gig} />
             </section>
             <div>
-              <DetailsAbout gig={gig} />
-              {/* <DetailsReview gig={gig}/> */}
+              <DetailsHeader gig={gig} />
+              {/* <HeroCarousel images={images} /> */}
+              <DetailsMainCarousel imgUrls={gig.imgUrls} />
             </div>
             {/* <PackageComparison/> */}
             <DetailsReviews gig={gig} />

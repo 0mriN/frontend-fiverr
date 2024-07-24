@@ -1,0 +1,45 @@
+.details-main-carousel {
+  position: relative;
+  width: 80%;
+  margin: auto;
+
+  .hero-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .hero-carousel-image {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+
+  // .thumbnail-container {
+  //   margin-top: 20px;
+  // }
+
+  .thumbnail-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px;
+    border: 2px solid transparent;
+
+    &.active {
+      opacity: 1;
+    }
+
+    &:not(.active) {
+      opacity: .5;
+    }
+
+    .thumbnail-image {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+}
