@@ -67,9 +67,12 @@
 }
 
 //
-.line {
-    width: 100%;
-    border-bottom: solid 1px #ccc   ;
+.border-bottom {
+    border-bottom: solid 1px #ccc;
+}
+
+.main-padding {
+    padding: 0px rem(32px);
 }
 
 // Media helpers
@@ -96,4 +99,5 @@
 
 .transparent {
     opacity: 0;
+    pointer-events: none
 }
