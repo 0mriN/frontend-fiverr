@@ -24,6 +24,7 @@ import introVideo from '../assets/img/How-Fiverr-Works-homepage.mp4'
 import { HomePrimeCategoryFilter } from '../cmps/HomePrimeCategoryFilter'
 import { setFilter } from '../store/actions/gig.actions'
 import { useSelector } from 'react-redux'
+import { SearchBar } from '../cmps/SearchBar'
 
 
 
@@ -50,11 +51,12 @@ export function HomePage() {
             <div className="hero-box-container">
                 <div className="hero-box">
                     <h1>Find the right <span>freelance</span> service, right away</h1>
-                    <div className="search-bar">
-                        <input type="text" placeholder="Search for any service..." />
+                    <div className="search-bar-container">
+                        <SearchBar trackInViewport={true}/>
+                        {/* <input type="text" placeholder="Search for any service..." />
                         <button>
                             <img src={searchBtn} alt="searchbtn" className='search-btn' />
-                        </button>
+                        </button> */}
                     </div>
                 </div>
                 <div className="hero-images">
