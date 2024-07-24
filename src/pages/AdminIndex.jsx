@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { loadUsers, removeUser } from '../store/actions/user.actions'
+// import { loadUsers, removeUser } from '../store/actions/user.actions'
 import { useNavigate } from 'react-router'
 
 export function AdminIndex() {
