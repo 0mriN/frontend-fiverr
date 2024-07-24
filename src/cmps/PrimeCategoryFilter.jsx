@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router"
 import { getPrimeCategories } from "../services/util.service"
+import { showSearchBar } from "../store/actions/system.actions"
 
 
 export function PrimeCategoryFilter({ setFilterBy, filterBy }) {
@@ -9,6 +10,7 @@ export function PrimeCategoryFilter({ setFilterBy, filterBy }) {
 
     function onClickCategory(category) {
         setFilterBy({ ...filterBy, tags: [category] })
+        showSearchBar(true)
         navigate('/gig')
     }
 
