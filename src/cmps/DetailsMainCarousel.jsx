@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
+import { CustomLeftArrow, CustomRightArrow } from './CarouselArrows'
 
 const responsive = {
   superLargeDesktop: {
@@ -20,6 +21,10 @@ const responsive = {
     items: 1
   }
 }
+
+
+
+export { CustomLeftArrow, CustomRightArrow }
 
 const thumbnailResponsive = {
   superLargeDesktop: {
@@ -46,7 +51,7 @@ export function DetailsMainCarousel({ imgUrls }) {
 
   const handleThumbnailClick = (index) => {
     setCurrentIndex(index)
-    mainCarouselRef.current.goToSlide(index)
+    mainCarouselRef.current.goToSlide(index, true)
   }
 
   return (
@@ -55,9 +60,9 @@ export function DetailsMainCarousel({ imgUrls }) {
         ref={mainCarouselRef}
         responsive={responsive}
         showDots={false}
-        arrows={true}
+        arrows
         infinite={false}
-        customTransition="all .5"
+        customTransition="all .5s"
         transitionDuration={500}
         containerClass="carousel-container"
         itemClass="carousel-item-padding-40-px"
@@ -66,10 +71,12 @@ export function DetailsMainCarousel({ imgUrls }) {
         swipeable={true}
         draggable={true}
         afterChange={(previousSlide, { currentSlide }) => setCurrentIndex(currentSlide)}
+        customLeftArrow={<CustomLeftArrow/>}
+        customRightArrow={<CustomRightArrow/>}
       >
         {imgUrls.map((image, index) => (
           <div key={index} className="hero-image-container">
-            <img src={image} className="hero-carousel-image" />
+            <img src={image} className="hero-carousel-image" alt={`Slide ${index}`} />
           </div>
         ))}
       </Carousel>
@@ -87,10 +94,10 @@ export function DetailsMainCarousel({ imgUrls }) {
         {imgUrls.map((image, index) => (
           <div
             key={index}
-            className={`thumbnail-image-container ${index === currentIndex ? 'active' : ''}`}
+            className={`thumbnail-image-container`}
             onClick={() => handleThumbnailClick(index)}
           >
-            <img src={image} alt='img' className="thumbnail-image" />
+            <img src={image} alt={`Thumbnail ${index}`} className={`thumbnail-image ${index === currentIndex ? 'active' : ''}`} />
           </div>
         ))}
       </Carousel>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 import {userService} from '../services/user/user.service.local'
 import country from '../assets/img/svg/country.svg'
 import member from '../assets/img/svg/member.svg'
@@ -8,15 +8,15 @@ export function ProfilePage() {
     <img src =''></img>
 // const img=user.imgUrl
     useEffect(() => {
-        const loggedInUser = (userService.getLoggedinUser());
+        const loggedInUser = (userService.getLoggedinUser())
         console.log(loggedInUser)
         if (loggedInUser) {
-            setUser(loggedInUser);
+            setUser(loggedInUser)
         }
-    }, []);
+    }, [])
 
     if (!user) {
-        return <div>Loading...</div>;
+        return <div>Loading...</div>
     }
 
     return (
@@ -40,5 +40,5 @@ export function ProfilePage() {
             <button className="messages-btn">Messages</button>
             </div>
         </div>
-    );
+    )
 }

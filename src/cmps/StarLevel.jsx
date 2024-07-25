@@ -1,4 +1,4 @@
-import { gigService } from "../services/gig";
+import { gigService } from "../services/gig"
 import levelStar from "../assets/img/svg/levelStar.svg"
 
 export function StarLevel({ gig }) {

@@ -26,8 +26,8 @@ export function GigFilter({ gigs }) {
 
         <article className="title-container">
             <ul className="breadcrumbs flex align-center">
-                <li className="flex align-center"><Link to="/"><img src={homeBreadcrumb} alt="Fiverr"></img></Link>&nbsp;</li>
-                <li> / &nbsp;{filterBy.tags[0]} </li>
+                <li className="flex align-center"><Link to="/"><img src={homeBreadcrumb} alt="Fiverr"></img></Link>&nbsp</li>
+                <li> / &nbsp{filterBy.tags[0]} </li>
             </ul>
             <h1>Website Development</h1>
             <p className="index-subtitle">Create, build, and develop your website with skilled website developers</p>
