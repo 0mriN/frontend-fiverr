@@ -1,0 +1,15 @@
+.order-list {
+    width: 100%;
+    border: 1px solid lightgray;
+    border-collapse: collapse;
+
+    .order-list-header {
+        justify-content: space-between;
+
+        border-bottom: solid 1px lightgray;
+    }
+
+    .order-list-body {
+        width: 100%;
+    }
+}

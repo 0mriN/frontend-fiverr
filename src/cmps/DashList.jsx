@@ -1,21 +1,22 @@
 import React from 'react'
-import { OrderPreview } from "./OrderPreview"
+import { DashPreview } from "./DashPreview"
 
-export function OrderList({ orders }) {
+export function DashList({ orders, fetchOrders }) {
     return (
         <table className="order-list">
             <thead className="order-list-header">
                 <tr>
-                    <th>Seller</th>
-                    <th>Gig Title</th>
-                    <th>Delivery Date</th>
-                    <th>Price</th>
+                    <td>BUYER</td>
+                    <td>GIG</td>
+                    <td>DELIVERED AT</td>
+                    <td>TOTAL</td>
+                    <td>STATUS</td>
                 </tr>
             </thead>
             <tbody className="order-list-body">
                 {orders.map(order => (
                     <tr key={order._id}>
-                        <OrderPreview order={order} />
+                        <DashPreview order={order} fetchOrders={fetchOrders} />
                     </tr>
                 ))}
             </tbody>
