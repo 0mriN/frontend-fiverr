@@ -292,7 +292,7 @@
                 align-items: center;
                 display: flex;
                 line-height: 24px;
-              
+
                 .full-name {
                   color: #404145;
                   font-size: 18px;
@@ -368,14 +368,15 @@
           }
         }
 
-        .contact-btns{
+        .contact-btns {
           display: flex;
-          gap:16px;
+          gap: 16px;
           line-height: 20.8;
           color: #62646a;
-          margin-bottom:20px;
+          margin-bottom: 20px;
 
-          .contact-me, .book{
+          .contact-me,
+          .book {
             align-items: flex-start;
             border: 1px solid #222325;
             border-radius: 4px;
@@ -647,40 +648,40 @@
                 }
 
               }
-            }
-          }
 
-          .modal-footer {
-            color: #404145;
-            display: flex;
-            flex-direction: column;
-            padding: 0 24px 20px 24px;
+              .modal-footer {
+                color: #404145;
+                display: flex;
+                flex-direction: column;
+                padding: 0 24px 20px 24px;
 
-            .continue-btn {
-              align-items: flex-start;
-              background-color: #000;
-              border: 1px solid #0000;
-              border-radius: 4px;
-              color: #fff;
-              font-weight: 600;
-              line-height: 16px;
-              padding: 12px 24px;
-              text-align: center;
-              font-size: 16px;
-              margin: 20px 0px;
-
-              &:hover {
-                border: 1px solid #0000;
-                background-color: #404145;
-
-              }
-
-              span {
-                float: right;
-
-                svg {
+                .continue-btn {
+                  align-items: flex-start;
+                  background-color: #000;
+                  border: 1px solid #0000;
+                  border-radius: 4px;
                   color: #fff;
-                  fill: #fff;
+                  font-weight: 600;
+                  line-height: 16px;
+                  padding: 12px 24px;
+                  text-align: center;
+                  font-size: 16px;
+                  margin: 20px 0px;
+
+                  &:hover {
+                    border: 1px solid #0000;
+                    background-color: #404145;
+
+                  }
+
+                  span {
+                    float: right;
+
+                    svg {
+                      color: #fff;
+                      fill: #fff;
+                    }
+                  }
                 }
               }
             }

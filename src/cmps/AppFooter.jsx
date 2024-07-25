@@ -12,9 +12,9 @@ export function AppFooter() {
 
 	return (
 		<footer className="app-footer ">
-			 <div className='top-line'></div>
+			 {/* <div className='top-line'></div> */}
 			<div className="footer-wrapper">
-				<div className="footer-grid">
+				{/* <div className="footer-grid">
 
 					<div className="footer-col">
 						<article>
@@ -122,7 +122,7 @@ export function AppFooter() {
 						</article>
 					</div>
 
-				</div>
+				</div> */}
 				<div className="footer-bottom">
 					<div className="footer-bottom-left">
 						<span className="footer-logo">

@@ -46,6 +46,7 @@ export function PackModal({ gig }) {
   }
 
   const handleContinue = (packageKey) => {
+    console.log('packageKey:', packageKey);
     setSelectedPackage(packages[packageKey])
     onContinue(selectedPackage)
     // setShowOrderModal(true)
@@ -154,15 +155,16 @@ export function PackModal({ gig }) {
                       </div>
                     </div>
                   </article>
+                  <footer className="modal-footer">
+                    <button className="continue-btn" onClick={() => handleContinue(key)}>Continue
+                      <span className="arrow-icon">{arrowR}</span></button>
+                  </footer>
                 </div>
               ))}
             </div>
           </div>
 
-          <footer className="modal-footer">
-            <button className="continue-btn" onClick={() => handleContinue(key)}>Continue
-              <span className="arrow-icon">{arrowR}</span></button>
-          </footer>
+
         </div>
         <div className='contact-wrapper'>
           <button className="contact-btn">Contact me</button>
