@@ -1,17 +1,23 @@
 .gig-details {
 
   display: grid;
-  grid-template-columns: rem(712px) 1fr;
+  // grid-template-columns: minmax(auto,rem(738px)) auto;
+  grid-template-columns: rem(760px) auto;
   background-color: #fff;
   line-height: 24px;
   padding: 32px 32px 0px;
 
   .gig-details-main {
+    // max-width: rem(712px);
     grid-column: 1;
-    padding: 0 rem(32px);
+    padding: 0 0 0 rem(48px);
+
+    .gig-details-wrapper {
+      width: 100%;
+    }
 
     .main-carousel {
-      width: 100%;
+      // width: 712px;
       height: em(575px);
     }
 
@@ -56,7 +62,7 @@
         color: #62646a;
         gap: 20px;
         line-height: 24px;
-        max-width: rem(628px);
+        width: 100%;
 
         img {
           max-width: rem(64px);
@@ -402,7 +408,9 @@
 
   .gig-buy-modal {
     grid-column: 2;
-    padding: 0px 0px 32px 40px;
+    // padding: 0px 0px 32px 80px;
+    padding: 0px 0px rem(32px) rem(63px);
+    justify-self: center;
 
 
     .modal {
@@ -411,7 +419,7 @@
       margin: 0px 0px 16px;
       padding: 0px 0px 32px;
       transform: translate3d(0px, 0px, 0px);
-      width: 400px;
+      width: rem(415px);
       top: 140px;
       height: min-content;
       position: sticky;

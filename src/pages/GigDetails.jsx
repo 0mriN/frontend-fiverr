@@ -26,7 +26,7 @@ export function GigDetails() {
     <section className="gig-details">
       <div className="gig-details-main">
         {gig ? (
-          <div>
+          <div className="gig-details-wrapper">
             <DetailsHeader gig={gig} />
             <section className="main-carousel">
             <DetailsMainCarousel imgUrls={gig.imgUrls} />
