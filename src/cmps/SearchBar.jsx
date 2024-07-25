@@ -4,6 +4,7 @@ import { setFilter } from '../store/actions/gig.actions'
 import { useNavigate } from 'react-router'
 import { useVisibility } from '../customHooks/useVisibility'
 import { SHOW_SEARCH_BAR } from '../store/reducers/system.reducer'
+import { showSearchBar } from '../store/actions/system.actions'
 
 export function SearchBar({ trackInViewport = false }) {
     const showTopSearchBar = useSelector(storeState => storeState.systemModule.showSearchBar)
@@ -37,6 +38,8 @@ export function SearchBar({ trackInViewport = false }) {
         ev.preventDefault()
         if (!filterBy.title) return
         onSetFilter(filterBy)
+        showSearchBar(true)
+        // dispatch(action)
         navigate('/gig')
     }
 

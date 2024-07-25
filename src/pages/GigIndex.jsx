@@ -33,9 +33,6 @@ export function GigIndex() {
     if (!gigs) return <div>Loading...</div>
     return (
         <main className="gig-index">
-            <header>
-                
-            </header>
             <GigFilter gigs={gigs}/>
             <GigList
                 gigs={gigs}

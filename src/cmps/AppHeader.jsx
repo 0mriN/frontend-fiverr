@@ -35,9 +35,9 @@ export function AppHeader() {
 		}
 	}
 
-	return <section className="app-header">
-		<header>
-			<nav>
+	return <section className="app-header full">
+		<header className="main-container full border-bottom">
+			<nav className="main-padding">
 				<div className="nav-hamburger">
 					<svg xmlns="http://www.w3.org/2000/svg" width="23" height="19" viewBox="0 0 23 19"><rect y="16" width="23" height="3" rx="1.5" fill="#555" /><rect width="23" height="3" rx="1.5" fill="#555" /><rect y="8" width="23" height="3" rx="1.5" fill="#555" /></svg>
 				</div>
@@ -75,9 +75,9 @@ export function AppHeader() {
 				{/* {isSignUpModalOpen && <SignUpModal onClose={() => setIsSignUpModalOpen(false)} />} */}
 			</nav>
 		</header>
-		<div className="line full"></div>
+		{/* <div className="line full"></div> */}
 		<PrimeCategoryFilter setFilterBy={onSetFilterBy} filterBy={filterBy} />
-		<div className="line full"></div>
+		{/* <div className="line full"></div> */}
 
 	</section >
 

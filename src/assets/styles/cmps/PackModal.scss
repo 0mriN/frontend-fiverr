@@ -1,166 +1,164 @@
 .gig-buy-modal {
   // position: sticky;
-  top: 20px; // Adjust this value to control how far from the top the modal sticks
+  // top: 20px; // Adjust this value to control how far from the top the modal sticks
   // display: flex;
   // flex-direction: column;
   // z-index: 1010;
   // display: inline;
-  overflow: none;
+  // overflow: none;
   // position: absolute;
-  position: fixed;
-  left: 950px;
-  top: 100px;
+  // position: fixed;
+  // left: 950px;
+  // top: 100px;
   
   .modal {
-    background-color: white;
-    border-radius: 5px;
-    width: 400px;
-    padding: 20px;
+    // background-color: white;
+    // border-radius: 5px;
+    // width: 400px;
+    // padding: 20px;
 
     // position: absolute;
     
-    .modal-content {
-      background-color: white;
-      position: sticky; 
-      border-radius: 5px;
-      position: -webkit-sticky !important;
-      top: 10px;
-    }
+    // .modal-content {
+    //   background-color: white;
+    //   position: sticky; 
+    //   border-radius: 5px;
+    //   position: -webkit-sticky !important;
+    //   top: 10px;
+    // }
 
-    .modal-body {
-      text-align: center;
-      overflow-y: auto; // Allow scrolling within modal body if content overflows
-      max-height: calc(100vh - 100px); // Adjust max height as needed
-      border: solid 1px gray;
-    }
+   
 
     .modal-header {
-      display: flex;
-      border-bottom: 1px solid #ccc;
+      // display: flex;
+      // border-bottom: 1px solid #ccc;
     }
 
-    h2 {
-      margin-top: 0;
-    }
+    // h2 {
+    //   margin-top: 0;
+    // }
 
     .extras {
-      margin-top: 20px;
+      // margin-top: 20px;
 
       label {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
+        // display: flex;
+        // align-items: center;
+        // margin-bottom: 10px;
+        // background-color: black;
+        // border: 5px solid orange;
 
         input {
-          margin-right: 10px;
+          // margin-right: 10px;
         }
       }
     }
 
-    .continue-btn {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      border-radius: 4px;
-      font-size: 16px;
+    // .continue-btn {
+    //   background-color: #007bff;
+    //   color: white;
+    //   border: none;
+    //   padding: 10px 20px;
+    //   cursor: pointer;
+    //   border-radius: 4px;
+    //   font-size: 16px;
+    // }
+
+    // .tab {
+    //   flex: 1;
+    //   text-align: center;
+    //   padding: 10px;
+    //   cursor: pointer;
+    //   // border-bottom: 2px solid transparent;
+    //   border: solid 1px gray;
+    //   background-color: white;
+    //   // 
+    //   // width: 104px;
+
+    //   &.active {
+    //     // border-bottom: 2px solid black;
+    //     font-weight: bold;
+    //   }
+    // }
+
+    .modal-body {
+      // text-align: center;
+      // overflow-y: auto; // Allow scrolling within modal body if content overflows
+      // max-height: calc(100vh - 100px); // Adjust max height as needed
+      // // border: solid 1px gray;
     }
 
-    .tab {
-      flex: 1;
-      text-align: center;
-      padding: 10px;
-      cursor: pointer;
-      border-bottom: 2px solid transparent;
-      border: solid 1px gray;
-      background-color: white;
-      height: 58px;
-      width: 104px;
+    
 
-      &.active {
-        border-bottom: 2px solid black;
-        font-weight: bold;
-      }
-    }
+    // .info-icon {
+    //   font-size: 12px;
+    //   cursor: pointer;
+    //   margin-right: 24px;
+    //   margin-left: 8px;
+    // }
 
-    .tab-content {
-      display: none;
+    // .icon {
+    //   margin-right: 5px;
+    //   width: 16px;
+    //   height: 16px;
+    // }
 
-      &.active {
-        display: block;
-      }
-    }
+    // .toggle-details {
+    //   text-decoration: none;
+    //   color: black;
+    // }
 
-    .info-icon {
-      font-size: 12px;
-      cursor: pointer;
-      margin-right: 24px;
-      margin-left: 8px;
-    }
+    // .continue-btn {
+    //   background-color: black;
+    //   color: white;
+    //   padding: 10px;
+    //   border: none;
+    //   cursor: pointer;
+    // }
 
-    .icon {
-      margin-right: 5px;
-      width: 16px;
-      height: 16px;
-    }
+    // .arrow-icon {
+    //   margin-left: 10px;
+    // }
 
-    .toggle-details {
-      text-decoration: none;
-      color: black;
-    }
+    // .compare-packages {
+    //   font-size: 12px;
+    //   color: grey;
+    // }
 
-    .continue-btn {
-      background-color: black;
-      color: white;
-      padding: 10px;
-      border: none;
-      cursor: pointer;
-    }
+    // .modal-footer {
+    //   text-align: center;
+    //   padding-top: 10px;
+    //   margin-top: 20px;
+    // }
 
-    .arrow-icon {
-      margin-left: 10px;
-    }
+    // .contact-btn {
+    //   background-color: white;
+    //   border: 1px solid black;
+    //   padding: 10px;
+    //   cursor: pointer;
+    //   width: calc(100% - 24px);
+    // }
 
-    .compare-packages {
-      font-size: 12px;
-      color: grey;
-    }
+    // .package-info {
+    //   display: flex;
+    //   justify-content: space-between;
+    //   align-items: center;
+    //   margin-bottom: 8px;
+    //   margin-top: 10px;
 
-    .modal-footer {
-      text-align: center;
-      padding-top: 10px;
-      margin-top: 20px;
-    }
+      // h3 {
+      //   margin-left: 24px;
+      //   font-size: 16px;
+      // }
+    // }
 
-    .contact-btn {
-      background-color: white;
-      border: 1px solid black;
-      padding: 10px;
-      cursor: pointer;
-      width: calc(100% - 24px);
-    }
+    // p {
+    //   margin-left: 24px;
+    //   margin-right: 24px;
+    // }
 
-    .package-info {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 8px;
-      margin-top: 10px;
-
-      h3 {
-        margin-left: 24px;
-        font-size: 16px;
-      }
-    }
-
-    p {
-      margin-left: 24px;
-      margin-right: 24px;
-    }
-
-    .modal-price {
-      font-size: 20px;
-    }
+    // .modal-price {
+    //   font-size: 20px;
+    // }
   }
 }
