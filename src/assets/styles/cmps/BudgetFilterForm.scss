@@ -1,0 +1,68 @@
+.budget-filter-form {
+    padding: 20px;
+    position: absolute;
+    z-index: 10000;
+    transform: translate(79px, 155px);
+
+    height: max-content;
+    width: 316px;
+
+    background-color: #fff;
+    border: 1px solid #dadbdd;
+    border-radius: 8px;
+    box-shadow: 0 12px 18px rgba(0, 0, 0, 0.1411764706);
+
+    .radio-container {
+        padding-block-end: 20px;
+
+        .filter-label {
+            border-radius: 8px;
+
+            &:hover {
+                background-color: #fafafa;
+            }
+        }
+    }
+
+    .filter-label {
+        border-radius: 8px;
+
+        &:hover {
+            background-color: #fff;
+        }
+    }
+
+    .btn-container {
+        display: flex;
+        justify-content: space-between;
+
+
+        border-top: 1px solid #dadbdd;
+        padding: 0;
+        padding-block-start: 15px;
+
+        .btn {
+            cursor: pointer;
+
+            height: 46px;
+            width: 87px;
+
+            border: 0;
+            padding: 5px 10px;
+
+            font-size: 16px;
+
+            &.apply-btn {
+                background-color: #222325;
+                color: #fafafa;
+
+                border-radius: 8px;
+            }
+
+            &.clear-btn {
+                background-color: #fff;
+                color: #62646a;
+            }
+        }
+    }
+}
