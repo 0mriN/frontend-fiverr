@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
-import { addGigMsg, loadGig } from "../store/actions/gig.actions"
+import { loadGig } from "../store/actions/gig.actions"
 import { PackModal } from "../cmps/PackModal"
 import { DetailsMainCarousel } from "../cmps/DetailsMainCarousel"
 
@@ -29,12 +29,9 @@ export function GigDetails() {
           <div>
             <DetailsHeader gig={gig} />
             <section className="main-carousel">
-              {/* <DetailsMainCarousel gig={gig} /> */}
+            <DetailsMainCarousel imgUrls={gig.imgUrls} />
             </section>
-            <div>
-              <DetailsAbout gig={gig} />
-              {/* <DetailsReview gig={gig}/> */}
-            </div>
+            <DetailsAbout gig={gig} />
             {/* <PackageComparison/> */}
             <DetailsReviews gig={gig} />
           </div>

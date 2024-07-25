@@ -1,51 +1,68 @@
 import react from "react"
+import profileImg from "../../src/assets/img/profile.png"
+import { StarLevel } from "../cmps/StarLevel"
+import ratingStar from '../assets/img/svg/RatingStar.svg'
 
-import { StarLevel } from "../cmps/StarLevel" 
+
 export function DetailsAbout({ gig }) {
+  const avgRating = gigService.getAvgRating(gig.reviews)
+
 
   return (
     <section className="details-about-section">
-      <p className="about-title">About this gig</p>
+      <header>
+        <h2 className="about-title">About this gig</h2>
+      </header>
       <div className="desc-div">
-        <div
-          className="about-desc"
-          dangerouslySetInnerHTML={{ __html: gig.description }}
-        ></div>
+        <div className="about-desc" dangerouslySetInnerHTML={{ __html: gig.description }}></div>
       </div>
-      <hr className="divider" />
+      <div className="divider"></div>
+
+      <div className="disclaimer">
+        <header>
+          <h6><span className="disclaimer-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0.25C3.72009 0.25 0.25 3.72134 0.25 8C0.25 12.2812 3.72009 15.75 8 15.75C12.2799 15.75 15.75 12.2812 15.75 8C15.75 3.72134 12.2799 0.25 8 0.25ZM8 3.6875C8.72487 3.6875 9.3125 4.27513 9.3125 5C9.3125 5.72487 8.72487 6.3125 8 6.3125C7.27513 6.3125 6.6875 5.72487 6.6875 5C6.6875 4.27513 7.27513 3.6875 8 3.6875ZM9.75 11.625C9.75 11.8321 9.58209 12 9.375 12H6.625C6.41791 12 6.25 11.8321 6.25 11.625V10.875C6.25 10.6679 6.41791 10.5 6.625 10.5H7V8.5H6.625C6.41791 8.5 6.25 8.33209 6.25 8.125V7.375C6.25 7.16791 6.41791 7 6.625 7H8.625C8.83209 7 9 7.16791 9 7.375V10.5H9.375C9.58209 10.5 9.75 10.6679 9.75 10.875V11.625Z"></path></svg></span>Delivery style preference</h6>
+        </header>
+        <p>Please inform the freelancer of any preferences or concerns regarding the use of AI tools in the completion and/or delivery of your order.</p>
+      </div>
       <div
         className="about-file-details"
         dangerouslySetInnerHTML={{ __html: gig.aboutFiles }}
       ></div>
       <div className="about-get-to-know">
-        <h4>Get to know {gig.owner.fullname}</h4>
+        <h2>
+          <span>Get to know {gig.owner.fullname}</span>
+        </h2>
         <div className="about-get-to-know-details">
-          <img
-            src="https://fiverr-res.cloudinary.com/image/upload/t_profile_original,q_auto,f_auto/v1/attachments/profile/photo/f91b8760b6eae417acc9fc0adf178b80-1709314771112/401bbbdd-fbbf-4ce2-9ab9-fe68217db026.jpg"
-            alt=""
-          />
-          <div className="get-to-know-container">
-            <p>{gig.getToKnowDesc}</p>
-            <div className="get-to-know-container-inside">
-              <svg
-                width="16"
-                height="15"
-                viewBox="0 0 16 15"
-                xmlns="http://www.w3.org/2000/svg"
-                className=""
-              >
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M16 5.81285C16 5.98299 15.875 6.14367 15.75 6.26654L12.2596 9.61248L13.0865 14.3384C13.0962 14.4045 13.0962 14.4612 13.0962 14.5274C13.0962 14.7732 12.9808 15 12.7019 15C12.5673 15 12.4327 14.9527 12.3173 14.8866L8 12.656L3.68269 14.8866C3.55769 14.9527 3.43269 15 3.29808 15C3.01923 15 2.89423 14.7732 2.89423 14.5274C2.89423 14.4612 2.90385 14.4045 2.91346 14.3384L3.74038 9.61248L0.240385 6.26654C0.125 6.14367 0 5.98299 0 5.81285C0 5.5293 0.298077 5.41588 0.538462 5.37807L5.36539 4.68809L7.52885 0.387524C7.61539 0.207939 7.77885 0 8 0C8.22115 0 8.38462 0.207939 8.47115 0.387524L10.6346 4.68809L15.4615 5.37807C15.6923 5.41588 16 5.5293 16 5.81285Z"
-                  className="st-current"
-                ></path>
-              </svg>
-              <p>{gig.reviews[0].rating}</p><p>     |             </p>
-              <div className="gig-details-rate-comp"> <StarLevel gig={gig}/></div>
-              
+          <img src={gig.owner.imgUrl} alt={profileImg} />
+
+          <div className='gig-detail-owner-info'>
+            <div className='gig-details-header-owner'>
+              <div className='name-wrapper'>
+                <div className='full-name single-line-text'>{gig.owner.fullname}</div>
+              </div>
+            </div>
+            <div className='rate-wrapper'>
+              <div className='gig-owner-rate'>
+                <img src={ratingStar} alt="ratingstar" />
+                {` ${avgRating}`}
+                <span>{`(${gig.reviews.length})`}</span>
+              </div>
+              <div className='border-line'></div>
+              <div className='gig-owner-level'>
+                <StarLevel gig={gig} />
+              </div>
             </div>
           </div>
+
+
+        </div>
+        <div className="contact-btns">
+          <button className="contact-me">
+            Contact Me
+          </button>
+          <button className="book">
+            Book a consultation
+          </button>
         </div>
       </div>
     </section>
