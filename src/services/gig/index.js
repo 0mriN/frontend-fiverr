@@ -18,7 +18,7 @@ function getDefaultFilter() {
     return {
         title: '',
         tags: [],
-        sort: 'recommended',
+        sort: 'bestSelling',
         // sortField: '',
     }
 }
