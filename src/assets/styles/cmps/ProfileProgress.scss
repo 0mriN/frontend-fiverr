@@ -1,0 +1,74 @@
+.profile-progress {
+    width: rem(400px);
+    max-height: rem(600px);
+    border: 1px solid #dadbdd;
+    border-radius: 5px;
+    margin: 0px 40px 60px 0px;
+    padding: 30px 20px 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    p {
+        margin: 0;
+    }
+
+    .profile-wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        .img-container {
+            width: rem(120px);
+            height: rem(120px);
+
+            img {
+                border-radius: 50%;
+                display: inline;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .user-desc {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 0 0 20px;
+            max-height: rem(120px);
+            margin-inline-start: 20px;
+
+            .profile-item {
+                padding: 8px;
+
+
+            }
+        }
+    }
+
+    .progress-wrapper {
+
+        .progress-item {
+            margin: 30px 0;
+
+            .text-wrapper {
+                display: flex;
+                justify-content: space-between;
+                margin: 0 0 10px;
+            }
+
+            .progress-bar {
+                background-color: #dadbdd;
+                border-radius: 4px;
+                overflow: hidden;
+                width: 100%;
+                height: 20px;
+
+                .progress-fill {
+                    background-color: #1DBF73;
+                    height: 100%;
+                    transition: width 0.3s ease;
+
+                }
+            }
+        }
+    }
+}

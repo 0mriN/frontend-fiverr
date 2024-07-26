@@ -1,25 +1,40 @@
 .summary-section {
     display: flex;
-    justify-content: space-around;
-    margin: 20px 0;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #dadbdd;
+    justify-content: space-evenly;
+    margin: 0 0 rem(40px);
+    padding: rem(30px) 0px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: rem(898px); //check responsiveness
 
     .summary-item {
-        text-align: center;
+        display: flex;
+        flex-direction: column;
+        flex-basis: 0%;
+        align-items: center;
+        min-height: rem(120px);
+        justify-content: space-between;
+        padding: 0 10px;
 
-        h3 {
-            margin: 0;
-            font-size: 1.2rem;
-            color: #333;
+        span {
+            color: #74767E;
+            font-weight: 600;
+            text-align: center;
+            font-size: 16px;
         }
 
-        p {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 5px 0 0;
+        h3 {
+            color: #565454;
+            font-size: 28px;
+            font-weight: 300;
+        }
+
+        &:not(:last-child) {
+            border-right: 1px solid #dadbdd;
+            padding-right: rem(44px);
         }
     }
 }

@@ -10,39 +10,57 @@ export function DashPreview({ order, fetchOrders }) {
         return gig.daysToMake
     }
 
-    const handleStatusChange = async (event) => {
+    async function handleStatusChange(event) {
         const newStatus = event.target.value
         try {
             await orderService.update(order._id, newStatus)
             setCurrentStatus(newStatus)
-            fetchOrders()  // Trigger re-fetching of orders
+            fetchOrders()
         } catch (error) {
             console.error("Failed to update order status", error)
         }
     }
 
+    function getSelectStyle() {
+        switch (currentStatus) {
+            case "Pending":
+                return { backgroundColor: "#ffbe5b", color: "white" };
+            case "Completed":
+                return { backgroundColor: "#1dbf73", color: "white" };
+            case "Rejected":
+                return { backgroundColor: "#c43333", color: "white" };
+            default:
+                return { backgroundColor: "white", color: "black" };
+        }
+    }
+
+
     return (
-        <>
-            <td className="order-preview flex">
+        <div className="dash-preview">
+            <div className="buyer-cols">
                 <img src={buyerImg} alt="buyer" />
                 <p>{buyer.fullname}</p>
-            </td>
-            <td>
-                <p>{gig.title}</p>
-            </td>
-            <td>
-                <p>{calcDaysToMake()}</p>
-            </td>
-            <td>
-                <p>{gig.price}</p>
-            </td>
-            <td>
-                <select value={currentStatus} onChange={handleStatusChange} className={`status ${currentStatus.toLowerCase()}`}>
-                    <option value="Pending">Pending</option>
-                    <option value="Rejected">Rejected</option>
-                    <option value="Completed">Completed</option>
+            </div>
+
+            <div className="gig-cols">
+                <span>{gig.title}</span>
+            </div>
+
+            <div className="date-cols">
+                <span>{calcDaysToMake()}</span>
+            </div>
+
+            <div className="total-cols">
+                <span>{`$${gig.price}`}</span>
+            </div>
+
+            <div className="status-cols">
+                <select value={currentStatus} onChange={handleStatusChange} className={`status ${currentStatus.toLowerCase()}`} style={getSelectStyle()}>
+                    <option value="Pending" style={{ backgroundColor: '#ffbe5b' }}>Pending</option>
+                    <option value="Completed" style={{ backgroundColor: '#1dbf73' }}>Completed</option>
+                    <option value="Rejected" style={{ backgroundColor: '#c43333' }}>Rejected</option>
                 </select>
-            </td>
-        </>
+            </div>
+        </div>
     )
 }

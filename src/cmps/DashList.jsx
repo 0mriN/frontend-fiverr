@@ -3,23 +3,17 @@ import { DashPreview } from "./DashPreview"
 
 export function DashList({ orders, fetchOrders }) {
     return (
-        <table className="order-list">
-            <thead className="order-list-header">
-                <tr>
-                    <td>BUYER</td>
-                    <td>GIG</td>
-                    <td>DELIVERED AT</td>
-                    <td>TOTAL</td>
-                    <td>STATUS</td>
-                </tr>
-            </thead>
-            <tbody className="order-list-body">
+        <div className="dash-list">
+            <div className="dash-list-header">
+                <div className='buyer-col'><h4>Buyer</h4></div>
+                <div className='gig-col'><h4>Gig</h4></div>
+                <div className='date-col'><h4>Order Date</h4></div>
+                <div className='total-col'><h4>Total</h4></div>
+                <div className='status-col'><h4>Status</h4></div>
+            </div>
                 {orders.map(order => (
-                    <tr key={order._id}>
-                        <DashPreview order={order} fetchOrders={fetchOrders} />
-                    </tr>
+                        <DashPreview order={order} fetchOrders={fetchOrders} key={order._id} />
                 ))}
-            </tbody>
-        </table>
+        </div>
     )
 }

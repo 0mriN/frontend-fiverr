@@ -156,3 +156,9 @@ export function loadFromStorage(key) {
     const data = localStorage.getItem(key)
     return (data) ? JSON.parse(data) : undefined
 }
+
+export function calculateProgress(orders,totalOrders) {
+    // const totalOrders = orders.length
+    if (totalOrders === 0) return 0
+    return Math.min((orders / totalOrders) * 100, 100)
+}

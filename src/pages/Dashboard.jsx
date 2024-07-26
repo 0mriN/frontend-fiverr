@@ -1,0 +1,49 @@
+import React, { useEffect, useState } from 'react'
+import { orderService } from '../services/order/order.service.local'
+import { DashList } from '../cmps/DashList'
+import { SummarySection } from '../cmps/SummarySection'
+import { userService } from '../services/user/user.service.local'
+import { ProfileProgress } from '../cmps/ProfileProgress'
+
+
+
+export function Dashboard() {
+    const [orders, setOrders] = useState([])
+    const [user, setUser] = useState(null)
+
+    useEffect(() => {
+        const user = (userService.getLoggedinUser())
+        if (user) {
+            setUser(user)
+        }
+    }, [])
+
+
+    const fetchOrders = async () => {
+        try {
+            const orders = await orderService.query()
+            setOrders(orders)
+        } catch (error) {
+            console.error("Failed to load orders", error)
+        }
+    }
+
+    useEffect(() => {
+        fetchOrders()
+    }, [])
+
+    if (!user) {
+        return <div>You have to log in first !</div>
+    }
+
+    return (
+        <section className="dashboard">
+            <ProfileProgress user={user} orders={orders} totalOrders={orders.length} />
+            <div className='seller-orders'>
+                <SummarySection orders={orders} />
+                <h2 className='headline'>Manage Orders</h2>
+                <DashList orders={orders} fetchOrders={fetchOrders} />
+            </div>
+        </section>
+    )
+}
