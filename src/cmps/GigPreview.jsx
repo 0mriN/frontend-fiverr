@@ -6,6 +6,8 @@ import "react-multi-carousel/lib/styles.css"
 import { responsive } from './GigCarousel'
 import { StarLevel } from './StarLevel.jsx'
 import ratingStar from '../assets/img/svg/RatingStar.svg'
+import { CustomLeftArrow, CustomRightArrow } from './CarouselArrows.jsx'
+import { CarouselDots } from './CarouselDots.jsx'
 
 export function GigPreview({ gig }) {
     const avgRating = gigService.getAvgRating(gig.reviews)
@@ -17,13 +19,17 @@ export function GigPreview({ gig }) {
         <Carousel
             swipeable={true}
             draggable={true}
-            showDots={true}
+            customDot={<CarouselDots/>}
+            showDots
+            arrows
             responsive={responsive}
             customTransition="all .5"
             transitionDuration={500}
             containerClass="carousel-container"
             dotListClass="custom-dot-list-style"
             itemClass="carousel-item-padding-40-px"
+            customLeftArrow={<CustomLeftArrow/>}
+            customRightArrow={<CustomRightArrow/>}
         >
             {imgs.map((img, idx) => (
                 <Link key={idx} to={`/gig/${gig._id}`}>
