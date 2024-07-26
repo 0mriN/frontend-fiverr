@@ -20,7 +20,7 @@ window.cs = gigService
 
 async function query(filterBy = { title: '' }) {
     var gigs = await storageService.query(GIG_KEY)
-    const { title, tags } = filterBy
+    const { title, tags, budget } = filterBy
 
     if (title) {
         const regex = new RegExp(filterBy.title, 'i')
@@ -31,6 +31,23 @@ async function query(filterBy = { title: '' }) {
             return tags.every(tag => gig.tags.includes(tag))
         })
     }
+    if (budget) {
+        switch (budget) {
+            case 'value':
+                gigs = gigs.filter(gig => gig.price < 116)
+                break;
+            case 'midRange': // 116 - 231
+                gigs = gigs.filter(gig => gig.price >= 116 && gig.price < 231)
+                break;
+            case 'highEnd':
+                gigs = gigs.filter(gig => gig.price >= 231)
+                break;
+        
+            default:
+                break;
+        }
+    }
+    
     return gigs
 }
 

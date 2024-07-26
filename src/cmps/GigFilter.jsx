@@ -11,11 +11,11 @@ import { setFilter } from "../store/actions/gig.actions"
 
 export function GigFilter({ gigs }) {
     const filterBy = useSelector(storeState => storeState.gigModule.filterBy)
-    const [isOpen, setIsOpen] = useState({ budget: false, deliveryTime: false, sort: false })
+    const [isOpen, setIsOpen] = useState({ budgetModal: false, deliveryTimeModal: false, sortModal: false })
     const [sort, setSort] = useState(filterBy.sort)
 
     useEffect(() => {
-
+        console.log('use effected');
         switch (filterBy.sort) {
             case 'bestSelling':
                 setSort('Best selling')
@@ -30,21 +30,21 @@ export function GigFilter({ gigs }) {
             default:
                 break;
         }
-    }, [filterBy])
+    }, [filterBy, isOpen])
 
     function toggleModal(type, ev) {
 
         switch (type) {
             case 'budget':
-                setIsOpen({ budget: true, deliveryTime: false, sort: false })
+                setIsOpen({ budgetModal: true, deliveryTimeModal: false, sortModal: false })
                 break;
             case 'deliveryTime':
-                setIsOpen({ budget: false, deliveryTime: true, sort: false })
+                setIsOpen({ budgetModal: false, deliveryTimeModal: true, sortModal: false })
                 break;
             case 'sort':
                 ev.preventDefault()
                 ev.stopPropagation()
-                setIsOpen({ budget: false, deliveryTime: false, sort: true })
+                setIsOpen({ budgetModal: false, deliveryTimeModal: false, sortModal: true })
                 break;
 
             default:
@@ -53,14 +53,18 @@ export function GigFilter({ gigs }) {
     }
 
     function closeModal() {
-        setIsOpen({ ...isOpen, budget: false, deliveryTime: false })
-        // setIsOpen({ ...isOpen, budget: false, deliveryTime: false, sort: false })
+        console.log('before', isOpen);
+        setIsOpen({ ...isOpen, budgetModal: false, deliveryTimeModal: false })
+        console.log('after', isOpen);
+        // setIsOpen({ budget: false, deliveryTime: false, sort: false })
         // console.log(isOpen);
     }
 
-    function onApply(ev) {
+    function applyFilter(ev, value) {
         ev.preventDefault()
         ev.stopPropagation()
+        console.log('applied', ev, value);
+        setFilter({ ...filterBy, budget: value})
         closeModal()
     }
 
@@ -81,7 +85,7 @@ export function GigFilter({ gigs }) {
                 <div className="filter-btn budget flex align-center justify-center" onClick={() => toggleModal('budget')}>
                     <p>Budget</p>
                     <svg width="16" height="16" viewBox="0 0 11 7" xmlns="http://www.w3.org/2000/svg" fill="currentFill"><path d="M5.464 6.389.839 1.769a.38.38 0 0 1 0-.535l.619-.623a.373.373 0 0 1 .531 0l3.74 3.73L9.47.61a.373.373 0 0 1 .531 0l.619.623a.38.38 0 0 1 0 .535l-4.624 4.62a.373.373 0 0 1-.531 0Z" /></svg>
-                    <BudgetFilterForm isOpen={isOpen.budget} onApply={onApply} />
+                    <BudgetFilterForm isOpen={isOpen.budgetModal} applyFilter={applyFilter} />
                 </div>
             </div>
 
@@ -89,7 +93,7 @@ export function GigFilter({ gigs }) {
                 <div className="filter-btn delivery-time flex align-center justify-center" onClick={() => toggleModal('deliveryTime')}>
                     <p>Delivery time</p>
                     <svg width="16" height="16" viewBox="0 0 11 7" xmlns="http://www.w3.org/2000/svg" fill="currentFill"><path d="M5.464 6.389.839 1.769a.38.38 0 0 1 0-.535l.619-.623a.373.373 0 0 1 .531 0l3.74 3.73L9.47.61a.373.373 0 0 1 .531 0l.619.623a.38.38 0 0 1 0 .535l-4.624 4.62a.373.373 0 0 1-.531 0Z" /></svg>
-                    <DeliveryTimeFilterForm isOpen={isOpen.deliveryTime} onApply={onApply} />
+                    <DeliveryTimeFilterForm isOpen={isOpen.deliveryTimeModal} applyFilter={applyFilter} />
                 </div>
             </div>
         </article>
@@ -100,7 +104,7 @@ export function GigFilter({ gigs }) {
                 <li className="sort-by">
                     <div className="form-container" onClick={() => toggleModal('sort', event)}>
                         <p>Sort By: <span>{sort} <svg width="16" height="16" viewBox="0 0 11 7" xmlns="http://www.w3.org/2000/svg" fill="currentFill"><path d="M5.464 6.389.839 1.769a.38.38 0 0 1 0-.535l.619-.623a.373.373 0 0 1 .531 0l3.74 3.73L9.47.61a.373.373 0 0 1 .531 0l.619.623a.38.38 0 0 1 0 .535l-4.624 4.62a.373.373 0 0 1-.531 0Z" /></svg></span></p>
-                        <SortGigForm isOpen={isOpen.sort} />
+                        <SortGigForm isOpen={isOpen.sortModal} />
                     </div>
                 </li>
             </ul>
