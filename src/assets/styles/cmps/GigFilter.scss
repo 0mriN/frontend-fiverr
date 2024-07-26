@@ -65,14 +65,29 @@
         }
     }
 
-    .sort-by-wrapper {
-        justify-content: space-between;
+    .sort-container {
 
-        .sort-select {
-            border: none;
 
-            padding-inline: 8px;
-            padding-block: 10px;
+        .sort-by-wrapper {
+            justify-content: space-between;
+
+            .form-container {
+
+                span {
+                    padding: 8px;
+                    border-radius: 8px;
+
+                    svg {
+                        padding-top: 7px;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: #fafafa;
+                    }
+                }
+
+            }
         }
     }
 }

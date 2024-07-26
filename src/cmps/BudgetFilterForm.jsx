@@ -1,6 +1,6 @@
 import { FormControl, FormControlLabel, Radio, RadioGroup } from "@mui/material"
 
-export function BudgetFilterForm({ isOpen }) {
+export function BudgetFilterForm({ isOpen, onApply }) {
     return <form className={`budget-filter-form ${isOpen ? '' : 'transparent'}`} >
         <section className="radio-container">
             <FormControl fullWidth={true}>
@@ -26,7 +26,7 @@ export function BudgetFilterForm({ isOpen }) {
         </section>
         <div className="btn-container">
             <button className="btn clear-btn">Clear all</button>
-            <button className="btn apply-btn">Apply</button>
+            <button className="btn apply-btn" onClick={onApply}>Apply</button>
         </div>
     </form>
 }

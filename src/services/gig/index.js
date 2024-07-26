@@ -18,8 +18,8 @@ function getDefaultFilter() {
     return {
         title: '',
         tags: [],
+        sort: 'recommended',
         // sortField: '',
-        // sortDir: '',
     }
 }
 

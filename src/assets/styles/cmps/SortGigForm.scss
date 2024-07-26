@@ -1,0 +1,39 @@
+.sort-gig-form {
+    padding: 10px;
+    position: absolute;
+    z-index: 10000;
+    transform: translate(29px, -5px);
+
+    height: max-content;
+    width: rem(207px);
+
+    background-color: #fff;
+    border: 1px solid #dadbdd;
+    border-radius: 8px;
+    box-shadow: 0 12px 18px rgba(0, 0, 0, 0.1411764706);
+
+    .sort-option {
+        display: flex;
+        align-items: center;
+
+        width: 100%;
+        background-color: #fff;
+
+        color: darken($gray3, 10%);
+
+        div {
+            padding: 5px;
+        }
+
+        p {
+            margin-block: 10px;
+            padding-inline-start: rem(9px);
+            font-size: rem(16px);
+        }
+
+        &:hover {
+            border-radius: rem(8px);
+            background-color: #fafafa;
+        }
+    }
+}

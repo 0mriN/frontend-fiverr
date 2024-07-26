@@ -1,6 +1,6 @@
 import { FormControl, FormControlLabel, Radio, RadioGroup } from "@mui/material"
 
-export function DeliveryTimeFilterForm({ isOpen }) {
+export function DeliveryTimeFilterForm({ isOpen, onApply }) {
     return <form className={`delivery-time-filter-form ${isOpen ? '' : 'transparent'}`} >
         <section className="radio-container">
             <FormControl fullWidth={true}>
@@ -29,7 +29,7 @@ export function DeliveryTimeFilterForm({ isOpen }) {
         </section>
         <div className="btn-container">
             <button className="btn clear-btn">Clear all</button>
-            <button className="btn apply-btn">Apply</button>
+            <button className="btn apply-btn" onClick={onApply}>Apply</button>
         </div>
     </form>
 }
