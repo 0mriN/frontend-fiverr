@@ -1,5 +1,5 @@
-import { useSelector } from "react-redux";
-import { CheckoutDetails } from "./CheckoutDetails";
+import { useSelector } from "react-redux"
+import { CheckoutDetails } from "./CheckoutDetails"
 
 
 export function OrderCheckout() {

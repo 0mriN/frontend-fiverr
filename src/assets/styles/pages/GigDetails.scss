@@ -1,18 +1,21 @@
 .gig-details {
 
   display: grid;
-  grid-template-columns: rem(712px) 1fr;
+  grid-template-columns: minmax(rem(130px), rem(760px)) auto;
   background-color: #fff;
   line-height: 24px;
   padding: 32px 32px 0px;
 
   .gig-details-main {
     grid-column: 1;
-    padding: 0 rem(32px);
+    padding: 0 0 0 rem(48px);
+
+    .gig-details-wrapper {
+      width: 100%;
+    }
 
     .main-carousel {
-      width: 100%;
-      height: em(575px);
+      height: rem(575px);
     }
 
     .Details-breadcrumbs {
@@ -56,7 +59,7 @@
         color: #62646a;
         gap: 20px;
         line-height: 24px;
-        max-width: rem(628px);
+        width: 100%;
 
         img {
           max-width: rem(64px);
@@ -103,7 +106,7 @@
               display: flex;
               gap: 12px;
               line-height: 24px;
-              width: rem(530px);
+              width: 100%;
 
               >* {
                 display: flex;
@@ -204,6 +207,7 @@
         font-weight: 700;
         line-height: 28px;
         padding: 0px 0px 25px;
+        margin-top: 70px;
       }
 
       .about-desc {
@@ -312,7 +316,7 @@
               display: flex;
               gap: 12px;
               line-height: 24px;
-              width: rem(530px);
+              width: 100%;
 
               >* {
                 display: flex;
@@ -402,7 +406,8 @@
 
   .gig-buy-modal {
     grid-column: 2;
-    padding: 0px 0px 32px 40px;
+    padding: 0px 0px rem(32px) rem(63px);
+    justify-self: center;
 
 
     .modal {
@@ -411,7 +416,7 @@
       margin: 0px 0px 16px;
       padding: 0px 0px 32px;
       transform: translate3d(0px, 0px, 0px);
-      width: 400px;
+      width: 100%;
       top: 140px;
       height: min-content;
       position: sticky;
@@ -480,7 +485,6 @@
 
                 .toolbar-button-share {
                   align-items: center;
-                  // background-color: #f5f5f5;
                   border: 1px solid #e4e5e7;
                   border-radius: 8px;
                   color: #222325;
@@ -497,12 +501,11 @@
 
         }
 
-
         .modal-packages {
           margin-bottom: 16px;
           border: 1px solid #dadbdd;
           max-width: rem(415px);
-          // background-color: black;
+
 
           .modal-header {
             text-align: center;
@@ -559,7 +562,6 @@
                     font-size: 28px;
                     line-height: 36.4px;
                     font-weight: 700;
-                    // max-height: rem(50px);
 
                     .price-with-icon {
                       align-items: center;
@@ -653,7 +655,7 @@
                 color: #404145;
                 display: flex;
                 flex-direction: column;
-                padding: 0 24px 20px 24px;
+                padding: 0 0px 20px 0;
 
                 .continue-btn {
                   align-items: flex-start;

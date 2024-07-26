@@ -1,3 +1,7 @@
+.order-index {
+    padding: 0 32px;
+}
+
 .order-list {
     width: 100%;
     border: 1px solid lightgray;
@@ -6,20 +10,15 @@
     .order-list-header {
         border-bottom: solid 1px lightgray;
         text-align: left;
-
-        th {
-            padding: 10px;
-            border: 1px solid lightgray;
-            background-color: #f9f9f9;
-        }
     }
 
     .order-list-body {
         width: 100%;
+    }
 
-        td {
-            padding: 10px;
-            border: 1px solid lightgray;
-        }
+    td, th {
+        padding: 10px;
+        border: 1px solid lightgray;
     }
 }
+    

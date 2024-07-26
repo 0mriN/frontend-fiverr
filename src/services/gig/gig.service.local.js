@@ -151,10 +151,10 @@ function getStarLevel(gig) {
 }
 
 function getAvgRating(reviews) {
-    if (reviews.length === 0) return 'No reviews';
+    if (reviews.length === 0) return 'No reviews'
 
-    const totalRating = reviews.reduce((sum, review) => sum + review.rate, 0);
-    return (totalRating / reviews.length).toFixed(2);
+    const totalRating = reviews.reduce((sum, review) => sum + review.rate, 0)
+    return (totalRating / reviews.length).toFixed(2)
 }
 
 function _createGigs() {
@@ -916,7 +916,7 @@ function _getFormattedGigs() {
                     "name": "ashtonpeckham",
                     "country": "United States",
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
-                    "txt": "The seller was very responsive. We had revisions after the initial designs were delivered and the seller made them very quickly. The logo we selected is perfect for our current needs. Recommend including your vision in the initial request so you don't end up with ideas that you don't like. There were only 2 real contenders because the Fiverr site wouldn't allow me to attach my hand drawn idea. The paperclip icon was essentially rendered inactive, even after several attempts. This is no fault of the designers; i should have been even more descriptive with my request when I was unable to attach files.",
+                    "txt": "The seller was very responsive. We had revisions after the initial designs were delivered and the seller made them very quickly. The logo we selected is perfect for our current needs. Recommend including your vision in the initial request so you don't end up with ideas that you don't like. There were only 2 real contenders because the Fiverr site wouldn't allow me to attach my hand drawn idea. The paperclip icon was essentially rendered inactive, even after several attempts. This is no fault of the designers i should have been even more descriptive with my request when I was unable to attach files.",
                     "date": "Published 1 week ago",
                     "rate": 5
                 },
@@ -2053,7 +2053,7 @@ function _getFormattedGigs() {
         },
         {
             "title": "I will create a sales whiteboard video",
-            "about": "Welcome! My name is Gregoria. I am an experienced Marketer that loves to spice up whatever you bring to the table. With many years of marketing, and over 8 years of Video Advertising, I will help your enterprise get a high level of Attraction, Interaction, and of course, Sales; through Animation. I and my team work FULL TIME on Fiverr to guarantee quick, and excellent Animation videos.",
+            "about": "Welcome! My name is Gregoria. I am an experienced Marketer that loves to spice up whatever you bring to the table. With many years of marketing, and over 8 years of Video Advertising, I will help your enterprise get a high level of Attraction, Interaction, and of course, Sales through Animation. I and my team work FULL TIME on Fiverr to guarantee quick, and excellent Animation videos.",
             "price": 159,
             "owner": {
                 "fullname": "allesanimation",
@@ -2063,7 +2063,7 @@ function _getFormattedGigs() {
             },
             "country": "Germany",
             "daysToMake": 7,
-            "description": "Kindly contact me for orders above 90 seconds.\nWhat does my package include?\nMotion whiteboard video\nScriptwriting (Additional $50 per 150 words)\nVoice over; Male & Female(English and German)\nBackground music & imagery\nHD Video\nColored whiteboard\nCommercial Rights (Additional $20)\nBroadcast Rights (Additional $50)\nNote: Voice-over is available in German, US English, and UK English.\n.\n.\n.\nBitte kontaktieren Sie mich für Bestellungen über 90 Sekunden.\nWas beinhaltet mein Paket?\nMotion Whiteboard Video\nDrehbuchschreiben (Zusätzliche €50 pro 150 Wörter)\nVoice-over; Männlich & Weiblich (Englisch und Deutsch)\nHintergrundmusik und Bilder\nHD-Video\nFarbiges Whiteboard\nKommerzielle Rechte (Zusätzliche €20)\nÜbertragungsrechte (Zusätzliche €50)\nHinweis: Voice-Over ist in Deutsch, US-Englisch und UK-Englisch verfügbar.",
+            "description": "Kindly contact me for orders above 90 seconds.\nWhat does my package include?\nMotion whiteboard video\nScriptwriting (Additional $50 per 150 words)\nVoice over Male & Female(English and German)\nBackground music & imagery\nHD Video\nColored whiteboard\nCommercial Rights (Additional $20)\nBroadcast Rights (Additional $50)\nNote: Voice-over is available in German, US English, and UK English.\n.\n.\n.\nBitte kontaktieren Sie mich für Bestellungen über 90 Sekunden.\nWas beinhaltet mein Paket?\nMotion Whiteboard Video\nDrehbuchschreiben (Zusätzliche €50 pro 150 Wörter)\nVoice-over Männlich & Weiblich (Englisch und Deutsch)\nHintergrundmusik und Bilder\nHD-Video\nFarbiges Whiteboard\nKommerzielle Rechte (Zusätzliche €20)\nÜbertragungsrechte (Zusätzliche €50)\nHinweis: Voice-Over ist in Deutsch, US-Englisch und UK-Englisch verfügbar.",
             "tags": [
                 "whiteboard video",
                 "explainer video",
@@ -2298,7 +2298,7 @@ function _getFormattedGigs() {
                     "name": "jaygreen341",
                     "country": "United States",
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
-                    "txt": "Working with bnn_marketing has been very easy! They provided a product that is better than what I expected. Even when I made a mistake on my order, Daniel was very understanding and professional. There are many companies to choose from; However, I can see why bnn_marketing is a top seller, I would highly recommend them to anyone!",
+                    "txt": "Working with bnn_marketing has been very easy! They provided a product that is better than what I expected. Even when I made a mistake on my order, Daniel was very understanding and professional. There are many companies to choose from However, I can see why bnn_marketing is a top seller, I would highly recommend them to anyone!",
                     "date": "Published 1 month ago",
                     "rate": 1
                 },
@@ -2594,7 +2594,7 @@ function _getFormattedGigs() {
                     "name": "kofaisal",
                     "country": "Kuwait",
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1f0-1f1fc.png",
-                    "txt": "For my case, I didn’t see any value added; the seller could go to my profile and assess what are the things my profile needs. He asked to choose the premium package which means creation of a full LinkedIn profile from scratch. To be fair, I am going to list what are the things I have learned from him: how to put the symbol in the description, shared with me a list skills, that I have to put my full name in the first name, and how to customize my Linkedin URL. Finally, after I received the delivery, I asked if may he share with me a few versions of the “About” section. He said that he was not able to send more versions this is because I have to pay for it. Again, I have paid $50.",
+                    "txt": "For my case, I didn’t see any value added the seller could go to my profile and assess what are the things my profile needs. He asked to choose the premium package which means creation of a full LinkedIn profile from scratch. To be fair, I am going to list what are the things I have learned from him: how to put the symbol in the description, shared with me a list skills, that I have to put my full name in the first name, and how to customize my Linkedin URL. Finally, after I received the delivery, I asked if may he share with me a few versions of the “About” section. He said that he was not able to send more versions this is because I have to pay for it. Again, I have paid $50.",
                     "date": "Published 1 month ago",
                     "rate": 5
                 },
@@ -2643,6 +2643,6 @@ function _getFormattedGigs() {
     ]
 
     const formattedGigs = Object.values(gigs)
-    // console.log(JSON.stringify(formattedGigs.map(gig => ({...gig, hi:'hi'}))));
+    // console.log(JSON.stringify(formattedGigs.map(gig => ({...gig, hi:'hi'}))))
     return formattedGigs
 }

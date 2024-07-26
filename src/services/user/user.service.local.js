@@ -109,14 +109,6 @@ async function logout() {
 
 function getLoggedinUser() {
   return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
-  return {
-    _id: "u101",
-    fullname: "idan duj",
-    imgUrl: "../../assets/img/profile.png",
-    username: "idan",
-    password: "1234",
-    level: "basic",
-  }
 }
 
 function saveLoggedinUser(user) {

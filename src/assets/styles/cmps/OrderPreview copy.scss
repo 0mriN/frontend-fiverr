@@ -1,0 +1,30 @@
+.order-preview {
+    justify-content: space-around;
+    align-items: center;
+
+    img {
+        height: 40px;
+        border-radius: 50%;
+    }
+
+    .status {
+        padding: 5px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .status.pending {
+        background-color: yellow;
+    }
+
+    .status.rejected {
+        background-color: red;
+        color: white;
+    }
+
+    .status.completed {
+        background-color: green;
+        color: white;
+    }
+}

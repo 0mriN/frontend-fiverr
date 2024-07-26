@@ -1,13 +1,13 @@
-import { Link, NavLink } from 'react-router-dom';
-import { useNavigate } from 'react-router';
-import { useSelector } from 'react-redux';
-import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service';
-import { logout } from '../store/actions/user.actions';
-import { SearchBar } from './SearchBar';
-import { useState } from 'react';
-import { gigService } from '../services/gig';
-import { LoginModal } from './LoginModal';
-import { SignUpModal } from './SignupModal';
+import { Link, NavLink } from 'react-router-dom'
+import { useNavigate } from 'react-router'
+import { useSelector } from 'react-redux'
+import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
+import { logout } from '../store/actions/user.actions'
+import { SearchBar } from './SearchBar'
+import { useState } from 'react'
+import { gigService } from '../services/gig'
+import { LoginModal } from './LoginModal'
+import { SignUpModal } from './SignupModal'
 
 import { setFilter } from '../store/actions/gig.actions'
 import { PrimeCategoryFilter } from './PrimeCategoryFilter'
@@ -15,11 +15,11 @@ import { PrimeCategoryFilter } from './PrimeCategoryFilter'
 
 
 export function AppHeader() {
-	const user = useSelector(storeState => storeState.userModule.user);
-	const navigate = useNavigate();
+	const user = useSelector(storeState => storeState.userModule.user)
+	const navigate = useNavigate()
 
-	const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-	const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
+	const [isLoginModalOpen, setIsLoginModalOpen] = useState(false)
+	const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false)
 	const filterBy = useSelector(storeState => storeState.gigModule.filterBy)
 
 	function onSetFilterBy(filterBy) {
@@ -27,11 +27,11 @@ export function AppHeader() {
 	}
 	async function onLogout() {
 		try {
-			await logout();
-			navigate('/');
-			showSuccessMsg('Bye now');
+			await logout()
+			navigate('/')
+			showSuccessMsg('Bye now')
 		} catch (err) {
-			showErrorMsg('Cannot logout');
+			showErrorMsg('Cannot logout')
 		}
 	}
 

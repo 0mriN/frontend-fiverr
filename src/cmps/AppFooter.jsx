@@ -150,8 +150,6 @@ export function AppFooter() {
 						<section className="settings-btns">
 							<button className="currecny">₪ ILS</button>
 						</section>
-
-						<button className="accessibility"><img src={accessibility} alt="" /></button>
 					</div>
 				</div>
 			</div>
