@@ -10,9 +10,8 @@
         border: 1px solid #dadbdd;
         margin: 30px auto;
         padding: 30px;
-        // display: flex;
-        // flex-direction: column;
-        // font-size: 1.5rem;
+        
+       
 
         .top-form {
             margin-bottom: 50px;
@@ -49,6 +48,10 @@
                     width: 100%;
                     font-size: 1.12em;
                     color: #404145;
+
+                    &:focus-visible{
+                        outline-color: #1dbf73;
+                    }
                 }
             }
 
@@ -83,6 +86,10 @@
                     line-height: 25px;
                     font-size: 1rem;
                     color: #404145;
+
+                    &:focus-visible{
+                        outline-color: #1dbf73;
+                    }
 
                 }
             }
@@ -127,6 +134,10 @@
                     height: rem(64px);
                     font-size: 1rem;
                     padding: 10px;
+                    
+                    &:focus-visible{
+                        outline-color: #1dbf73;
+                    }
                 }
 
 
@@ -210,7 +221,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
             &:hover {
-                background-color: #404145;
+                background-color: gray;
                 color: #fff;
                 border: 1px solid #404145;
             }

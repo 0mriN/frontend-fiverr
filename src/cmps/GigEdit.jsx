@@ -108,11 +108,17 @@ export function GigEdit() {
         document.getElementById('imgUrls').click();
     }
 
+    function onCancel(){
+      let isConfirmed = confirm('Are you sure you want to cancel ?')
+        if(!isConfirmed) return
+        navigate('/profile')
+    }
+
     const { title, price, description, tags, daysToMake } = gigToEdit
 
     return (
         <section className="gig-edit">
-            <form onSubmit={onAddGig} >
+            <form >
                 <div className="top-form">
                     <label htmlFor="title" className="title">
                         <span>Gig Title
@@ -204,7 +210,7 @@ export function GigEdit() {
 
             </form>
             <div className="btns-wrapper">
-            <button onClick={onAddGig} className="cancel-btn">Cancel</button>
+            <button onClick={onCancel} className="cancel-btn">Cancel</button>
             <button onClick={onAddGig} className="save-btn">Save</button>
             </div>
         </section>
