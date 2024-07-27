@@ -13,7 +13,7 @@ export function LoginModal({ onClose }) {
     }
 
 
-    
+
     const onLogin = async (ev) => {
         ev.preventDefault()
         try {
@@ -29,8 +29,8 @@ export function LoginModal({ onClose }) {
         <>
             <div className="modal-overlay" onClick={onClose}></div>
             <div className="login-modal">
-                <button onClick={onClose}>Close</button>
-                <form onSubmit={onLogin}>
+                <h1>Sign in to Fiverr</h1>
+                <form className="login-form" onSubmit={onLogin}>
                     <input
                         type="text"
                         name="username"
@@ -45,7 +45,7 @@ export function LoginModal({ onClose }) {
                         value={credentials.password}
                         onChange={handleChange}
                     />
-                    <button type="submit">Login</button>
+                    <button className="btn submit-login" type="submit">Login</button>
                 </form>
             </div>
         </>

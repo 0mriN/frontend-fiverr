@@ -19,7 +19,8 @@ function getDefaultFilter() {
     return {
         title: '',
         tags: [],
-        sort: 'recommended',
+        budget: null,
+        sort: 'bestSelling',
         // sortField: '',
     }
 }
