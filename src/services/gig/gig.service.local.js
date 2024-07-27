@@ -36,7 +36,7 @@ async function query(filterBy = { title: '' }) {
             case 'value':
                 gigs = gigs.filter(gig => gig.price < 116)
                 break;
-            case 'midRange': // 116 - 231
+            case 'midRange':
                 gigs = gigs.filter(gig => gig.price >= 116 && gig.price < 231)
                 break;
             case 'highEnd':
@@ -51,30 +51,9 @@ async function query(filterBy = { title: '' }) {
         gigs.sort((gig1, gig2) =>
             (getAvgRating(gig2.reviews) - getAvgRating(gig1.reviews)))
     } else if (sort === 'recommended') {
-        gigs.sort((gig1, gig2) => {
-            if (gig1.owner.level === 'Top Rated' || gig1.owner.level === 'Level 2') {
-                
-            }
-
-        })
+        gigs.sort((gig1, gig2) => 
+        (gig2.likedByUsers.length - gig1.likedByUsers.length))
     }
-
-    // switch (sort) {
-    //     case 'bestSelling':
-    //         gigs.sort((gig1, gig2) => 
-    //             (gig1))
-    //         break;
-    //     case 'recommended':
-    //         setisChecked({ bestSelling: false, recommended: true, newestArrivals: false })
-    //         break;
-    //     case 'newestArrivals':
-    //         setisChecked({ bestSelling: false, recommended: false, newestArrivals: true })
-    //         break;
-
-    //     default:
-    //         break;
-    // }
-
 
     return gigs
 }
@@ -215,6 +194,7 @@ function _createGigs() {
         gigs.map(gig => {
             gig._id = makeId()
             gig.tags = getRandomTags()
+
         })
 
         saveToStorage(GIG_KEY, gigs)
@@ -273,7 +253,7 @@ function _createGig(title = 'a new gig') {
             '../src/assets/img/img3.png',
         ],
         tags: ['Arts And Crafts', 'Logo Design'],
-        likedByUsers: ['mini-user'],
+        likedByUsers: ['mini-user','mini-user','mini-user','mini-user','mini-user',],
         reviews: [
             {
                 _id: makeId(),
@@ -355,7 +335,7 @@ function _getFormattedGigs() {
                 "graphics_design"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "reviews": [
                 {
@@ -388,7 +368,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "Very detailed",
                     "date": "Published 1 week ago",
-                    "rate": 5
+                    "rate": 4
                 },
                 {
                     "name": "stevekaszycki",
@@ -396,7 +376,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "very nice portrait, very good quality.",
                     "date": "Published 2 weeks ago",
-                    "rate": 5
+                    "rate": 3
                 }
             ],
             "imgUrls": [
@@ -405,7 +385,6 @@ function _getFormattedGigs() {
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         },
         {
@@ -449,7 +428,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "Very detailed",
                     "date": "Published 1 week ago",
-                    "rate": 5
+                    "rate": 3
                 },
                 {
                     "name": "stevekaszycki",
@@ -457,7 +436,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "very nice portrait, very good quality.",
                     "date": "Published 2 weeks ago",
-                    "rate": 5
+                    "rate": 3
                 }
             ],
             "country": "Bangladesh",
@@ -471,7 +450,7 @@ function _getFormattedGigs() {
                 "pencil sketch"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "imgUrls": [
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/197422311/original/1907136f4b9684daa164acfa5cfedc6035b771b1.jpg",
@@ -479,7 +458,6 @@ function _getFormattedGigs() {
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         },
         {
@@ -503,7 +481,7 @@ function _getFormattedGigs() {
                 "painting"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "reviews": [
                 {
@@ -528,7 +506,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "incredible on how precise that art is, picture perfect. 100% amazing job and I will use your services again ...",
                     "date": "Published 3 weeks ago",
-                    "rate": 5
+                    "rate": 4
                 },
                 {
                     "name": "gavrielm",
@@ -536,7 +514,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ee-1f1f1.png",
                     "txt": "amazing saller and great work",
                     "date": "Published 6 days ago",
-                    "rate": 5
+                    "rate": 2
                 },
                 {
                     "name": "garebear52",
@@ -544,7 +522,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "Beautiful drawing! Just what I wanted.",
                     "date": "Published 1 week ago",
-                    "rate": 5
+                    "rate": 1
                 }
             ],
             "imgUrls": [
@@ -553,7 +531,6 @@ function _getFormattedGigs() {
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         },
         {
@@ -573,7 +550,7 @@ function _getFormattedGigs() {
                 "technical writing"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "reviews": [
                 {
@@ -582,7 +559,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1e8-1f1e6.png",
                     "txt": "I had a bad experience…. The work doesn’t match the requirement at all. Although l sent a specific and detailed question, l received a general answer. Not recommend and will not deal again.",
                     "date": "Published 2 months ago",
-                    "rate": 3
+                    "rate": 4
                 },
                 {
                     "name": "rehanmirdk",
@@ -614,7 +591,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "She could understand the contents and write well",
                     "date": "Published 3 days ago",
-                    "rate": 4
+                    "rate": 3
                 }
             ],
             "imgUrls": [
@@ -623,7 +600,6 @@ function _getFormattedGigs() {
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         },
         {
@@ -647,7 +623,7 @@ function _getFormattedGigs() {
                 "product listing"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "reviews": [
                 {
@@ -656,7 +632,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ec-1f1e7.png",
                     "txt": "Daisy accept the job. However, I think my job could have been done in the hours set and it was not. I would not use again from this experience.",
                     "date": "Published 1 month ago",
-                    "rate": 2
+                    "rate": 4
                 },
                 {
                     "name": "kasper711",
@@ -664,7 +640,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1f3-1f1f1.png",
                     "txt": "Clear communication, did the job!",
                     "date": "Published 1 day ago",
-                    "rate": 1
+                    "rate": 3
                 },
                 {
                     "name": "jmorgenstern82",
@@ -697,7 +673,6 @@ function _getFormattedGigs() {
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         },
         {
@@ -721,7 +696,7 @@ function _getFormattedGigs() {
                 "data entry typing"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "reviews": [
                 {
@@ -738,7 +713,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "Muhammad was responsive and did a good job collecting the information for a very reasonable price. His English isn't perfect, but we didn't struggle to communicate. If you give good directions, you'll get good results.",
                     "date": "Published 1 month ago",
-                    "rate": 3
+                    "rate": 4
                 },
                 {
                     "name": "dustinolsen1",
@@ -762,16 +737,14 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "Super efficient - Does amazing work. Have several orders with this seller and they always perform. Thank you so much",
                     "date": "Published 2 months ago",
-                    "rate": 3
+                    "rate": 2
                 }
             ],
             "imgUrls": [
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/128385654/original/3dae388cef7d9c837186d54a47d3861c70f0847d.png",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/197422311/original/1907136f4b9684daa164acfa5cfedc6035b771b1.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         },
         {
@@ -795,7 +768,7 @@ function _getFormattedGigs() {
                 "copy paste"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "reviews": [
                 {
@@ -804,7 +777,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1e9-1f1ea.png",
                     "txt": "There was no communication besides delivering. Receiving a short message with an estimate on delivery time would help to make the process more transparent. Otherwise it seems that the task was forgotten.",
                     "date": "Published 2 months ago",
-                    "rate": 3
+                    "rate": 5
                 },
                 {
                     "name": "barcoxx",
@@ -812,7 +785,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "Pros: Communication response time was amazing. Project delivered in the time promised. Quick Response to revision requests. Cons: Got a little bit impatient with me for asking for consecutive revisions, which was actually due to his own oversight, but it all worked out in the end.",
                     "date": "Published 2 months ago",
-                    "rate": 3
+                    "rate": 5
                 },
                 {
                     "name": "teamcafelist",
@@ -836,7 +809,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "Masum really came through on this task, painful and time consuming, he stayed on it and made it happen. So Happy. Thank you a 1000 times.",
                     "date": "Published 2 weeks ago",
-                    "rate": 3
+                    "rate": 1
                 }
             ],
             "imgUrls": [
@@ -845,7 +818,6 @@ function _getFormattedGigs() {
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         },
         {
@@ -869,7 +841,7 @@ function _getFormattedGigs() {
                 "typing jobs"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "reviews": [
                 {
@@ -894,7 +866,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ec-1f1e7.png",
                     "txt": "I’ve worked with Abrar before, and once again he did a great job with what I’d asked him to do. Will definitely be working with him again.",
                     "date": "Published 2 months ago",
-                    "rate": 5
+                    "rate": 3
                 },
                 {
                     "name": "schneida",
@@ -902,7 +874,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1e6-1f1f9.png",
                     "txt": "It was a pleasure to work with Abrar and his team. He is fast responding and an awesome problem solver who always reaches the goals for his clients. He is on my shortlist for other jobs in the future for sure.",
                     "date": "Published 1 month ago",
-                    "rate": 5
+                    "rate": 3
                 },
                 {
                     "name": "jarrodrandol238",
@@ -910,7 +882,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "This is my second project with him. Delivered on time and exactly how I asked. I would hire him if he lived in Florida!!!",
                     "date": "Published 2 days ago",
-                    "rate": 5
+                    "rate": 1
                 }
             ],
             "imgUrls": [
@@ -919,7 +891,6 @@ function _getFormattedGigs() {
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         },
         {
@@ -944,7 +915,7 @@ function _getFormattedGigs() {
                 "logo maker"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "reviews": [
                 {
@@ -961,7 +932,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ec-1f1e7.png",
                     "txt": "I thought this service was amazing, I bought the basic option just hoping for a basic logo, but the seller went above my expectations and provided me with a bunch of concepts that were better than I could have imagined, for £7.90 I think this service is a must-buy for anyone needing a professional-looking logo and not wanting to spend a huge amount",
                     "date": "Published 2 months ago",
-                    "rate": 5
+                    "rate": 4
                 },
                 {
                     "name": "ashtonpeckham",
@@ -969,7 +940,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "The seller was very responsive. We had revisions after the initial designs were delivered and the seller made them very quickly. The logo we selected is perfect for our current needs. Recommend including your vision in the initial request so you don't end up with ideas that you don't like. There were only 2 real contenders because the Fiverr site wouldn't allow me to attach my hand drawn idea. The paperclip icon was essentially rendered inactive, even after several attempts. This is no fault of the designers i should have been even more descriptive with my request when I was unable to attach files.",
                     "date": "Published 1 week ago",
-                    "rate": 5
+                    "rate": 3
                 },
                 {
                     "name": "borowski10",
@@ -977,7 +948,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "Ultimately, I am very happy with the final logo I received. However, the seller's communication could have been better. There were a few times I asked for specific revisions and I was sent the same thing or something else that I didn't ask for. It took about 2 weeks for me to finally get what I was looking for. In the end, I got what I paid for and I am grateful for the service!",
                     "date": "Published 2 days ago",
-                    "rate": 5
+                    "rate": 2
                 },
                 {
                     "name": "fowlplay_uk",
@@ -985,16 +956,14 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ec-1f1e7.png",
                     "txt": "VD was great. I had a very specific design in mind already that I needed recreating professionally and they did not disappoint. Even when I started to get picky with the design, nothing I requested was ever too much trouble. We went through many revisions to get it to exactly how I wanted it and every interaction we had was effortless. This is the first project I'd commissioned so wasn't really sure on the correct etiquette, yet VD made things so easy for me. Can't recommend these guys enough for that",
                     "date": "Published 2 months ago",
-                    "rate": 5
+                    "rate": 2
                 }
             ],
             "imgUrls": [
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/3171448/original/a41a38f3733bb97279a49d1449f7337dece50693.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/197422311/original/1907136f4b9684daa164acfa5cfedc6035b771b1.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         },
         {
@@ -1018,7 +987,7 @@ function _getFormattedGigs() {
                 "logo maker"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "reviews": [
                 {
@@ -1035,7 +1004,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "This designer is awesome. I have got my idea materialised in an efficient manner and the way I wanted. Seeing this logo, I would say this is the best designer to do any kind of graphics work.",
                     "date": "Published 1 month ago",
-                    "rate": 3
+                    "rate": 4
                 },
                 {
                     "name": "gbsol579",
@@ -1043,7 +1012,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "This designer is so quick and efficient in his work. My order was delivered in few hours. The design is hypnotizing and truly reflects my business idea. Highly recommended!",
                     "date": "Published 1 month ago",
-                    "rate": 3
+                    "rate": 4
                 },
                 {
                     "name": "antoniodixon65",
@@ -1063,12 +1032,10 @@ function _getFormattedGigs() {
                 }
             ],
             "imgUrls": [
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/103152154/original/b89645456b7f6906afa872771737e980b6f57cfb.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/197422311/original/1907136f4b9684daa164acfa5cfedc6035b771b1.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         },
         {
@@ -1093,7 +1060,7 @@ function _getFormattedGigs() {
                 "logo maker"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "reviews": [
                 {
@@ -1102,7 +1069,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1f3-1f1f1.png",
                     "txt": "Use your revisions and communication, and you will have something that works for you! I recommend modernmarvel for the price they ask! I did not know what to expect from my first buy on FIverr. The previews where what I was going for, so I thought why not give it a try. The initial delivery had two good concepts and three concepts I did not like. The two good concepts however, where not really what I wanted though. I submitted a revision proposal and hoped for the best. This is where this seller shines! From the initial designs, he worked quickly with every suggestion I made for revisions and was good in communication. I slowly saw my project evolving to something I love. Recommended!",
                     "date": "Published 2 months ago",
-                    "rate": 1
+                    "rate": 5
                 },
                 {
                     "name": "v_winko33",
@@ -1110,7 +1077,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "Working with this seller was a great experience in that he was quick to respond (considering the 11+ hr time zone difference), friendly, reliable, and professional. He created some concepts with literally no reference the first time around, and the second time around I gave him more of an idea of what I was looking for and found the ideal logo. You get what you pay for, and the price I think is a very good deal that's hard to find. Communication +asking questions is key to get all that you want and need from this great offer. Although I am satisfied with the logo, I probably would've liked something more like the work he shows in his second picture on his profile/gigs. I do recommend him!",
                     "date": "Published 3 weeks ago",
-                    "rate": 1
+                    "rate": 2
                 },
                 {
                     "name": "brendanpaull",
@@ -1138,12 +1105,9 @@ function _getFormattedGigs() {
                 }
             ],
             "imgUrls": [
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/125798593/original/fea4f6af37e201fa9cb71a85583fedc171da2a26.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/197422311/original/1907136f4b9684daa164acfa5cfedc6035b771b1.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         },
         {
@@ -1168,7 +1132,7 @@ function _getFormattedGigs() {
                 "logo maker"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "reviews": [
                 {
@@ -1209,16 +1173,13 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "A friend of mine (Maximum Performance Productions) recommended Fiverr. I'm starting a new business and needed a design to catapult us to new heights. It didn't take long to find the right artist. Shallene was able to capture my idea and interpret it into the design that I am very pleased with. Her communication skills and response time are second to none. She is very informative and answered all my questions satisfactorily. Shallene performed her tasks timely and without delay. I am forever grateful for the outstanding designs she has provided and would highly recommend her to anyone. Thank You Shallene!",
                     "date": "Published 1 week ago",
-                    "rate": 4
+                    "rate": 2
                 }
             ],
             "imgUrls": [
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/142024147/original/25c0cb214ccc1e1458cb975cddec0e3e348f75ee.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/197422311/original/1907136f4b9684daa164acfa5cfedc6035b771b1.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         },
         {
@@ -1242,7 +1203,7 @@ function _getFormattedGigs() {
                 "social network"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "reviews": [
                 {
@@ -1283,7 +1244,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "Thank you so much for creating my bios for me on my social media pages. We got it right how we wanted it to I appreciate that. God bless!",
                     "date": "Published 3 weeks ago",
-                    "rate": 5
+                    "rate": 4
                 }
             ],
             "imgUrls": [
@@ -1292,7 +1253,6 @@ function _getFormattedGigs() {
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         },
         {
@@ -1315,7 +1275,7 @@ function _getFormattedGigs() {
                 "instagram growth"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "reviews": [
                 {
@@ -1324,7 +1284,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "I am very new to organic growth and trying to work Instagram in the best way possible for my business. I found this seller on a whim and WOW. I know that a lot of his reviews say that he is amazing but I didn't expect nearly HALF of what I got. It was so good that I immediately printed it out and made it into my own little book to reference as I go through the process of building my Instagram audience. In all honesty, I think that he should charge way more for what he gives. I can't believe I got so much value at this very fair price! Thank you so much and I can't WAIT to implement your strategies starting TODAY!!",
                     "date": "Published 2 months ago",
-                    "rate": 1
+                    "rate": 5
                 },
                 {
                     "name": "basayra",
@@ -1332,7 +1292,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "I was very very skeptical. Since this is my 1st business. I truly appreciated I was able to communicate with him and let him know about my \"unique\" nitch. Before we even proceeded he asked for my Instagram to make sure he could provided the services I requested. I was not prepared for the the whole breakdown!! I am shocked as to how much information I received for the price. Not only did i receive information regarding hashtags, but when to post, what to write under the post, how to not repost to the same things to become saturated . I can't wait to implement this new information to my Gram. Sooooo yeah about my unique niche go follow @ba_sayra.",
                     "date": "Published 1 month ago",
-                    "rate": 2
+                    "rate": 5
                 },
                 {
                     "name": "marialeeheller",
@@ -1340,7 +1300,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "As other sellers described- the service is excellent, especially for the price. I did notice some spelling errors but that did not detract from the overall informative report. I am very pleased with the delivery and I learned A LOT. Also, the hashtags he provided were on point- very impressed. Let me preface this by saying that I had purchased similar hashtag research from another top seller on this platform and what I received was subpar. My business has elements of sustainability that I haven't pushed too much (because the 100% sustainable products haven't launched yet), but he picked up on it and delivered results that included this. 👏👏👏",
                     "date": "Published 2 months ago",
-                    "rate": 2
+                    "rate": 5
                 },
                 {
                     "name": "soniabukh",
@@ -1348,7 +1308,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ee-1f1f9.png",
                     "txt": "Tommy is absolutely great! My expectations were high because of all the other excellent reviews, but wow he really does go above and beyond! I got the most basic hashtag strategy package and not only did he do a great job with it, he also included a lot of bonus information and tools. If you're tired of not knowing how Instagram works and trying random tactics hoping they'll work and get your account seen, let me offer you a suggestion: buy this gig! You won't regret it! I can't wait to start implementing all his great advice. P.S. Communication was great and delivery was on time!",
                     "date": "Published 2 months ago",
-                    "rate": 1
+                    "rate": 4
                 },
                 {
                     "name": "ricarda20",
@@ -1360,12 +1320,10 @@ function _getFormattedGigs() {
                 }
             ],
             "imgUrls": [
-                "https://fiverr-res.cloudinary.com/video/upload/so_0.0,t_gig_cards_web/jylhbgosxfqilptpru24.png",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/197422311/original/1907136f4b9684daa164acfa5cfedc6035b771b1.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         },
         {
@@ -1388,7 +1346,7 @@ function _getFormattedGigs() {
                 "youtube promotion"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "reviews": [
                 {
@@ -1413,7 +1371,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1f9-1f1ed.png",
                     "txt": "she increased my subscribers amount by a little over 1000 subscribers and over 4000 watch hours. I recommend to anyone who wants a boost for their channel.",
                     "date": "Published 1 month ago",
-                    "rate": 5
+                    "rate": 4
                 },
                 {
                     "name": "vwgbooks",
@@ -1421,7 +1379,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ec-1f1e7.png",
                     "txt": "The gig was good, nothing amazing. I didn't really notice any difference when using this gig. Watch time, subs didn't increase that much. I did order the lowest gig, so I wasn't expecting big numbers or anything. It was a good gig and the seller was easy to work with.",
                     "date": "Published 2 weeks ago",
-                    "rate": 5
+                    "rate": 4
                 },
                 {
                     "name": "dulline",
@@ -1429,16 +1387,14 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1f7-1f1f4.png",
                     "txt": "I just want to be short and clear she is the BEST ! Very happy and satisfied what she did to my youtube channel ! A lot of subscribers and more what she said and more watch hours.If you want to grow your youtube channel fast and organic 100% real she is the ONE who can do it ! Thank you very much Farah !",
                     "date": "Published 2 weeks ago",
-                    "rate": 5
+                    "rate": 3
                 }
             ],
             "imgUrls": [
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/167364631/original/ddbe1967fc0deba979b6d66f2871051245a1544a.jpeg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/197422311/original/1907136f4b9684daa164acfa5cfedc6035b771b1.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         },
         {
@@ -1462,7 +1418,7 @@ function _getFormattedGigs() {
                 "seo marketing"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "reviews": [
                 {
@@ -1503,7 +1459,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "Provided excellent service and good direction. Thank you.",
                     "date": "Published 1 week ago",
-                    "rate": 5
+                    "rate": 4
                 }
             ],
             "imgUrls": [
@@ -1512,7 +1468,6 @@ function _getFormattedGigs() {
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         },
         {
@@ -1534,7 +1489,7 @@ function _getFormattedGigs() {
                 "internet researcher"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "reviews": [
                 {
@@ -1559,7 +1514,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ec-1f1e7.png",
                     "txt": "Once again, Struan exceeded expectations and delivered an excellent research review. He implements a lot of referencing, proving his depth of research- I will definitely work with him again, thank you!",
                     "date": "Published 2 months ago",
-                    "rate": 5
+                    "rate": 4
                 },
                 {
                     "name": "harrybenham228",
@@ -1567,7 +1522,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ec-1f1e7.png",
                     "txt": "Struan's work is exceptional! His communication, service and final delivery were of the highest quality and even better than expected. I will definitely choose him for research work again!",
                     "date": "Published 2 months ago",
-                    "rate": 5
+                    "rate": 4
                 },
                 {
                     "name": "bossbroc",
@@ -1575,7 +1530,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "My absolute go-to researcher!",
                     "date": "Published 3 hours ago",
-                    "rate": 5
+                    "rate": 4
                 }
             ],
             "imgUrls": [
@@ -1584,7 +1539,6 @@ function _getFormattedGigs() {
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         },
         {
@@ -1607,7 +1561,7 @@ function _getFormattedGigs() {
                 "summaries"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "reviews": [
                 {
@@ -1648,7 +1602,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "She got me my assignment back in 6 hours. Thank you so much",
                     "date": "Published 7 hours ago",
-                    "rate": 5
+                    "rate": 3
                 }
             ],
             "imgUrls": [
@@ -1657,7 +1611,6 @@ function _getFormattedGigs() {
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         },
         {
@@ -1681,7 +1634,7 @@ function _getFormattedGigs() {
                 "articles"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "reviews": [
                 {
@@ -1690,7 +1643,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "Her work is absolutely amazing ! Delivered on time and very accommodating . would definitely recommend . I will be reaching out again .",
                     "date": "Published 1 month ago",
-                    "rate": 1
+                    "rate": 5
                 },
                 {
                     "name": "evanclark",
@@ -1698,7 +1651,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "excellent experience. Angela delivered exactly what she said she would. Very thorough and High quality of service and communication. will definitely work with again!",
                     "date": "Published 2 months ago",
-                    "rate": 1
+                    "rate": 4
                 },
                 {
                     "name": "ronneishapicket",
@@ -1706,7 +1659,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "Didn’t need any modifications was absolutely perfect ! Got me an A so I highly recommend! And will be shopping in the future",
                     "date": "Published 1 month ago",
-                    "rate": 2
+                    "rate": 3
                 },
                 {
                     "name": "klemicha",
@@ -1731,7 +1684,6 @@ function _getFormattedGigs() {
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         },
         {
@@ -1755,7 +1707,7 @@ function _getFormattedGigs() {
                 "swot analysis"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "reviews": [
                 {
@@ -1796,7 +1748,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1e8-1f1f7.png",
                     "txt": "Excellent service",
                     "date": "Published 2 months ago",
-                    "rate": 5
+                    "rate": 3
                 }
             ],
             "imgUrls": [
@@ -1805,7 +1757,6 @@ function _getFormattedGigs() {
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         },
         {
@@ -1829,7 +1780,7 @@ function _getFormattedGigs() {
                 "translation"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "reviews": [
                 {
@@ -1838,7 +1789,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ee-1f1f1.png",
                     "txt": "I got my document translated by the deadline, with high efficiency and translation level. I got nice inputs and comments that helped the final delivery be excellent. thank you a lot for providing a great service.",
                     "date": "Published 2 weeks ago",
-                    "rate": 2
+                    "rate": 5
                 },
                 {
                     "name": "worldpressnow",
@@ -1846,7 +1797,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1e9-1f1ea.png",
                     "txt": "Good communication, very friendly and quick delivery!",
                     "date": "Published 2 weeks ago",
-                    "rate": 1
+                    "rate": 5
                 },
                 {
                     "name": "osherbanay1",
@@ -1854,7 +1805,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ee-1f1f1.png",
                     "txt": "Amazing! very accurate and very quick, pleasure to work with!",
                     "date": "Published 1 month ago",
-                    "rate": 1
+                    "rate": 5
                 },
                 {
                     "name": "talleizer",
@@ -1862,7 +1813,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ee-1f1f1.png",
                     "txt": "shiran do a great job definitely recommanded",
                     "date": "Published 1 month ago",
-                    "rate": 2
+                    "rate": 3
                 },
                 {
                     "name": "idankayam",
@@ -1870,7 +1821,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ee-1f1f1.png",
                     "txt": "great she is the best",
                     "date": "Published 1 month ago",
-                    "rate": 1
+                    "rate": 3
                 }
             ],
             "imgUrls": [
@@ -1879,7 +1830,6 @@ function _getFormattedGigs() {
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         },
         {
@@ -1903,7 +1853,7 @@ function _getFormattedGigs() {
                 "russian"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "reviews": [
                 {
@@ -1912,7 +1862,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "I needed a document translated ASAP on Friday night! I had a high quality translation by the time I woke up own Sat morning. Great job! Highly recommended.",
                     "date": "Published 2 months ago",
-                    "rate": 3
+                    "rate": 4
                 },
                 {
                     "name": "marianabolivar",
@@ -1920,7 +1870,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ec-1f1e7.png",
                     "txt": "Vladimir, you are the best. Always professional, very quick delivery. I recommend your gigs to anyone who need a reliable and excellent Russian/ English translation.",
                     "date": "Published 4 weeks ago",
-                    "rate": 3
+                    "rate": 4
                 },
                 {
                     "name": "lhancha",
@@ -1936,7 +1886,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1f1-1f1fb.png",
                     "txt": "You are the best, thank you!",
                     "date": "Published 2 days ago",
-                    "rate": 4
+                    "rate": 2
                 },
                 {
                     "name": "smc_rus",
@@ -1944,16 +1894,14 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1f1-1f1fb.png",
                     "txt": "Perfect communication and translations, thank you!",
                     "date": "Published 3 days ago",
-                    "rate": 4
+                    "rate": 1
                 }
             ],
             "imgUrls": [
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/3296856/original/767ea5cb0ccd4893231d198cbd1e7a82a42d1faf.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/197422311/original/1907136f4b9684daa164acfa5cfedc6035b771b1.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         },
         {
@@ -1976,7 +1924,7 @@ function _getFormattedGigs() {
                 "french translation"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "reviews": [
                 {
@@ -2001,7 +1949,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1e8-1f1e6.png",
                     "txt": "Very accurately translated from English to French. The editing to our document was also completed. A pleasure to work with!",
                     "date": "Published 1 day ago",
-                    "rate": 5
+                    "rate": 4
                 },
                 {
                     "name": "jimbob",
@@ -2009,7 +1957,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ee-1f1ea.png",
                     "txt": "Great job. Done in record time. I will definitely use this seller again. Highly recommended for French translations",
                     "date": "Published 1 day ago",
-                    "rate": 5
+                    "rate": 2
                 },
                 {
                     "name": "aliaksandra_nik",
@@ -2021,12 +1969,10 @@ function _getFormattedGigs() {
                 }
             ],
             "imgUrls": [
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/129378192/original/accecd46dd68bf0eae72b5c91db4edc34c625cd3.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/197422311/original/1907136f4b9684daa164acfa5cfedc6035b771b1.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         },
         {
@@ -2049,7 +1995,7 @@ function _getFormattedGigs() {
                 "french translation"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "reviews": [
                 {
@@ -2058,7 +2004,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1eb-1f1f7.png",
                     "txt": "Amazing ! Extremely reactive and truly professional. We needed translation for a french marketing website : translations were delivered in a short span of time with high quality. Execution was excellent : the seller kept the text evocative and emotive. I really recommend !",
                     "date": "Published 3 weeks ago",
-                    "rate": 1
+                    "rate": 5
                 },
                 {
                     "name": "saracousin",
@@ -2066,7 +2012,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1e8-1f1ed.png",
                     "txt": "Fast and great job",
                     "date": "Published 3 days ago",
-                    "rate": 1
+                    "rate": 5
                 },
                 {
                     "name": "felipecabrer920",
@@ -2074,7 +2020,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "Quick turnaround and quality work!",
                     "date": "Published 3 weeks ago",
-                    "rate": 1
+                    "rate": 4
                 },
                 {
                     "name": "oliviercroce738",
@@ -2082,7 +2028,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1eb-1f1f7.png",
                     "txt": "Merci beaucoup pour la qualité du travail et la réactivité",
                     "date": "Published 1 month ago",
-                    "rate": 2
+                    "rate": 4
                 },
                 {
                     "name": "stephanemeer",
@@ -2099,7 +2045,6 @@ function _getFormattedGigs() {
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         },
         {
@@ -2121,7 +2066,7 @@ function _getFormattedGigs() {
                 "explain"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "reviews": [
                 {
@@ -2154,7 +2099,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1e9-1f1ea.png",
                     "txt": "Sehr gut geworden. Vielen Dank nochmal!",
                     "date": "Published 1 week ago",
-                    "rate": 5
+                    "rate": 4
                 },
                 {
                     "name": "gradyguez",
@@ -2162,16 +2107,14 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1e9-1f1ea.png",
                     "txt": "Sie war schnell mit der Lieferung. Ich habe nur ein paar Antworten auf ihre Fragen gegeben und am Ende hatte ich eine perfekte Animation. Ich werde für mehr zurück sein.",
                     "date": "Published 2 weeks ago",
-                    "rate": 5
+                    "rate": 4
                 }
             ],
             "imgUrls": [
-                "https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/lrceizjt7bnvlvkd8dbo.png",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/197422311/original/1907136f4b9684daa164acfa5cfedc6035b771b1.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         },
         {
@@ -2195,7 +2138,7 @@ function _getFormattedGigs() {
                 "promotional video"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "reviews": [
                 {
@@ -2220,7 +2163,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "Seller communicated well and took time to properly understand my requirements. Seller accommodated revisions and worked with me to meet my expectations.",
                     "date": "Published 1 month ago",
-                    "rate": 5
+                    "rate": 4
                 },
                 {
                     "name": "mrmichael1324",
@@ -2228,7 +2171,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ec-1f1e7.png",
                     "txt": "First time using Fiverr and could not of asked for a better experience. So fast and professional. EXACTLY what I wanted. 100% recommended.",
                     "date": "Published 3 weeks ago",
-                    "rate": 5
+                    "rate": 4
                 },
                 {
                     "name": "reneshamcneal",
@@ -2236,7 +2179,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "They gave me everything I asked for and was very patient with me with all the requests I asked for.",
                     "date": "Published 2 months ago",
-                    "rate": 5
+                    "rate": 2
                 }
             ],
             "imgUrls": [
@@ -2245,7 +2188,6 @@ function _getFormattedGigs() {
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         },
         {
@@ -2269,7 +2211,7 @@ function _getFormattedGigs() {
                 "whiteboard animation"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "reviews": [
                 {
@@ -2278,7 +2220,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ee-1f1f3.png",
                     "txt": "Really surprised by his work. Simply wow.. I never expected the outcome and the quality and the script he wrote was just amazing. For the details I gave to him, never expected the output received.. Will definitely reach you soon with other orders... VERY SATISFIED And HIGHLY RECOMENDED SELLER...",
                     "date": "Published 2 months ago",
-                    "rate": 4
+                    "rate": 5
                 },
                 {
                     "name": "sanjanassss",
@@ -2302,7 +2244,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ee-1f1f3.png",
                     "txt": "Very Responsive and will did a lot for our request... Thanks A lot for Your Speedy Delivery and hardwork bro.... HIGHLY RECOMMENDED SELLER FOR WHITEBOARD ANIMATIONS...",
                     "date": "Published 2 months ago",
-                    "rate": 4
+                    "rate": 3
                 },
                 {
                     "name": "bakus09",
@@ -2310,16 +2252,14 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1e8-1f1ee.png",
                     "txt": "Great Job!",
                     "date": "Published 7 hours ago",
-                    "rate": 4
+                    "rate": 3
                 }
             ],
             "imgUrls": [
-                "https://fiverr-res.cloudinary.com/video/upload/so_26.270999,t_gig_cards_web/tfl3oturwkkl0qp55kmf.png",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/197422311/original/1907136f4b9684daa164acfa5cfedc6035b771b1.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         },
         {
@@ -2342,7 +2282,7 @@ function _getFormattedGigs() {
                 "hand drawing"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "reviews": [
                 {
@@ -2351,7 +2291,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "Working with bnn_marketing has been very easy! They provided a product that is better than what I expected. Even when I made a mistake on my order, Daniel was very understanding and professional. There are many companies to choose from However, I can see why bnn_marketing is a top seller, I would highly recommend them to anyone!",
                     "date": "Published 1 month ago",
-                    "rate": 1
+                    "rate": 5
                 },
                 {
                     "name": "tomiyostoner",
@@ -2359,7 +2299,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "I didn't exactly have a vision for what the finished project would look like, just a general idea that a whiteboard explainer might work well. BNN_Marketing really delivered exactly what I was looking for. Customizations were spot on and I love the finished product.",
                     "date": "Published 2 weeks ago",
-                    "rate": 1
+                    "rate": 5
                 },
                 {
                     "name": "joetankard",
@@ -2367,7 +2307,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "daniel is the man!! always high quality work with great customer service. im a repeat customer and his work is featured on my company websites. always 5 stars, highly recommend!",
                     "date": "Published 2 months ago",
-                    "rate": 1
+                    "rate": 4
                 },
                 {
                     "name": "jrwaddington",
@@ -2375,7 +2315,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "The video came out amazing. They did a great job capturing the essence of the narration. The only down side was that it was 3 days late.",
                     "date": "Published 2 months ago",
-                    "rate": 1
+                    "rate": 3
                 },
                 {
                     "name": "macjacart",
@@ -2387,12 +2327,10 @@ function _getFormattedGigs() {
                 }
             ],
             "imgUrls": [
-                "https://fiverr-res.cloudinary.com/video/upload/so_4.985944,t_gig_cards_web/llttjkqfxz0ybon92ifg.png",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/197422311/original/1907136f4b9684daa164acfa5cfedc6035b771b1.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         },
         {
@@ -2416,7 +2354,7 @@ function _getFormattedGigs() {
                 "resume writing"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "reviews": [
                 {
@@ -2449,7 +2387,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1e9-1f1ea.png",
                     "txt": "Overall good service and very good value for money. I'd recommend it to others looking for a critical review of their LinkedIn Profile.",
                     "date": "Published 5 days ago",
-                    "rate": 5
+                    "rate": 4
                 },
                 {
                     "name": "nyc1989",
@@ -2457,7 +2395,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "Mediagirl is truly phenomenal. She has excellent writing skills and helped me to significantly improve my LinkedIn profile. I would highly recommend her.",
                     "date": "Published 2 months ago",
-                    "rate": 5
+                    "rate": 3
                 }
             ],
             "imgUrls": [
@@ -2466,7 +2404,6 @@ function _getFormattedGigs() {
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         },
         {
@@ -2490,7 +2427,7 @@ function _getFormattedGigs() {
                 "linkedin business"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "reviews": [
                 {
@@ -2499,7 +2436,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "WOW, Richard did an amazing job highlighting my skillsets while offering guidance on how to maintain and improve my profile over time. He was incredibly detailed and looked through my entire profile. I'm in marketing, but sometimes it's hard to market yourself. Richard was my second set of eyes and gave me the outside lens I needed to keep my profile in check and improve my keywords. I would highly recommend his services!",
                     "date": "Published 1 month ago",
-                    "rate": 1
+                    "rate": 5
                 },
                 {
                     "name": "igorvidic",
@@ -2507,7 +2444,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1f3-1f1f4.png",
                     "txt": "I've got 4 messages from the recruiters within a couple of days after my update of profile (based on harvardcv's suggestions) even though I am not open to work. I've got them before but not at this rate, meaning that the job has been done great. It is only up to me to improve my skills and experience if I want to get more traffic, and then, I will again ask harvardcv to update my linkeding.",
                     "date": "Published 1 month ago",
-                    "rate": 1
+                    "rate": 5
                 },
                 {
                     "name": "amelle55",
@@ -2515,7 +2452,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1e8-1f1ed.png",
                     "txt": "Richard was great to work with, very professional. He upgraded my LinkedIn profile even if the one I had was not bad, but he was creative and came back with great suggestions and language that I wouldn’t have done on my own. He did the full review, added the necessary optimizations, and even provided advice on my picture and other sections besides the résumé and work experience sections. I am very satisfied and give him 5/5 score. Thank you Richard!",
                     "date": "Published 1 month ago",
-                    "rate": 1
+                    "rate": 3
                 },
                 {
                     "name": "dnassozi",
@@ -2523,7 +2460,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "Richard is such a great communicator and wow, he tremendously transformed my resume/LinkedIn profile and gave it wings! I love it and can't wait to upload and share my new profile!! Thanks, Richard",
                     "date": "Published 1 month ago",
-                    "rate": 1
+                    "rate": 3
                 },
                 {
                     "name": "uniquedrobinson",
@@ -2535,12 +2472,10 @@ function _getFormattedGigs() {
                 }
             ],
             "imgUrls": [
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/131354127/original/7ea13693d5539c7714613fa799147a1e88cf91e3.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/197422311/original/1907136f4b9684daa164acfa5cfedc6035b771b1.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         },
         {
@@ -2564,7 +2499,7 @@ function _getFormattedGigs() {
                 "linkedin bio"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "reviews": [
                 {
@@ -2573,7 +2508,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1f2-1f1fe.png",
                     "txt": "i was in hospital when the job automatically completed. the fund was transferred and unfortunately she wrote the description wrongly. however she was willing to redo the work without any complains. very responsible freelancer. highly recommended",
                     "date": "Published 1 week ago",
-                    "rate": 1
+                    "rate": 5
                 },
                 {
                     "name": "lharris02",
@@ -2581,7 +2516,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
                     "txt": "Seller was very fast and prompt, delivered within 12 hours! However, some of my job experiences were padded with skills and programming languages I'm not familiar with. Other than the job experiences, everything looks great.",
                     "date": "Published 2 weeks ago",
-                    "rate": 1
+                    "rate": 5
                 },
                 {
                     "name": "rafhaelgomes992",
@@ -2589,7 +2524,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1e7-1f1f7.png",
                     "txt": "Haniwritertech wrote something even better than I was expecting in a really short period of time. I highly recommend it.",
                     "date": "Published 1 month ago",
-                    "rate": 1
+                    "rate": 5
                 },
                 {
                     "name": "rajraj731",
@@ -2597,7 +2532,7 @@ function _getFormattedGigs() {
                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ec-1f1e7.png",
                     "txt": "She has updated my profile in 4hrs time. I really appreciate your time and effort. I will recommend her for everyone",
                     "date": "Published 1 month ago",
-                    "rate": 2
+                    "rate": 4
                 },
                 {
                     "name": "haftomg",
@@ -2614,7 +2549,6 @@ function _getFormattedGigs() {
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         },
         {
@@ -2638,7 +2572,7 @@ function _getFormattedGigs() {
                 "resume writing"
             ],
             "likedByUsers": [
-                "mini-user"
+                'mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user','mini-user',
             ],
             "reviews": [
                 {
@@ -2688,7 +2622,6 @@ function _getFormattedGigs() {
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
-                "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/127580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee1.jpg"
             ]
         }
     ]

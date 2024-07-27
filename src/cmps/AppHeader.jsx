@@ -33,9 +33,7 @@ export function AppHeader() {
 	const handleOpen = () => setOpen(true)
 	// const handleClose = () => setOpen(false)
 	const handleClose = () => {
-		console.log('handleClose called')
 		setOpen(false)
-		console.log('open state after handleClose:', open)
 	}
 
 	// function handleClose() {
@@ -44,7 +42,6 @@ export function AppHeader() {
 	// }
 
 	useEffect(() => {
-        console.log('open state after handleClose (useEffect):', open)
     }, [open])
 
 	const handleClickAway = () => {

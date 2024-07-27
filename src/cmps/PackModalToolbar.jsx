@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function PackModalToolbar() {
+export function PackModalToolbar({ likedByUsers }) {
   return (
     <div className="toolbar-wrapper">
       <div className='toolbar'>
@@ -11,7 +11,7 @@ export function PackModalToolbar() {
             </button>
           </div>
           <span className='collect-count'>
-            895
+            {likedByUsers}
           </span>
           <span className='modal-share'>
             <button className="toolbar-button-share">

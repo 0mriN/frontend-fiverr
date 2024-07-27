@@ -88,7 +88,7 @@ export function PackModal({ gig }) {
   return (
     <div className="modal">
       <div className="modal-content">
-        <PackModalToolbar />
+        <PackModalToolbar likedByUsers={gig.likedByUsers.length} />
         <div className='modal-packages'>
 
           <div className="modal-header">
