@@ -20,7 +20,7 @@ window.cs = gigService
 
 async function query(filterBy = { title: '' }) {
     var gigs = await storageService.query(GIG_KEY)
-    const { title, tags, budget } = filterBy
+    const { title, tags, budget, sort } = filterBy
 
     if (title) {
         const regex = new RegExp(filterBy.title, 'i')
@@ -42,12 +42,40 @@ async function query(filterBy = { title: '' }) {
             case 'highEnd':
                 gigs = gigs.filter(gig => gig.price >= 231)
                 break;
-        
+
             default:
                 break;
         }
     }
-    
+    if (sort === 'bestSelling') {
+        gigs.sort((gig1, gig2) =>
+            (getAvgRating(gig2.reviews) - getAvgRating(gig1.reviews)))
+    } else if (sort === 'recommended') {
+        gigs.sort((gig1, gig2) => {
+            if (gig1.owner.level === 'Top Rated' || gig1.owner.level === 'Level 2') {
+                
+            }
+
+        })
+    }
+
+    // switch (sort) {
+    //     case 'bestSelling':
+    //         gigs.sort((gig1, gig2) => 
+    //             (gig1))
+    //         break;
+    //     case 'recommended':
+    //         setisChecked({ bestSelling: false, recommended: true, newestArrivals: false })
+    //         break;
+    //     case 'newestArrivals':
+    //         setisChecked({ bestSelling: false, recommended: false, newestArrivals: true })
+    //         break;
+
+    //     default:
+    //         break;
+    // }
+
+
     return gigs
 }
 
