@@ -13,7 +13,9 @@ export const orderService = {
 }
 
 async function query() {
-    return await storageService.query(ORDER_KEY)
+    const orders = await storageService.query(ORDER_KEY)
+    console.log(orders);
+    return orders
 }
 
 async function update(orderId, status) {

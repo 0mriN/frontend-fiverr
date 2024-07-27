@@ -4,6 +4,7 @@
     top: 0;
     z-index: 10000;
     background-color: white;
+
     header {
         // display: flex;
         min-height: rem(70px);
@@ -85,9 +86,6 @@
             .nav-user {
                 display: grid;
                 place-items: center;
-                text-align: center;
-
-                // margin-inline-start: remm(50px);
 
                 height: 32px;
                 width: 32px;
@@ -101,6 +99,93 @@
 
                 &:hover {
                     cursor: pointer;
+                }
+
+                .user-modal {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+
+                    border: 1px solid #CCC;
+                    border-radius: 5px;
+                    box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+
+                    padding: 5px 15px;
+
+                    background-color: white;
+                    color: $gray4;
+
+                    transform: translate(-86%, 7%);
+
+                    .user-options {
+                        border-bottom: 0.2px solid $gray2;
+                        color: #62646a;
+
+
+                        p>*:visited {
+                            color: #62646a;
+                        }
+                        
+                        p>*:hover {
+                            text-decoration: none;
+                            color: $clr3;
+                            transition: .4s;
+                        }
+                    }
+
+                    & p:hover {
+                        color: $clr3;
+                    }
+                }
+            }
+
+            .nav-login-signup {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                gap: rem(25px);
+
+                .login,
+                .signup {
+                    font-family: MacanBold;
+                }
+
+                .login {
+                    font-size: rem(16px);
+
+                    &:hover {
+                        cursor: pointer;
+
+                        color: $clr3;
+
+                        transition: .4s;
+                    }
+                }
+
+                .signup {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    height: rem(36px);
+                    width: rem(63px);
+
+                    border: 1px solid $clr3;
+                    border-radius: 5px;
+
+                    background-color: white;
+                    font-size: rem(14px);
+                    color: $clr3;
+
+                    &:hover {
+                        cursor: pointer;
+
+                        background-color: $clr3;
+                        color: white;
+
+                        transition: .4s;
+                    }
                 }
             }
         }
