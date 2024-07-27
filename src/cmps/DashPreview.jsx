@@ -24,13 +24,13 @@ export function DashPreview({ order, fetchOrders }) {
     function getSelectStyle() {
         switch (currentStatus) {
             case "Pending":
-                return { backgroundColor: "#ffbe5b", color: "white" };
+                return { backgroundColor: "#ffbe5b", color: "white" }
             case "Completed":
-                return { backgroundColor: "#1dbf73", color: "white" };
+                return { backgroundColor: "#1dbf73", color: "white" }
             case "Rejected":
-                return { backgroundColor: "#c43333", color: "white" };
+                return { backgroundColor: "#c43333", color: "white" }
             default:
-                return { backgroundColor: "white", color: "black" };
+                return { backgroundColor: "white", color: "black" }
         }
     }
 

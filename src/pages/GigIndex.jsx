@@ -22,21 +22,13 @@ export function GigIndex() {
         loadGigs(filterBy)
     }, [filterBy])
 
-    async function onRemoveGig(gigId) {
-        try {
-            await removeGig(gigId)
-            showSuccessMsg('Gig removed')
-        } catch (err) {
-            showErrorMsg('Cannot remove gig')
-        }
-    }
+  
     if (!gigs) return <div>Loading...</div>
     return (
         <main className="gig-index">
             <GigFilter gigs={gigs}/>
             <GigList
                 gigs={gigs}
-                onRemoveGig={onRemoveGig}
             // onUpdateGig={onUpdateGig} 
             />
         </main>

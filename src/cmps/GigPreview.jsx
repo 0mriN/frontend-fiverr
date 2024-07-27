@@ -60,7 +60,7 @@ export function GigPreview({ gig }) {
                 <span>{`(${gig.reviews.length})`}</span>
             </div>
             <Link to={`/gig/${gig._id}`}>
-                <span className='card-from'>From<span>{`₪${gig.price}`}</span></span>
+                <span className='card-from'>From<span>{`$${gig.price}`}</span></span>
             </Link>
         </div>
 

@@ -13,7 +13,7 @@ export function GigEdit() {
 
     useEffect(() => {
         if (params.gigId) loadGig()
-    }, [gigToEdit])
+    }, [])
 
     async function loadGig() {
         try {
@@ -54,25 +54,14 @@ export function GigEdit() {
         ev.preventDefault()
         try {
             const savedGig = await addGig(gigToEdit)
-            navigate('/gig')
+            navigate('/profile')
             showSuccessMsg(`Gig saved !`)
         } catch (err) {
             showErrorMsg(`Cannot save gig`)
             console.log('err:', err)
         }
     }
-    async function onUpdateGig(ev) {
-        ev.preventDefault()
-        try {
-            const savedGig = await updateGig(gigToEdit)
-            navigate('/gig')
-            showSuccessMsg(`Gig saved !`)
-        } catch (err) {
-            showErrorMsg(`Cannot save gig`)
-            console.log('err:', err)
-        }
-    }
-
+    
     const { title, price, description } = gigToEdit
 
     return (

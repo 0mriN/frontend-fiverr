@@ -9,10 +9,9 @@ import { ProfileProgress } from '../cmps/ProfileProgress'
 
 export function Dashboard() {
     const [orders, setOrders] = useState([])
-    const [user, setUser] = useState(null)
+    const [user, setUser] = useState(userService.getLoggedinUser())
 
     useEffect(() => {
-        const user = (userService.getLoggedinUser())
         if (user) {
             setUser(user)
         }

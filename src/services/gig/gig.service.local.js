@@ -58,13 +58,14 @@ async function save(gig) {
             title: gig.title,
             price: gig.price,
             description: gig.description,
-            owner: {
-                _id: makeId(),
-                fullname: makeLorem(2),
-                imgUrl: '../src/assets/img/profile.png',
-                level: 'Level 1',
-                rate: getRandomIntInclusive(1, 5),
-            },
+            // owner: {
+            //     _id: makeId(),
+            //     fullname: makeLorem(2),
+            //     imgUrl: '../src/assets/img/profile.png',
+            //     level: 'Level 1',
+            //     rate: getRandomIntInclusive(1, 5),
+            // },
+            owner: userService.getLoggedinUser(),
             reviews: [
                 {
                     id: makeId(),
@@ -287,7 +288,8 @@ function _getFormattedGigs() {
             "about": "Hi reader, thanks for your time. I'm an experienced young artist and i specialize in 3D animation, graphic designing and pencil Art. I'm familiar with word processing application. Kindly hit me up if if you need any of my services.",
             "price": 172,
             "owner": {
-                "fullname": "frederickkessie",
+                // "fullname": "frederickkessie",
+                "fullname": "Elad Berliner",
                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/4abf6f5b58e4d78cfb7c410cf8d7a9ac-1626111679444/4a04b77c-22ee-4ce8-b4be-747fd059e9ff.jpg",
                 "level": "Top Rated",
                 "rate": 2
@@ -362,7 +364,7 @@ function _getFormattedGigs() {
             "about": "Hello, this is Masuk, stand up for vividstore,I am a young and enthusiastic graphic artist and realistic pencil sketch artist. I am certified as graphic designer from George Washington University, USA. I have almost 11 years experience in this field since my university life. I really love to work with Adobe Illustrator, Adobe Photoshop, and so on as a full time online freelancer. And also passionate about sketching. Thank you.",
             "price": 151,
             "owner": {
-                "fullname": "vividstore",
+                "fullname": "elad berliner",
                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/83cc7c97f9873bdb052590a94d32f84c-1576419363871/ed47443e-0f9b-42ab-beaf-ec0a0acccfe8.jpeg",
                 "level": "Top Rated",
                 "rate": 4
@@ -436,7 +438,7 @@ function _getFormattedGigs() {
             "about": "Hello! I'm a brazilian artist specialized in hyperrealistic drawings and paintings of human figures and animals, i use a diversity of techniques like Oil painting, dry pastel drawing and pencil. I have over 30 years of experience, check out my portfolio.",
             "price": 198,
             "owner": {
-                "fullname": "andreacarvalho_",
+                "fullname": "elad Berliner",
                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/5344c10fd4820db3626c4fc24968783d-1588608774469/1e4a3bd9-b71d-48ce-8ac0-0ff6d667caf4.jpeg",
                 "level": "Top Rated",
                 "rate": 5
@@ -802,7 +804,7 @@ function _getFormattedGigs() {
             "about": "I'm glad you're here! My name is Abrar Hussain. I’m a professional Transcriptionist and data entry expert. I’ve a BS degree in Mechanical engineering. From last more than three years, I’ve been working as a Data entry operator and English language transcriptionist. To me, customer satisfaction and providing the best quality work are always my top priorities. I’m really good at MS Office and Transcript. Get yourselves a skillful creator and professional Assistant by simply contacting me. So, drop a message, and let's get started. I am also available for long term projects. Thanks!",
             "price": 106,
             "owner": {
-                "fullname": "abrar_029",
+                "fullname": "Elad berliner",
                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/798a61194492b92313c2f5b27d5397bb-1615924783131/a6a1c7f0-0cc0-4c50-95e1-2693d183ee1c.jpg",
                 "level": "Top Rated",
                 "rate": 2

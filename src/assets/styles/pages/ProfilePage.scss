@@ -1,77 +1,167 @@
 .profile-page {
-  display: grid;
-  justify-content: center;
-  padding: 20px;
-  grid-template-columns: 400px 3fr;
-  padding: 20px;
-  // background-color: red;
+  display: flex;
+  padding: 40px 32px;
+  // justify-content: space-between;
 
   .profile-info {
-    width: 300px;
+    max-width: rem(400px);
     text-align: center;
-
-    padding: 20px;
-    // margin: 100px;
     width: 100%;
 
-    background-color: #fff;
     .profile-info-main {
+      border: 1px solid #dadbdd;
+      border-radius: 8px;
+      padding: 30px;
+      color: #404145;
+      margin: 0 0 20px;
+
+      .profile-img-container {
+        width: rem(150px);
+        height: rem(150px);
+        margin: 0 auto 15px auto;
+
+        .profile-img {
+          border-radius: 50%;
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .profile-details {
+
+        .profile-details-country,
+        .profile-details-date {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .country-wrapper,
+          .date-wrapper {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            font-weight: 700;
+            color: #74767e;
+          }
+
+          span {
+            font-family: 800;
+            color: #62646a;
+            font-family: 'MacanBold';
+          }
+
+        }
+      }
+    }
+
+    .profile-description {
+      margin: 20px 0;
+      text-align: left;
       border: 1px solid #ddd;
       border-radius: 8px;
       padding: 1em;
-    }
-     img.profile-info-main-img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 20px;
-      margin: auto;
-      
+      font-family: "Macan";
     }
 
-    .profile-info-main h2 {
-      margin: 0 0 10px;
-      padding-bottom: 1em;
-      border-bottom: solid 1px #ccc;
+    .messages-btn {
+      padding: 10px 20px;
+      background-color: #1dbf73;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 20px;
+      font-family: 'MacanBold';
+
+      &:hover {
+        background-color: darken($color: #1dbf73, $amount: 10%);
+      }
     }
   }
 
+  .gig-status {
+    width: rem(840px);
+    margin-left: rem(96px);
 
-  .profile-details p {
-    margin: 5px 0;
-}
-    .profile-details-singleline{
-        display: flex;
 
+    .headline-container {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      background-color: #1dbf73;
+      color: #fff;
+      // max-height: rem(50px);
+      height: rem(50px);
+      align-items: center;
+      border-radius: 5px;
+      font-family: 'MacanBold';
+
+      .headline {
+        position: relative;
+        bottom: 3px;
+        font-size: 30px;
+        font-weight: 700;
+        text-align: center;
+        margin: 0;
+        // padding-bottom: rem(25px);
+        // margin-top: 10px;
+      }
     }
-    .profile-details-singleline{
-        justify-content: space-between;
-        align-items: center;
-        .profile-details-singleline-innerdiv{
-            display: flex;
+
+    .user-gigs-container {
+      .user-gig-list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(rem(210px), rem(280px)));
+        // grid-template-rows: rem(25px);
+        // grid-template-rows:minmax(rem(240px),auto);
+        grid-row-gap: rem(20px);
+        grid-column-gap: rem(20px);
+        // width: 100%;
+        // height: 100%;
+        
+        
+
+
+        button {
+          background: #fff;
+          border: 1px solid #dadbdd;
+          border-radius: 5px;
+
+          span {
+            display:inline-block;
+            border-radius: 50%;
+            background-color: #1dbf73;
+            width: rem(70px);
+            height: rem(70px);
+            align-content: center;
+            color: #1dbf73;
+            color: #fff;
+            font-size: 50px;
+            justify-self: center;
+          }
+
+          p{
+            font-size: 22px;
+            color: #74767e;
+
+          }
+
         }
+
+        .profile-gig-preview {
+          border: 1px solid #dadbdd;
+          border-radius: 5px;
+          text-decoration: none;
+          display: flex;
+          flex-direction: column;
+
+        }
+
+
+      }
     }
-  .profile-description {
-    margin: 20px 0;
-    text-align: left;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1em;
-    font-family: "Macan";
-  }
 
-  .profile-description h3 {
-    margin: 0 0 10px;
-    font-size: 1em;
-  }
-
-  .messages-btn {
-    padding: 10px 20px;
-    background-color: green;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
   }
 }

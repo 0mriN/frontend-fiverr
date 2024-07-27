@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import profilePic from "../assets/img/profile.png"
-import { calculateProgress } from '../services/util.service';
+import { calculateProgress } from '../services/util.service'
 
 export function ProfileProgress({ user, orders, totalOrders }) {
     const [progress, setProgress] = useState(calculateProgress(orders, totalOrders))

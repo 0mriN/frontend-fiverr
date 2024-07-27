@@ -31,16 +31,16 @@ export function GigFilter({ gigs }) {
         switch (type) {
             case 'budget':
                 setIsOpen({ budget: true, deliveryTime: false, sort: false })
-                break;
+                break
             case 'deliveryTime':
                 setIsOpen({ budget: false, deliveryTime: true, sort: false })
-                break;
+                break
             case 'sort':
                 setIsOpen({ budget: false, deliveryTime: false, sort: true })
-                break;
+                break
 
             default:
-                break;
+                break
         }
     }
 
