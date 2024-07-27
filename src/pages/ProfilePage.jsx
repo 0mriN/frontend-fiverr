@@ -27,16 +27,16 @@ export function ProfilePage() {
         if (!isConfirmed) return
         try {
             const removedToy = await removeGig(gigId)
-            loadGigs(pageIdx)
+            loadGigs(gigs)
             showSuccessMsg('Toy removed')
         } catch (err) {
-            console.log('Cannot remove toy', err)
-            showErrorMsg('Cannot remove toy')
+            console.log('Cannot remove gig', err)
+            showErrorMsg('Cannot remove gig')
         }
     }
 
     const userGigs = gigs.filter(gig => gig.owner.fullname.toLowerCase() === user.fullname.toLowerCase())
-
+    // console.log('userGigs:', userGigs);
 
     if (!user) return <div>You have to log in first !</div>
 

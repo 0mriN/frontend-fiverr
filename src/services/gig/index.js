@@ -10,7 +10,8 @@ function getEmptyGig() {
 		title:'',
 		price:'',
         description: '',
-        imgUrls: []
+        imgUrls: [],
+        tags:[]
 	}
 }
 
