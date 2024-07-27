@@ -97,6 +97,7 @@ async function save(gig) {
             price: gig.price,
             description: gig.description,
             tags:gig.tags,
+            daysToMake:gig.daysToMake,
         }
         savedGig = await storageService.put(GIG_KEY, gigToSave)
     } else {
@@ -105,6 +106,7 @@ async function save(gig) {
             price: gig.price,
             description: gig.description,
             tags:gig.tags,
+            daysToMake:gig.daysToMake,
             // owner: {
             //     _id: makeId(),
             //     fullname: makeLorem(2),

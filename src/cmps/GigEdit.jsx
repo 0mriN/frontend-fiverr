@@ -40,15 +40,13 @@ export function GigEdit() {
 
     function handleTagChange(tag) {
         setGigToEdit(prevGigToEdit => {
-            const currentTags = prevGigToEdit.tags || [];
-            const isSelected = currentTags.includes(tag);
+            const currentTags = prevGigToEdit.tags || []
+            const isSelected = currentTags.includes(tag)
             const updatedTags = isSelected
                 ? currentTags.filter(t => t !== tag)
-                : [...currentTags, tag];
-            console.log('updatedTags:', updatedTags);
-            console.log('prevGigToEdit:', prevGigToEdit);
-            return { ...prevGigToEdit, tags: updatedTags };
-        });
+                : [...currentTags, tag]
+            return { ...prevGigToEdit, tags: updatedTags }
+        })
     }
 
     const CustomCheckbox = (props) => (
@@ -63,7 +61,7 @@ export function GigEdit() {
             },
           }}
         />
-      );
+      )
 
     function handleChange({ target }) {
         const field = target.name
@@ -105,7 +103,7 @@ export function GigEdit() {
     }
 
     function handleButtonClick() {
-        document.getElementById('imgUrls').click();
+        document.getElementById('imgUrls').click()
     }
 
     function onCancel(){
