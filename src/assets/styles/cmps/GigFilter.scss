@@ -44,14 +44,29 @@
         }
     }
 
+    // .sticky {
+    //     display: flex;
+    //     gap: rem(12px);
+    //     padding: 10px 0 13px 0;
+    //     top: 100px;
+
+    //     .filter-container {
+    //         display: flex;
+    //         gap: rem(12px);
+    //         padding: 10px 0 13px 0;
+    //     }
+    // }
+
     .filter-container {
         // overflow: visible;
         // position: fixed;
         // z-index: 1000;
-        // background-color: #fff;
+        position: static;
         display: flex;
         gap: rem(12px);
         padding: 10px 0 13px 0;
+
+        // background-color: #fff;
 
         .filter-btn {
             height: rem(42px);

@@ -84,6 +84,9 @@
             flex-wrap: wrap;
             justify-content: space-between;
             line-height: 24px;
+            // max-height: rem(55px);
+    //         bottom: 20px;
+    // position: relative;
 
             .footer-bottom-left {
                 align-items: center;
@@ -123,7 +126,7 @@
                 flex-wrap: wrap;
                 justify-content: space-between;
                 line-height: 24px;
-                padding: 16px 0px 0px;
+                padding: 4px 0px 0px;
                 width: rem(495px);
 
                 .social {
@@ -188,7 +191,9 @@
                             font-weight: 600;
                             line-height: 21px;
                             text-align: center;
-                            padding-left: 3px;
+                            padding-left: 7px;
+                            color: #74767e;
+
                         }
 
                     }
@@ -197,14 +202,20 @@
                         align-items: flex-start;
                         border-radius: 54px;
                         display: inline-block;
-                        //    font-size: 14px;
+                           font-size: 14px;
                         font-weight: 600;
                         line-height: 21px;
                         //    padding: 8px 12px;
                         text-align: center;
                         background-color: transparent;
                         margin-top: 14px;
-                        color: #62646a;
+                        color: #74767e;
+                        width:rem(82px);
+                        height:rem(37px);
+                    
+                        &:hover{
+                            color: #404145;
+                        }
                     }
                 }
             }
