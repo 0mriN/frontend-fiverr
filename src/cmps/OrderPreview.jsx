@@ -2,14 +2,14 @@ import sellerImg from "../assets/img/profile.png"
 import { useState } from "react"
 
 export function OrderPreview({ order }) {
-    const { seller, gig } = order
+    const { owner, gig } = order
     const deliveryDate = new Date(order.deliveryDate).toLocaleDateString()
 
     return (
         <>
             <td className="order-preview flex">
                 <img src={sellerImg} alt="seller" />
-                <p>{seller.fullname}</p>
+                <p>{owner.fullname}</p>
             </td>
             <td>
                 <p>{gig.title}</p>

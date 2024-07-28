@@ -50,7 +50,7 @@ export function RootCmp() {
                     <Route path="/checkout" element={<OrderCheckout />} />
                 </Routes>
             </main>
-            <AppFooter />
+            {/* <AppFooter /> */}
         </div>
     )
 }

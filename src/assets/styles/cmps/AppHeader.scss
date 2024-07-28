@@ -8,6 +8,7 @@
     header {
         // display: flex;
         min-height: rem(70px);
+        margin-bottom: 20px;
 
         nav {
             display: flex;
@@ -24,6 +25,7 @@
 
             & .nav-logo>* {
                 margin-inline-end: rem(35px);
+                letter-spacing: -1px;
 
                 font-size: 2.2em;
                 font-weight: bold;
@@ -115,11 +117,12 @@
                     background-color: white;
                     color: $gray4;
 
-                    transform: translate(-86%, 7%);
+                    transform: translate(-93%, 7%);
+                    width:rem(248px);
 
                     .user-options {
-                        border-bottom: 0.2px solid $gray2;
-                        color: #62646a;
+                        border-bottom: 1px solid #dadbdd;
+                        color: #74767e;
 
 
                         p>*:visited {
@@ -131,6 +134,9 @@
                             color: $clr3;
                             transition: .4s;
                         }
+                    }
+                    p{
+                        color: #74767e;
                     }
 
                     & p:hover {

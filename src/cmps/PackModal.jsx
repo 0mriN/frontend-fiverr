@@ -62,7 +62,7 @@ export function PackModal({ gig }) {
     const order = {
       _id: makeId(),
       buyer: userService.getLoggedinUser(),
-      seller: gig.owner,
+      owner: gig.owner,
       gig,
       // packageInfo,
       packageInfo: {

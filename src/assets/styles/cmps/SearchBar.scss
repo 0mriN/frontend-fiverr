@@ -21,15 +21,20 @@
             }
         }
 
-        & .btn {
-            height: 40px;
-            width: 50px;
+        & .header-search-btn {
+            height: 42px;
+            width: 51px;
 
             margin: -1px;
             padding-top: 9px;
 
             background-color: black;
             border-radius: 0px 4px 4px 0px;
+
+            svg{
+                width: 16px;
+                height: 16px;
+            }
         }
     }
 }

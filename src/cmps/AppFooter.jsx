@@ -128,7 +128,7 @@ export function AppFooter() {
 						<span className="footer-logo">
 							<img src={footerLogo} alt="" />
 						</span>
-						<p><span>© Fiverr International Ltd. 2024</span></p>
+						<p><span>© Thriverr International Ltd. 2024</span></p>
 					</div>
 					<div className="footer-bottom-right">
 						<ul className="social">

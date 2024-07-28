@@ -64,8 +64,13 @@ export function GigFilter({ gigs }) {
         ev.preventDefault()
         ev.stopPropagation()
         console.log('applied', ev, value);
-        setFilter({ ...filterBy, budget: value})
+        setFilter({ ...filterBy, budget: value })
         closeModal()
+    }
+
+    function capitalizeFirstLetter(string) {
+        if (!string) return ''
+        return string.charAt(0).toUpperCase() + string.slice(1)
     }
 
     return <section className="gig-filter">
@@ -73,7 +78,7 @@ export function GigFilter({ gigs }) {
         <article className="title-container">
             <ul className="breadcrumbs flex align-center">
                 <li className="flex align-center"><Link to="/"><img src={homeBreadcrumb} alt="Fiverr"></img></Link>&nbsp;</li>
-                <li> / &nbsp;{filterBy.tags[0]}</li>
+                <li> <span>/</span> <a>&nbsp;{capitalizeFirstLetter(filterBy.tags[0])}</a></li>
             </ul>
             <h1>Website Development</h1>
             <p className="index-subtitle">Create, build, and develop your website with skilled website developers</p>
