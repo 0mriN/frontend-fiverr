@@ -1,9 +1,31 @@
 .order-preview {
-    justify-content: space-around;
+    display: flex;
     align-items: center;
 
-    img {
-        height: 40px;
-        border-radius: 50%;
+    gap: rem(5px);
+
+    border-bottom: 1px solid $gray2;
+
+    &:hover {
+        border-bottom: 1px solid $clr3;
     }
+
+    .img-container {
+        max-width: 110px;
+        padding: 0 rem(10px);
+    }
+
+    .gig-info-container {
+
+
+        .gig-info {
+            // margin: 0;
+            line-height: lh(18px);
+        }
+
+        .gig-seller {
+            // margin: 0 0 5px;
+        }
+    }
+
 }

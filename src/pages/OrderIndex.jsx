@@ -5,11 +5,10 @@ import { SummarySection } from '../cmps/SummarySection'
 import { userService } from '../services/user/user.service.local'
 
 
-console.log
 export function OrderIndex() {
     const [orders, setOrders] = useState([])
 
-    const fetchOrders = async () => {
+    async function loadOrders() {
         try {
             const orders = await orderService.query()
             setOrders(orders)
@@ -19,16 +18,14 @@ export function OrderIndex() {
     }
 
     useEffect(() => {
-        fetchOrders()
+        loadOrders()
     }, [])
 
     if (!orders.length) return <div>Loading...</div>
 
     return (
         <section className="order-index">
-            <h1>Manage Orders</h1>
-            <SummarySection orders={orders} />
-            <OrderList orders={orders} fetchOrders={fetchOrders} />
+            <OrderList orders={orders} loadOrders={loadOrders} />
         </section>
     )
 }

@@ -17,6 +17,7 @@ import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import { ClickAwayListener } from '@mui/base'
+import { OrderIndex } from '../pages/OrderIndex'
 
 
 
@@ -29,18 +30,34 @@ export function AppHeader() {
 	const filterBy = useSelector(storeState => storeState.gigModule.filterBy)
 
 	//Modal
-	const [open, setOpen] = useState(false)
-
-	function handleOpen() {
-		setOpen(true)
+	const [openUser, setOpenUser] = useState(false)
+	const [openOrders, setOpenOrders] = useState(false)
+	
+	// Open
+	function handleOpenUser() {
+		setOpenUser(true)
 	}
 
-	function handleClose() {
-		setOpen(false)
+	function handleOpenOrders() {
+		setOpenOrders(true)
 	}
 
-	function handleClickAway() {
-		setOpen(false)
+	// Close
+	function handleCloseUser() {
+		setOpenUser(false)
+	}
+	
+	function handleCloseOrders() {
+		setOpenOrders(false)
+	}
+
+	// Click away
+	function handleClickAwayUser() {
+		setOpenUser(false)
+	}
+
+	function handleClickAwayOrders() {
+		setOpenOrders(false)
 	}
 
 	function onSetFilterBy(filterBy) {
@@ -48,13 +65,13 @@ export function AppHeader() {
 	}
 
 	function navigateTo(path) {
-		setOpen(false)
+		setOpenUser(false)
 		navigate(path)
 	}
 
 	async function onLogout() {
 		try {
-			setOpen(false)
+			setOpenUser(false)
 			await logout()
 			navigate('/')
 			showSuccessMsg('Bye now')
@@ -85,21 +102,36 @@ export function AppHeader() {
 
 				{user ? (
 					<>
-						<div className="nav-orders">
-							<NavLink to="/orders">Orders</NavLink>
+						<div className="nav-orders" onClick={handleOpenOrders}>
+							<p>Orders</p>
+							<ClickAwayListener
+									mouseEvent="onMouseDown"
+									touchEvent="onTouchStart"
+									onClickAway={handleClickAwayOrders}
+								>
+									<Box sx={{ position: 'relative' }}>
+										{openOrders ? (
+											<Box onClose={handleCloseOrders} onClick={ev => ev.stopPropagation()} className="orders-modal" >
+												<OrderIndex />
+											</Box>
+										) : null}
+									</Box>
+								</ClickAwayListener>
+
+							{/* <NavLink to="/orders">Orders</NavLink> */}
 						</div>
-						<div className="nav-user" onClick={handleOpen}>
+						<div className="nav-user" onClick={handleOpenUser}>
 							{user.fullname.charAt(0)}
 
 							<div>
 								<ClickAwayListener
 									mouseEvent="onMouseDown"
 									touchEvent="onTouchStart"
-									onClickAway={handleClickAway}
+									onClickAway={handleClickAwayUser}
 								>
 									<Box sx={{ position: 'relative' }}>
-										{open ? (
-											<Box onClose={handleClose} onClick={ev => ev.stopPropagation()} className="user-modal" >
+										{openUser ? (
+											<Box onClose={handleCloseUser} onClick={ev => ev.stopPropagation()} className="user-modal" >
 												<div className="user-options">
 													<p onClick={() => navigateTo('/profile')}>Profile</p>
 													<p onClick={() => navigateTo('/dashboard')}>Dashboard</p>
