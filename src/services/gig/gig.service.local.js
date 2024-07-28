@@ -20,7 +20,7 @@ window.cs = gigService
 
 async function query(filterBy = { title: '' }) {
     var gigs = await storageService.query(GIG_KEY)
-    const { title, tags, budget, sort } = filterBy
+    const { title, tags, budget, sort, deliveryTime } = filterBy
 
     if (title) {
         const regex = new RegExp(filterBy.title, 'i')
@@ -43,6 +43,25 @@ async function query(filterBy = { title: '' }) {
                 gigs = gigs.filter(gig => gig.price >= 231)
                 break;
 
+            default:
+                break;
+        }
+    }
+    if (deliveryTime) {
+        switch (deliveryTime) {
+            case 'express':
+                gigs = gigs.filter(gig => gig.daysToMake <= 1)
+                break;
+            case 'threeDays':
+                gigs = gigs.filter(gig => gig.daysToMake <= 3)
+                break;
+            case 'sevenDays':
+                gigs = gigs.filter(gig => gig.daysToMake <= 7)
+                break;
+            case 'anytime':
+                gigs = gigs.filter(gig => gig.daysToMake >= 1)
+                break;
+        
             default:
                 break;
         }

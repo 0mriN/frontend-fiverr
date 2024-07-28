@@ -25,7 +25,6 @@ export function CheckoutDetails({ orders }) {
     async function onPay() {
         try {
             orderService.add(orders[0])
-            console.log('saved to storage')
             navigate('/')
             showSuccessMsg(`Order saved !`)
         } catch (err) {

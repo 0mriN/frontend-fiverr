@@ -1,9 +1,15 @@
 import { FormControl, FormControlLabel, Radio, RadioGroup } from "@mui/material"
+import { useState } from "react"
 
-export function DeliveryTimeFilterForm({ isOpen, applyFilter }) {
-    
+export function DeliveryTimeFilterForm({ applyFilter }) {
+    const [value, setValue] = useState()
+
+    function setFilterBy(event, valuenew) {
+        setValue(valuenew)
+    }
+
     function onApplyFilter(ev, value) {
-        applyFilter(ev, value)
+        applyFilter(ev, value, 'deliveryTime')
     }
 
     return <form className={`delivery-time-filter-form`} >
@@ -12,7 +18,8 @@ export function DeliveryTimeFilterForm({ isOpen, applyFilter }) {
                 <RadioGroup
                     aria-labelledby="demo-radio-buttons-group-label"
                     defaultValue="female"
-                    name="radio-buttons-group">
+                    name="radio-buttons-group"
+                    onChange={setFilterBy}>
                     <FormControlLabel
                         className="filter-label"
                         value="express"

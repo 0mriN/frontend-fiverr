@@ -1,7 +1,7 @@
 import { FormControl, FormControlLabel, Radio, RadioGroup } from "@mui/material"
 import { useState } from "react"
 
-export function BudgetFilterForm({ isOpen, applyFilter }) {
+export function BudgetFilterForm({ applyFilter }) {
     const [value, setValue] = useState()
 
     function setFilterBy(event, valuenew) {
@@ -9,7 +9,7 @@ export function BudgetFilterForm({ isOpen, applyFilter }) {
     }
 
     function onApplyFilter(ev, value) {
-        applyFilter(ev, value)
+        applyFilter(ev, value, 'budget')
     }
 
     // return <form className={`budget-filter-form ${isOpen ? '' : 'transparent'}`} >
@@ -20,8 +20,7 @@ export function BudgetFilterForm({ isOpen, applyFilter }) {
                     aria-labelledby="demo-radio-buttons-group-label"
                     defaultValue="female"
                     name="radio-buttons-group"
-                    onChange={setFilterBy}
-                >
+                    onChange={setFilterBy}>
                     <FormControlLabel
                         className="filter-label"
                         value="value"

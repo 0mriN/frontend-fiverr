@@ -21,7 +21,7 @@ function getDefaultFilter() {
         tags: [],
         budget: null,
         sort: 'bestSelling',
-        // sortField: '',
+        deliveryTime: null,
     }
 }
 

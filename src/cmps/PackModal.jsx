@@ -46,7 +46,6 @@ export function PackModal({ gig }) {
   }
 
   const handleContinue = (packageKey) => {
-    console.log('packageKey:', packageKey)
     setSelectedPackage(packages[packageKey])
     onContinue(selectedPackage)
     // setShowOrderModal(true)
