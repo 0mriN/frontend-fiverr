@@ -1,16 +1,21 @@
 .budget-filter-form {
-    padding: 20px;
-    position: absolute;
     z-index: 10000;
-    transform: translate(79px, 155px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
 
-    height: max-content;
     width: 316px;
 
-    background-color: #fff;
-    border: 1px solid #dadbdd;
-    border-radius: 8px;
-    box-shadow: 0 12px 18px rgba(0, 0, 0, 0.1411764706);
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+
+    padding: 24px;
+
+    background-color: white;
+    color: $gray4;
+
+    transform: translate(-38.7%, 10%);
 
     .radio-container {
         padding-block-end: 20px;

@@ -30,21 +30,16 @@ export function AppHeader() {
 
 	//Modal
 	const [open, setOpen] = useState(false)
-	const handleOpen = () => setOpen(true)
-	// const handleClose = () => setOpen(false)
-	const handleClose = () => {
+
+	function handleOpen() {
+		setOpen(true)
+	}
+
+	function handleClose() {
 		setOpen(false)
 	}
 
-	// function handleClose() {
-	// 	setOpen(false)
-	// 	console.log('closed', open)
-	// }
-
-	useEffect(() => {
-    }, [open])
-
-	const handleClickAway = () => {
+	function handleClickAway() {
 		setOpen(false)
 	}
 
@@ -54,7 +49,6 @@ export function AppHeader() {
 
 	function navigateTo(path) {
 		setOpen(false)
-		handleClose()
 		navigate(path)
 	}
 
@@ -105,7 +99,7 @@ export function AppHeader() {
 								>
 									<Box sx={{ position: 'relative' }}>
 										{open ? (
-											<Box onClose={handleClose} className="user-modal" >
+											<Box onClose={handleClose} onClick={ev => ev.stopPropagation()} className="user-modal" >
 												<div className="user-options">
 													<p onClick={() => navigateTo('/profile')}>Profile</p>
 													<p onClick={() => navigateTo('/dashboard')}>Dashboard</p>
