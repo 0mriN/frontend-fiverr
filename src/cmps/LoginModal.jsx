@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { login } from '../store/actions/user.actions'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
+{/* <img class="N3KcAH7" src="https://fiverr-res.cloudinary.com/npm-assets/layout-service/standard.0638957.png" alt="setup illustrastion banner"></img> */}
 
 export function LoginModal({ onClose }) {
     const [credentials, setCredentials] = useState({ username: 'elad', password: '1234' })

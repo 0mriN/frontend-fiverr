@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { PackModalToolbar } from '../cmps/PackModalToolbar'
 import { OrderModal } from './OrderModal.jsx'
 import { makeId } from '../services/util.service.js'
@@ -14,6 +14,8 @@ export function PackModal({ gig }) {
   const [showOrderModal, setShowOrderModal] = useState(false)
   const [selectedPackage, setSelectedPackage] = useState(null)
   const navigate = useNavigate()
+  const modalRef = useRef(null)
+ 
 
   const packages = {
     basic: {
@@ -27,7 +29,7 @@ export function PackModal({ gig }) {
     },
     standard: {
       name: "Standard",
-      price: `₪ 10`,
+      // price: `$ 10`,
       price: gig.price + 20,
       description: "5 Logo Design + PNG + JPG + 3D Mockup + Source Files",
       delivery: "5-day delivery",
@@ -36,7 +38,7 @@ export function PackModal({ gig }) {
     },
     premium: {
       name: "Premium",
-      price: `₪ 10`,
+      // price: `$ 10`,
       price: gig.price + 40,
       description: "Unlimited Logo Design + PNG + JPG + 3D Mockup + Source Files + Brand Guidelines",
       delivery: "7-day delivery",
@@ -61,7 +63,7 @@ export function PackModal({ gig }) {
     const order = {
       _id: makeId(),
       buyer: userService.getLoggedinUser(),
-      seller: gig.owner,
+      owner: gig.owner,
       gig,
       // packageInfo,
       packageInfo: {
@@ -84,8 +86,27 @@ export function PackModal({ gig }) {
 
   }
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (modalRef.current) {
+        const scrollY = window.scrollY
+        const stickyOffset = 140
+        const rect = modalRef.current.getBoundingClientRect()
+        if (scrollY >= stickyOffset) {
+          modalRef.current.style.top = `${stickyOffset}px`
+        } else {
+          modalRef.current.style.top = '0px' 
+        }
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
-    <div className="modal">
+    <div className="modal" ref={modalRef}>
       <div className="modal-content">
         <PackModalToolbar likedByUsers={gig.likedByUsers.length} />
         <div className='modal-packages'>
@@ -118,7 +139,7 @@ export function PackModal({ gig }) {
 
                         <span className='price-with-icon'>
                           <span className='modal-price'>
-                            {`₪${packages[key].price}`}
+                            {`US$${packages[key].price}`}
                           </span>
                           <div className="info-icon">
                             <svg width="16" height="16" viewBox="0 0 14 15" xmlns="http://www.w3.org/2000/svg" fill="#404145" className="st-current">

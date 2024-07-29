@@ -8,6 +8,8 @@ import { DeliveryTimeFilterForm } from "./DeliveryTimeFilterForm"
 import { SortGigForm } from "./SortGigForm"
 import { setFilter } from "../store/actions/gig.actions"
 import { Box, ClickAwayListener } from "@mui/material"
+import { StickyWrapper } from "./StickyWrapper"
+
 
 
 export function GigFilter({ gigs }) {
@@ -85,12 +87,17 @@ export function GigFilter({ gigs }) {
         handleCloseDeliveryTime()
     }
 
+    function capitalizeFirstLetter(string) {
+        if (!string) return ''
+        return string.charAt(0).toUpperCase() + string.slice(1)
+    }
+
     return <section className="gig-filter">
 
         <article className="title-container">
             <ul className="breadcrumbs flex align-center">
                 <li className="flex align-center"><Link to="/"><img src={homeBreadcrumb} alt="Fiverr"></img></Link>&nbsp;</li>
-                <li> / &nbsp;{filterBy.tags[0]}</li>
+                <li> <span>/</span> <a>&nbsp;{capitalizeFirstLetter(filterBy.tags[0])}</a></li>
             </ul>
             <h1>Website Development</h1>
             <p className="index-subtitle">Create, build, and develop your website with skilled website developers</p>
@@ -98,48 +105,50 @@ export function GigFilter({ gigs }) {
         </article>
 
         <article className="filter-container">
-            <div className="btn-container">
-                <div className="filter-btn budget flex align-center justify-center" onClick={handleOpenBudget}>
-                    <p>Budget</p>
-                    <svg width="16" height="16" viewBox="0 0 11 7" xmlns="http://www.w3.org/2000/svg" fill="currentFill"><path d="M5.464 6.389.839 1.769a.38.38 0 0 1 0-.535l.619-.623a.373.373 0 0 1 .531 0l3.74 3.73L9.47.61a.373.373 0 0 1 .531 0l.619.623a.38.38 0 0 1 0 .535l-4.624 4.62a.373.373 0 0 1-.531 0Z" /></svg>
+            <StickyWrapper>
+                <div className="btn-container">
+                    <div className="filter-btn budget flex align-center justify-center" onClick={handleOpenBudget}>
+                        <p>Budget</p>
+                        <svg width="16" height="16" viewBox="0 0 11 7" xmlns="http://www.w3.org/2000/svg" fill="currentFill"><path d="M5.464 6.389.839 1.769a.38.38 0 0 1 0-.535l.619-.623a.373.373 0 0 1 .531 0l3.74 3.73L9.47.61a.373.373 0 0 1 .531 0l.619.623a.38.38 0 0 1 0 .535l-4.624 4.62a.373.373 0 0 1-.531 0Z" /></svg>
 
-                    <ClickAwayListener
-                        mouseEvent="onMouseDown"
-                        touchEvent="onTouchStart"
-                        onClickAway={handleClickAwayBudget}
-                    >
-                        <Box sx={{ position: 'relative' }}>
-                            {openBudget ? (
-                                <Box onClose={handleCloseBudget} onClick={ev => ev.stopPropagation()} className="user-modal" >
-                                    <BudgetFilterForm applyFilter={applyFilter} />
-                                </Box>
-                            ) : null}
-                        </Box>
-                    </ClickAwayListener>
+                        <ClickAwayListener
+                            mouseEvent="onMouseDown"
+                            touchEvent="onTouchStart"
+                            onClickAway={handleClickAwayBudget}
+                        >
+                            <Box sx={{ position: 'relative' }}>
+                                {openBudget ? (
+                                    <Box onClose={handleCloseBudget} onClick={ev => ev.stopPropagation()} className="user-modal" >
+                                        <BudgetFilterForm applyFilter={applyFilter} />
+                                    </Box>
+                                ) : null}
+                            </Box>
+                        </ClickAwayListener>
+                    </div>
                 </div>
-            </div>
 
-            <div className="btn-container">
-                <div className="filter-btn delivery-time flex align-center justify-center" onClick={handleOpenDeliveryTime}>
-                    <p>Delivery time</p>
-                    <svg width="16" height="16" viewBox="0 0 11 7" xmlns="http://www.w3.org/2000/svg" fill="currentFill"><path d="M5.464 6.389.839 1.769a.38.38 0 0 1 0-.535l.619-.623a.373.373 0 0 1 .531 0l3.74 3.73L9.47.61a.373.373 0 0 1 .531 0l.619.623a.38.38 0 0 1 0 .535l-4.624 4.62a.373.373 0 0 1-.531 0Z" /></svg>
+                <div className="btn-container">
+                    <div className="filter-btn delivery-time flex align-center justify-center" onClick={handleOpenDeliveryTime}>
+                        <p>Delivery time</p>
+                        <svg width="16" height="16" viewBox="0 0 11 7" xmlns="http://www.w3.org/2000/svg" fill="currentFill"><path d="M5.464 6.389.839 1.769a.38.38 0 0 1 0-.535l.619-.623a.373.373 0 0 1 .531 0l3.74 3.73L9.47.61a.373.373 0 0 1 .531 0l.619.623a.38.38 0 0 1 0 .535l-4.624 4.62a.373.373 0 0 1-.531 0Z" /></svg>
 
-                    <ClickAwayListener
-                        mouseEvent="onMouseDown"
-                        touchEvent="onTouchStart"
-                        onClickAway={handleClickAwayDeliveryTime}
-                    >
-                        <Box sx={{ position: 'relative' }}>
-                            {openDeliveryTime ? (
-                                <Box onClose={handleCloseDeliveryTime} onClick={ev => ev.stopPropagation()} className="user-modal" >
-                                    <DeliveryTimeFilterForm applyFilter={applyFilter} />
-                                </Box>
-                            ) : null}
-                        </Box>
-                    </ClickAwayListener>
+                        <ClickAwayListener
+                            mouseEvent="onMouseDown"
+                            touchEvent="onTouchStart"
+                            onClickAway={handleClickAwayDeliveryTime}
+                        >
+                            <Box sx={{ position: 'relative' }}>
+                                {openDeliveryTime ? (
+                                    <Box onClose={handleCloseDeliveryTime} onClick={ev => ev.stopPropagation()} className="user-modal" >
+                                        <DeliveryTimeFilterForm applyFilter={applyFilter} />
+                                    </Box>
+                                ) : null}
+                            </Box>
+                        </ClickAwayListener>
 
+                    </div>
                 </div>
-            </div>
+            </StickyWrapper>
         </article>
 
         <article className="sort-container">

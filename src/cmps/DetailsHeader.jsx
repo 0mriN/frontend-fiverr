@@ -15,7 +15,7 @@ export function DetailsHeader({ gig }) {
 
       <div className='Details-breadcrumbs'>
         <Link to="/"> <img src={homeBreadcrump} alt="Fiverr"></img></Link>
-        <Link to="/gig"> / Logo Design </Link>
+        <Link to="/gig"><span>/</span>Logo Design </Link>
       </div>
       <div className='gig-overview'>
         <h1>{gig.title}</h1>

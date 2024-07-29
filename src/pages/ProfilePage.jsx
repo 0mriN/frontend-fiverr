@@ -75,7 +75,7 @@ export function ProfilePage() {
             </div>
             <div className='gig-status'>
                 <div className='headline-container'>
-                    <h2 className='headline'>Active Gigs</h2>
+                    <h2 className='headline underlined'>Active Gigs</h2>
                 </div>
 
 

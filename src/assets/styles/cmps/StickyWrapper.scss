@@ -1,0 +1,26 @@
+/* StickyWrapper.css */
+
+.sticky-wrapper {
+    width: 100%;
+    display: flex;
+    gap: rem(12px);
+    padding: 10px 0;
+}
+
+.sticky {
+    position: fixed;
+    top: 88px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    z-index: 10000;
+    padding-left: 123px;
+}
+
+
+.filter-container {
+    position: static;
+    display: flex;
+    gap: rem(12px);
+    padding: 10px 0;
+}

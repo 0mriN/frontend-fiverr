@@ -8,6 +8,7 @@
     header {
         // display: flex;
         min-height: rem(70px);
+        margin-bottom: 20px;
 
         nav {
             display: flex;
@@ -24,6 +25,7 @@
 
             & .nav-logo>* {
                 margin-inline-end: rem(35px);
+                letter-spacing: -1px;
 
                 font-size: 2.2em;
                 font-weight: bold;
@@ -52,8 +54,8 @@
                 & .heart-icon {
                     height: 40px;
                     width: 40px;
-
-                    fill: #62646a;
+                    font-weight: 400;
+                    fill: #74767e;
                     border-radius: 50%;
                 }
 
@@ -68,17 +70,17 @@
 
             .nav-orders {
                 margin-inline-end: rem(25px);
-
+                font-weight: 600;
                 font-size: rem(16px);
 
                 &>*:visited {
-                    color: #62646a;
+                    color: #74767e;
                 }
 
                 &>*:hover {
                     cursor: pointer;
                     text-decoration: none;
-                    color: $clr3;
+                    color: #1dbf73;
                     transition: .4s;
                 }
 
@@ -113,10 +115,11 @@
 
                 border-radius: 50%;
 
-                background-color: #9b6928;
+                background-color: #b25d1f;
 
-                color: white;
+                color: #fff;
                 font-size: rem(16px);
+                font-weight: 600;
 
                 &:hover {
                     cursor: pointer;
@@ -136,11 +139,12 @@
                     background-color: white;
                     color: $gray4;
 
-                    transform: translate(-86%, 7%);
+                    transform: translate(-93%, 7%);
+                    width: rem(248px);
 
                     .user-options {
-                        border-bottom: 0.2px solid $gray2;
-                        color: #62646a;
+                        border-bottom: 1px solid #dadbdd;
+                        color: #74767e;
 
 
                         p>*:visited {
@@ -152,6 +156,11 @@
                             color: $clr3;
                             transition: .4s;
                         }
+                    }
+
+                    p {
+                        color: #74767e;
+                        font-family: 'MacanExLight';
                     }
 
                     & p:hover {

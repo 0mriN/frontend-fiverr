@@ -17,7 +17,7 @@ export function OrderModal({ packageInfo, onClose, gig }) {
     const order = {
       _id: makeId(),
       buyer: userService.getLoggedinUser(),
-      seller: gig.owner,
+      owner: gig.owner,
       gig,
       packageInfo,
       status: 'pending',

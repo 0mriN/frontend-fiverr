@@ -1,3 +1,4 @@
+
 .profile-page {
   display: flex;
   padding: 40px 32px;
@@ -90,13 +91,16 @@
       display: flex;
       width: 100%;
       justify-content: center;
-      background-color: #1dbf73;
-      color: #fff;
+      // background-color: #1dbf73;
+      background-color: #fff;
+      color:#404145 ;
       // max-height: rem(50px);
       height: rem(50px);
       align-items: center;
       border-radius: 5px;
       font-family: 'MacanBold';
+      border: 1px solid #dadbdd;
+      
 
       .headline {
         position: relative;
@@ -107,8 +111,28 @@
         margin: 0;
         // padding-bottom: rem(25px);
         // margin-top: 10px;
+        
+        border-bottom: 1px solid #1dbf73;
       }
+      .underlined {
+        display: inline-block;
+        position: relative;
+        padding-bottom: 13px; 
+        bottom: -5px;
     }
+
+    .underlined::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 2px; /* Adjust as needed */
+        width: 100%;
+        background-color: #1dbf73; /* Change color as needed */
+    }
+
+    }
+
 
     .user-gigs-container {
       .user-gig-list {

@@ -32,15 +32,51 @@
         text-decoration: none;
         color: #222325;
         font-size: 14px;
+        height: 16px;
+        font-family: 'MacanExLight';
 
         img {
+          position: relative;
+          top: 2px;
           color: #222325;
           display: inline;
           font-size: 14px;
           line-height: 21px;
+          height: 16px;
+          width: 16px;
         }
+
+        span {
+          padding-right: 8px;
+          color: #c5c6c9;
+        }
+
       }
     }
+
+    //   .breadcrumbs {
+    //     margin: 0;
+    //     padding-bottom: rem(10px);
+
+    //     a {
+    //         // display: flex;
+    //         font-size: 14px;
+    //         color: #404145;
+    //         font-family: 'MacanThin';
+    //         font-weight: 900;
+
+    //         img {
+    //             height: 14px;
+    //             width: 14px;
+    //             margin-right: 12px;
+    //             margin-top: 3px;
+    //         }
+    //     }
+
+    //     span {
+    //         color: #c5c6c9;
+    //     }
+    // }
 
     .gig-overview {
       background-color: #fff;
@@ -417,9 +453,10 @@
       padding: 0px 0px 32px;
       transform: translate3d(0px, 0px, 0px);
       width: 100%;
-      top: 140px;
+      // top: 140px;
       height: min-content;
       position: sticky;
+      transition: top 0.7s ease;
 
       .modal-content {
         display: block;

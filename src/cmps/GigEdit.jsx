@@ -3,7 +3,7 @@ import { gigService } from "../services/gig"
 import { useNavigate, useParams } from "react-router"
 import { addGig, updateGig } from "../store/actions/gig.actions"
 import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service"
-import { loadImageFromInput } from "../services/upload.service.local.js"
+import { uploadService } from "../services/upload.service.js"
 import { Checkbox, FormControlLabel, FormGroup, Select, MenuItem, ListItemText, InputLabel, FormControl } from "@mui/material"
 
 
@@ -77,9 +77,10 @@ export function GigEdit() {
                 value = target.checked
                 break
             case 'file':
-                loadImageFromInput(target.files[0], (imgUrl) => {
-                    setGigToEdit(prevGigToEdit => ({ ...prevGigToEdit, imgUrls: [imgUrl] }))
-                })
+                // uploadImg(target.files, (imgUrl) => {
+                //     setGigToEdit(prevGigToEdit => ({ ...prevGigToEdit, imgUrls: [imgUrl] }))
+                // })
+                handleFileUpload(target.files)
                 return
 
             default:
@@ -110,6 +111,16 @@ export function GigEdit() {
       let isConfirmed = confirm('Are you sure you want to cancel ?')
         if(!isConfirmed) return
         navigate('/profile')
+    }
+
+    async function handleFileUpload(files) {
+        try {
+            const imgUrls = await Promise.all([...files].map(file => uploadService.uploadImg(file)))
+            setGigToEdit(prevGigToEdit => ({ ...prevGigToEdit, imgUrls }))
+        } catch (err) {
+            showErrorMsg('Failed to upload images')
+            console.error('Failed to upload images', err)
+        }
     }
 
     const { title, price, description, tags, daysToMake } = gigToEdit
@@ -147,7 +158,7 @@ export function GigEdit() {
                         <span>Price
                             <p>Price you're offering for this gig</p>
                         </span>
-                        <input onChange={handleChange} type="text" name="price" id="price" value={price} />
+                        <input onChange={handleChange} type="number" name="price" id="price" value={price} />
                     </label>
 
                     <div className="upload-section">
@@ -165,7 +176,8 @@ export function GigEdit() {
                         className="file-input-btn"
                         name="imgUrls"
                         onChange={handleChange}
-                        accept="image/*" />
+                        accept="image/*" 
+                        multiple />
                     </div>
 
                 </div>
