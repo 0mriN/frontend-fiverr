@@ -12,7 +12,8 @@ export function BudgetFilterForm({ isOpen, applyFilter }) {
         applyFilter(ev, value)
     }
 
-    return <form className={`budget-filter-form ${isOpen ? '' : 'transparent'}`} >
+    // return <form className={`budget-filter-form ${isOpen ? '' : 'transparent'}`} >
+    return <form className={`budget-filter-form `} >
         <section className="radio-container">
             <FormControl fullWidth={true}>
                 <RadioGroup
