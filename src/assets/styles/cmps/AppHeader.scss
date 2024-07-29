@@ -54,8 +54,8 @@
                 & .heart-icon {
                     height: 40px;
                     width: 40px;
-
-                    fill: #62646a;
+                    font-weight: 400;
+                    fill: #74767e;
                     border-radius: 50%;
                 }
 
@@ -70,16 +70,16 @@
 
             .nav-orders {
                 margin-inline-end: rem(25px);
-
+                font-weight: 600;
                 font-size: rem(16px);
 
                 &>*:visited {
-                    color: #62646a;
+                    color: #74767e;
                 }
 
                 &>*:hover {
                     text-decoration: none;
-                    color: $clr3;
+                    color: #1dbf73;
                     transition: .4s;
                 }
 
@@ -94,10 +94,11 @@
 
                 border-radius: 50%;
 
-                background-color: #9b6928;
+                background-color: #b25d1f;
 
-                color: white;
+                color: #fff;
                 font-size: rem(16px);
+                font-weight: 600;
 
                 &:hover {
                     cursor: pointer;
@@ -118,7 +119,7 @@
                     color: $gray4;
 
                     transform: translate(-93%, 7%);
-                    width:rem(248px);
+                    width: rem(248px);
 
                     .user-options {
                         border-bottom: 1px solid #dadbdd;
@@ -128,15 +129,17 @@
                         p>*:visited {
                             color: #62646a;
                         }
-                        
+
                         p>*:hover {
                             text-decoration: none;
                             color: $clr3;
                             transition: .4s;
                         }
                     }
-                    p{
+
+                    p {
                         color: #74767e;
+                        font-family: 'MacanExLight';
                     }
 
                     & p:hover {

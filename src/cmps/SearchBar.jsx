@@ -50,7 +50,7 @@ export function SearchBar({ trackInViewport = false }) {
                 type="search"
                 name="title"
                 value={filterBy.title}
-                placeholder="what service are you looking for today?"
+                placeholder="What service are you looking for today?"
                 onChange={handleChange}
                 required
             />
