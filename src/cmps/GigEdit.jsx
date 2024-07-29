@@ -3,7 +3,6 @@ import { gigService } from "../services/gig"
 import { useNavigate, useParams } from "react-router"
 import { addGig, updateGig } from "../store/actions/gig.actions"
 import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service"
-import { loadImageFromInput } from "../services/upload.service.local.js"
 import { uploadService } from "../services/upload.service.js"
 import { Checkbox, FormControlLabel, FormGroup, Select, MenuItem, ListItemText, InputLabel, FormControl } from "@mui/material"
 
