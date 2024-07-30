@@ -32,8 +32,8 @@ async function query(type) {
 async function update(orderId, status) {
   const order = await storageService.get(ORDER_KEY, orderId)
   order.status = status
-  await storageService.put(ORDER_KEY, order)
-  return order
+  const addedOrder = await storageService.put(ORDER_KEY, order)
+  return addedOrder
 }
 
 async function getById(orderId) {

@@ -18,6 +18,8 @@ function getById(gigId) {
     return httpService.get(`gig/${gigId}`)
 }
 
+
+
 async function remove(gigId) {
     return httpService.delete(`gig/${gigId}`)
 }

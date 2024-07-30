@@ -2,6 +2,7 @@ import react from "react"
 import profileImg from "../../src/assets/img/profile.png"
 import { StarLevel } from "../cmps/StarLevel"
 import ratingStar from '../assets/img/svg/RatingStar.svg'
+import { gigService } from "../services/gig"
 
 
 export function DetailsAbout({ gig }) {

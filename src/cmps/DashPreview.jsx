@@ -9,11 +9,10 @@ export function DashPreview({ order, fetchOrders }) {
     function calcDaysToMake() {
         return gig.daysToMake
     }
-
     async function handleStatusChange(event) {
         const newStatus = event.target.value
         try {
-            await orderService.update(order._id, newStatus)
+            await orderService.update(order._id, { status: newStatus }) // Send an object with the status
             setCurrentStatus(newStatus)
             fetchOrders()
         } catch (error) {

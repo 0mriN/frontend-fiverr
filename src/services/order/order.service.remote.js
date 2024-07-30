@@ -16,18 +16,16 @@ function query(filterBy) {
 
 
   async function query(type) {
-    let orders = await httpService.query(ORDER_KEY)
+    let orders = await httpService.get(ORDER_KEY)
     const currUser = userService.getLoggedinUser()
     if (type === "dashboard") {
       orders = orders.filter(
         (order) => order.owner.fullname === currUser.fullname
       )
-      console.log("dashboard ", orders)
     } else if (type === "orders") {
       orders = orders.filter(
         (order) => order.buyer.fullname === currUser.fullname
       )
-      console.log("dashboard ", orders)
     }
     return orders
   }
