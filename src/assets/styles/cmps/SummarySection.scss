@@ -38,3 +38,15 @@
         }
     }
 }
+
+@include for-mobile-layout {
+    .summary-section {
+        // max-width: 520px;
+        // overflow: hidden;
+
+        // display: grid;
+        // grid-template-columns: 1fr 1fr;
+        // gap: 40px;
+        display: none;
+    }
+}

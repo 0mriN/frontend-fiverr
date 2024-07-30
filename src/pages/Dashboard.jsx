@@ -4,7 +4,8 @@ import { DashList } from '../cmps/DashList'
 import { SummarySection } from '../cmps/SummarySection'
 import { userService } from '../services/user/user.service.local'
 import { ProfileProgress } from '../cmps/ProfileProgress'
-
+import profilePic from "../assets/img/profile.png"
+import { MobileDashboard } from '../cmps/MobileDashboard'
 
 
 export function Dashboard() {
@@ -43,6 +44,7 @@ export function Dashboard() {
                 <h2 className='headline'>Manage Orders</h2>
                 <DashList orders={orders} fetchOrders={fetchOrders} />
             </div>
+            <MobileDashboard user={user} orders={orders} fetchOrders={fetchOrders}/>
         </section>
     )
 }

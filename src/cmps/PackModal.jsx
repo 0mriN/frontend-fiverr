@@ -23,7 +23,7 @@ export function PackModal({ gig }) {
       // price: `₪ 10`,
       price: gig.price,
       description: "3 Logo Design + PNG + JPG + 3D Mockup",
-      delivery: "3-day delivery",
+      delivery: `${gig.daysToMake}-day delivery`,
       revisions: "5 Revisions",
       promo: "Wind - For Start Ups "
     },
@@ -32,7 +32,7 @@ export function PackModal({ gig }) {
       // price: `$ 10`,
       price: gig.price + 20,
       description: "5 Logo Design + PNG + JPG + 3D Mockup + Source Files",
-      delivery: "5-day delivery",
+      delivery: `${gig.daysToMake + 2}-day delivery`,
       revisions: "10 Revisions",
       promo: "Tornado - Best Choice "
     },
@@ -41,7 +41,7 @@ export function PackModal({ gig }) {
       // price: `$ 10`,
       price: gig.price + 40,
       description: "Unlimited Logo Design + PNG + JPG + 3D Mockup + Source Files + Brand Guidelines",
-      delivery: "7-day delivery",
+      delivery: `${gig.daysToMake + 4}-day delivery`,
       revisions: "Unlimited Revisions",
       promo: "Hurricane - Selected By PRO "
     }

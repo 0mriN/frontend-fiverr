@@ -12,6 +12,7 @@
 
     @include for-mobile-layout {
         grid-template-columns:
+            // minmax(3px) minmax(1fr) minmax(3px);
             minmax(3px, 1fr) minmax(auto, $mobile-breakpoint) minmax(3px, 1fr);
 
         .gig-list {

@@ -25,7 +25,7 @@ import { OrderCheckout } from './cmps/OrderCheckout.jsx'
 export function RootCmp() {
     return (
         <div className="main-container">
-            <AppHeader />
+            {/* <AppHeader /> */}
             {/* <UserMsg /> */}
 
             <main>
@@ -48,7 +48,7 @@ export function RootCmp() {
                     <Route path="/checkout" element={<OrderCheckout />} />
                 </Routes>
             </main>
-            <AppFooter />
+            {/* <AppFooter /> */}
         </div>
     )
 }

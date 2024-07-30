@@ -1,0 +1,35 @@
+.mobile-dashboard {
+    width: 510px;
+
+    .user-info-container {
+        max-width: 100%;
+        max-height: rem(600px);
+        border: 1px solid #dadbdd;
+        border-radius: 10px;
+        margin: 0px 40px 60px 0px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        .user-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            // gap: 5px;
+
+            &>* {
+                height: 180px;
+                width: 100%;
+
+                border: 1px solid lighten($gray1, 3%);
+                // border-radius: 10px;
+
+                padding: 10px;
+            }
+
+        }
+    }
+}
+
+@include for-small-layout {
+    .mobile-dashboard {
+        display: none;
+    }   
+}

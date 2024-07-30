@@ -1,0 +1,15 @@
+.prime-category-filter {
+    overflow: hidden;
+
+    .category-list {
+        gap: 20px;
+
+        & > * {
+            &:hover {
+                cursor: pointer;
+                
+                border-bottom: 2px solid $clr3;
+            }
+        }
+    }
+}

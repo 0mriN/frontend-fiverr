@@ -15,7 +15,7 @@ export function PrimeCategoryFilter({ setFilterBy, filterBy }) {
     }
 
     return <section className="prime-category-filter full main-container border-bottom">
-        <ul className="flex  main-padding">
+        <ul className="category-list flex main-padding">
             {categories.map(category =>  // category { title: , tag: }
                 <li key={category.tag} onClick={() => onClickCategory(category.tag)}>{category.title}</li>
             )}

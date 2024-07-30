@@ -74,11 +74,14 @@ export function DetailsMainCarousel({ imgUrls }) {
         customLeftArrow={<CustomLeftArrow/>}
         customRightArrow={<CustomRightArrow/>}
       >
-        {imgUrls.map((image, index) => (
-          <div key={index} className="hero-image-container">
-            <img src={image} className="hero-carousel-image" alt={`Slide ${index}`} />
-          </div>
-        ))}
+
+          {imgUrls.map((image, index) => (
+            <div key={index} className="hero-image-container">
+              <img src={image} className="hero-carousel-image" alt={`Slide ${index}`} />
+            </div>
+          ))}
+
+
       </Carousel>
       <Carousel
         responsive={thumbnailResponsive}

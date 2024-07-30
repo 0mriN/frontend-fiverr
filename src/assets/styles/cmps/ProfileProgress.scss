@@ -72,3 +72,9 @@
         }
     }
 }
+
+@include for-mobile-layout {
+    .profile-progress {
+        display: none;
+    }
+}

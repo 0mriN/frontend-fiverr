@@ -8,10 +8,28 @@
         flex-direction: column;
     }
 
-    .headline{
+    .headline {
         color: #62646a;
         font-size: 24px;
         font-weight: 700;
         align-self: flex-start;
     }
 }
+
+@include for-mobile-layout {
+    .dashboard {
+        // flex-direction: column;
+
+        // margin: 0;
+
+        // background-color: pink;
+
+        .seller-orders {
+            .headline {
+                // margin: 0 auto;
+                display: none;
+            }
+        }
+    }
+}
+
