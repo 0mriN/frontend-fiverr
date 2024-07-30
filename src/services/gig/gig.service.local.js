@@ -2,6 +2,7 @@
 import { storageService } from '../async-storage.service'
 import { getRandomIntInclusive, makeId, makeLorem, saveToStorage, loadFromStorage, getRandomTags } from '../util.service'
 import { userService } from '../user'
+import { json } from 'react-router'
 
 const GIG_KEY = 'gig'
 _createGigs()

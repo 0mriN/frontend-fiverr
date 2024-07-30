@@ -1,5 +1,7 @@
+// gig.service.remote.js
 import { httpService } from '../http.service'
 import { userService } from '../user';
+
 export const gigService = {
     query,
     getById,
@@ -10,86 +12,79 @@ export const gigService = {
     getAvgRating,
 }
 
-async function query(filterBy = { txt: '', price: 0 }) {
-    return httpService.get(`gig`, filterBy)
+async function query(filterBy = { title: '', tags: [], minPrice: 0, maxPrice: Infinity, deliveryTime: '', sort: '', pageIdx: 0 }) {
+    const params = new URLSearchParams(filterBy).toString();
+    return httpService.get(`gig?${params}`);
 }
 
 function getById(gigId) {
-    return httpService.get(`gig/${gigId}`)
+    return httpService.get(`gig/${gigId}`);
 }
-
-
 
 async function remove(gigId) {
-    return httpService.delete(`gig/${gigId}`)
+    return httpService.delete(`gig/${gigId}`);
 }
+
 async function save(gig) {
-    let savedGig
+    let savedGig;
     if (gig._id) {
-        savedGig = await httpService.put(`gig/${gig._id}`, gig)
+        savedGig = await httpService.put(`gig/${gig._id}`, gig);
     } else {
-       /*  savedGig = await httpService.post('gig', gig) */
-
-
-       const gigToSave = {
-        title: gig.title,
-        price: gig.price,
-        description: gig.description,
-        tags: gig.tags,
-        daysToMake: gig.daysToMake,
-        owner: userService.getLoggedinUser(),
-        reviews: [
-            {
-                id: makeId(),
-                txt: 'Did an amazing work',
-                rate: getRandomIntInclusive(1, 5),
-                by: {
-                    _id: 'u102',
-                    fullname: 'user2',
-                    imgUrl: '/img/img2.jpg',
+        const gigToSave = {
+            title: gig.title,
+            price: gig.price,
+            description: gig.description,
+            tags: gig.tags,
+            daysToMake: gig.daysToMake,
+            owner: userService.getLoggedinUser(),
+            reviews: [
+                {
+                    id: makeId(),
+                    txt: 'Did an amazing work',
+                    rate: getRandomIntInclusive(1, 5),
+                    by: {
+                        _id: 'u102',
+                        fullname: 'user2',
+                        imgUrl: '/img/img2.jpg',
+                    },
                 },
-            },
-            {
-                id: makeId(),
-                txt: 'Did an awesome work',
-                rate: getRandomIntInclusive(1, 5),
-                by: {
-                    _id: 'u107',
-                    fullname: 'user7',
-                    imgUrl: '/img/img2.jpg',
+                {
+                    id: makeId(),
+                    txt: 'Did an awesome work',
+                    rate: getRandomIntInclusive(1, 5),
+                    by: {
+                        _id: 'u107',
+                        fullname: 'user7',
+                        imgUrl: '/img/img2.jpg',
+                    },
                 },
-            },
-            {
-                id: makeId(),
-                txt: 'Did a great job',
-                rate: getRandomIntInclusive(1, 5),
-                by: {
-                    _id: 'u102',
-                    fullname: 'user2',
-                    imgUrl: '/img/img2.jpg',
+                {
+                    id: makeId(),
+                    txt: 'Did a great job',
+                    rate: getRandomIntInclusive(1, 5),
+                    by: {
+                        _id: 'u102',
+                        fullname: 'user2',
+                        imgUrl: '/img/img2.jpg',
+                    },
                 },
-            },
-        ],
-        imgUrls: gig.imgUrls || [
-            '../src/assets/img/img1.png',
-            '../src/assets/img/img2.png',
-            '../src/assets/img/img3.png',
-        ],
-    };
+            ],
+            imgUrls: gig.imgUrls || [
+                '../src/assets/img/img1.png',
+                '../src/assets/img/img2.png',
+                '../src/assets/img/img3.png',
+            ],
+        };
 
-    savedGig = await httpService.post('gig', gigToSave)
-
-
+        savedGig = await httpService.post('gig', gigToSave);
     }
-    return savedGig
+    return savedGig;
 }
 
 async function addGigMsg(gigId, txt) {
-    const savedMsg = await httpService.post(`gig/${gigId}/msg`, {txt})
-    return savedMsg
+    const savedMsg = await httpService.post(`gig/${gigId}/msg`, {txt});
+    return savedMsg;
 }
-
-
 
 function getStarLevel(gig) {
     let color1 = '#E4E5E7';
