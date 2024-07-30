@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { gigService } from '../services/gig/gig.service.local.js'
+import { gigService } from '../services/gig/'
 import { LongTxt } from './LongTxt.jsx'
 import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css"

@@ -58,7 +58,7 @@ export function PackModal({ gig }) {
     const user = userService.getLoggedinUser()
 
     const order = {
-      _id: makeId(),
+     /*  _id: makeId(), */
       buyer: userService.getLoggedinUser(),
       owner: gig.owner,
       gig,

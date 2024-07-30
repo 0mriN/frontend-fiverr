@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router"
 import { addOrder } from "../store/actions/order.actions"
 import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service"
-import { orderService } from "../services/order/order.service.local"
+import { orderService } from "../services/order/"
 
 export function CheckoutDetails({ orders }) {
     const navigate = useNavigate()
