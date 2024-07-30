@@ -1,0 +1,316 @@
+.checkout-main {
+    margin: 16px 0px 0px;
+    padding: 0 16px;
+    flex-basis: 58.33333%;
+    max-width: 58.33333%;
+
+    .billing-info-wrapper {
+        border: 1px solid #efeff0;
+        border-radius: 4px;
+        color: #62646a;
+        margin: 0 0 24px;
+        text-align: left;
+        font-size: 16px;
+
+        .section-header {
+            padding: 16px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fafafa;
+            border-bottom: 1px solid #efeff0;
+
+            .text-display {
+                font-size: 16px;
+                line-height: 140%;
+                color: #404145;
+                font-weight: 700;
+            }
+        }
+
+        .billing-details-wrapper {
+            padding: 20px;
+
+            .billing-details {
+                justify-content: space-between;
+                flex-direction: row;
+                gap: 16px;
+                display: flex;
+
+                .billing-text {
+                    gap: 16px;
+                    flex-direction: column;
+                    display: flex;
+
+                    p {
+                        max-width: 360px;
+                    }
+
+                    .buyer-name {
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            .add-details {
+                background: none;
+                // border-color: currentColor;
+                max-width: fit-content;
+                height: 42px;
+                display: inline-block;
+                position: relative;
+                padding: 12px 24px;
+                border: 1px solid currentColor;
+                border-radius: 4px;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 100%;
+                text-decoration: none;
+                text-align: center;
+                cursor: pointer;
+                transition: 70ms cubic-bezier(.75, 0, .25, 1);
+                color: #222325;
+                margin: 0;
+
+            }
+        }
+    }
+
+    .payment-methods {
+        margin-bottom: 24px;
+        border-radius: 4px;
+        display: block;
+        border: 0;
+        margin: 0;
+        color: #62646a;
+
+        .cash {
+            margin-bottom: 32px;
+
+            .section-header {
+                border: 1px solid #efeff0;
+                border-top-left-radius: 4px;
+                border-top-right-radius: 4px;
+                padding: 16px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #fafafa;
+
+                .text-display {
+                    font-size: 16px;
+                    line-height: 140%;
+                    color: #404145;
+                    font-weight: 700;
+                }
+            }
+
+            .credit-payment {
+                border: 1px solid #efeff0;
+                border-radius: 0 0 4px 4px;
+
+                .credit-wrapper {
+                    border-bottom: 1px solid #efeff0;
+                    text-align: left;
+
+                    .credit-header {
+                        padding-left: 16px;
+                        display: flex;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        height: rem(64px);
+
+                        label {
+                            height: 22px;
+                            display: inline-flex;
+                            flex-direction: row;
+                            align-items: center;
+                            color: #222325;
+
+                            input {
+                                opacity: 0;
+                                height: 0;
+                                width: 0;
+                                margin: 0;
+                                padding: 0;
+                            }
+
+                            .radio-btn {
+                                border-color: #222325;
+                                border-width: 5px;
+                                display: inline-block;
+                                position: relative;
+                                width: 20px;
+                                height: 20px;
+                                flex-shrink: 0;
+                                align-self: flex-start;
+                                margin-top: 1px;
+                                border: 1px solid #dadbdd;
+                                border-radius: 50%;
+                                margin-right: 8px;
+                                cursor: pointer;
+                                user-select: none;
+                                background-color: #222325;
+
+                                .inside-btn {
+                                    border-color: #222325;
+                                    border-width: 5px;
+                                    display: inline-block;
+                                    position: relative;
+                                    width: 10px;
+                                    height: 10px;
+                                    flex-shrink: 0;
+                                    align-self: flex-start;
+                                    margin-top: 1px;
+                                    border: 1px solid #dadbdd;
+                                    border-radius: 50%;
+                                    margin-right: 8px;
+                                    cursor: pointer;
+                                    user-select: none;
+                                    background-color: #fff;
+                                    bottom: 5px;
+                                    left: 4px;
+                                }
+                            }
+
+                            .payment-options {
+                                display: flex;
+                                align-items: flex-end;
+                                cursor: pointer;
+
+                                .pay-header {
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    align-items: center;
+                                    margin-right: 16px;
+
+                                    span {
+                                        margin-bottom: 0;
+                                        margin-left: 0;
+                                        color: #404145;
+                                        margin-right: 8px;
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .payment-method-container {
+                        padding-left: 40px;
+                        padding: 24px 18px;
+                        border-top: 1px solid #efeff0;
+                        box-shadow: inset 0 2px 4px rgba(0, 0, 0, .06);
+
+                        .credit-form {
+                            max-width: rem(520px);
+
+                            iframe {
+                                width: 100%;
+                                height: 220px;
+                                border: none;
+                            }
+
+                            .cardholder-name-label {
+                                color: #404145;
+                                font-weight: 600;
+                                display: block;
+                                margin-bottom: 8px;
+                                font-family: 'MacanExLight';
+                            }
+
+                            .text-field-input-wrapper {
+                                width: 100%;
+                                display: inline-block;
+                                position: relative;
+
+                                .text-field-input {
+                                    border-color: #c5c6c9;
+                                    border-radius: 8px;
+                                    width: 100%;
+                                    padding: 8px 12px;
+                                    border: 1px solid #c5c6c9;
+                                    box-shadow: none;
+                                    font: inherit;
+                                    color: #404145;
+                                    transition: .15s ease-in-out;
+                                    margin: 0;
+                                }
+
+                                p {
+                                    margin-top: 6px;
+                                    font-size: 14px;
+                                    color: #74767e;
+                                }
+                            }
+
+                            .checkbox-wrapper {
+                                margin-top: 32px;
+
+                                .save-checkbox {
+                                    padding-top: 2px;
+                                    display: inline-flex;
+                                    flex-direction: row;
+                                    align-items: center;
+                                    color: #404145;
+
+                                    span {
+                                        color: #222325;
+                                        bottom: 2px;
+                                        position: relative;
+                                        font-weight: 600;
+                                        font-family: 'MacanExLight';
+                                        margin-left: 5px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .paypal-wrapper {
+                    border-bottom: 1px solid #efeff0;
+                    text-align: left;
+
+                    .paypal-header {
+                        padding-left: 16px;
+                        display: flex;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        height: 64px;
+
+                        label {
+                            height: 22px;
+                            display: inline-flex;
+                            flex-direction: row;
+                            align-items: center;
+                            color: #222325;
+
+                            span {
+                                display: inline-block;
+                                position: relative;
+                                width: 20px;
+                                height: 20px;
+                                flex-shrink: 0;
+                                align-self: flex-start;
+                                margin-top: 1px;
+                                border: 1px solid #dadbdd;
+                                border-radius: 50%;
+                                margin-right: 8px;
+                                cursor: pointer;
+                                user-select: none;
+                            }
+
+                            .paypal {
+                                position: relative;
+                                top: 1px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

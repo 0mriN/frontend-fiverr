@@ -1,60 +1,233 @@
 .checkout-details {
-    padding: rem(25px);
+    padding: rem(16px) 0;
+    max-width: rem(377px);
+    background-color: #fafafa;
 
-    border: 1px solid lightgrey;
+    border: 1px solid #e4e8e7;
     border-radius: rem(5px);
 
-    .checkout-header {
-        display: flex;
-        justify-content: space-between;
+    .order-details-wrapper {
+        padding: 6px rem(24px);
+        background-color: #fafafa;
 
-        img {
-            margin-inline-end: rem(20px);
+        .checkout-header {
+            display: flex;
+            justify-content: space-between;
 
-            height: 100px;
+
+            img {
+                margin-inline-end: rem(20px);
+                width: rem(110px);
+                height: rem(77px);
+                border-radius: rem(4px);
+                object-fit: fill;
+            }
+
+            h2 {
+                text-align: left;
+                font-size: rem(16px);
+                margin-bottom: 4px;
+            }
+        }
+
+        .package-type {
+            display: flex;
+            justify-content: space-between;
+            color: #62646a;
+            font-size: 16px;
+            line-height: 140%;
+
+
+            p {
+                font-weight: 600;
+            }
+
+            .pckg-price {
+                font-weight: 600;
+                font-family: 'MacanExLight';
+            }
+        }
+
+        .pckg-desc {
+            display: flex;
+            padding-top: 0;
+            line-height: 140%;
+            align-items: center;
+            gap: 10px;
+            height: 28px;
+
+            p {
+                font-size: 16px;
+                color: #62646a;
+                font-family: 'MacanThin';
+                font-weight: 600;
+            }
+        }
+    }
+
+    .check {
+        background-color: #fff;
+        padding: 0 rem(24px);
+
+        .order-service-tax {
+            display: flex;
+            flex-direction: column;
+            margin: 16px 0 0 0;
+            border-top: 1px solid #e4e8e7;
+            border-bottom: 1px solid #e4e8e7;
+            font-size: 16px;
+
+
+
+            .service,
+            .tax {
+                font-weight: 600;
+                font-family: 'MacanExLight';
+                display: flex;
+                justify-content: space-between;
+                margin: 10px 0;
+
+            }
+        }
+
+        .order-payment {
+
+            & .final-pay {
+                display: flex;
+                justify-content: space-between;
+                font-weight: 600;
+                font-family: 'MacanExLight';
+
+            }
+        }
+
+        .currency-pay {
+            display: flex;
+            justify-content: space-between;
+            font-family: 'MacanBold';
+            font-weight: 800;
+            padding-bottom: 16px;
+            font-size: 18px;
+
+            span {
+                margin: 0;
+            }
+
+            p {
+                margin: 0;
+            }
+        }
+
+        .package-delivery {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            font-family: 'MacanExLight';
+            padding-bottom: 16px;
+
+            span {
+                margin: 0;
+            }
+
+            p {
+                margin: 0;
+            }
+        }
+
+        .btn {
+            display: block;
+            margin: 0 auto;
+
+            width: 100%;
+            height: rem(48px);
+
+            background-color: #000000;
+            color: #ffff;
+            font-size: rem(18px);
             border-radius: rem(5px);
         }
 
-        h2 {
-            font-size: rem(18px);
-        }
-    }
-
-    .package-type {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .order-service-tax {
-        display: flex;
-        flex-direction: column;
-
-        .service,
-        .tax {
+        .secure-payment {
+            font-size: 14px;
+            line-height: 22px;
+            color: #62646a;
+            text-align: center;
+            margin-top: 8px;
+            gap: 8px;
+            justify-content: center;
+            align-items: center;
             display: flex;
-            justify-content: space-between;
-
+            font-family: 'MacanThin';
+            font-weight: 600;
+            padding-bottom: 16px;
         }
     }
 
-    .order-payment {
-        & .final-pay {
-            display: flex;
-            justify-content: space-between;
-        }
-    }
-
-    .btn {
-        display: block;
+    .currency-suggestion {
+        border: 1px solid #e4e8e7;
+        border-bottom: none;
+        width: rem(377px);
+        padding: 16px 24px;
         margin: 0 auto;
+        background-color: fafafa;
+        display: block;
 
-        width: 85%;
-        height: rem(40px);
 
-        background-color: black;
-        color: white;
-        font-size: rem(18px);
+        .currency-selector-container {
+            font-size: 13px;
+            padding-bottom: 0;
+            overflow: hidden;
+            text-align: left;
+            border: 0;
+            display: block;
 
-        border-radius: rem(5px);
+            .currency-selector {
+                padding: 8px 0;
+                display: flex;
+                cursor: pointer;
+
+                .selector-title {
+                    -webkit-box-flex: unset;
+                    flex-grow: unset;
+                    font-size: 13px;
+                    color: #62646a;
+                    font-family: 'MacanExLight';
+                    font-weight: 600;
+                }
+
+                .selector-arrow {
+                    display: inline-flex;
+                    width: 25px;
+                    color: inherit;
+                    -webkit-box-align: center;
+                    align-items: center;
+                    -webkit-box-pack: end;
+                    justify-content: flex-end;
+
+                    .arrow {
+                        width: 14px;
+                        height: 14px;
+                        position: relative;
+                        top: 1px;
+                        display: inline-block;
+                        cursor: pointer;
+                        transform: rotate(90deg);
+                        transition: .2s;
+                        background: none;
+                        border: none;
+                        padding: 0;
+                        margin: 0;
+                        fill: #74767e;
+                        font-weight: 400;
+                        font-family: 'MacanExLight';
+
+                        svg {
+                            width: 14px;
+                            height: 14px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

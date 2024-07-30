@@ -1,13 +1,16 @@
 .order-checkout {
     padding: 0 rem(32px);
-
-    h1 {
-        text-align: center;
-    }
+    margin-left: -16px;
+    margin-right: -16px;
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
 
     .checkout-details-container {
         display: block;
         margin: 0 auto;
-        width: 400px;
+        // width: 400px;
+        margin-top: 18px;
+        // background-color: #fafafa;
     }
 }
