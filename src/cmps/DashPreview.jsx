@@ -9,10 +9,11 @@ export function DashPreview({ order, fetchOrders }) {
     function calcDaysToMake() {
         return gig.daysToMake
     }
+
     async function handleStatusChange(event) {
         const newStatus = event.target.value
         try {
-            await orderService.update(order._id, { status: newStatus }) // Send an object with the status
+            await orderService.update(order._id, newStatus)
             setCurrentStatus(newStatus)
             fetchOrders()
         } catch (error) {
@@ -33,7 +34,7 @@ export function DashPreview({ order, fetchOrders }) {
         }
     }
 
-
+console.log(currentStatus)
     return (
         <div className="dash-preview">
             <div className="buyer-cols">
