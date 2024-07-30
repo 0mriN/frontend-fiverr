@@ -13,7 +13,7 @@ const packages = [
       { name: '3D mockup', available: false },
       { name: 'Source file', available: false },
       { name: 'Revisions', available: true, quantity: 1 },
-      { name: 'Delivery Time', available: true, time: '2 days', extraCost: '1 day (+₪153.05)' }
+      { name: 'Delivery Time', available: true, time: '2 days', extraCost: '1 day (+$153.05)' }
     ],
   },
   {
@@ -26,7 +26,7 @@ const packages = [
       { name: '3D mockup', available: false },
       { name: 'Source file', available: true },
       { name: 'Revisions', available: true, quantity: 2 },
-      { name: 'Delivery Time', available: true, time: '5 days', extraCost: '1 day (+₪382.63)' }
+      { name: 'Delivery Time', available: true, time: '5 days', extraCost: '1 day (+$382.63)' }
     ],
   },
   {
@@ -39,7 +39,7 @@ const packages = [
       { name: '3D mockup', available: true },
       { name: 'Source file', available: true },
       { name: 'Revisions', available: true, quantity: 3 },
-      { name: 'Delivery Time', available: true, time: '5 days', extraCost: '1 day (+₪382.63)' }
+      { name: 'Delivery Time', available: true, time: '5 days', extraCost: '1 day (+$382.63)' }
     ],
   },
 ]
@@ -70,7 +70,7 @@ export function PackageComparison() {
           <div key={index} className="package">
             <div className="package-header">
               <h3>{pkg.name}</h3>
-              <p>₪{pkg.price}</p>
+              <p>${pkg.price}</p>
             </div>
             {featureNames.map((feature, i) => {
               const pkgFeature = pkg.features.find(f => f.name === feature)

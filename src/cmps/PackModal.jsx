@@ -20,7 +20,6 @@ export function PackModal({ gig }) {
   const packages = {
     basic: {
       name: "Basic",
-      // price: `₪ 10`,
       price: gig.price,
       description: "3 Logo Design + PNG + JPG + 3D Mockup",
       delivery: `${gig.daysToMake}-day delivery`,
@@ -29,7 +28,6 @@ export function PackModal({ gig }) {
     },
     standard: {
       name: "Standard",
-      // price: `$ 10`,
       price: gig.price + 20,
       description: "5 Logo Design + PNG + JPG + 3D Mockup + Source Files",
       delivery: `${gig.daysToMake + 2}-day delivery`,
@@ -38,7 +36,6 @@ export function PackModal({ gig }) {
     },
     premium: {
       name: "Premium",
-      // price: `$ 10`,
       price: gig.price + 40,
       description: "Unlimited Logo Design + PNG + JPG + 3D Mockup + Source Files + Brand Guidelines",
       delivery: `${gig.daysToMake + 4}-day delivery`,
@@ -65,11 +62,9 @@ export function PackModal({ gig }) {
       buyer: userService.getLoggedinUser(),
       owner: gig.owner,
       gig,
-      // packageInfo,
       packageInfo: {
         name: "Premium",
         price: gig.price,
-        // price: `₪ ${gig.price + 80}`,
         description: "Unlimited Logo Design + PNG + JPG + 3D Mockup + Source Files + Brand Guidelines",
         delivery: "7-day delivery",
         revisions: "Unlimited Revisions",

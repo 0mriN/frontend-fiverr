@@ -38,27 +38,27 @@ export function OrderModal({ packageInfo, onClose, gig }) {
         <div className="order-modal-content">
           <button className="close-btn" onClick={onClose}>×</button>
           <h2>{packageInfo.name}</h2>
-          <p>{`₪${packageInfo.price}`}</p>
+          <p>{`$${packageInfo.price}`}</p>
           <div className="extras">
             <label>
               <input type="checkbox" />
               {/* Extra-fast 1-day delivery {`₪${gig.price + 229.59}`} */}
-              Extra-fast 1-day delivery ( + ₪229.59 )
+              Extra-fast 1-day delivery ( + $229.59 )
             </label>
             <label>
               <input type="checkbox" />
-              Include 3D mockup (+1 day) ( + ₪38.26 )
+              Include 3D mockup (+1 day) ( + $38.26 )
             </label>
             <label>
               <input type="checkbox" />
-              Additional logo (+1 day) ( + ₪153.06 )
+              Additional logo (+1 day) ( + $153.06 )
             </label>
             <label>
               <input type="checkbox" />
-              Google Drive Link ( + ₪38.26 )
+              Google Drive Link ( + $38.26 )
             </label>
           </div>
-          <button className="continue-btn" onClick={onContinue}>Continue ({`₪${packageInfo.price}`})</button>
+          <button className="continue-btn" onClick={onContinue}>Continue ({`$${packageInfo.price}`})</button>
         </div>
       </div>
     </div>
