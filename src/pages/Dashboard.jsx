@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { orderService } from '../services/order/order.service.local'
+import { orderService } from '../services/order'
 import { DashList } from '../cmps/DashList'
 import { SummarySection } from '../cmps/SummarySection'
-import { userService } from '../services/user/user.service.local'
+import { userService } from '../services/user'
 import { ProfileProgress } from '../cmps/ProfileProgress'
 import profilePic from "../assets/img/profile.png"
 import { MobileDashboard } from '../cmps/MobileDashboard'
@@ -21,7 +21,7 @@ export function Dashboard() {
 
     const fetchOrders = async () => {
         try {
-            const orders = await orderService.query()
+            const orders = await orderService.query('dashboard')
             setOrders(orders)
         } catch (error) {
             console.error("Failed to load orders", error)

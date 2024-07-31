@@ -6,6 +6,7 @@ export const UPDATE_ORDER_STATUS = 'UPDATE_ORDER_STATUS'
 
 const initialState = {
   orders: [],
+  currOrder: {},
 }
 
 export function orderReducer(state = initialState, action) {
@@ -32,6 +33,12 @@ export function orderReducer(state = initialState, action) {
                   order._id === action.updatedOrder._id ? action.updatedOrder : order
               )
           }
+
+             //   case SET_CURR_ORDER:
+    //       return {
+    //           ...state,
+    //           currOrder: action.order
+    //       };
       default:
           return state
   }

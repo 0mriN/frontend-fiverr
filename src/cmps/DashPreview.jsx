@@ -1,5 +1,5 @@
 import buyerImg from "../assets/img/profile.png"
-import { orderService } from "../services/order/order.service.local.js"
+import { orderService } from "../services/order/"
 import { useState } from "react"
 
 export function DashPreview({ order, fetchOrders }) {
@@ -34,12 +34,12 @@ export function DashPreview({ order, fetchOrders }) {
         }
     }
 
-
+console.log(currentStatus)
     return (
         <div className="dash-preview">
             <div className="buyer-cols">
                 <img src={buyerImg} alt="buyer" />
-                <p>{buyer.fullname}</p>
+                <p>{buyer?.fullname}</p>
             </div>
 
             <div className="gig-cols">

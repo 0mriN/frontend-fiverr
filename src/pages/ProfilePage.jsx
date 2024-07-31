@@ -6,7 +6,7 @@ import img from '../assets/img/profile.png'
 import { useSelector } from 'react-redux'
 import { loadGigs, removeGig } from '../store/actions/gig.actions'
 import { UserGigPreview } from '../cmps/UserGigPreview'
-
+import { userService } from '../services/user'
 export function ProfilePage() {
     const user = useSelector(storeState => storeState.userModule.user)
     const gigs = useSelector(storeState => storeState.gigModule.gigs)

@@ -12,7 +12,7 @@ export function OrderPreview({ order }) {
 
         <article className="gig-info-container">
             <p className="gig-info">{gig.title}</p>
-            <p className="gig-seller">by {owner.fullname}</p>
+            <p className="gig-seller">by {owner?.fullname}</p>
         </article>
     </section>
 }
