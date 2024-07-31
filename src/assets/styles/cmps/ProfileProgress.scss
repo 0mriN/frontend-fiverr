@@ -76,5 +76,42 @@
 @include for-mobile-layout {
     .profile-progress {
         display: none;
+
+        .img-container {
+            display: none;
+        }
+
+    }
+
+    .mobile-dashboard {
+        .profile-progress {
+            display: block;
+
+        }
+    }
+}
+
+// @include for-mobile-layout{
+//     .user-desc{
+//         display: flex;
+//         flex-direction: row;
+//        }
+// }
+
+
+@include for-small-layout {
+    .profile-progress {
+        display: block;
+
+    }
+
+    .mobile-dashboard {
+        .profile-progress {
+            display: none;
+
+            .img-container {
+                display: none;
+            }
+        }
     }
 }
