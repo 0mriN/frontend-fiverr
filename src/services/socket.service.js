@@ -10,6 +10,9 @@ export const SOCKET_EVENT_REVIEW_ADDED = 'review-added'
 export const SOCKET_EVENT_REVIEW_REMOVED = 'review-removed'
 export const SOCKET_EVENT_REVIEW_ABOUT_YOU = 'review-about-you'
 
+export const SOCKET_EVENT_ORDER_ADDED = 'order-added'
+
+
 const SOCKET_EMIT_LOGIN = 'set-user-socket'
 const SOCKET_EMIT_LOGOUT = 'unset-user-socket'
 
@@ -21,7 +24,7 @@ export const socketService = createSocketService()
 // for debugging from console
 window.socketService = socketService
 
-// socketService.setup()
+socketService.setup()
 
 
 function createSocketService() {
@@ -45,9 +48,11 @@ function createSocketService() {
     },
     login(userId) {
       socket.emit(SOCKET_EMIT_LOGIN, userId)
+      console.log('logged in');
     },
     logout() {
       socket.emit(SOCKET_EMIT_LOGOUT)
+      console.log('logged out');
     },
     terminate() {
       socket = null

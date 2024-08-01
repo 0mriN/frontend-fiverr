@@ -26,7 +26,7 @@ export function RootCmp() {
     return (
         <div className="main-container">
             <AppHeader />
-            {/* <UserMsg /> */}
+            <UserMsg />
 
             <main>
                 <Routes>
