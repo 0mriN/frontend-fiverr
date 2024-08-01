@@ -226,7 +226,14 @@
         }
 
         .status-cols {
-            padding-inline-start: 25px
+            // padding-inline-start: 25px
+            width: 30%;
+            select {
+                width: 114px;
+                height: 50px;
+                font-size: 23px;
+                padding: 0;
+            }
         }
     }
 

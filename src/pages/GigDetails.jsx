@@ -8,6 +8,7 @@ import { DetailsHeader } from "../cmps/DetailsHeader"
 import { DetailsReviews } from "../cmps/DetailsReviews"
 import { DetailsAbout } from "../cmps/DetailsAbout"
 // import { PackageComparison } from "../cmps/PackCompare"
+import loader from '../assets/img/svg/loader.svg'
 
 
 export function GigDetails() {
@@ -34,7 +35,9 @@ export function GigDetails() {
             <DetailsReviews gig={gig} />
           </div>
         ) : (
-          <p>Loading...</p>
+          <div className="loader-container">
+            {<img src={loader} />}
+          </div>
         )}
       </div>
       <div className="gig-buy-modal">

@@ -4,6 +4,7 @@ import { OrderList } from '../cmps/OrderList'
 import { SummarySection } from '../cmps/SummarySection'
 import { userService } from '../services/user'
 import { store } from '../store/store'
+import loader from '../assets/img/svg/loader.svg'
 
 export function OrderIndex() {
     const [orders, setOrders] = useState([])
@@ -22,11 +23,13 @@ export function OrderIndex() {
         loadOrders()
     }, [])
 
-    if (!orders.length) return <div>Loading...</div>
 
     return (
         <section className="order-index">
-            <OrderList orders={orders} loadOrders={loadOrders} />
+            <div className="loader-container">
+                {!orders.length && <img src={loader} />}
+            </div>
+            {orders && <OrderList orders={orders} loadOrders={loadOrders} />}
         </section>
     )
 }

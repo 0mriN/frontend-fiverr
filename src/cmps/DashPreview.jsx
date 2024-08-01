@@ -52,9 +52,9 @@ console.log(currentStatus)
                 <span>{gig.title}</span>
             </div>
 
-            <div className="date-cols">
+            {/* <div className="date-cols">
                 <span>{calcDaysToMake()}</span>
-            </div>
+            </div> */}
 
             <div className="total-cols">
                 <span>{`$${gig.price}`}</span>
