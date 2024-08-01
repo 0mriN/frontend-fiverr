@@ -42,7 +42,7 @@ export function Dashboard() {
             <div className='seller-orders'>
                 <SummarySection orders={orders} />
                 <h2 className='headline'>Manage Orders</h2>
-                <DashList orders={orders} fetchOrders={fetchOrders} />
+                {/* <DashList orders={orders} fetchOrders={fetchOrders} /> */}
             </div>
             <MobileDashboard user={user} orders={orders} fetchOrders={fetchOrders}/>
         </section>

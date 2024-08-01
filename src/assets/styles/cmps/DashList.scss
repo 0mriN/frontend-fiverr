@@ -75,9 +75,13 @@
 
 }
 
-// @include for-mobile-layout {
-//     .dash-list {
-//         // max-width: 520px;
+@include for-mobile-layout {
+    .dash-list {
+        // max-width: 520px;
+        max-height:400px;
+        overflow-y: scroll;
+        width: 100%;
+        border: none;
 
-//     }
-// }
+    }
+}
