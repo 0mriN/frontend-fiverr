@@ -1,5 +1,5 @@
 .mobile-dashboard {
-    max-width: 700px;
+    // max-width: 700px;
     height: 680px;
 
     .user-info-container {
@@ -33,152 +33,11 @@
     .app-header {
         display: none;
     }
-    
-    .greeting {
-        display: flex;
-        justify-content: space-between;
-        height: 110px;
-        margin-bottom: 20px;
-        padding-left: 10px;
-        
-        .welcome{
-            align-content: end;
-            h1{
-                font-size: 30px;
-                font-weight: 600;
-                font-family: 'MacanExLight';
-                color: #222325;
-            }
-            h2{
-                font-size: 30px;
-                color: #222325;
-                font-weight: 700;
-                font-family: 'MacanBold';
-            }
-        }
 
-        .img-profile-container {
-            // height: 50px;
-            margin-right: 50px;
-
-            img {
-                height: 100px;
-                width: 100px;
-                border-radius: 50%;
-            }
-        }
-    }
-
-    .dashboard {
-        margin: 30px 20px 60px;
+    .mobile-dashboard {
 
         .user-info-container {
-            margin-right: 0;
-        }
-    }
-
-    .dash-list {
-        overflow-y: scroll;
-        .dash-list-header {
-            height: rem(60px);
-
-            .buyer-col {
-                min-width: 20px;
-                max-width: 60px;
-
-                h4 {
-                    left: 31px
-                }
-            }
-
-            .gig-col {
-                max-width: 50%;
-                min-width: 20px;
-                flex: 1;
-
-                h4 {
-                    position: relative;
-                    left: 67px;
-                }
-            }
-
-            .date-col {
-                width: 15%;
-                min-width: 80px;
-
-                h4 {
-                    position: relative;
-                    left: rem(50px);
-                }
-            }
-
-            .total-col {
-                width: 10%;
-                min-width: 80px;
-
-                h4 {
-                    position: relative;
-                    left: rem(50px);
-                }
-            }
-
-            .status-col {
-                text-align: center;
-                padding-inline-end: 10px;
-                position: relative;
-                width: 15%;
-                min-width: 110px;
-
-                h4 {
-                    position: relative;
-                    left: 20px;
-                }
-            }
-
-        }
-
-    }
-
-    .dash-preview {
-        .buyer-cols {
-            min-width: 60px;
-            padding: 0 0 0 0;
-
-            img {
-                left: 31px;
-            }
-
-            p {
-                bottom: 8px;
-                position: relative;
-            }
-        }
-
-        .gig-cols {
-            padding-inline-start: 20px;
-        }
-
-        .date-cols {
-            min-width: 0;
-            // max-width:80px;
-            overflow: visible;
-            width: 10%;
-
-            span {
-                left: rem(24px);
-            }
-        }
-
-        .total-cols {
-            overflow: visible;
-
-            span {
-                left: 44px
-            }
-        }
-
-        .status-cols {
-            padding-inline-start: 25px
+            margin: 0px 0px 60px 0px;
         }
     }
 }

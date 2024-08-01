@@ -133,3 +133,101 @@
         }
     }
 }
+
+@include for-mobile-layout {
+    .greeting {
+        display: flex;
+        justify-content: space-between;
+        height: 110px;
+        margin-bottom: 20px;
+        padding-left: 10px;
+
+        .welcome {
+            align-content: end;
+
+            h1 {
+                font-size: 30px;
+                font-weight: 600;
+                font-family: 'MacanExLight';
+                color: #222325;
+            }
+
+            h2 {
+                font-size: 30px;
+                color: #222325;
+                font-weight: 700;
+                font-family: 'MacanBold';
+            }
+        }
+
+        .img-profile-container {
+            // height: 50px;
+            margin-right: 10px;
+
+            img {
+                height: 100px;
+                width: 100px;
+                border-radius: 50%;
+            }
+        }
+    }
+
+
+    .dash-preview {
+        font-size: 20px;
+        font-family: 'MacanExLight';
+        font-weight: 700;
+        height: 100px;
+        .buyer-cols {
+            min-width: 60px;
+            padding: 0px 0 0 2px;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            // height: 100px;
+
+            img {
+                max-width: rem(60px);
+                max-height: rem(60px);
+                left: 0px;
+            }
+
+            p {
+                // bottom: 8px;
+                font-size: 20px;
+                font-family: 'Macan';
+                position: relative;
+                font-weight: 800;
+                left: 10px;
+            }
+        }
+
+        .gig-cols {
+            padding-inline-start: 20px;
+        }
+
+        .date-cols {
+            min-width: 0;
+            // max-width:80px;
+            overflow: visible;
+            width: 10%;
+
+            span {
+                left: rem(10px);
+            }
+        }
+
+        .total-cols {
+            overflow: visible;
+
+            span {
+                left: 25px
+            }
+        }
+
+        .status-cols {
+            padding-inline-start: 25px
+        }
+    }
+
+}

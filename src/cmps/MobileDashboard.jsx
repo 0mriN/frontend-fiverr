@@ -11,7 +11,7 @@ export function MobileDashboard({ user, orders, fetchOrders }) {
     }
     
     console.log('user:', user);
-    return <section className="mobile-dashboard">
+    return <section className="mobile-dashboard full">
         <div className="greeting">
             <div className="welcome">
                 <h1>Hi {`${getFirstName(user.fullname)},`}</h1>
@@ -49,6 +49,7 @@ export function MobileDashboard({ user, orders, fetchOrders }) {
                 <AccordionSummary
                     aria-controls="panel1-content"
                     id="panel1-header"
+                    style={{height:'100px',fontSize:'27px',fontWeight:'800'}}
                     >
                     Statistics
                 </AccordionSummary>
@@ -60,10 +61,11 @@ export function MobileDashboard({ user, orders, fetchOrders }) {
                 <AccordionSummary
                     aria-controls="panel1-content"
                     id="panel1-header"
+                    style={{height:'100px',fontSize:'27px',fontWeight:'800'}}
                 >
                     Orders
                 </AccordionSummary>
-                <AccordionDetails>
+                <AccordionDetails style={{height:'500px', padding:'8px 0px 16px',display:'flex',alignItems:'start'}}>,
                     <DashList orders={orders} fetchOrders={fetchOrders} />
                 </AccordionDetails>
             </Accordion>
@@ -71,6 +73,7 @@ export function MobileDashboard({ user, orders, fetchOrders }) {
                 <AccordionSummary
                     aria-controls="panel1-content"
                     id="panel1-header"
+                    style={{height:'100px',fontSize:'27px',fontWeight:'800'}}
                 >
                     User info
                 </AccordionSummary>
@@ -82,6 +85,7 @@ export function MobileDashboard({ user, orders, fetchOrders }) {
                 <AccordionSummary
                     aria-controls="panel1-content"
                     id="panel1-header"
+                    style={{height:'100px',fontSize:'27px',fontWeight:'800'}}
                 >
                     My Gigs
                 </AccordionSummary>
@@ -93,6 +97,7 @@ export function MobileDashboard({ user, orders, fetchOrders }) {
                 <AccordionSummary
                     aria-controls="panel1-content"
                     id="panel1-header"
+                    style={{height:'100px',fontSize:'27px',fontWeight:'800'}}
                 >
                     To-Dos
                 </AccordionSummary>
@@ -104,6 +109,7 @@ export function MobileDashboard({ user, orders, fetchOrders }) {
                 <AccordionSummary
                     aria-controls="panel1-content"
                     id="panel1-header"
+                    style={{height:'100px',fontSize:'27px',fontWeight:'800'}}
                 >
                     Earnings
                 </AccordionSummary>
