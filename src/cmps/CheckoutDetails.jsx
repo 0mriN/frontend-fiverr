@@ -6,7 +6,7 @@ import { orderService } from "../services/order/"
 export function CheckoutDetails({ orders }) {
     const navigate = useNavigate()
     const { gig, packageInfo } = orders[0]
-
+console.log(`packageInfo:`,packageInfo)
     function getDeliveryDays() {
         const deliveryString = packageInfo.delivery
         const numberMatch = deliveryString.match(/\d+/)
@@ -104,7 +104,8 @@ export function CheckoutDetails({ orders }) {
 
             <div className="package-delivery">
                 <span>Total delivery time</span>
-                <p>{`${getDeliveryDays()} days`}</p>
+                <p>{`1 day`}</p>
+                {/* <p>{`${getDeliveryDays()} days`}</p> */}
             </div>
 
             <button className="btn" onClick={onPay}>Pay In ILS</button>
