@@ -15,11 +15,11 @@ export function LoginModal({ onClose }) {
 
 
 
-    const onLogin = async (ev) => {
-        ev.preventDefault()
+    async function onLogin(ev = null){
+        if (ev) ev.preventDefault()
         try {
             onClose()
-            dispatch(login(credentials))
+            await login(credentials)
         } catch (err) {
             showErrorMsg('Login failed')
         }

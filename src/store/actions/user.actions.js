@@ -5,6 +5,7 @@ import { store } from '../store'
 import { showErrorMsg } from '../../services/event-bus.service'
 import { LOADING_DONE, LOADING_START } from '../reducers/system.reducer'
 import { REMOVE_USER, SET_USER, SET_USERS, SET_WATCHED_USER } from '../reducers/user.reducer'
+import { socketService } from '../../services/socket.service'
 
 // Existing unchanged code...
 
@@ -15,7 +16,7 @@ export async function login(credentials) {
             type: SET_USER,
             user
         })
-        // socketService.login(user._id) // Removed socket login
+        socketService.login(user._id) // Removed socket login
 
         return user
     } catch (err) {
@@ -46,7 +47,7 @@ export async function logout() {
             type: SET_USER,
             user: null
         })
-        // socketService.logout() // Removed socket logout
+        socketService.logout() // Removed socket logout
     } catch (err) {
         console.log('Cannot logout', err)
         throw err

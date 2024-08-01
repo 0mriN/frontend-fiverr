@@ -18,11 +18,8 @@
 
 @include for-mobile-layout {
     .dashboard {
-        // flex-direction: column;
+        margin: 30px 0px 0px 0px;
 
-        // margin: 0;
-
-        // background-color: pink;
 
         .seller-orders {
             .headline {
@@ -33,3 +30,22 @@
     }
 }
 
+@include for-small-layout{
+    .dashboard {
+        display: flex;
+        margin: 30px 30px 50px;
+    
+        .seller-orders {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .headline {
+            color: #62646a;
+            font-size: 24px;
+            font-weight: 700;
+            align-self: flex-start;
+        }
+    }
+}

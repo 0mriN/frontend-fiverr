@@ -6,6 +6,12 @@ export function DashPreview({ order, fetchOrders }) {
     const { buyer, gig, status } = order
     const [currentStatus, setCurrentStatus] = useState(status)
 
+    function getFirstName(fullName) {
+        const nameParts = fullName.split(' ')
+        const firstNameArray = nameParts.slice(0, 1)
+        return firstNameArray[0]
+    }
+
     function calcDaysToMake() {
         return gig.daysToMake
     }
@@ -39,7 +45,7 @@ console.log(currentStatus)
         <div className="dash-preview">
             <div className="buyer-cols">
                 <img src={buyerImg} alt="buyer" />
-                <p>{buyer?.fullname}</p>
+                <p>{getFirstName(buyer.fullname)}</p>
             </div>
 
             <div className="gig-cols">
