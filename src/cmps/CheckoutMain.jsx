@@ -1,5 +1,7 @@
 export function CheckoutMain({ orders }) {
     const order = orders[0]
+    console.log(orders)
+    console.log(order)
     // 5555 5555 5555 4444
     return (
         <div className="checkout-main">
@@ -14,7 +16,7 @@ export function CheckoutMain({ orders }) {
                         <div className="billing-text">
                             <p>Your invoice will be issued according to the details listed here.</p>
                             <div className="user-info">
-                                <div className="buyer-name">{order.buyer.fullname}</div>
+                                <div className="buyer-name">{order.buyer?.fullname}</div>
                                 <div className="buyer-country">{order.buyer.country}</div>
                             </div>
                         </div>

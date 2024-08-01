@@ -20,11 +20,11 @@ function query(filterBy) {
     const currUser = userService.getLoggedinUser()
     if (type === "dashboard") {
       orders = orders.filter(
-        (order) => order.owner.fullname === currUser.fullname
+        (order) => order.owner.fullname.toLowerCase() === currUser.fullname.toLowerCase()
       )
     } else if (type === "orders") {
       orders = orders.filter(
-        (order) => order.buyer.fullname === currUser.fullname
+        (order) => order.buyer.fullname.toLowerCase() === currUser.fullname.toLowerCase()
       )
     }
     return orders
