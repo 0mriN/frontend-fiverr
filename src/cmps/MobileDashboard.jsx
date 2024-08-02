@@ -65,7 +65,7 @@ export function MobileDashboard({ user, orders, fetchOrders }) {
                 >
                     Orders
                 </AccordionSummary>
-                <AccordionDetails style={{height:'500px', padding:'8px 0px 16px',display:'flex',alignItems:'start'}}>,
+                <AccordionDetails style={{ padding:'8px 0px 16px',display:'flex',alignItems:'start'}}>,
                     <DashList orders={orders} fetchOrders={fetchOrders} />
                 </AccordionDetails>
             </Accordion>

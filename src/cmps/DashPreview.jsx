@@ -16,8 +16,7 @@ export function DashPreview({ order, fetchOrders }) {
         return gig.daysToMake
     }
 
-    async function handleStatusChange(event) {
-        const newStatus = event.target.value
+    async function updateStatus(newStatus) {
         try {
             await orderService.update(order._id, newStatus)
             setCurrentStatus(newStatus)
@@ -27,20 +26,16 @@ export function DashPreview({ order, fetchOrders }) {
         }
     }
 
-    function getSelectStyle() {
-        switch (currentStatus) {
-            case "Pending":
-                return { backgroundColor: "#ffbe5b", color: "white" }
-            case "Completed":
-                return { backgroundColor: "#1dbf73", color: "white" }
-            case "Rejected":
-                return { backgroundColor: "#c43333", color: "white" }
-            default:
-                return { backgroundColor: "white", color: "black" }
-        }
+    function handleApprove() {
+        updateStatus("completed");
     }
 
-console.log(currentStatus)
+    function handleReject() {
+        updateStatus("rejected");
+    }
+
+
+    console.log(currentStatus)
     return (
         <div className="dash-preview">
             <div className="buyer-cols">
@@ -51,21 +46,22 @@ console.log(currentStatus)
             <div className="gig-cols">
                 <span>{gig.title}</span>
             </div>
-
-            {/* <div className="date-cols">
-                <span>{calcDaysToMake()}</span>
-            </div> */}
-
             <div className="total-cols">
                 <span>{`$${gig.price}`}</span>
             </div>
-
             <div className="status-cols">
-                <select value={currentStatus} onChange={handleStatusChange} className={`status ${currentStatus.toLowerCase()}`} style={getSelectStyle()}>
-                    <option value="Pending" style={{ backgroundColor: '#ffbe5b' }}>Pending</option>
-                    <option value="Completed" style={{ backgroundColor: '#1dbf73' }}>Completed</option>
-                    <option value="Rejected" style={{ backgroundColor: '#c43333' }}>Rejected</option>
-                </select>
+                {currentStatus === "pending" && (
+                    <>
+                        <button onClick={handleApprove} style={{ backgroundColor: "#1dbf73", color: "white", width: "89px", fontSize: "large" }}>
+                            Approve
+                        </button>
+                        <button onClick={handleReject} style={{ backgroundColor: "#c43333", color: "white", width: "89px", fontSize: "large", marginTop: "5px" }}>
+                            Reject
+                        </button>
+                    </>
+                )}
+                {currentStatus === "completed" && <span style={{ backgroundColor: "#1dbf73", color: "white" }}>Approved</span>}
+                {currentStatus === "rejected" && <span style={{ backgroundColor: "#c43333", color: "white", padding: '5px' }}>Rejected</span>}
             </div>
         </div>
     )

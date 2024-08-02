@@ -1,6 +1,7 @@
 .mobile-dashboard {
     // max-width: 700px;
     height: 680px;
+    z-index: 10;
 
     .user-info-container {
         max-width: 100%;
@@ -42,7 +43,9 @@
     }
 
     .app-footer {
-        display: none;
+     position: relative;
+     z-index: 2;
+        // display: none;
     }
 
     .footer-bottom {
