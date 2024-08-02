@@ -40,6 +40,19 @@
             margin: 0px 0px 60px 0px;
         }
     }
+
+    .app-footer {
+        display: none;
+    }
+
+    .footer-bottom {
+        margin-top: 60px;
+
+        .footer-bottom-left {
+            left: 80px;
+            position: relative;
+        }
+    }
 }
 
 @include for-small-layout {
@@ -49,5 +62,14 @@
 
     .mobile-dashboard {
         display: none;
+    }
+
+    .footer-bottom {
+        margin-top: 0px;
+
+        .footer-bottom-left {
+            left: 0px;
+            position: relative;
+        }
     }
 }

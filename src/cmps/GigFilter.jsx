@@ -99,8 +99,8 @@ export function GigFilter({ gigs }) {
                 <li className="flex align-center"><Link to="/"><img src={homeBreadcrumb} alt="Fiverr"></img></Link>&nbsp;</li>
                 <li> <span>/</span> <a>&nbsp;{capitalizeFirstLetter(filterBy.tags[0])}</a></li>
             </ul>
-            <h1>Website Development</h1>
-            <p className="index-subtitle">Create, build, and develop your website with skilled website developers</p>
+            <h1>Graphics & Design</h1>
+            <p className="index-subtitle">Stand out from the crowd with a logo that fits your brand personality.</p>
             {/* {userService.getLoggedinUser() && <button onClick={onAddGig}>Add a Gig</button>} */}
         </article>
 
