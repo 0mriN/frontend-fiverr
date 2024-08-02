@@ -162,7 +162,7 @@ export function AppHeader() {
 			</nav>
 		</header>
 
-		{/* <PrimeCategoryFilter setFilterBy={onSetFilterBy} filterBy={filterBy} /> */}
+		<PrimeCategoryFilter setFilterBy={onSetFilterBy} filterBy={filterBy} />
 
 	</section >
 
