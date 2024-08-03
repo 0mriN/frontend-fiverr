@@ -23,24 +23,23 @@
 
         .seller-orders {
             .headline {
-                // margin: 0 auto;
                 display: none;
             }
         }
     }
 }
 
-@include for-small-layout{
+@include for-small-layout {
     .dashboard {
         display: flex;
         margin: 30px 30px 50px;
-    
+
         .seller-orders {
             align-items: center;
             display: flex;
             flex-direction: column;
         }
-    
+
         .headline {
             color: #62646a;
             font-size: 24px;

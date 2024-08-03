@@ -12,7 +12,6 @@
 
     @include for-mobile-layout {
         grid-template-columns:
-            // minmax(3px) minmax(1fr) minmax(3px);
             minmax(3px, 1fr) minmax(auto, $mobile-breakpoint) minmax(3px, 1fr);
 
         .gig-list {
@@ -57,10 +56,6 @@
                     }
                 }
             }
-
-            .nav-orders {
-                // display: none;
-            }
         }
 
         .gig-list {
@@ -97,7 +92,6 @@
 
         .gig-list {
             grid-template-columns: repeat(4, minmax(rem(210px), rem(316px)));
-
         }
     }
 
@@ -107,8 +101,6 @@
 
         .gig-list {
             grid-template-columns: repeat(4, minmax(rem(256px), rem(326px)));
-
         }
-
     }
 }

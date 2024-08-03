@@ -161,7 +161,6 @@
         }
 
         .img-profile-container {
-            // height: 50px;
             margin-right: 10px;
 
             img {
@@ -178,13 +177,13 @@
         font-family: 'MacanExLight';
         font-weight: 700;
         height: 100px;
+
         .buyer-cols {
             min-width: 60px;
             padding: 0px 0 0 2px;
             display: flex;
             flex-direction: column;
             align-items: start;
-            // height: 100px;
 
             img {
                 max-width: rem(60px);
@@ -193,7 +192,6 @@
             }
 
             p {
-                // bottom: 8px;
                 font-size: 20px;
                 font-family: 'Macan';
                 position: relative;
@@ -208,7 +206,6 @@
 
         .date-cols {
             min-width: 0;
-            // max-width:80px;
             overflow: visible;
             width: 10%;
 
@@ -226,8 +223,8 @@
         }
 
         .status-cols {
-            // padding-inline-start: 25px
             width: 30%;
+
             select {
                 width: 114px;
                 height: 50px;

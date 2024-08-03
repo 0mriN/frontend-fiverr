@@ -1,5 +1,4 @@
 .mobile-dashboard {
-    // max-width: 700px;
     height: 680px;
     z-index: 10;
 
@@ -14,15 +13,12 @@
         .user-stats {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            // gap: 5px;
 
             &>* {
                 height: 180px;
                 width: 100%;
 
                 border: 1px solid lighten($gray1, 3%);
-                // border-radius: 10px;
-
                 padding: 10px;
             }
 
@@ -43,9 +39,8 @@
     }
 
     .app-footer {
-     position: relative;
-     z-index: 2;
-        // display: none;
+        position: relative;
+        z-index: 2;
     }
 
     .footer-bottom {

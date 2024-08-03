@@ -9,8 +9,7 @@ export function MobileDashboard({ user, orders, fetchOrders }) {
         const firstNameArray = nameParts.slice(0, 1)
         return firstNameArray[0]
     }
-    
-    console.log('user:', user);
+
     return <section className="mobile-dashboard full">
         <div className="greeting">
             <div className="welcome">
@@ -49,8 +48,8 @@ export function MobileDashboard({ user, orders, fetchOrders }) {
                 <AccordionSummary
                     aria-controls="panel1-content"
                     id="panel1-header"
-                    style={{height:'100px',fontSize:'27px',fontWeight:'800'}}
-                    >
+                    style={{ height: '100px', fontSize: '27px', fontWeight: '800' }}
+                >
                     Statistics
                 </AccordionSummary>
                 <AccordionDetails>
@@ -61,11 +60,11 @@ export function MobileDashboard({ user, orders, fetchOrders }) {
                 <AccordionSummary
                     aria-controls="panel1-content"
                     id="panel1-header"
-                    style={{height:'100px',fontSize:'27px',fontWeight:'800'}}
+                    style={{ height: '100px', fontSize: '27px', fontWeight: '800' }}
                 >
                     Orders
                 </AccordionSummary>
-                <AccordionDetails style={{ padding:'8px 0px 16px',display:'flex',alignItems:'start'}}>,
+                <AccordionDetails style={{ padding: '8px 0px 16px', display: 'flex', alignItems: 'start' }}>,
                     <DashList orders={orders} fetchOrders={fetchOrders} />
                 </AccordionDetails>
             </Accordion>
@@ -73,43 +72,43 @@ export function MobileDashboard({ user, orders, fetchOrders }) {
                 <AccordionSummary
                     aria-controls="panel1-content"
                     id="panel1-header"
-                    style={{height:'100px',fontSize:'27px',fontWeight:'800'}}
+                    style={{ height: '100px', fontSize: '27px', fontWeight: '800' }}
                 >
                     User info
                 </AccordionSummary>
                 <AccordionDetails>
-                Under Development
+                    Under Development
                 </AccordionDetails>
             </Accordion>
             <Accordion>
                 <AccordionSummary
                     aria-controls="panel1-content"
                     id="panel1-header"
-                    style={{height:'100px',fontSize:'27px',fontWeight:'800'}}
+                    style={{ height: '100px', fontSize: '27px', fontWeight: '800' }}
                 >
                     My Gigs
                 </AccordionSummary>
                 <AccordionDetails>
-                Under Development
+                    Under Development
                 </AccordionDetails>
             </Accordion>
             <Accordion>
                 <AccordionSummary
                     aria-controls="panel1-content"
                     id="panel1-header"
-                    style={{height:'100px',fontSize:'27px',fontWeight:'800'}}
+                    style={{ height: '100px', fontSize: '27px', fontWeight: '800' }}
                 >
                     To-Dos
                 </AccordionSummary>
                 <AccordionDetails>
-                Under Development
+                    Under Development
                 </AccordionDetails>
             </Accordion>
             <Accordion>
                 <AccordionSummary
                     aria-controls="panel1-content"
                     id="panel1-header"
-                    style={{height:'100px',fontSize:'27px',fontWeight:'800'}}
+                    style={{ height: '100px', fontSize: '27px', fontWeight: '800' }}
                 >
                     Earnings
                 </AccordionSummary>

@@ -19,12 +19,10 @@ async function query(type) {
     orders = orders.filter(
       (order) => order.owner.fullname === currUser.fullname
     )
-    console.log("dashboard ", orders)
   } else if (type === "orders") {
     orders = orders.filter(
       (order) => order.buyer.fullname === currUser.fullname
     )
-    console.log("dashboard ", orders)
   }
   return orders
 }

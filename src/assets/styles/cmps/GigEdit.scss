@@ -1,8 +1,4 @@
 .gig-edit {
-    // max-width: rem(300px);
-    // margin: auto;
-    // margin-top: rem(30px);
-
 
     form {
         max-width: rem(772px);
@@ -10,8 +6,8 @@
         border: 1px solid #dadbdd;
         margin: 30px auto;
         padding: 30px;
-        
-       
+
+
 
         .top-form {
             margin-bottom: 50px;
@@ -49,7 +45,7 @@
                     font-size: 1.12em;
                     color: #404145;
 
-                    &:focus-visible{
+                    &:focus-visible {
                         outline-color: #1dbf73;
                     }
                 }
@@ -88,7 +84,7 @@
                     color: #404145;
                     font-family: 'Macan';
 
-                    &:focus-visible{
+                    &:focus-visible {
                         outline-color: #1dbf73;
                     }
 
@@ -126,7 +122,6 @@
                         font-weight: 400;
                         line-height: 21px;
                     }
-
                 }
 
                 input {
@@ -135,13 +130,11 @@
                     height: rem(64px);
                     font-size: 1rem;
                     padding: 10px;
-                    
-                    &:focus-visible{
+
+                    &:focus-visible {
                         outline-color: #1dbf73;
                     }
                 }
-
-
             }
 
             .upload-section {
@@ -190,7 +183,6 @@
                     }
                 }
             }
-
         }
 
         .categories-title {
@@ -239,10 +231,9 @@
             transition: .15s ease-in-out;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
-            &:hover{
-                background-color:darken($color: #1dbf73, $amount: 10%) ;
+            &:hover {
+                background-color: darken($color: #1dbf73, $amount: 10%);
             }
         }
-
     }
 }

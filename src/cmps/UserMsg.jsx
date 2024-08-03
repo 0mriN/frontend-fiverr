@@ -24,9 +24,8 @@ export function UserMsg() {
 			showSuccessMsg(`New order ${order.gig.title}`)
 			store.dispatch(getActionAddOrder(order))
 		})
-		
+
 		socketService.on(SOCKET_EVENT_ORDER_UPDATED, order => {
-			console.log('update order', order.status)
 			if (order.status === 'Completed') {
 				showSuccessMsg(`Your order has been approved ! ${order.gig.title}`)
 			} else if (order.status === 'Rejected') {

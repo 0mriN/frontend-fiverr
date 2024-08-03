@@ -7274,6 +7274,5 @@ function _getFormattedGigs() {
     ]
 
     const formattedGigs = Object.values(gigs)
-    // console.log(JSON.stringify(formattedGigs.map(gig => ({...gig, hi:'hi'}))))
     return formattedGigs
 }

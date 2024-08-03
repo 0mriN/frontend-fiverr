@@ -4,14 +4,12 @@
 
     .title-container {
         margin-block: rem(16px);
-        // padding: 0 0 rem(16px);
 
         .breadcrumbs {
             margin: 0;
             padding-bottom: rem(10px);
 
             a {
-                // display: flex;
                 font-size: 14px;
                 color: #404145;
                 font-family: 'MacanThin';
@@ -44,29 +42,12 @@
         }
     }
 
-    // .sticky {
-    //     display: flex;
-    //     gap: rem(12px);
-    //     padding: 10px 0 13px 0;
-    //     top: 100px;
-
-    //     .filter-container {
-    //         display: flex;
-    //         gap: rem(12px);
-    //         padding: 10px 0 13px 0;
-    //     }
-    // }
-
     .filter-container {
-        // overflow: visible;
-        // position: fixed;
-        // z-index: 1000;
         position: static;
         display: flex;
         gap: rem(12px);
         padding: 10px 0 13px 0;
 
-        // background-color: #fff;
 
         .filter-btn {
             height: rem(42px);
@@ -133,7 +114,6 @@
                         background-color: #fafafa;
                     }
                 }
-
             }
         }
     }

@@ -1,5 +1,6 @@
 .search-bar {
     transition: 0.4s;
+
     form {
         display: flex;
 
@@ -16,7 +17,6 @@
             font-size: rem(18px);
 
             &::placeholder {
-                // color: lighten($gray2, 10%);
                 color: #62646a;
                 font-weight: lighter;
                 opacity: 0.7;
@@ -33,7 +33,7 @@
             background-color: black;
             border-radius: 0px 4px 4px 0px;
 
-            svg{
+            svg {
                 width: 16px;
                 height: 16px;
             }

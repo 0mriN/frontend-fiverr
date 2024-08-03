@@ -6,7 +6,6 @@ export function StickyWrapper({ children }) {
   const [originalOffsetTop, setOriginalOffsetTop] = useState(null)
 
   useEffect(() => {
-    // Store the original offset top of the element on mount
     if (wrapperRef.current) {
       setOriginalOffsetTop(wrapperRef.current.offsetTop)
     }
@@ -15,10 +14,7 @@ export function StickyWrapper({ children }) {
   useEffect(() => {
     function handleScroll() {
       if (!wrapperRef.current) return
-
-      // Check if the element is scrolled past the original position
       const isPastThreshold = window.scrollY >= originalOffsetTop
-
       setIsSticky(isPastThreshold)
     }
 

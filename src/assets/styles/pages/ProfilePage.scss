@@ -1,8 +1,6 @@
-
 .profile-page {
   display: flex;
   padding: 40px 32px;
-  // justify-content: space-between;
 
   .profile-info {
     max-width: rem(400px);
@@ -91,16 +89,14 @@
       display: flex;
       width: 100%;
       justify-content: center;
-      // background-color: #1dbf73;
       background-color: #fff;
-      color:#404145 ;
-      // max-height: rem(50px);
+      color: #404145;
       height: rem(50px);
       align-items: center;
       border-radius: 5px;
       font-family: 'MacanBold';
       border: 1px solid #dadbdd;
-      
+
 
       .headline {
         position: relative;
@@ -109,27 +105,25 @@
         font-weight: 700;
         text-align: center;
         margin: 0;
-        // padding-bottom: rem(25px);
-        // margin-top: 10px;
-        
         border-bottom: 1px solid #1dbf73;
       }
+
       .underlined {
         display: inline-block;
         position: relative;
-        padding-bottom: 13px; 
+        padding-bottom: 13px;
         bottom: -5px;
-    }
+      }
 
-    .underlined::after {
+      .underlined::after {
         content: '';
         position: absolute;
         left: 0;
         bottom: 0;
-        height: 2px; /* Adjust as needed */
+        height: 2px;
         width: 100%;
-        background-color: #1dbf73; /* Change color as needed */
-    }
+        background-color: #1dbf73;
+      }
 
     }
 
@@ -138,15 +132,8 @@
       .user-gig-list {
         display: grid;
         grid-template-columns: repeat(3, minmax(rem(210px), rem(280px)));
-        // grid-template-rows: rem(25px);
-        // grid-template-rows:minmax(rem(240px),auto);
         grid-row-gap: rem(20px);
         grid-column-gap: rem(20px);
-        // width: 100%;
-        // height: 100%;
-        
-        
-
 
         button {
           background: #fff;
@@ -154,7 +141,7 @@
           border-radius: 5px;
 
           span {
-            display:inline-block;
+            display: inline-block;
             border-radius: 50%;
             background-color: #1dbf73;
             width: rem(70px);
@@ -166,7 +153,7 @@
             justify-self: center;
           }
 
-          p{
+          p {
             font-size: 22px;
             color: #74767e;
 
@@ -180,12 +167,8 @@
           text-decoration: none;
           display: flex;
           flex-direction: column;
-
         }
-
-
       }
     }
-
   }
 }

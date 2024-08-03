@@ -91,14 +91,6 @@
     }
 }
 
-// @include for-mobile-layout{
-//     .user-desc{
-//         display: flex;
-//         flex-direction: row;
-//        }
-// }
-
-
 @include for-small-layout {
     .profile-progress {
         display: block;

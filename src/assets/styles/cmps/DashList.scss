@@ -1,5 +1,4 @@
 .dash-list {
-    // display: block;
     width: 100%;
     margin: rem(18px) 0 0;
     border: 1px solid #dadbdd;
@@ -8,7 +7,6 @@
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     display: -webkit-box;
-    // border-collapse: collapse;
 
     h4 {
         color: #3d3d3d;
@@ -21,7 +19,6 @@
         align-items: center;
         height: rem(80px);
         border-bottom: 1px solid #dadbdd;
-        // justify-content: space-between;
 
         .buyer-col {
             width: 20%;
@@ -72,12 +69,10 @@
             min-width: 110px;
         }
     }
-
 }
 
 @include for-mobile-layout {
     .dash-list {
-        // max-width: 520px;
         max-height: 400px;
         overflow-y: scroll;
         width: 100%;
@@ -88,8 +83,6 @@
 
         .dash-list-header {
             height: rem(42px);
-            // align-items: start;
-            
 
             .buyer-col {
                 min-width: 20px;
