@@ -1,6 +1,8 @@
-import { eventBus, showSuccessMsg } from '../services/event-bus.service'
+import { eventBus, showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { useState, useEffect, useRef } from 'react'
-import { socketService, SOCKET_EVENT_ORDER_ADDED } from '../services/socket.service'
+import { socketService, SOCKET_EVENT_ORDER_ADDED, SOCKET_EVENT_ORDER_UPDATED } from '../services/socket.service'
+import { store } from '../store/store'
+import { getActionAddOrder } from '../store/actions/order.actions'
 import errorIcon from '../assets/img/svg/error-icon.png'
 import successIcon from '../assets/img/svg/success-icon.svg'
 
@@ -19,13 +21,24 @@ export function UserMsg() {
 		})
 
 		socketService.on(SOCKET_EVENT_ORDER_ADDED, order => {
-			console.log('im here')
-			showSuccessMsg(`New order ${order.title}`)
+			showSuccessMsg(`New order ${order.gig.title}`)
+			store.dispatch(getActionAddOrder(order))
+		})
+		
+		socketService.on(SOCKET_EVENT_ORDER_UPDATED, order => {
+			console.log('update order', order.status)
+			if (order.status === 'Completed') {
+				showSuccessMsg(`Your order has been approved ! ${order.gig.title}`)
+			} else if (order.status === 'Rejected') {
+				showErrorMsg(`Your order has been rejected. ${order.gig.title}`)
+
+			}
 		})
 
 		return () => {
 			unsubscribe()
 			socketService.off(SOCKET_EVENT_ORDER_ADDED)
+			socketService.off(SOCKET_EVENT_ORDER_UPDATED)
 		}
 	}, [])
 

@@ -30,7 +30,7 @@ export function Dashboard() {
 
     useEffect(() => {
         fetchOrders()
-    }, [])
+    }, [orders])
 
     if (!user) {
         return <div>You have to log in first !</div>

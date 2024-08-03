@@ -11,6 +11,7 @@ export const SOCKET_EVENT_REVIEW_REMOVED = 'review-removed'
 export const SOCKET_EVENT_REVIEW_ABOUT_YOU = 'review-about-you'
 
 export const SOCKET_EVENT_ORDER_ADDED = 'order-added'
+export const SOCKET_EVENT_ORDER_UPDATED = 'order-updated'
 
 
 const SOCKET_EMIT_LOGIN = 'set-user-socket'
