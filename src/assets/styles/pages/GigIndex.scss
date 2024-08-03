@@ -1,3 +1,11 @@
 .gig-index {
     padding: 0 rem(32px);
+
+    .thloader {
+        width: 215px;
+        height: 215px;
+        display: block;
+        margin-top: 10%;
+        animation: bounce 1s infinite ease-in-out, circle 2s infinite linear;
+    }
 }

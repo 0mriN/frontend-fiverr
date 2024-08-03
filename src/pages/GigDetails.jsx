@@ -8,7 +8,7 @@ import { DetailsHeader } from "../cmps/DetailsHeader"
 import { DetailsReviews } from "../cmps/DetailsReviews"
 import { DetailsAbout } from "../cmps/DetailsAbout"
 // import { PackageComparison } from "../cmps/PackCompare"
-import loader from '../assets/img/svg/loader.svg'
+import loader from '../assets/img/svg/thloader.svg'
 
 
 export function GigDetails() {
@@ -36,7 +36,7 @@ export function GigDetails() {
           </div>
         ) : (
           <div className="loader-container">
-            {<img src={loader} />}
+            {<img src={loader} className="thloader" />}
           </div>
         )}
       </div>
