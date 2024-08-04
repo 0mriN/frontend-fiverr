@@ -69,7 +69,8 @@ export function AppHeader() {
 		navigate(path)
 	}
 
-	async function onLogout() {
+	async function onLogout(ev) {
+		ev.stopPropagation()
 		try {
 			setOpenUser(false)
 			await logout()
@@ -121,8 +122,8 @@ export function AppHeader() {
 							{/* <NavLink to="/orders">Orders</NavLink> */}
 						</div>
 						<div className="nav-user" onClick={handleOpenUser}>
-							{user.fullname.charAt(0)}
-
+							{/* {user.fullname.charAt(0)} */}
+							<img src={user.imgUrl} alt="" />
 							<div>
 								<ClickAwayListener
 									mouseEvent="onMouseDown"

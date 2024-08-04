@@ -57,7 +57,7 @@ export function GigPreview({ gig }) {
             <div className='card-rating'>
                 <img src={ratingStar} alt="ratingstar" />
                 {` ${avgRating}`}
-                <span>{`(${gig.reviews.length})`}</span>
+                <span>{`(1k)`}</span>
             </div>
             <Link to={`/gig/${gig._id}`}>
                 <span className='card-from'>From<span>{`$${gig.price}`}</span></span>

@@ -21,17 +21,16 @@ export function UserMsg() {
 		})
 
 		socketService.on(SOCKET_EVENT_ORDER_ADDED, order => {
-			showSuccessMsg(`New order ${order.gig.title}`)
+			showSuccessMsg(`You have a new order from ${order.buyer.fullname} !`)
 			store.dispatch(getActionAddOrder(order))
 		})
 		
 		socketService.on(SOCKET_EVENT_ORDER_UPDATED, order => {
 			console.log('update order', order.status)
-			if (order.status === 'Completed') {
-				showSuccessMsg(`Your order has been approved ! ${order.gig.title}`)
-			} else if (order.status === 'Rejected') {
-				showErrorMsg(`Your order has been rejected. ${order.gig.title}`)
-
+			if (order.status === 'completed') {
+				showSuccessMsg(`Your order from ${order.owner.fullname} has been approved !`)
+			} else if (order.status === 'rejected') {
+				showErrorMsg(`Your order from ${order.owner.fullname} has been rejected.`)
 			}
 		})
 

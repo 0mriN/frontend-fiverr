@@ -2,6 +2,7 @@ import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import { DashList } from "./DashList";
 import { ProfileProgress } from "./ProfileProgress";
 import profilePic from "../assets/img/profile.png"
+import eladProfile from "../assets/img/elad.jpeg"
 
 export function MobileDashboard({ user, orders, fetchOrders }) {
     function getFirstName(fullName) {
@@ -18,7 +19,7 @@ export function MobileDashboard({ user, orders, fetchOrders }) {
                 <h2>Welcome back</h2>
             </div>
             <div className="img-profile-container">
-                <img src={profilePic} alt="" />
+                <img src={user.imgUrl} alt="" />
                 {/* <img src={user.imgUrl} alt="" /> */}
             </div>
         </div>

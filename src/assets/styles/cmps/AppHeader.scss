@@ -110,22 +110,31 @@
                 display: grid;
                 place-items: center;
 
-                height: 32px;
-                width: 32px;
+                // height: 32px;
+                // width: 32px;
 
-                border-radius: 50%;
+                // border-radius: 50%;
 
-                background-color: #b25d1f;
+                // background-color: #b25d1f;
 
-                color: #fff;
+                // color: #fff;
                 font-size: rem(16px);
                 font-weight: 600;
+
+                img {
+                    height:38px;
+                    // max-width: rem(64px);
+                    border-radius: 50%;
+                    margin: 0;
+                    aspect-ratio: 1 / 1;
+                }
 
                 &:hover {
                     cursor: pointer;
                 }
 
                 .user-modal {
+                    z-index: 20;
                     position: absolute;
                     top: 50%;
                     left: 50%;
