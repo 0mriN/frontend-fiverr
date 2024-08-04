@@ -51,17 +51,17 @@ export function GigEdit() {
 
     const CustomCheckbox = (props) => (
         <Checkbox
-          {...props}
-          sx={{
-            '& .MuiSvgIcon-root': {
-              color: '#1dbf73',
-            },
-            '&.Mui-checked': {
-              color: '#1dbf73',
-            },
-          }}
+            {...props}
+            sx={{
+                '& .MuiSvgIcon-root': {
+                    color: '#1dbf73',
+                },
+                '&.Mui-checked': {
+                    color: '#1dbf73',
+                },
+            }}
         />
-      )
+    )
 
     function handleChange({ target }) {
         const field = target.name
@@ -107,9 +107,9 @@ export function GigEdit() {
         document.getElementById('imgUrls').click()
     }
 
-    function onCancel(){
-      let isConfirmed = confirm('Are you sure you want to cancel ?')
-        if(!isConfirmed) return
+    function onCancel() {
+        let isConfirmed = confirm('Are you sure you want to cancel ?')
+        if (!isConfirmed) return
         navigate('/profile')
     }
 
@@ -162,22 +162,22 @@ export function GigEdit() {
                     </label>
 
                     <div className="upload-section">
-                    <label htmlFor="imgUrls" className="upload-container">
-                        <span>Upload Images
-                            <p>Encourage buyers to choose your Gig by featuring a variety of your work.  </p>
-                        </span>
-                    </label>
-                    <button type="button" className="upload-button" onClick={handleButtonClick}>
-                        Choose File
-                    </button>
-                    <input
-                        type="file"
-                        id="imgUrls"
-                        className="file-input-btn"
-                        name="imgUrls"
-                        onChange={handleChange}
-                        accept="image/*" 
-                        multiple />
+                        <label htmlFor="imgUrls" className="upload-container">
+                            <span>Upload Images
+                                <p>Encourage buyers to choose your Gig by featuring a variety of your work.  </p>
+                            </span>
+                        </label>
+                        <button type="button" className="upload-button" onClick={handleButtonClick}>
+                            Choose File
+                        </button>
+                        <input
+                            type="file"
+                            id="imgUrls"
+                            className="file-input-btn"
+                            name="imgUrls"
+                            onChange={handleChange}
+                            accept="image/*"
+                            multiple />
                     </div>
 
                 </div>
@@ -220,8 +220,8 @@ export function GigEdit() {
 
             </form>
             <div className="btns-wrapper">
-            <button onClick={onCancel} className="cancel-btn">Cancel</button>
-            <button onClick={onAddGig} className="save-btn">Save</button>
+                <button onClick={onCancel} className="cancel-btn">Cancel</button>
+                <button onClick={onAddGig} className="save-btn">Save</button>
             </div>
         </section>
     )

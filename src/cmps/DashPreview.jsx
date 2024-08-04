@@ -34,8 +34,6 @@ export function DashPreview({ order, fetchOrders }) {
         updateStatus("rejected");
     }
 
-
-    console.log(currentStatus)
     return (
         <div className="dash-preview">
             <div className="buyer-cols">

@@ -1,7 +1,6 @@
 export function CheckoutMain({ orders }) {
     const order = orders[0]
-    console.log(orders)
-    console.log(order)
+
     // 5555 5555 5555 4444
     return (
         <div className="checkout-main">

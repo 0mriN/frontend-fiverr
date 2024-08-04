@@ -53,7 +53,7 @@ export function getPrimeCategories(type) {
                 tag: 'personal growth',
             },
         ]
-        } else if(type === 'home') {
+    } else if (type === 'home') {
         return [
             {
                 title: 'Programming & Tech',
@@ -108,7 +108,7 @@ export function getRandomTags() {
         'ai services',
         'personal growth',
     ]
-     return ([
+    return ([
         tags[getRandomIntInclusive(0, tags.length - 1)],
         tags[getRandomIntInclusive(0, tags.length - 1)],
     ])
@@ -127,7 +127,7 @@ export function makeLorem(size = 100) {
 export function getRandomIntInclusive(min, max) {
     min = Math.ceil(min)
     max = Math.floor(max)
-    return Math.floor(Math.random() * (max - min + 1)) + min //The maximum is inclusive and the minimum is inclusive 
+    return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
 
@@ -157,8 +157,7 @@ export function loadFromStorage(key) {
     return (data) ? JSON.parse(data) : undefined
 }
 
-export function calculateProgress(orders,totalOrders) {
-    // const totalOrders = orders.length
+export function calculateProgress(orders, totalOrders) {
     if (totalOrders === 0) return 0
     return Math.min((orders / totalOrders) * 100, 100)
 }

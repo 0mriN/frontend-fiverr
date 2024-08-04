@@ -16,7 +16,7 @@ export function PackModal({ gig }) {
   const [selectedPackage, setSelectedPackage] = useState(null)
   const navigate = useNavigate()
   const modalRef = useRef(null)
- 
+
 
   const packages = {
     basic: {
@@ -59,7 +59,7 @@ export function PackModal({ gig }) {
     const user = userService.getLoggedinUser()
 
     const order = {
-     /*  _id: makeId(), */
+      /*  _id: makeId(), */
       buyer: userService.getLoggedinUser(),
       owner: gig.owner,
       gig,
@@ -91,7 +91,7 @@ export function PackModal({ gig }) {
         if (scrollY >= stickyOffset) {
           modalRef.current.style.top = `${stickyOffset}px`
         } else {
-          modalRef.current.style.top = '0px' 
+          modalRef.current.style.top = '0px'
         }
       }
     }

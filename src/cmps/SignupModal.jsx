@@ -12,10 +12,9 @@ export function SignUpModal({ onClose }) {
         setCredentials({ ...credentials, [name]: value })
     }
 
-    async function onSignUp(ev){
+    async function onSignUp(ev) {
         ev.preventDefault()
         try {
-            console.log(credentials)
             await dispatch(signup(credentials))
             showSuccessMsg('Sign up successful')
             onClose()

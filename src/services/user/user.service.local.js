@@ -88,8 +88,6 @@ async function login(userCred) {
 
   ]
   const user = users.find((user) => user.username === userCred.username)
-  console.log('usercred ', userCred)
-  console.log('user: ', user)
   if (user) return saveLoggedinUser(user)
 }
 
@@ -142,5 +140,4 @@ async function _createAdmin() {
   }
 
   const newUser = await storageService.post("user", userCred)
-  console.log("newUser: ", newUser)
 }

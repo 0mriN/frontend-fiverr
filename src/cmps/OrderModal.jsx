@@ -29,7 +29,7 @@ export function OrderModal({ packageInfo, onClose, gig }) {
       showErrorMsg(`Oops, something went wrong`)
       console.log('err:', err)
     }
-     
+
   }
 
   return (

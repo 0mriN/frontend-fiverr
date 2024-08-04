@@ -1,19 +1,15 @@
 .gig-list-container {
 
     .sort-container {
-        // align-items: left;
         color: #62646a;
         display: flex;
         flex-direction: column;
-        // flex-basis: 0%;
-        // flex-wrap: wrap;
         font-weight: 600;
         gap: 16px normal;
         justify-content: space-between;
         line-height: 24px;
 
         .top-filters {
-            // align-content: left;
             color: #62646a;
             display: flex;
             font-weight: 600;
@@ -49,23 +45,23 @@
             justify-content: space-between;
             align-items: center;
             font-weight: 600;
-           
-            
-            .sort-by{
+
+
+            .sort-by {
                 font-weight: 580;
                 color: #74767e;
                 padding: 10px 12px;
                 max-width: rem(230px);
 
-                .sort-selector{
+                .sort-selector {
                     background-color: #fff;
                     border: none;
                     font-family: 'MacanBold';
                     font-size: 16px;
-                    color:#222325;
+                    color: #222325;
                     text-align: center;
                     max-width: rem(130px);
-                    
+
                 }
             }
         }

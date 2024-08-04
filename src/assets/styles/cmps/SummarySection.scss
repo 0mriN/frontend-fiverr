@@ -8,7 +8,7 @@
     margin: 0 0 rem(40px);
     padding: rem(30px) 0px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: rem(898px); //check responsiveness
+    width: rem(898px);
 
     .summary-item {
         display: flex;
@@ -41,12 +41,6 @@
 
 @include for-mobile-layout {
     .summary-section {
-        // max-width: 520px;
-        // overflow: hidden;
-
-        // display: grid;
-        // grid-template-columns: 1fr 1fr;
-        // gap: 40px;
         display: none;
     }
 }

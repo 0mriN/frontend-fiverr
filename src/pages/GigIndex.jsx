@@ -11,7 +11,7 @@ import { GigList } from '../cmps/GigList'
 
 import { Link } from 'react-router-dom'
 import { GigFilter } from '../cmps/GigFilter'
-import loader from '../assets/img/svg/loader.svg'
+import loader from '../assets/img/svg/thloader.svg'
 
 
 
@@ -28,7 +28,7 @@ export function GigIndex() {
         <main className="gig-index">
             <GigFilter gigs={gigs} />
             <div className="loader-container">
-                {!gigs.length && <img src={loader} />}
+                {!gigs.length && <img src={loader} className="thloader"/>}
             </div>
             {gigs && <GigList
                 gigs={gigs}

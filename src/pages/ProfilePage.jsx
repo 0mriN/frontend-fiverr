@@ -36,7 +36,6 @@ export function ProfilePage() {
     }
 
     const userGigs = gigs.filter(gig => gig.owner.fullname.toLowerCase() === user.fullname.toLowerCase())
-    // console.log('userGigs:', userGigs);
 
     if (!user) return <div>You have to log in first !</div>
 

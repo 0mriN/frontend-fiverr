@@ -79,8 +79,7 @@ export function GigFilter({ gigs }) {
 
     function applyFilter(ev, value, type) {
         ev.preventDefault()
-        console.log(value, 'val')
-        
+
         if (type === 'budget') setFilter({ ...filterBy, budget: value })
         else if (type === 'deliveryTime') setFilter({ ...filterBy, deliveryTime: value })
         handleCloseBudget()

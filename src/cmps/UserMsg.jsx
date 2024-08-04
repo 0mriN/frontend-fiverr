@@ -24,7 +24,7 @@ export function UserMsg() {
 			showSuccessMsg(`You have a new order from ${order.buyer.fullname} !`)
 			store.dispatch(getActionAddOrder(order))
 		})
-		
+
 		socketService.on(SOCKET_EVENT_ORDER_UPDATED, order => {
 			console.log('update order', order.status)
 			if (order.status === 'completed') {
