@@ -33,11 +33,12 @@ export function DashPreview({ order, fetchOrders }) {
     function handleReject() {
         updateStatus("rejected");
     }
-
+    console.log(buyer)
+    
     return (
         <div className="dash-preview">
             <div className="buyer-cols">
-                <img src={buyerImg} alt="buyer" />
+                <img src={buyer.imgUrl} alt="buyer" />
                 <p>{getFirstName(buyer.fullname)}</p>
             </div>
 
